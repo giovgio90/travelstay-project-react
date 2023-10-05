@@ -1,0 +1,546 @@
+{
+  "travel": [
+    {
+      "id": 1,
+      "destination": "Paris, France",
+      "duration": "7 days",
+      "description": "Discover the magic of the 'City of Love' with our immersive 7-day Parisian adventure. From the iconic Eiffel Tower to the charming streets of Montmartre, this journey promises an unforgettable experience. Your enchanting stay begins at the 'Romantic Oasis Hotel,' a picturesque apartment nestled in the heart of Paris. Marvel at the breathtaking art in the Louvre, take leisurely strolls along the Seine River, and savor delectable croissants at local cafes. With free WiFi, a fully equipped kitchen, air conditioning, and a flat-screen TV, your accommodation ensures comfort and convenience. Our guests have raved about their experiences, with Alice123 saying, 'The Romantic Oasis Hotel was absolutely delightful. Its central location made it easy to explore Paris, and the apartment was cozy and well-equipped.' Whether you're embarking on a romantic getaway or a solo adventure, Paris is waiting to captivate your heart. Book now and immerse yourself in the rich history, culture, and romance of this iconic city.",
+      "price": 1200,
+      "price_per_adult": 1200,
+      "price_per_child": 800,
+      "image": "https://images.unsplash.com/photo-1549144511-f099e773c147?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
+      "image_two": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2020&q=80",
+      "image_three": "https://images.unsplash.com/photo-1520939817895-060bdaf4fe1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1923&q=80",
+      "image_four": "https://images.unsplash.com/photo-1508050919630-b135583b29ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+      "hotel": {
+        "name": "Hotel Park-Lane Paris",
+        "type": "Entire Apartment",
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "guests": 2,
+        "amenities": ["Free WiFi", "Kitchen", "Air Conditioning", "TV"],
+        "reviews": [
+          {
+            "user": "Alice123",
+            "rating": 4.5,
+            "comment": "The apartment was cozy and had a great location. We loved our stay in Paris."
+          },
+          {
+            "user": "BobTraveler",
+            "rating": 4,
+            "comment": "This apartment was perfect for our romantic getaway. Highly recommended!"
+          }
+        ],
+        "images": [
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/88/f5/18716db0af813c769c3529b6617ff7557422c1841a46f1fbf3c3ae7f8381.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/ce/70/33dec22e66c60f4e8e3ba8d29bfccd4d7ee9f62792c3765f4127116f8dfd.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/df/b9/ec7e9b1e00672daa6d553354b5dd4dcb3839abbca4f410f792692c2afa7c.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/bb/b8/2e6f5e284fe51dcdabb95dc84ab9468c06ef5f0ef92eb36bfb2dc333813f.jpeg"
+        ]
+      },
+      "host": {
+        "name": "John",
+        "superhost": true,
+        "verified": true
+      },
+      "cancellation_policy": "Moderate",
+      "dates_available": ["2023-11-15", "2023-11-22", "2023-11-29"],
+      "instant_bookable": true,
+      "special_prices": [
+        {
+          "date": "2023-11-15",
+          "price": 1150
+        },
+        {
+          "date": "2023-11-22",
+          "price": 1100
+        },
+        {
+          "date": "2023-11-29",
+          "price": 1180
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "destination": "New York, USA",
+      "duration": "10 days",
+      "description": "Discover the Big Apple and all its attractions.",
+      "price": 1800,
+      "price_per_adult": 1800,
+      "price_per_child": 1200,
+      "image": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "hotel": {
+        "name": "Luxury Penthouse in Manhattan",
+        "type": "Entire Penthouse",
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "guests": 4,
+        "amenities": ["Free WiFi", "Kitchen", "Gym", "Panoramic View"],
+        "reviews": [
+          {
+            "user": "TravelLover88",
+            "rating": 4.8,
+            "comment": "This penthouse offers breathtaking views of NYC. A dream come true!"
+          },
+          {
+            "user": "AdventureSeeker",
+            "rating": 4.2,
+            "comment": "I saw all the major attractions of New York on this unforgettable trip."
+          }
+        ],
+        "images": [
+          "/assets/images/NewYork_one.jpg",
+          "/assets/images/NewYork_two.jpg",
+          "/assets/images/NewYork_three.jpg"
+        ]
+      },
+      "host": {
+        "name": "Sarah",
+        "superhost": true,
+        "verified": true
+      },
+      "cancellation_policy": "Strict",
+      "dates_available": ["2023-11-10", "2023-11-17", "2023-11-24"],
+      "instant_bookable": true,
+      "special_prices": [
+        {
+          "date": "2023-11-10",
+          "price": 1750
+        },
+        {
+          "date": "2023-11-17",
+          "price": 1700
+        },
+        {
+          "date": "2023-11-24",
+          "price": 1850
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "destination": "Barcelona, Spain",
+      "duration": "5 days",
+      "description": "Experience the vibrant culture of Barcelona.",
+      "price": 950,
+      "price_per_adult": 950,
+      "price_per_child": 600,
+      "image": "https://images.unsplash.com/photo-1511527661048-7fe73d85e9a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80",
+      "hotel": {
+        "name": "Charming Studio in the Gothic Quarter",
+        "type": "Studio",
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "guests": 2,
+        "amenities": ["Free WiFi", "Kitchenette", "Central Location"],
+        "reviews": [
+          {
+            "user": "TravelBug123",
+            "rating": 4.3,
+            "comment": "The studio was small but cozy, and the location was perfect for exploring."
+          },
+          {
+            "user": "CultureExplorer",
+            "rating": 4.6,
+            "comment": "Barcelona has so much to offer. Loved the stay in the Gothic Quarter."
+          }
+        ],
+        "images": ["barcelona1.jpg", "barcelona2.jpg", "barcelona3.jpg"]
+      },
+      "host": {
+        "name": "Maria",
+        "superhost": true,
+        "verified": true
+      },
+      "cancellation_policy": "Flexible",
+      "dates_available": ["2023-11-05", "2023-11-12", "2023-11-19"],
+      "instant_bookable": true,
+      "special_prices": [
+        {
+          "date": "2023-11-05",
+          "price": 900
+        },
+        {
+          "date": "2023-11-12",
+          "price": 920
+        },
+        {
+          "date": "2023-11-19",
+          "price": 930
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "destination": "Rome, Italy",
+      "duration": "6 days",
+      "description": "Explore the rich history of Rome.",
+      "price": 1300,
+      "price_per_adult": 1300,
+      "price_per_child": 800,
+      "image": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1996&q=80",
+      "hotel": {
+        "name": "Historic Apartment near the Colosseum",
+        "type": "Entire Apartment",
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "guests": 4,
+        "amenities": ["Free WiFi", "Kitchen", "Historic Location"],
+        "reviews": [
+          {
+            "user": "HistoryBuff",
+            "rating": 4.7,
+            "comment": "Staying near the Colosseum was a dream come true for a history lover like me."
+          },
+          {
+            "user": "FoodieExplorer",
+            "rating": 4.5,
+            "comment": "Rome's food and history make it an amazing destination."
+          }
+        ],
+        "images": ["rome1.jpg", "rome2.jpg", "rome3.jpg"]
+      },
+      "host": {
+        "name": "Luigi",
+        "superhost": true,
+        "verified": true
+      },
+      "cancellation_policy": "Moderate",
+      "dates_available": ["2023-11-15", "2023-11-22", "2023-11-29"],
+      "instant_bookable": true,
+      "special_prices": [
+        {
+          "date": "2023-11-15",
+          "price": 1250
+        },
+        {
+          "date": "2023-11-22",
+          "price": 1280
+        },
+        {
+          "date": "2023-11-29",
+          "price": 1260
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "destination": "Tokyo, Japan",
+      "duration": "9 days",
+      "description": "Experience the unique blend of modernity and tradition in Tokyo.",
+      "price": 2200,
+      "price_per_adult": 2200,
+      "price_per_child": 1400,
+      "image": "https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2036&q=80",
+      "hotel": {
+        "name": "Traditional Ryokan in Asakusa",
+        "type": "Traditional Ryokan",
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "guests": 2,
+        "amenities": ["Free WiFi", "Japanese Tatami Room", "Traditional Breakfast"],
+        "reviews": [
+          {
+            "user": "Japanophile",
+            "rating": 4.9,
+            "comment": "Staying in a traditional ryokan was a cultural experience I'll never forget."
+          },
+          {
+            "user": "UrbanExplorer",
+            "rating": 4.7,
+            "comment": "Tokyo is a city like no other. Loved the ryokan experience in Asakusa."
+          }
+        ],
+        "images": ["tokyo1.jpg", "tokyo2.jpg", "tokyo3.jpg"]
+      },
+      "host": {
+        "name": "Yuki",
+        "superhost": true,
+        "verified": true
+      },
+      "cancellation_policy": "Strict",
+      "dates_available": ["2023-11-10", "2023-11-17", "2023-11-24"],
+      "instant_bookable": true,
+      "special_prices": [
+        {
+          "date": "2023-11-10",
+          "price": 2150
+        },
+        {
+          "date": "2023-11-17",
+          "price": 2100
+        },
+        {
+          "date": "2023-11-24",
+          "price": 2250
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "destination": "Sydney, Australia",
+      "duration": "8 days",
+      "description": "Explore the stunning beaches and vibrant culture of Sydney.",
+      "price": 1600,
+      "price_per_adult": 1600,
+      "price_per_child": 1000,
+      "image": "https://images.unsplash.com/photo-1612953293239-4befdc359b72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "hotel": {
+        "name": "Beachfront Villa in Bondi Beach",
+        "type": "Entire Villa",
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "guests": 6,
+        "amenities": ["Free WiFi", "Ocean View", "Private Pool"],
+        "reviews": [
+          {
+            "user": "BeachLover",
+            "rating": 4.6,
+            "comment": "Bondi Beach is a paradise, and this villa made our stay even better."
+          },
+          {
+            "user": "CultureVulture",
+            "rating": 4.2,
+            "comment": "Sydney's cultural scene is incredible. Loved the villa's location."
+          }
+        ],
+        "images": ["sydney1.jpg", "sydney2.jpg", "sydney3.jpg"]
+      },
+      "host": {
+        "name": "Emma",
+        "superhost": true,
+        "verified": true
+      },
+      "cancellation_policy": "Moderate",
+      "dates_available": ["2023-11-05", "2023-11-12", "2023-11-19"],
+      "instant_bookable": true,
+      "special_prices": [
+        {
+          "date": "2023-11-05",
+          "price": 1550
+        },
+        {
+          "date": "2023-11-12",
+          "price": 1580
+        },
+        {
+          "date": "2023-11-19",
+          "price": 1620
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "destination": "Cape Town, South Africa",
+      "duration": "12 days",
+      "description": "Explore the breathtaking landscapes and wildlife of South Africa.",
+      "price": 2500,
+      "price_per_adult": 2500,
+      "price_per_child": 1600,
+      "image": "https://images.unsplash.com/photo-1580060860978-d479ebf95a53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=800",
+      "hotel": {
+        "name": "Safari Lodge in Kruger National Park",
+        "type": "Safari Lodge",
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "guests": 4,
+        "amenities": ["Game Drives", "Safari Experience", "Bush Dining"],
+        "reviews": [
+          {
+            "user": "NatureEnthusiast",
+            "rating": 4.9,
+            "comment": "This safari lodge exceeded all my expectations. Saw the Big Five!"
+          },
+          {
+            "user": "WildlifeLover",
+            "rating": 4.8,
+            "comment": "Cape Town and Kruger Park - a dream vacation come true."
+          }
+        ],
+        "images": ["capetown1.jpg", "capetown2.jpg", "capetown3.jpg"]
+      },
+      "host": {
+        "name": "David",
+        "superhost": true,
+        "verified": true
+      },
+      "cancellation_policy": "Strict",
+      "dates_available": ["2023-11-15", "2023-11-22", "2023-11-29"],
+      "instant_bookable": true,
+      "special_prices": [
+        {
+          "date": "2023-11-15",
+          "price": 2450
+        },
+        {
+          "date": "2023-11-22",
+          "price": 2480
+        },
+        {
+          "date": "2023-11-29",
+          "price": 2520
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "destination": "Bali, Indonesia",
+      "duration": "14 days",
+      "description": "Relax on the beautiful beaches and experience Balinese culture.",
+      "price": 1800,
+      "price_per_adult": 1800,
+      "price_per_child": 1200,
+      "image": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1938&q=80",
+      "hotel": {
+        "name": "Luxury Villa in Ubud",
+        "type": "Entire Villa",
+        "bedrooms": 4,
+        "bathrooms": 3,
+        "guests": 8,
+        "amenities": ["Private Pool", "Rice Terrace View", "Cooking Classes"],
+        "reviews": [
+          {
+            "user": "BeachBum",
+            "rating": 4.7,
+            "comment": "Bali's beaches are incredible, and this villa was pure luxury."
+          },
+          {
+            "user": "CultureExplorer",
+            "rating": 4.4,
+            "comment": "Ubud is a cultural gem, and this villa was the perfect base."
+          }
+        ],
+        "images": ["bali1.jpg", "bali2.jpg", "bali3.jpg"]
+      },
+      "host": {
+        "name": "Wayan",
+        "superhost": true,
+        "verified": true
+      },
+      "cancellation_policy": "Moderate",
+      "dates_available": ["2023-11-05", "2023-11-12", "2023-11-19"],
+      "instant_bookable": true,
+      "special_prices": [
+        {
+          "date": "2023-11-05",
+          "price": 1750
+        },
+        {
+          "date": "2023-11-12",
+          "price": 1780
+        },
+        {
+          "date": "2023-11-19",
+          "price": 1820
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "destination": "Rio de Janeiro, Brazil",
+      "duration": "7 days",
+      "description": "Experience the energy of Rio's Carnival and its beautiful beaches.",
+      "price": 1500,
+      "price_per_adult": 1500,
+      "price_per_child": 1000,
+      "image": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "hotel": {
+        "name": "Beachfront Condo in Copacabana",
+        "type": "Entire Condo",
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "guests": 4,
+        "amenities": ["Free WiFi", "Ocean View", "Swimming Pool"],
+        "reviews": [
+          {
+            "user": "CarnivalFanatic",
+            "rating": 4.8,
+            "comment": "Rio during Carnival is an absolute blast! Loved the condo's location."
+          },
+          {
+            "user": "BeachLover",
+            "rating": 4.5,
+            "comment": "Copacabana Beach is stunning, and this condo had everything we needed."
+          }
+        ],
+        "images": ["rio1.jpg", "rio2.jpg", "rio3.jpg"]
+      },
+      "host": {
+        "name": "Isabella",
+        "superhost": true,
+        "verified": true
+      },
+      "cancellation_policy": "Flexible",
+      "dates_available": ["2023-11-10", "2023-11-17", "2023-11-24"],
+      "instant_bookable": true,
+      "special_prices": [
+        {
+          "date": "2023-11-10",
+          "price": 1450
+        },
+        {
+          "date": "2023-11-17",
+          "price": 1480
+        },
+        {
+          "date": "2023-11-24",
+          "price": 1520
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "destination": "Machu Picchu, Peru",
+      "duration": "4 days",
+      "description": "Embark on an unforgettable journey to the ancient ruins of Machu Picchu.",
+      "price": 1600,
+      "price_per_adult": 1600,
+      "price_per_child": 1000,
+      "image": "https://images.unsplash.com/photo-1591323531557-6d650aa9afe8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80",
+      "hotel": {
+        "name": "Eco-Friendly Lodge in Aguas Calientes",
+        "type": "Eco Lodge",
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "guests": 2,
+        "amenities": ["Scenic Views", "Restaurant", "Guided Tours"],
+        "reviews": [
+          {
+            "user": "HistoryExplorer",
+            "rating": 4.6,
+            "comment": "Machu Picchu is a wonder of the world, and this lodge was the perfect choice."
+          },
+          {
+            "user": "NatureLover",
+            "rating": 4.4,
+            "comment": "Aguas Calientes is a charming town, and this eco lodge had a great vibe."
+          }
+        ],
+        "images": ["machupicchu1.jpg", "machupicchu2.jpg", "machupicchu3.jpg"]
+      },
+      "host": {
+        "name": "Carlos",
+        "superhost": true,
+        "verified": true
+      },
+      "cancellation_policy": "Strict",
+      "dates_available": ["2023-11-05", "2023-11-12", "2023-11-19"],
+      "instant_bookable": true,
+      "special_prices": [
+        {
+          "date": "2023-11-05",
+          "price": 1550
+        },
+        {
+          "date": "2023-11-12",
+          "price": 1580
+        },
+        {
+          "date": "2023-11-19",
+          "price": 1620
+        }
+      ]
+    }
+  ]
+}

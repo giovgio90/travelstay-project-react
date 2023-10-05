@@ -1,38 +1,148 @@
-.App {
-  text-align: center;
+.navbar-head {
+  background-color: #2030408e;
+  font-weight: 500;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-background {
+  background-image: linear-gradient(rgba(11, 70, 148, 0.349), rgba(33, 51, 75, 0.144)),
+    url("./assets/vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg");
+  height: 100vh;
+  background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.btn-explore {
+  border: none;
+  background: #203040;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* INTRO */
+
+.card-tours {
+  background-image: linear-gradient(rgba(11, 70, 148, 0.514), rgba(33, 51, 75, 0.541));
+}
+
+.btn-tours {
+  border: none;
+  background: #203040;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* DELUXE */
+
+.deluxe {
+  background-image: linear-gradient(rgba(11, 70, 148, 0.589), rgba(33, 51, 75, 0.507)), url("./assets/Maldive.jpg");
+
+  background-size: cover;
+
+  height: 80vh;
+}
+
+/*NEWSLETTER*/
+
+.newsletter {
+  background: #203040;
+}
+
+.hr-style {
+  background-color: white;
+  height: 1px;
+  border: none;
+}
+
+/* OFFERS EXPLORE NOW */
+
+.offer-card {
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*FOOTER*/
+
+.footer-travel {
+  background: #203040;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 4.5rem;
+    padding-top: 120px;
+  }
+  h2 {
+    font-family: "Dancing Script", cursive;
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  .intro p {
+    font-size: 1.1rem;
+  }
+
+  .header-background {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .carousel {
+    width: 100% !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 768px) {
+  h1 {
+    font-size: 7rem;
+    padding-top: 120px;
   }
-  to {
-    transform: rotate(360deg);
+  h2 {
+    font-family: "Dancing Script", cursive;
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+  }
+
+  .intro p {
+    font-size: 1.4rem;
+  }
+
+  .carousel {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 7.5rem;
+    padding-top: 140px;
+  }
+
+  h2 {
+    font-family: "Dancing Script", cursive;
+    font-size: 3.5rem;
+  }
+
+  h3 {
+    font-size: 2.8rem;
+  }
+
+  .intro p {
+    font-size: 1.7rem;
+  }
+
+  .carousel {
+    width: 90% !important;
   }
 }
