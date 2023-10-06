@@ -72,6 +72,25 @@
   background: #203040;
 }
 
+/*LOGIN*/
+
+.login {
+  background-image: url("./assets/Login.png");
+}
+
+.login-input {
+  background-color: transparent;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  backdrop-filter: blur(2px);
+  border-radius: 10px;
+  padding: 40px;
+}
+
+.custom-button:disabled {
+  background-color: #20304079;
+}
+
 @media (max-width: 767px) {
   h1 {
     font-size: 4.5rem;

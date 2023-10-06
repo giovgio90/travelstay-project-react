@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Logo from "../assets/Logo.png";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
@@ -24,50 +25,71 @@ const LoginTravel = () => {
   };
 
   return (
-    <Container>
-      <Row>
-        <Col md={{ span: 6, offset: 3 }}>
-          <div className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
-            <div>
-              <h2>Login</h2>
-              <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="formBasicEmail">
-                  <Form.Label>Username</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Inserisci email"
-                    value={username}
-                    onChange={handleUsernameChange}
-                  />
-                </Form.Group>
+    <div className="login">
+      <Container>
+        <Row>
+          <Col md={{ span: 6, offset: 3 }}>
+            <div className=" d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
+              <div className="login-input">
+                <div className="d-flex mb-5">
+                  <div className="me-1">
+                    <img src={Logo} width="25" height="35" className="d-inline-block" alt="Logo" />
+                  </div>
+                  <div className="align-self-center">
+                    <h4 className="mb-0 text-black" style={{ fontSize: "1.3rem" }}>
+                      TRAVELSTAY
+                    </h4>
+                  </div>
+                </div>
+                <Form onSubmit={handleSubmit} className="text-center">
+                  <Form.Group controlId="formBasicEmail">
+                    <Form.Control
+                      style={{ background: "#ffffff90" }}
+                      type="text"
+                      size="sm"
+                      placeholder="Username"
+                      value={username}
+                      onChange={handleUsernameChange}
+                      className="mb-3"
+                    />
+                  </Form.Group>
 
-                <Form.Group controlId="formBasicPassword">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control
-                    type="password"
-                    placeholder="Inserisci password"
-                    value={password}
-                    onChange={handlePasswordChange}
-                    required
-                  />
-                </Form.Group>
-                {isFormValid ? (
-                  <Link to="/">
-                    <Button variant="primary" type="submit">
-                      Accedi
+                  <Form.Group controlId="formBasicPassword">
+                    <Form.Control
+                      className="mb-3"
+                      size="sm"
+                      style={{ background: "#ffffff90" }}
+                      type="password"
+                      placeholder="Password"
+                      value={password}
+                      onChange={handlePasswordChange}
+                      required
+                    />
+                  </Form.Group>
+                  {isFormValid ? (
+                    <Link to="/">
+                      <Button variant="primary" type="submit" size="lg" className="btn-explore mt-4 rounded-5 px-5 ">
+                        Login
+                      </Button>
+                    </Link>
+                  ) : (
+                    <Button
+                      variant="trasparent"
+                      type="submit"
+                      size="lg"
+                      className="custom-button btn-explore mt-4 rounded-5 px-5 "
+                      disabled
+                    >
+                      Login
                     </Button>
-                  </Link>
-                ) : (
-                  <Button variant="primary" type="button" disabled>
-                    Accedi
-                  </Button>
-                )}
-              </Form>
+                  )}
+                </Form>
+              </div>
             </div>
-          </div>
-        </Col>
-      </Row>
-    </Container>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 };
 
