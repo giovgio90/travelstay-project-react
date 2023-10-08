@@ -542,5 +542,733 @@
         }
       ]
     }
+  ],
+  "hotels": [
+    {
+      "id": 1,
+      "name": "Grand Hotel Paris",
+      "city": "Paris",
+      "type": "Hotel",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "guests": 4,
+      "amenities": ["Free WiFi", "Swimming Pool", "Gym", "Restaurant"],
+      "reviews": [
+        {
+          "user": "Guest123",
+          "rating": 4.5,
+          "comment": "A wonderful stay at Grand Hotel Paris!"
+        },
+        {
+          "user": "TravelerX",
+          "rating": 4,
+          "comment": "Great amenities and friendly staff."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel1-image1.jpg",
+        "https://example.com/hotel1-image2.jpg",
+        "https://example.com/hotel1-image3.jpg",
+        "https://example.com/hotel1-image4.jpg"
+      ],
+      "price_per_adult": 200,
+      "price_per_child": 100,
+      "host": {
+        "name": "Emily",
+        "superhost": true,
+        "verified": true
+      }
+    },
+    {
+      "id": 2,
+      "name": "Luxury Beach Resort",
+      "city": "Miami",
+      "type": "Resort",
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "guests": 6,
+      "amenities": ["Private Beach", "Spa", "Poolside Bar"],
+      "reviews": [
+        {
+          "user": "BeachLover",
+          "rating": 4.8,
+          "comment": "The private beach is amazing!"
+        },
+        {
+          "user": "SunSeeker",
+          "rating": 4.7,
+          "comment": "Great resort for a sunny vacation."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel2-image1.jpg",
+        "https://example.com/hotel2-image2.jpg",
+        "https://example.com/hotel2-image3.jpg",
+        "https://example.com/hotel2-image4.jpg"
+      ],
+      "price_per_adult": 300,
+      "price_per_child": 150,
+      "host": {
+        "name": "Michael",
+        "superhost": true,
+        "verified": true
+      }
+    },
+    {
+      "id": 3,
+      "name": "Mountain View Lodge",
+      "city": "Aspen",
+      "type": "Lodge",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "guests": 8,
+      "amenities": ["Ski-in/Ski-out", "Hot Tub", "Fireplace"],
+      "reviews": [
+        {
+          "user": "SkiEnthusiast",
+          "rating": 4.9,
+          "comment": "Perfect location for skiing!"
+        },
+        {
+          "user": "NatureLover",
+          "rating": 4.6,
+          "comment": "Cozy lodge with stunning views."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel3-image1.jpg",
+        "https://example.com/hotel3-image2.jpg",
+        "https://example.com/hotel3-image3.jpg",
+        "https://example.com/hotel3-image4.jpg"
+      ],
+      "price_per_adult": 250,
+      "price_per_child": 120,
+      "host": {
+        "name": "Daniel",
+        "superhost": true,
+        "verified": true
+      }
+    },
+    {
+      "id": 4,
+      "name": "Beachfront Paradise Resort",
+      "city": "Maui",
+      "type": "Resort",
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "guests": 10,
+      "amenities": ["Beachfront Access", "Infinity Pool", "Spa"],
+      "reviews": [
+        {
+          "user": "BeachBum",
+          "rating": 4.7,
+          "comment": "Paradise on the beach!"
+        },
+        {
+          "user": "Vacationer123",
+          "rating": 4.5,
+          "comment": "A dream vacation spot."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel4-image1.jpg",
+        "https://example.com/hotel4-image2.jpg",
+        "https://example.com/hotel4-image3.jpg",
+        "https://example.com/hotel4-image4.jpg"
+      ],
+      "price_per_adult": 350,
+      "price_per_child": 180,
+      "host": {
+        "name": "Sophia",
+        "superhost": true,
+        "verified": true
+      }
+    },
+    {
+      "id": 5,
+      "name": "Rustic Cabin Retreat",
+      "city": "Lake Tahoe",
+      "type": "Cabin",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "guests": 4,
+      "amenities": ["Lake View", "Fireplace", "Hiking Trails"],
+      "reviews": [
+        {
+          "user": "NatureExplorer",
+          "rating": 4.4,
+          "comment": "Beautiful cabin with great lake views."
+        },
+        {
+          "user": "AdventureSeeker",
+          "rating": 4.2,
+          "comment": "Perfect for a quiet getaway."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel5-image1.jpg",
+        "https://example.com/hotel5-image2.jpg",
+        "https://example.com/hotel5-image3.jpg",
+        "https://example.com/hotel5-image4.jpg"
+      ],
+      "price_per_adult": 180,
+      "price_per_child": 90,
+      "host": {
+        "name": "Olivia",
+        "superhost": true,
+        "verified": true
+      }
+    },
+    {
+      "id": 6,
+      "name": "Downtown Boutique Hotel",
+      "city": "New York",
+      "type": "Hotel",
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "guests": 2,
+      "amenities": ["City View", "Room Service"],
+      "reviews": [
+        {
+          "user": "CityTraveler",
+          "rating": 4.6,
+          "comment": "Great location in the heart of the city."
+        },
+        {
+          "user": "SoloExplorer",
+          "rating": 4.3,
+          "comment": "Cozy hotel for solo travelers."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel6-image1.jpg",
+        "https://example.com/hotel6-image2.jpg",
+        "https://example.com/hotel6-image3.jpg",
+        "https://example.com/hotel6-image4.jpg"
+      ],
+      "price_per_adult": 220,
+      "price_per_child": 110,
+      "host": {
+        "name": "Liam",
+        "superhost": true,
+        "verified": true
+      }
+    },
+    {
+      "id": 7,
+      "name": "Seaside Villa",
+      "city": "Malibu",
+      "type": "Villa",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "guests": 8,
+      "amenities": ["Beachfront Access", "Private Pool", "Ocean View"],
+      "reviews": [
+        {
+          "user": "BeachLoverX",
+          "rating": 4.9,
+          "comment": "A dream villa by the beach!"
+        },
+        {
+          "user": "Vacationer456",
+          "rating": 4.8,
+          "comment": "Relaxing stay with stunning ocean views."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel7-image1.jpg",
+        "https://example.com/hotel7-image2.jpg",
+        "https://example.com/hotel7-image3.jpg",
+        "https://example.com/hotel7-image4.jpg"
+      ],
+      "price_per_adult": 400,
+      "price_per_child": 200,
+      "host": {
+        "name": "Ava",
+        "superhost": true,
+        "verified": true
+      }
+    },
+    {
+      "id": 8,
+      "name": "Alpine Chalet",
+      "city": "Zermatt",
+      "type": "Chalet",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "guests": 6,
+      "amenities": ["Mountain View", "Hot Tub", "Ski Access"],
+      "reviews": [
+        {
+          "user": "SkiLover",
+          "rating": 4.7,
+          "comment": "Perfect chalet for a skiing holiday!"
+        },
+        {
+          "user": "MountainExplorer",
+          "rating": 4.5,
+          "comment": "Amazing views and cozy chalet."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel8-image1.jpg",
+        "https://example.com/hotel8-image2.jpg",
+        "https://example.com/hotel8-image3.jpg",
+        "https://example.com/hotel8-image4.jpg"
+      ],
+      "price_per_adult": 280,
+      "price_per_child": 140,
+      "host": {
+        "name": "Noah",
+        "superhost": true,
+        "verified": true
+      }
+    },
+    {
+      "id": 9,
+      "name": "Riverside Cabin",
+      "city": "Denver",
+      "type": "Cabin",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "guests": 4,
+      "amenities": ["River View", "Fire Pit", "Hiking Trails"],
+      "reviews": [
+        {
+          "user": "NatureLover456",
+          "rating": 4.4,
+          "comment": "Peaceful cabin by the river."
+        },
+        {
+          "user": "AdventureSeekerX",
+          "rating": 4.2,
+          "comment": "A great place to disconnect."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel9-image1.jpg",
+        "https://example.com/hotel9-image2.jpg",
+        "https://example.com/hotel9-image3.jpg",
+        "https://example.com/hotel9-image4.jpg"
+      ],
+      "price_per_adult": 190,
+      "price_per_child": 95,
+      "host": {
+        "name": "Oliver",
+        "superhost": true,
+        "verified": true
+      }
+    },
+    {
+      "id": 10,
+      "name": "Urban Loft",
+      "city": "San Francisco",
+      "type": "Loft",
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "guests": 2,
+      "amenities": ["City View", "Modern Design"],
+      "reviews": [
+        {
+          "user": "CityExplorer",
+          "rating": 4.6,
+          "comment": "Great loft in the heart of the city."
+        },
+        {
+          "user": "SoloTravelerX",
+          "rating": 4.3,
+          "comment": "Perfect for solo travelers."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel10-image1.jpg",
+        "https://example.com/hotel10-image2.jpg",
+        "https://example.com/hotel10-image3.jpg",
+        "https://example.com/hotel10-image4.jpg"
+      ],
+      "price_per_adult": 210,
+      "price_per_child": 105,
+      "host": {
+        "name": "Emma",
+        "superhost": true,
+        "verified": true
+      }
+    },
+    {
+      "id": 11,
+      "name": "Historic Manor",
+      "city": "Charleston",
+      "type": "Manor",
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "guests": 10,
+      "amenities": ["Antique Charm", "Gardens", "Fireplace"],
+      "reviews": [
+        {
+          "user": "HistoryBuff",
+          "rating": 4.7,
+          "comment": "A glimpse into the past in this historic manor."
+        },
+        {
+          "user": "GardenEnthusiast",
+          "rating": 4.5,
+          "comment": "Beautiful gardens and charming interiors."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel11-image1.jpg",
+        "https://example.com/hotel11-image2.jpg",
+        "https://example.com/hotel11-image3.jpg",
+        "https://example.com/hotel11-image4.jpg"
+      ],
+      "price_per_adult": 320,
+      "price_per_child": 160,
+      "host": {
+        "name": "William",
+        "superhost": true,
+        "verified": true
+      }
+    },
+    {
+      "id": 12,
+      "name": "Sunny Beachfront House",
+      "city": "Santa Monica",
+      "type": "House",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "guests": 8,
+      "amenities": ["Beachfront Access", "Hot Tub", "Ocean View"],
+      "reviews": [
+        {
+          "user": "BeachLover123",
+          "rating": 4.8,
+          "comment": "A perfect beachfront getaway!"
+        },
+        {
+          "user": "Vacationer789",
+          "rating": 4.7,
+          "comment": "Relaxing by the beach was amazing."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel12-image1.jpg",
+        "https://example.com/hotel12-image2.jpg",
+        "https://example.com/hotel12-image3.jpg",
+        "https://example.com/hotel12-image4.jpg"
+      ],
+      "price_per_adult": 380,
+      "price_per_child": 190,
+      "host": {
+        "name": "Olivia",
+        "superhost": true,
+        "verified": true
+      }
+    },
+    {
+      "id": 13,
+      "name": "Cozy Mountain Cabin",
+      "city": "Denver",
+      "type": "Cabin",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "guests": 4,
+      "amenities": ["Mountain View", "Fireplace", "Hiking Trails"],
+      "reviews": [
+        {
+          "user": "MountainLover",
+          "rating": 4.5,
+          "comment": "A perfect mountain escape."
+        },
+        {
+          "user": "NatureHiker",
+          "rating": 4.3,
+          "comment": "Great location for hiking."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel13-image1.jpg",
+        "https://example.com/hotel13-image2.jpg",
+        "https://example.com/hotel13-image3.jpg",
+        "https://example.com/hotel13-image4.jpg"
+      ],
+      "price_per_adult": 190,
+      "price_per_child": 95,
+      "host": {
+        "name": "Oliver",
+        "superhost": true,
+        "verified": true
+      }
+    },
+    {
+      "id": 14,
+      "name": "City View Apartment",
+      "city": "Los Angeles",
+      "type": "Apartment",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "guests": 4,
+      "amenities": ["City View", "Pool", "Gym"],
+      "reviews": [
+        {
+          "user": "CityExplorerX",
+          "rating": 4.7,
+          "comment": "Great apartment with stunning city views."
+        },
+        {
+          "user": "Traveler456",
+          "rating": 4.5,
+          "comment": "Convenient location for exploring the city."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel14-image1.jpg",
+        "https://example.com/hotel14-image2.jpg",
+        "https://example.com/hotel14-image3.jpg",
+        "https://example.com/hotel14-image4.jpg"
+      ],
+      "price_per_adult": 220,
+      "price_per_child": 110,
+      "host": {
+        "name": "Liam",
+        "superhost": true,
+        "verified": true
+      }
+    },
+    {
+      "id": 15,
+      "name": "Luxury Mountain Retreat",
+      "city": "Lake Tahoe",
+      "type": "House",
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "guests": 10,
+      "amenities": ["Mountain View", "Hot Tub", "Fireplace"],
+      "reviews": [
+        {
+          "user": "NatureLoverX",
+          "rating": 4.9,
+          "comment": "A luxurious mountain getaway!"
+        },
+        {
+          "user": "SkiEnthusiastX",
+          "rating": 4.8,
+          "comment": "Perfect for a ski trip."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel15-image1.jpg",
+        "https://example.com/hotel15-image2.jpg",
+        "https://example.com/hotel15-image3.jpg",
+        "https://example.com/hotel15-image4.jpg"
+      ],
+      "price_per_adult": 350,
+      "price_per_child": 180,
+      "host": {
+        "name": "Sophia",
+        "superhost": true,
+        "verified": true
+      }
+    },
+    {
+      "id": 16,
+      "name": "Modern City Loft",
+      "city": "San Francisco",
+      "type": "Loft",
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "guests": 2,
+      "amenities": ["City View", "Modern Design"],
+      "reviews": [
+        {
+          "user": "CityExplorer123",
+          "rating": 4.6,
+          "comment": "Sleek and modern loft in the city."
+        },
+        {
+          "user": "SoloTraveler456",
+          "rating": 4.3,
+          "comment": "Perfect for solo travelers."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel16-image1.jpg",
+        "https://example.com/hotel16-image2.jpg",
+        "https://example.com/hotel16-image3.jpg",
+        "https://example.com/hotel16-image4.jpg"
+      ],
+      "price_per_adult": 210,
+      "price_per_child": 105,
+      "host": {
+        "name": "Emma",
+        "superhost": true,
+        "verified": true
+      }
+    },
+    {
+      "id": 17,
+      "name": "Historic Mansion",
+      "city": "Charleston",
+      "type": "Mansion",
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "guests": 10,
+      "amenities": ["Antique Charm", "Gardens", "Fireplace"],
+      "reviews": [
+        {
+          "user": "HistoryEnthusiast",
+          "rating": 4.7,
+          "comment": "A step back in time in this historic mansion."
+        },
+        {
+          "user": "GardenLover",
+          "rating": 4.5,
+          "comment": "Gorgeous gardens and elegant interiors."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel17-image1.jpg",
+        "https://example.com/hotel17-image2.jpg",
+        "https://example.com/hotel17-image3.jpg",
+        "https://example.com/hotel17-image4.jpg"
+      ],
+      "price_per_adult": 320,
+      "price_per_child": 160,
+      "host": {
+        "name": "William",
+        "superhost": true,
+        "verified": true
+      }
+    },
+    {
+      "id": 18,
+      "name": "Beachfront Bungalow",
+      "city": "Maui",
+      "type": "Bungalow",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "guests": 4,
+      "amenities": ["Beachfront Access", "Outdoor Shower", "Ocean View"],
+      "reviews": [
+        {
+          "user": "BeachLover789",
+          "rating": 4.8,
+          "comment": "Paradise by the beach!"
+        },
+        {
+          "user": "Vacationer101",
+          "rating": 4.7,
+          "comment": "Unforgettable beachfront experience."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel18-image1.jpg",
+        "https://example.com/hotel18-image2.jpg",
+        "https://example.com/hotel18-image3.jpg",
+        "https://example.com/hotel18-image4.jpg"
+      ],
+      "price_per_adult": 300,
+      "price_per_child": 150,
+      "host": {
+        "name": "Sophia",
+        "superhost": true,
+        "verified": true
+      }
+    },
+    {
+      "id": 19,
+      "name": "Secluded Mountain Chalet",
+      "city": "Aspen",
+      "type": "Chalet",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "guests": 6,
+      "amenities": ["Mountain View", "Hot Tub", "Ski Access"],
+      "reviews": [
+        {
+          "user": "SkiLoverX",
+          "rating": 4.7,
+          "comment": "Perfect chalet for a skiing getaway!"
+        },
+        {
+          "user": "MountainExplorerX",
+          "rating": 4.5,
+          "comment": "Breathtaking mountain views."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel19-image1.jpg",
+        "https://example.com/hotel19-image2.jpg",
+        "https://example.com/hotel19-image3.jpg",
+        "https://example.com/hotel19-image4.jpg"
+      ],
+      "price_per_adult": 280,
+      "price_per_child": 140,
+      "host": {
+        "name": "Daniel",
+        "superhost": true,
+        "verified": true
+      }
+    },
+    {
+      "id": 20,
+      "name": "Urban Studio Apartment",
+      "city": "New York",
+      "type": "Apartment",
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "guests": 2,
+      "amenities": ["City View", "Kitchenette"],
+      "reviews": [
+        {
+          "user": "CityExplorer789",
+          "rating": 4.6,
+          "comment": "Convenient and modern studio in the city."
+        },
+        {
+          "user": "SoloTraveler101",
+          "rating": 4.3,
+          "comment": "Ideal for solo travelers exploring the city."
+        }
+      ],
+      "images": [
+        "https://example.com/hotel20-image1.jpg",
+        "https://example.com/hotel20-image2.jpg",
+        "https://example.com/hotel20-image3.jpg",
+        "https://example.com/hotel20-image4.jpg"
+      ],
+      "price_per_adult": 220,
+      "price_per_child": 110,
+      "host": {
+        "name": "Liam",
+        "superhost": true,
+        "verified": true
+      }
+    }
+  ],
+  "register": [
+    {
+      "username": "Giovanni787",
+      "email": "giovgio90@gmail.com",
+      "password": "sdfsdfsdf",
+      "id": "JbVzrS2"
+    },
+    {
+      "username": "Michele",
+      "email": "michele@gmail.com",
+      "password": "12121212",
+      "id": "8pTUtWx"
+    },
+    {
+      "username": "Francesco123",
+      "email": "fran23@gmail.com",
+      "password": "34567",
+      "id": "oSWpLp3"
+    },
+    {
+      "username": "Marco324",
+      "email": "marco234@gmail.com",
+      "password": "123456",
+      "id": "9PR8X0v"
+    }
   ]
 }

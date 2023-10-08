@@ -1,27 +1,51 @@
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTravelOffers } from "../redux/actions";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import Header from "./Header";
 import { Link } from "react-router-dom";
 import FooterTravelStay from "./FooterTravelStay";
+import StayOffers from "./StayOffers";
 
 const OffersPage = ({ travel }) => {
+  const [isSticky, setIsSticky] = useState(false);
   const dispatch = useDispatch();
-  const travelData = useSelector((state) => state.data);
+  const travelData = useSelector((state) => state.travel.data);
+  const [visibleOffers, setVisibleOffers] = useState(4);
 
   useEffect(() => {
     dispatch(fetchTravelOffers());
   }, [dispatch]);
 
+  const handleScroll = () => {
+    if (window.scrollY > 30) {
+      setIsSticky(true);
+    } else {
+      setIsSticky(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleShowMoreClick = () => {
+    setVisibleOffers((prevVisibleOffers) => prevVisibleOffers + 4);
+  };
+
+  const divClassName = isSticky ? "div-sticky" : "div-no-sticky";
+
   return (
     <>
       <Header />
-      <div style={{ marginTop: "120px" }}>
+      <div className={divClassName}>
         <Container>
-          <h4>Travel offers</h4>
+          <h4>Travel and stay offers</h4>
           <Row>
-            {travelData.map((offer, id) => (
+            {travelData.slice(0, visibleOffers).map((offer, id) => (
               <Col key={id} xs={12} md={6} lg={3}>
                 <Card className="offer-card mb-4 border-0">
                   <Card.Img
@@ -78,8 +102,23 @@ const OffersPage = ({ travel }) => {
               </Col>
             ))}
           </Row>
+          {visibleOffers < travelData.length && (
+            <div className="text-center mt-1">
+              <Button
+                variant="transparent"
+                className="mx-auto pt-0 pb-2"
+                style={{
+                  fontWeight: "500",
+                }}
+                onClick={handleShowMoreClick}
+              >
+                Visualizza Altro
+              </Button>
+            </div>
+          )}
         </Container>
       </div>
+      <StayOffers />
       <FooterTravelStay />
     </>
   );

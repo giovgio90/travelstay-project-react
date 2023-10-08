@@ -1,47 +1,126 @@
 import { Col, Container, Form, Nav, Navbar, Row } from "react-bootstrap";
-
 import Logo from "../assets/Logo.png";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchTravelOffers, setUser } from "../redux/actions"; // Assicurati di importare setUser dall'azione corretta
 
 const Header = () => {
+  const [isSticky, setIsSticky] = useState(false);
+  const username = useSelector((state) => state.user.username);
+  const travelData = useSelector((state) => state.travel.data);
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    // Resetta lo stato dell'utente a null
+    dispatch(setUser(null));
+  };
+
+  useEffect(() => {
+    dispatch(fetchTravelOffers());
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Rimuovi il listener quando il componente viene smontato
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [dispatch]);
+
+  const handleScroll = () => {
+    // Controlla la posizione dello scroll
+    if (window.scrollY > 30) {
+      setIsSticky(true);
+    } else {
+      setIsSticky(false);
+    }
+  };
+
+  const headerClassName = `navbar-head py-3 ${isSticky ? "navbar-head" : "sticky-header"}`;
+
   return (
-    <Navbar expand="lg" className="navbar-head py-4">
-      <Container>
-        <Navbar.Brand className="d-flex">
-          <div className="me-1">
-            <img src={Logo} width="30" height="40" className="d-inline-block" alt="Logo" />
-          </div>
-          <div className="align-self-center">
-            <h4 className="mb-0 text-white">TRAVELSTAY</h4>
-          </div>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="text-sm-center mx-lg-auto">
-            <Nav.Link className="pe-lg-5 text-white" href="/">
-              HOME
-            </Nav.Link>
-            <Nav.Link className="pe-lg-5 text-white" href="#about-us">
-              ABOUT US
-            </Nav.Link>
-            <Nav.Link className="pe-lg-5 text-white" href="/explore">
-              OFFERS
-            </Nav.Link>
-            <Nav.Link className="pe-lg-5 text-white" href="#contact">
-              CONTACT
-            </Nav.Link>
-          </Nav>
-          <Form className="d-flex justify-content-center">
-            <Row>
-              <Col>
-                <Nav.Link className="pe-lg-5 text-white" href="/login">
-                  LOGIN
-                </Nav.Link>
+    <>
+      <div className="box-scrolls pt-1">
+        <Container>
+          <Row>
+            <div className="d-flex" style={{ backgroundColor: "#203040;" }}>
+              <Col md={4} lg={3} className="text-end">
+                <div className="static-text pe-3">
+                  <h6>Offerte del momento:</h6>{" "}
+                </div>
               </Col>
-            </Row>
-          </Form>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+              <Col xs={12} md={8} lg={9} className="align-self-center">
+                <div className="scrolling-text-container d-flex">
+                  {travelData.map((offer, id) => (
+                    <div key={id} className="scrolling-text">
+                      <h6>
+                        {offer.destination} - {offer.duration} -{" "}
+                        <span className="bg-danger text-white px-1 rounded-3">{offer.price}€</span>
+                      </h6>
+                    </div>
+                  ))}
+                </div>
+              </Col>
+            </div>
+          </Row>
+        </Container>
+      </div>
+
+      <Navbar expand="lg" className={headerClassName}>
+        <Container>
+          <Navbar.Brand className="d-flex">
+            <div className="me-1">
+              <img src={Logo} width="30" height="40" className="d-inline-block" alt="Logo" />
+            </div>
+            <div className="align-self-center">
+              <h4 className="mb-0 text-white">TRAVELSTAY</h4>
+            </div>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="text-sm-center mx-lg-auto">
+              <Nav.Link className="pe-lg-5 text-white" href="/">
+                HOME
+              </Nav.Link>
+              <Nav.Link className="pe-lg-5 text-white" href="#about-us">
+                ABOUT US
+              </Nav.Link>
+              <Nav.Link className="pe-lg-5 text-white" href="/explore">
+                OFFERS
+              </Nav.Link>
+              <Nav.Link className="pe-lg-5 text-white" href="#contact">
+                CONTACT
+              </Nav.Link>
+            </Nav>
+            <Form className="d-flex justify-content-center">
+              <Row>
+                <Col>
+                  {username ? (
+                    <div>
+                      <span className="text-white me-2">Welcome, {username.username}</span>
+                      <Link to="/" onClick={handleLogout}>
+                        Logout
+                      </Link>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="d-flex">
+                        <Nav.Link className="pe-lg-4 text-white" href="/login">
+                          LOGIN
+                        </Nav.Link>
+                        <Nav.Link className="pe-lg-4 text-white" href="/register">
+                          REGISTER
+                        </Nav.Link>
+                      </div>
+                    </>
+                  )}
+                </Col>
+              </Row>
+            </Form>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </>
   );
 };
 

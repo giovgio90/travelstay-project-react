@@ -5,7 +5,6 @@ import Header from "./Header";
 import IntroSection from "./IntroSection";
 import MainSection from "./MainSection";
 import NewsletterSignup from "./NewsletterSignup";
-import SearchSection from "./SearchSection";
 
 const HomePage = () => {
   return (
@@ -13,7 +12,6 @@ const HomePage = () => {
       <header className="header-background position-relative">
         <Header />
         <MainSection />
-        <SearchSection />
       </header>
 
       <IntroSection />

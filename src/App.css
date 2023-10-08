@@ -1,10 +1,42 @@
 .navbar-head {
   background-color: #2030408e;
+  backdrop-filter: blur(3px);
   font-weight: 500;
   position: fixed;
   top: 0;
+
   width: 100%;
-  z-index: 10;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 6px 20px rgba(0, 0, 0, 0.19);
+  z-index: 1;
+}
+
+.sticky-header {
+  background-color: #2030408e;
+  backdrop-filter: blur(3px);
+  font-weight: 500;
+  position: sticky;
+  bottom: 3;
+  width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 6px 20px rgba(0, 0, 0, 0.19);
+  z-index: 1;
+  margin-top: 0px;
+}
+
+.div-sticky {
+  margin-top: 129px; /* Modifica il valore del padding come desideri */
+}
+
+.div-no-sticky {
+  margin-top: 50px;
+}
+
+.home-sticky {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.home-no-sticky {
+  text-align: center;
 }
 
 .header-background {
@@ -12,6 +44,45 @@
     url("./assets/vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg");
   height: 100vh;
   background-size: cover;
+}
+
+.box-scrolls {
+  background-color: #203040;
+
+  z-index: 2;
+}
+
+.static-text {
+  font-size: 15px; /* Stile del testo */
+  color: white; /* Colore del testo */
+  display: inline-block; /* Per evitare il ritorno a capo */
+  /* Aggiunge spazio tra "Offerte del momento:" e il testo scorrevole */
+}
+
+.scrolling-text-container {
+  width: 80%;
+
+  overflow: hidden;
+  background-color: #203040;
+  z-index: 2;
+}
+
+.scrolling-text {
+  font-size: 18px; /* Stile del testo */
+  color: white; /* Colore del testo */
+  white-space: nowrap; /* Impedisce il ritorno a capo */
+  margin-left: 60px; /* Aggiunge un margine sinistro per evitare sovrapposizioni */
+  opacity: 0.8; /* Opacità del testo scorrevole per renderlo meno visibile */
+  animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .btn-explore {
@@ -79,7 +150,7 @@
 }
 
 .login-input {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid transparent;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   backdrop-filter: blur(2px);
@@ -94,7 +165,7 @@
 @media (max-width: 767px) {
   h1 {
     font-size: 4.5rem;
-    padding-top: 120px;
+    padding-top: 40px;
   }
   h2 {
     font-family: "Dancing Script", cursive;
@@ -117,12 +188,16 @@
   .carousel {
     width: 100% !important;
   }
+
+  .static-text {
+    display: none;
+  }
 }
 
 @media (min-width: 768px) {
   h1 {
     font-size: 7rem;
-    padding-top: 120px;
+    padding-top: 40px;
   }
   h2 {
     font-family: "Dancing Script", cursive;
@@ -145,7 +220,7 @@
 @media (min-width: 1024px) {
   h1 {
     font-size: 7.5rem;
-    padding-top: 140px;
+    padding-top: 60px;
   }
 
   h2 {

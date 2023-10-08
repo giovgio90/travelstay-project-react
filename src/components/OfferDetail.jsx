@@ -1,26 +1,51 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Header from "./Header";
-import { Card, Carousel, Col, Container, Row } from "react-bootstrap";
+import { Button, Card, Carousel, Col, Container, Modal, Row } from "react-bootstrap";
 import FooterTravelStay from "./FooterTravelStay";
-import { PinMapFill } from "react-bootstrap-icons";
+import { PinMapFill, StarFill } from "react-bootstrap-icons";
 import ReservationForm from "./ReservationForm";
+import { useEffect, useState } from "react";
 
 const OfferDetail = () => {
   const { id } = useParams();
-  const travelData = useSelector((state) => state.data);
+  const travelData = useSelector((state) => state.travel.data);
 
   const offer = travelData.find((offer) => offer.id.toString() === id);
   console.log(offer);
+
+  const [isSticky, setIsSticky] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   if (!offer) {
     return <div>Offerta non trovata.</div>;
   }
 
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const homeClassName = isSticky ? "div-sticky" : "div-no-sticky";
+
+  const handleScroll = () => {
+    if (window.scrollY > 30) {
+      setIsSticky(true);
+    } else {
+      setIsSticky(false);
+    }
+  };
+
   return (
     <>
       <Header />
-      <Container style={{ marginTop: "120px" }}>
+      <Container className={homeClassName}>
         <h4 className="d-flex align-items-center">
           <PinMapFill className="me-2" style={{ fontSize: "1.4rem" }} />
           {offer.destination}
@@ -67,6 +92,41 @@ const OfferDetail = () => {
               </Col>
             </Row>
           </Col>
+          <div className="me-auto">
+            <Button variant="trasparent" onClick={() => setShowModal(true)}>
+              {offer.hotel.reviews.length > 0 && (
+                <span style={{ marginLeft: "5px" }}>
+                  <StarFill />{" "}
+                  {(
+                    offer.hotel.reviews.reduce((total, review) => total + review.rating, 0) / offer.hotel.reviews.length
+                  ).toFixed(2)}
+                  {"  "} {offer.hotel.reviews.length} recensioni
+                </span>
+              )}
+            </Button>
+
+            {/* Modale per le recensioni */}
+            <Modal show={showModal} onHide={handleCloseModal}>
+              <Modal.Header closeButton>
+                <Modal.Title>Reviews</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                {/* Mappa le recensioni da offer.hotel.reviews */}
+                {offer.hotel.reviews.map((review, index) => (
+                  <div key={index}>
+                    <h5>{review.user}</h5>
+                    <p>Rating: {review.rating}</p>
+                    <p>{review.comment}</p>
+                  </div>
+                ))}
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleCloseModal}>
+                  Chiudi
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </div>
         </Row>
         <Row className="position-relative">
           <Col md={7}>

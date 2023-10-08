@@ -1,0 +1,54 @@
+{
+  "viaggi": [
+    {
+      "id": 1,
+      "destinazione": "Parigi, Francia",
+      "durata": "7 giorni",
+      "descrizione": "Esplora la città dell'amore con questa fantastica offerta!",
+      "prezzo": 1200,
+      "immagini": ["paris1.jpg", "paris2.jpg", "paris3.jpg"],
+      "hotel": {
+        "nome": "Hotel Romantico",
+        "categoria": "5 stelle",
+        "servizi": ["Piscina all'aperto", "Ristorante gourmet", "Spa di lusso"]
+      },
+      "recensioni": [
+        {
+          "utente": "Alice123",
+          "voto": 4.5,
+          "commento": "Il viaggio è stato meraviglioso! L'hotel era lussuoso e il cibo delizioso."
+        },
+        {
+          "utente": "BobTraveler",
+          "voto": 4.0,
+          "commento": "Parigi è sempre una buona idea. Ho apprezzato ogni momento del mio soggiorno."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "destinazione": "New York, USA",
+      "durata": "10 giorni",
+      "descrizione": "Scopri la Grande Mela e tutte le sue attrazioni.",
+      "prezzo": 1800,
+      "immagini": ["newyork1.jpg", "newyork2.jpg", "newyork3.jpg"],
+      "hotel": {
+        "nome": "Hotel Metropolis",
+        "categoria": "4 stelle",
+        "servizi": ["Vista panoramica sulla città", "Palestra ben attrezzata", "Ristorante con chef stellato"]
+      },
+      "recensioni": [
+        {
+          "utente": "TravelLover88",
+          "voto": 4.8,
+          "commento": "New York è davvero la città che non dorme mai! L'hotel era perfetto per esplorarla."
+        },
+        {
+          "utente": "AdventureSeeker",
+          "voto": 4.2,
+          "commento": "Ho visto tutte le principali attrazioni di New York in questo viaggio indimenticabile."
+        }
+      ]
+    }
+  ]
+}
