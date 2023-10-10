@@ -14,7 +14,6 @@ const NewsletterSignup = () => {
 
     setShowModal(true);
 
-    // Ripristina il campo email dopo qualche secondo
     setTimeout(() => {
       setEmail("");
       setShowModal(false);
@@ -25,27 +24,28 @@ const NewsletterSignup = () => {
     <div className="newsletter pb-4 mt-3">
       <Container className="text-center">
         <h4 className="display-5 pt-3 text-light" style={{ fontWeight: "400" }}>
-          Sign up for our newsletter
+          Iscriviti alla nostra newsletter
         </h4>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="email">
             <Form.Label className="text-white fst-italic py-2">
-              Don't miss our incredible offers and the latest travel news! Sign up for our newsletter to keep up to date
-              with exciting itineraries and extraordinary destinations. It is the perfect way to start your journey to
-              new adventures! Sign up now and don't miss out on unique experiences.
+              Non perdetevi le nostre incredibili offerte e le ultime notizie di viaggio! Iscrivetevi alla nostra
+              newsletter per essere sempre aggiornati su itinerari emozionanti e destinazioni straordinarie. È il modo
+              perfetto per iniziare il vostro viaggio verso nuove avventure! Iscrivetevi subito e non perdetevi
+              esperienze uniche.
             </Form.Label>
             <Row className="justify-content-center">
               <Col lg={4}>
                 <InputGroup>
                   <Form.Control
                     type="email"
-                    placeholder="Enter your email address"
+                    placeholder="Il tuo indirizzo email"
                     value={email}
                     onChange={handleEmailChange}
                     required
                   />
                   <Button variant="success" type="submit">
-                    Sign up
+                    Iscriviti
                   </Button>
                 </InputGroup>
               </Col>

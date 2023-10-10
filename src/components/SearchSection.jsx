@@ -1,56 +1,91 @@
 import { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import { Search } from "react-bootstrap-icons";
+import { CurrencyEuro } from "react-bootstrap-icons";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Link } from "react-router-dom";
 
 const SearchSection = () => {
   const [startDate, setStartDate] = useState(null);
+  const [budget, setBudget] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleBudgetChange = (e) => {
+    let value = e.target.value;
+    setBudget(value);
+  };
+
+  const handleSearchQueryChange = (e) => {
+    const value = e.target.value;
+    setSearchQuery(value);
+  };
 
   return (
-    <Container className="mt-5">
-      <Row className="justify-content-center">
-        <Col xs={12} lg={7}>
-          <Form>
-            <div className="searchbar d-block d-md-flex justify-content-center bg-white py-1 px-1 rounded-3">
-              <div className="bg-white d-flex rounded-3 py-2 ps-1 text-start w-100">
+    <Form className="mb-3">
+      <div className="searchbar d-block d-md-flex   py-4 mt-5">
+        <Container>
+          <Row className="mx-auto align-items-center">
+            <Col lg={4}>
+              <div className=" d-flex rounded-3 py-2  text-start w-100">
                 <div>
-                  <i className="bi bi-suitcase fs-3" style={{ color: "#2170D9" }}></i>
+                  <i className="bi bi-suitcase fs-3 pe-3" style={{ color: "#2170D9" }}></i>
                 </div>
                 <div className="align-self-center w-100 me-1">
                   <Form.Group as={Row} controlId="formPlaintextPassword">
-                    <Col lg={12}>
-                      <Form.Control type="text" placeholder=" Where do you want to go?" />
-                    </Col>
+                    <Form.Control type="text" placeholder="Dove vuoi andare?" onChange={handleSearchQueryChange} />
                   </Form.Group>
                 </div>
               </div>
-
-              <div className="bg-white d-flex rounded-3 mx-1 py-2 w-100 me-0">
+            </Col>
+            <Col lg={3}>
+              <div className=" d-flex py-2 mx-1 w-100 me-0">
                 <div className="ps-1">
-                  <i className="bi bi-calendar-check fs-3 pe-1" style={{ color: "#0CC945" }}></i>
+                  <CurrencyEuro className="bi bi-cash-stack fs-1 pe-0" style={{ color: "#FF8C00" }} />
+                </div>
+                <div className="align-self-center ">
+                  <Form.Control
+                    type="number"
+                    placeholder="Budget"
+                    value={budget}
+                    onChange={handleBudgetChange}
+                    className="form-control"
+                  />
+                </div>
+              </div>
+            </Col>
+            <Col lg={3}>
+              <div className=" d-flex rounded-3 mx-1 py-2 w-100 me-0">
+                <div className="ps-1">
+                  <i className="bi bi-calendar-check fs-3 pe-2" style={{ color: "#0CC945" }}></i>
                 </div>
                 <div className="align-self-center ">
                   <DatePicker
                     selected={startDate}
                     onChange={(date) => setStartDate(date)}
                     dateFormat="dd/MM/yyyy"
-                    placeholderText="Choose date"
+                    placeholderText="Scegli la data"
                     className="form-control"
                   />
                 </div>
               </div>
-
+            </Col>
+            <Col lg={2} className="align-self-center">
               <div>
-                <Button className="ms-1 h-100 fs-3" typer="submit" style={{ backgroundColor: "#203040" }}>
-                  <Search className="pb-1" />
-                </Button>
+                <Link to={`/results/${searchQuery}`} style={{ textDecoration: "none" }}>
+                  <Button
+                    className="ms-1 h-100 fs-2 py-3 px-5 border border-none"
+                    type="button"
+                    style={{ backgroundColor: "#203040" }}
+                  >
+                    <h5 className="mb-0">Cerca</h5>
+                  </Button>
+                </Link>
               </div>
-            </div>
-          </Form>
-        </Col>
-      </Row>
-    </Container>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    </Form>
   );
 };
 

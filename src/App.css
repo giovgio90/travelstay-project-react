@@ -4,7 +4,7 @@
   font-weight: 500;
   position: fixed;
   top: 0;
-
+  margin-top: 0.3px;
   width: 100%;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 6px 20px rgba(0, 0, 0, 0.19);
   z-index: 1;
@@ -12,18 +12,32 @@
 
 .sticky-header {
   background-color: #2030408e;
-  backdrop-filter: blur(3px);
+
   font-weight: 500;
   position: sticky;
-  bottom: 3;
+
   width: 100%;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 6px 20px rgba(0, 0, 0, 0.19);
+
   z-index: 1;
-  margin-top: 0px;
+  margin-top: 0.4px;
+}
+
+/*SEARCHBAR*/
+
+.searchbar {
+  background-color: rgba(255, 255, 255, 0.699);
+  border: 1px solid transparent;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  backdrop-filter: blur(2px);
+}
+
+/*SEARCH RESULTS*/
+.search-results {
+  margin-top: 129px;
 }
 
 .div-sticky {
-  margin-top: 129px; /* Modifica il valore del padding come desideri */
+  margin-top: 129px;
 }
 
 .div-no-sticky {
@@ -53,10 +67,9 @@
 }
 
 .static-text {
-  font-size: 15px; /* Stile del testo */
-  color: white; /* Colore del testo */
-  display: inline-block; /* Per evitare il ritorno a capo */
-  /* Aggiunge spazio tra "Offerte del momento:" e il testo scorrevole */
+  font-size: 15px;
+  color: white;
+  display: inline-block;
 }
 
 .scrolling-text-container {
@@ -68,11 +81,11 @@
 }
 
 .scrolling-text {
-  font-size: 18px; /* Stile del testo */
-  color: white; /* Colore del testo */
-  white-space: nowrap; /* Impedisce il ritorno a capo */
-  margin-left: 60px; /* Aggiunge un margine sinistro per evitare sovrapposizioni */
-  opacity: 0.8; /* Opacità del testo scorrevole per renderlo meno visibile */
+  font-size: 18px;
+  color: white;
+  white-space: nowrap;
+  margin-left: 60px;
+  opacity: 0.8;
   animation: scroll 40s linear infinite;
 }
 
@@ -96,6 +109,16 @@
 
 .card-tours {
   background-image: linear-gradient(rgba(11, 70, 148, 0.514), rgba(33, 51, 75, 0.541));
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.hover-scale {
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.1);
 }
 
 .btn-tours {
@@ -133,8 +156,22 @@
   background-color: #fff;
   border: none;
   border-radius: 10px;
-
+  overflow: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.image-hover-scale {
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-hover-scale:hover {
+  transform: scale(1.1);
+}
+
+/*OFFER DETAIL*/
+.info-hotel {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
 }
 
 /*FOOTER*/

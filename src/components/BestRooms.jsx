@@ -12,57 +12,57 @@ const BestRooms = () => {
   const hotelRooms = [
     {
       id: 1,
-      name: "Standard Room",
-      price: "$99/night",
+      name: "Camera Standard",
+      price: "99€/notte",
       description: "Comfortable room with all basic amenities.",
       image: Standard,
     },
     {
       id: 2,
-      name: "Deluxe Room",
-      price: "$149/night",
+      name: "Camera Deluxe",
+      price: "149€/notte",
       description: "Spacious and luxurious room with a great view.",
       image: Deluxe,
     },
     {
       id: 3,
       name: "Executive Suite",
-      price: "$249/night",
+      price: "249€/notte",
       description: "A suite with premium amenities and services.",
       image: Executive,
     },
     {
       id: 4,
-      name: "Family Suite",
-      price: "$199/night",
+      name: "Suite famiglia",
+      price: "199€/notte",
       description: "Perfect for families with additional space and features.",
       image: Family,
     },
     {
       id: 5,
-      name: "Ocean View Suite",
-      price: "$299/night",
+      name: "Suite vista mare",
+      price: "299€/notte",
       description: "Enjoy stunning ocean views from your suite.",
       image: Ocean,
     },
     {
       id: 6,
-      name: "Presidential Suite",
-      price: "$499/night",
+      name: "Suite presidenziale",
+      price: "499€/notte",
       description: "Experience luxury at its finest in our presidential suite.",
       image: Presidential,
     },
     {
       id: 7,
-      name: "Cozy Cabin",
-      price: "$79/night",
+      name: "Cabina accogliente",
+      price: "79€/notte",
       description: "A cozy cabin in the woods, perfect for a peaceful getaway.",
       image: Cozy,
     },
     {
       id: 8,
-      name: "Mountain View Retreat",
-      price: "$199/night",
+      name: "Con vista sulle montagne",
+      price: "199€/notte",
       description: "Escape to the mountains in our serene mountain view retreat.",
       image: Mountain,
     },
@@ -71,12 +71,12 @@ const BestRooms = () => {
   return (
     <Container className="mt-4">
       <h3 className="text-center mb-4" style={{ fontSize: "2.1rem" }}>
-        THE BEST OFFERS ROOMS
+        LE MIGLIORI OFFERTE DI SOGGIORNO
       </h3>
       <Row>
         {hotelRooms.map((room) => (
           <Col key={room.id} xs={12} md={6} lg={3}>
-            <Card className="bg-dark text-white text-center border-0 me-2 mb-3" style={{ height: "400px" }}>
+            <Card className="hover-scale bg-dark text-white text-center border-0 me-2 my-3" style={{ height: "400px" }}>
               <Card.Img src={room.image} alt={room.name} style={{ objectFit: "cover", height: "100%" }} />
               <Card.ImgOverlay className="card-tours d-flex flex-column justify-content-center align-items-center">
                 <div className="mt-auto">

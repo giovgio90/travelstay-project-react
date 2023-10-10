@@ -2,44 +2,37 @@ import Logo from "../assets/Logo.png";
 import React, { useState } from "react";
 import { Form, Button, Alert, Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { setUser } from "../redux/actions"; // Assicurati di importare setUser dall'azione corretta
+import { setUser } from "../redux/actions";
 import { Link } from "react-router-dom";
 
 const LoginTravel = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.username); // Leggi lo stato dell'utente dallo store Redux
-  const [showAlert, setShowAlert] = useState(false); // Inizializza showAlert a false
+  const user = useSelector((state) => state.user.username);
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Simulazione di una richiesta GET per ottenere gli utenti registrati
     try {
       const response = await fetch("http://localhost:3030/register");
       if (response.ok) {
         const registeredUsers = await response.json();
 
-        // Verifica se le credenziali corrispondono a uno degli utenti registrati
         const foundUser = registeredUsers.find((user) => user.username === username && user.password === password);
 
         if (foundUser) {
-          // Credenziali valide, effettua il login
-          dispatch(setUser(foundUser)); // Invia un'azione per impostare l'utente nello stato Redux
+          dispatch(setUser(foundUser));
           console.log("Accesso riuscito");
-          // Reindirizza l'utente alla pagina successiva o effettua altre azioni dopo il login
         } else {
-          // Credenziali non valide, mostra un messaggio di errore
-          setShowAlert(true); // Imposta showAlert a true solo quando l'utente non è stato trovato
+          setShowAlert(true);
           console.log("Utente non trovato");
         }
       } else {
-        // Gestione degli errori se la richiesta non va a buon fine
         console.error("Si è verificato un errore durante l'accesso");
       }
     } catch (error) {
-      // Gestione degli errori in caso di eccezioni
       console.error("Si è verificato un errore durante l'accesso:", error);
     }
   };

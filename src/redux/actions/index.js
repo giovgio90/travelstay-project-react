@@ -34,23 +34,36 @@ export const fetchTravelOffers = () => async (dispatch) => {
     const data = await response.json();
     console.log(data);
 
-    dispatch({ type: FETCH_TRAVEL_SUCCESS, payload: data }); // Azione di successo
+    dispatch({ type: FETCH_TRAVEL_SUCCESS, payload: data });
   } catch (error) {
-    dispatch({ type: FETCH_TRAVEL_FAILURE, payload: error.message }); // Azione di errore
+    dispatch({ type: FETCH_TRAVEL_FAILURE, payload: error.message });
+  }
+};
+
+export const fetchResultsOffers = (searchQuery) => async (dispatch) => {
+  try {
+    dispatch({ type: "FETCH_TRAVEL_REQUEST" });
+
+    const response = await fetch(`http://localhost:3030/travel?query=${searchQuery}`);
+    const data = await response.json();
+
+    dispatch({ type: "FETCH_TRAVEL_SUCCESS", payload: data });
+  } catch (error) {
+    dispatch({ type: "FETCH_TRAVEL_FAILURE", payload: error.message });
   }
 };
 
 export const fetchstayOffers = () => async (dispatch) => {
   try {
-    dispatch({ type: FETCH_STAY_REQUEST }); // Azione di richiesta
+    dispatch({ type: FETCH_STAY_REQUEST });
 
     const response = await fetch("http://localhost:3030/hotels");
     const data = await response.json();
     console.log(data);
 
-    dispatch({ type: FETCH_STAY_SUCCESS, payload: data }); // Azione di successo
+    dispatch({ type: FETCH_STAY_SUCCESS, payload: data });
   } catch (error) {
-    dispatch({ type: FETCH_STAY_FAILURE, payload: error.message }); // Azione di errore
+    dispatch({ type: FETCH_STAY_FAILURE, payload: error.message });
   }
 };
 
@@ -109,9 +122,9 @@ export const registerUser = (formData) => {
         const responseData = await response.json();
 
         if (responseData.userExists) {
-          dispatch(setShowUserExistsAlert(true)); // Mostra l'alert utente già registrato
+          dispatch(setShowUserExistsAlert(true));
         } else {
-          dispatch(setShowSuccessAlert(true)); // Mostra l'alert di successo
+          dispatch(setShowSuccessAlert(true));
         }
 
         dispatch(registrationSuccess(responseData));

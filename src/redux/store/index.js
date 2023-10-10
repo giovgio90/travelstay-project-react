@@ -8,17 +8,19 @@ import stayReducer from "../reducers/stayReducer";
 
 import registerReducer from "../reducers/registerReducer";
 import userReducer from "../reducers/userReducer";
+import searchReducer from "../reducers/searchReducer";
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["register", "travel", "stay", "cart"],
+  whitelist: ["register", "user", "travel", "stay", "cart"],
 };
 
 const rootReducer = combineReducers({
   register: registerReducer,
   user: userReducer,
   travel: travelReducer,
+  search: searchReducer,
   stay: stayReducer,
   cart: cartReducer,
 });
@@ -26,7 +28,6 @@ const rootReducer = combineReducers({
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  // reducer
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),
 });

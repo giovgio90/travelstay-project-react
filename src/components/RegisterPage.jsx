@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { setFormData, registerUser } from "../redux/actions";
+import { Link } from "react-router-dom";
 
 function RegisterPage() {
   const formData = useSelector((state) => state.register.formData);
@@ -20,24 +21,20 @@ function RegisterPage() {
     const response = await dispatch(registerUser(formData));
 
     if (response && response.userExists) {
-      // L'utente è già registrato, mostra un alert
       setShowUserExistsAlert(true);
     } else {
-      // La registrazione è avvenuta con successo, mostra l'alert di successo
       setShowSuccessAlert(true);
-      // Pulisci il form
-      dispatch(setFormData({ username: "", email: "", password: "" }));
+
+      dispatch(setFormData({ username: "", email: "", password: "", gender: "" }));
     }
   };
 
   useEffect(() => {
-    // Nascondi l'alert di successo dopo 3 secondi
     if (showSuccessAlert) {
       const timer = setTimeout(() => {
         setShowSuccessAlert(false);
       }, 3000);
 
-      // Pulisci il timer quando il componente viene smontato
       return () => clearTimeout(timer);
     }
   }, [showSuccessAlert]);
@@ -79,9 +76,23 @@ function RegisterPage() {
               />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Form.Group controlId="gender">
+              <Form.Label>Genere</Form.Label>
+              <Form.Control as="select" name="gender" value={formData.gender} onChange={handleChange} required>
+                <option value="">Seleziona il tuo genere</option>
+                <option value="male">Maschio</option>
+                <option value="female">Femmina</option>
+              </Form.Control>
+            </Form.Group>
+
+            <Button className="btn-explore mt-3 me-4" variant="primary" type="submit">
               Registrati
             </Button>
+            <Link to="/login">
+              <Button className="btn-explore mt-3" variant="primary" type="submit">
+                Accedi
+              </Button>
+            </Link>
           </Form>
         </Col>
       </Row>

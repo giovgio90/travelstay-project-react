@@ -1,4 +1,4 @@
-import { Col, Container, Form, Nav, Navbar, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Nav, Navbar, Row } from "react-bootstrap";
 import Logo from "../assets/Logo.png";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -21,14 +21,12 @@ const Header = () => {
 
     window.addEventListener("scroll", handleScroll);
 
-    // Rimuovi il listener quando il componente viene smontato
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [dispatch]);
 
   const handleScroll = () => {
-    // Controlla la posizione dello scroll
     if (window.scrollY > 30) {
       setIsSticky(true);
     } else {
@@ -46,7 +44,7 @@ const Header = () => {
             <div className="d-flex" style={{ backgroundColor: "#203040;" }}>
               <Col md={4} lg={3} className="text-end">
                 <div className="static-text pe-3">
-                  <h6>Offerte del momento:</h6>{" "}
+                  <h6>Offerte da non perdere:</h6>{" "}
                 </div>
               </Col>
               <Col xs={12} md={8} lg={9} className="align-self-center">
@@ -83,13 +81,13 @@ const Header = () => {
                 HOME
               </Nav.Link>
               <Nav.Link className="pe-lg-5 text-white" href="#about-us">
-                ABOUT US
+                CHI SIAMO
               </Nav.Link>
               <Nav.Link className="pe-lg-5 text-white" href="/explore">
-                OFFERS
+                OFFERTE
               </Nav.Link>
               <Nav.Link className="pe-lg-5 text-white" href="#contact">
-                CONTACT
+                CONTATTI
               </Nav.Link>
             </Nav>
             <Form className="d-flex justify-content-center">
@@ -97,19 +95,23 @@ const Header = () => {
                 <Col>
                   {username ? (
                     <div>
-                      <span className="text-white me-2">Welcome, {username.username}</span>
+                      <span className="text-white me-2">
+                        {username.gender === "female" ? "Benvenuta," : "Benvenuto,"} {username.username}
+                      </span>
                       <Link to="/" onClick={handleLogout}>
-                        Logout
+                        <Button variant="trasparent" className="text-white align-self-center pt-0">
+                          Logout
+                        </Button>
                       </Link>
                     </div>
                   ) : (
                     <>
                       <div className="d-flex">
                         <Nav.Link className="pe-lg-4 text-white" href="/login">
-                          LOGIN
+                          ACCEDI
                         </Nav.Link>
                         <Nav.Link className="pe-lg-4 text-white" href="/register">
-                          REGISTER
+                          REGISTRATI
                         </Nav.Link>
                       </div>
                     </>

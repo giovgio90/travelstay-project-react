@@ -1,5 +1,3 @@
-import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import SearchSection from "./SearchSection";
 import { useEffect, useState } from "react";
 
@@ -26,13 +24,9 @@ const MainSection = () => {
   return (
     <>
       <div className={homeClassName}>
-        <h1 className="text-white fw-bold mb-0">DISCOVER</h1>
-        <h2 className="text-white">your dream stay.</h2>
-        <Link to="/explore">
-          <Button variant="primary" size="lg" className="btn-explore mt-4 rounded-5 px-5 ">
-            EXPLORE NOW
-          </Button>
-        </Link>
+        <h1 className="text-white fw-bold mb-0">SCOPRI</h1>
+        <h2 className="text-white">il tuo soggiorno da sogno!</h2>
+
         <SearchSection />
       </div>
     </>

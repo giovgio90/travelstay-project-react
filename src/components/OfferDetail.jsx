@@ -72,74 +72,127 @@ const OfferDetail = () => {
               </Carousel.Item>
             </Carousel>
           </Col>
-          <Col md={6}>
+        </Row>
+        <Row className="position-relative">
+          <Col md={8}>
+            <h4>Dove alloggerai</h4>
             <Row>
-              <Col md={6}>
-                <Card className="m-1" style={{ height: "170px", width: "255px" }}>
+              <Col md={12} className="d-flex">
+                <Card className="m-1" style={{ height: "170px", width: "280px" }}>
                   <Card.Img src={offer.hotel.images[0]} alt="Immagine 1" />
                 </Card>
-                <Card className="m-1 " style={{ height: "170px", width: "255px" }}>
+
+                <Card className="m-1 " style={{ height: "185px", width: "280px" }}>
                   <Card.Img src={offer.hotel.images[1]} alt="Immagine 2" />
                 </Card>
               </Col>
-              <Col md={6}>
-                <Card className="m-1" style={{ height: "170px", width: "255px" }}>
+            </Row>
+            <Row className="mb-3">
+              <Col md={12} className="d-flex">
+                <Card className="m-1" style={{ height: "170px", width: "280px" }}>
                   <Card.Img src={offer.hotel.images[2]} alt="Immagine 3" />
                 </Card>
-                <Card className="m-1" style={{ height: "170px", width: "255px" }}>
-                  <Card.Img src={offer.hotel.images[3]} alt="Immagine 4" style={{ height: "170px", width: "255px" }} />
+
+                <Card className="m-1" style={{ height: "185px", width: "280px" }}>
+                  <Card.Img src={offer.hotel.images[3]} alt="Immagine 4" style={{ height: "185px", width: "280px" }} />
                 </Card>
               </Col>
             </Row>
-          </Col>
-          <div className="me-auto">
-            <Button variant="trasparent" onClick={() => setShowModal(true)}>
-              {offer.hotel.reviews.length > 0 && (
-                <span style={{ marginLeft: "5px" }}>
-                  <StarFill />{" "}
-                  {(
-                    offer.hotel.reviews.reduce((total, review) => total + review.rating, 0) / offer.hotel.reviews.length
-                  ).toFixed(2)}
-                  {"  "} {offer.hotel.reviews.length} recensioni
-                </span>
-              )}
-            </Button>
-
-            {/* Modale per le recensioni */}
-            <Modal show={showModal} onHide={handleCloseModal}>
-              <Modal.Header closeButton>
-                <Modal.Title>Reviews</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-                {/* Mappa le recensioni da offer.hotel.reviews */}
-                {offer.hotel.reviews.map((review, index) => (
-                  <div key={index}>
-                    <h5>{review.user}</h5>
-                    <p>Rating: {review.rating}</p>
-                    <p>{review.comment}</p>
-                  </div>
-                ))}
-              </Modal.Body>
-              <Modal.Footer>
-                <Button variant="secondary" onClick={handleCloseModal}>
-                  Chiudi
-                </Button>
-              </Modal.Footer>
-            </Modal>
-          </div>
-        </Row>
-        <Row className="position-relative">
-          <Col md={7}>
-            <div>
-              <p>{offer.description}</p>
-              <p>
-                <strong>Duration:</strong> {offer.duration}
+            <div className="d-flex align-items-center mb-3">
+              <p className="mb-0" style={{ fontWeight: "500" }}>
+                {offer.hotel.name}
               </p>
-
-              <h4>Dove alloggerai</h4>
-              <p>Hotel: {offer.hotel.name}</p>
-              <p className="me-2">{offer.hotel.amenities}</p>
+              <Button className="py-0" variant="trasparent" onClick={() => setShowModal(true)}>
+                {offer.hotel.reviews.length > 0 && (
+                  <span className="d-flex" style={{ marginLeft: "5px" }}>
+                    <div>
+                      <StarFill className="pb-1" style={{ color: "yellow", fontSize: "1.2rem" }} />{" "}
+                    </div>
+                    <div>
+                      <strong>
+                        {(
+                          offer.hotel.reviews.reduce((total, review) => total + review.rating, 0) /
+                          offer.hotel.reviews.length
+                        ).toFixed(2)}
+                      </strong>
+                      {"  "} {offer.hotel.reviews.length} recensioni
+                    </div>
+                  </span>
+                )}
+              </Button>
             </div>
+
+            <div className="me-auto">
+              <Modal show={showModal} onHide={handleCloseModal}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Recensioni</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  {offer.hotel.reviews.map((review, index) => (
+                    <div key={index}>
+                      <h5>{review.user}</h5>
+                      <p>Rating: {review.rating}</p>
+                      <p>{review.comment}</p>
+                    </div>
+                  ))}
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleCloseModal}>
+                    Chiudi
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+              <p>{offer.description}</p>
+            </div>
+
+            <Row>
+              <Col md={10}>
+                <div>
+                  <div className="info-hotel border border-1 mb-2 p-3">
+                    <Row>
+                      <Col md={3}>
+                        <p>
+                          <strong>Duration:</strong>
+                        </p>
+                      </Col>
+                      <Col md={6}>{offer.duration}</Col>
+                    </Row>
+                    <Row>
+                      <Col md={3}>
+                        <p>
+                          <strong>Host:</strong>
+                        </p>
+                      </Col>
+                      <Col md={6}>{offer.host.name}</Col>
+                    </Row>
+                    <Row>
+                      <Col md={3}>
+                        <p>
+                          <strong>Stanze:</strong>
+                        </p>
+                      </Col>
+                      <Col md={6}>{offer.hotel.bedrooms}</Col>
+                    </Row>
+                    <Row>
+                      <Col md={3}>
+                        <p>
+                          <strong>Bagni:</strong>
+                        </p>
+                      </Col>
+                      <Col md={6}>{offer.hotel.bathrooms}</Col>
+                    </Row>
+                    <Row>
+                      <Col md={3}>
+                        <p>
+                          <strong>Servizi:</strong>
+                        </p>
+                      </Col>
+                      <Col md={6}>{offer.hotel.amenities.join(", ")}</Col>
+                    </Row>
+                  </div>
+                </div>
+              </Col>
+            </Row>
           </Col>
           <Col md={4} className="ms-auto">
             <div className="position-sticky" style={{ top: "110px" }}>

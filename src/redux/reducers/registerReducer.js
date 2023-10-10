@@ -3,6 +3,7 @@ const initialState = {
     username: "",
     email: "",
     password: "",
+    gender: "",
   },
   registrationResponse: null,
   showSuccessAlert: false,

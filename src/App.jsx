@@ -7,7 +7,7 @@ import OfferDetail from "./components/OfferDetail";
 import LoginTravel from "./components/LoginTravel";
 import Cart from "./components/Cart";
 import RegisterPage from "./components/RegisterPage";
-import ModalReviews from "./components/ModalReviews";
+import SearchResults from "./components/SearchResults";
 
 function App() {
   return (
@@ -17,8 +17,8 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginTravel />} />
           <Route path="/" element={<HomePage />} />
+          <Route path="/results/:query" element={<SearchResults />} />
           <Route path="/explore" element={<OffersPage />} />
-          <Route path="/reviews" element={<ModalReviews />} />
           <Route path="/explore/:id" element={<OfferDetail />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>

@@ -8,43 +8,39 @@ const FooterTravelStay = () => {
         <Row>
           <Col md={6}>
             <h5 className="mb-3">
-              <strong>Contact Information</strong>
+              <strong>Informazioni di contatto</strong>
             </h5>
             <p className="mb-1">
-              <strong>Address:</strong> Via Giuseppe Verdi, 12345, Roma
+              <strong>Indirizzo:</strong> Via Giuseppe Verdi, 12345, Roma
             </p>
             <p className="mb-1">
               <strong>Email:</strong> giovanni@gmail.com
             </p>
             <p className="mb-1">
-              <strong>Telephone:</strong> +39 334/1212121
+              <strong>Telefono:</strong> +39 334/1212121
             </p>
           </Col>
           <Col md={3}>
             <h5>
-              <strong>Useful Links</strong>
+              <strong>Link utili</strong>
             </h5>
             <div>
-              <NavLink to="/home" className="text-light">
-                <p className="mb-1">Home</p>
-              </NavLink>
-
               <NavLink to="/about" className="text-light">
-                <p className="mb-1">About us</p>
+                <p className="mb-1">Chi siamo</p>
               </NavLink>
 
               <NavLink to="/services" className="text-light">
-                <p className="mb-1">Services</p>
+                <p className="mb-1">Servizi</p>
               </NavLink>
 
               <NavLink to="/contact" className="text-light">
-                <p className="mb-1">Contact us</p>
+                <p className="mb-1">Contattaci</p>
               </NavLink>
             </div>
           </Col>
           <Col md={3}>
             <h5>
-              <strong>Follow us</strong>
+              <strong>Seguici</strong>
             </h5>
             <div className="d-flex">
               <NavLink to="#" className="text-light me-2">

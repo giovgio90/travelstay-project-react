@@ -45,19 +45,11 @@ const ReservationForm = () => {
   };
 
   return (
-    <div
-      className="border border-1 p-1 rounded-2"
-      style={{ boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }}
-    >
-      <Form
-        className=" p-4 rounded-2"
-        style={{
-          border: "3px solid #203040",
-        }}
-      >
-        <h4>
-          Total Price: ${calculateTotalPrice()} ({adults} adulti, {children} bambini)
-        </h4>
+    <div className="reservation-form-container border border-1 p-3">
+      <Form className="reservation-form">
+        <h6>Prezzo adulti: {offer.price}€</h6>
+        <h6>Prezzo bambini: {offer.price_per_child}€</h6>
+        <h4 className="mt-4">Prezzo totale: ${calculateTotalPrice()}</h4>
         <Dropdown>
           <Dropdown.Toggle variant="light" id="dropdown-basic">
             {adults + children} Persone
@@ -91,7 +83,7 @@ const ReservationForm = () => {
         </Dropdown>
         <Link to="/cart">
           <Button className="btn-explore mt-3" variant="primary" type="button" onClick={handleBookNowClick}>
-            Prenota
+            Vai al carrello
           </Button>
         </Link>
       </Form>

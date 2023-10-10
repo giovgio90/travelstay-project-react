@@ -43,7 +43,7 @@ const OffersPage = ({ travel }) => {
       <Header />
       <div className={divClassName}>
         <Container>
-          <h4>Travel and stay offers</h4>
+          <h4>Viaggio e soggiorno</h4>
           <Row>
             {travelData.slice(0, visibleOffers).map((offer, id) => (
               <Col key={id} xs={12} md={6} lg={3}>
@@ -51,13 +51,13 @@ const OffersPage = ({ travel }) => {
                   <Card.Img
                     variant="top"
                     src={offer.image}
-                    className="border-0"
+                    className="border-0 image-hover-scale"
                     style={{ height: "230px", objectFit: "cover" }}
                   />
                   <Card.Body className="pb-2">
                     <Card.Title style={{ fontSize: "1.2rem" }}>{offer.destination}</Card.Title>
                     <Card.Text>
-                      <strong style={{ fontWeight: "500" }}>Duration:</strong>
+                      <strong style={{ fontWeight: "500" }}>Durata:</strong>
                       <span
                         className="text-white px-2 mx-2 rounded-2"
                         style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
@@ -67,24 +67,24 @@ const OffersPage = ({ travel }) => {
                     </Card.Text>
 
                     <Card.Text className="pt-auto mb-0">
-                      <strong style={{ fontWeight: "500" }}>Price:</strong>
+                      <strong style={{ fontWeight: "500" }}>Prezzo:</strong>
                       <span
                         className="text-white px-2 mx-2 rounded-2"
                         style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
                       >
-                        ${offer.price_per_adult}
+                        {offer.price_per_adult}€
                       </span>
-                      <span className="ps-0">per adult</span>
+                      <span className="ps-0">adulti</span>
                     </Card.Text>
                     <Card.Text>
-                      <strong style={{ fontWeight: "500" }}>Price:</strong>
+                      <strong style={{ fontWeight: "500" }}>Prezzo:</strong>
                       <span
                         className="text-white px-2 mx-2 rounded-2"
                         style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
                       >
-                        ${offer.price_per_child}
+                        {offer.price_per_child}€
                       </span>
-                      <span className="ps-0">per child</span>
+                      <span className="ps-0">bambini</span>
                     </Card.Text>
                   </Card.Body>
                   <Link to={`/explore/${offer.id}`} key={id} className="text-center">
@@ -95,7 +95,7 @@ const OffersPage = ({ travel }) => {
                         fontWeight: "500",
                       }}
                     >
-                      See more
+                      Scopri di più
                     </Button>
                   </Link>
                 </Card>
