@@ -3,7 +3,7 @@ import Logo from "../assets/Logo.png";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchTravelOffers, setUser } from "../redux/actions"; // Assicurati di importare setUser dall'azione corretta
+import { fetchTravelOffers, setUser } from "../redux/actions";
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -12,7 +12,6 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-    // Resetta lo stato dell'utente a null
     dispatch(setUser(null));
   };
 
@@ -34,6 +33,17 @@ const Header = () => {
     }
   };
 
+  const getRandomOffers = (count) => {
+    const shuffledData = [...travelData];
+    for (let i = shuffledData.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledData[i], shuffledData[j]] = [shuffledData[j], shuffledData[i]];
+    }
+    return shuffledData.slice(0, count);
+  };
+
+  const randomOffers = getRandomOffers(3);
+
   const headerClassName = `navbar-head py-3 ${isSticky ? "navbar-head" : "sticky-header"}`;
 
   return (
@@ -49,7 +59,7 @@ const Header = () => {
               </Col>
               <Col xs={12} md={8} lg={9} className="align-self-center">
                 <div className="scrolling-text-container d-flex">
-                  {travelData.map((offer, id) => (
+                  {randomOffers.map((offer, id) => (
                     <div key={id} className="scrolling-text">
                       <h6>
                         {offer.destination} - {offer.duration} -{" "}

@@ -73,7 +73,7 @@
 }
 
 .scrolling-text-container {
-  width: 80%;
+  width: 100%;
 
   overflow: hidden;
   background-color: #203040;
@@ -86,20 +86,27 @@
   white-space: nowrap;
   margin-left: 60px;
   opacity: 0.8;
-  animation: visible 10s linear infinite;
+  position: relative;
+  animation: appear 5s linear forwards, zoom 1s 0.5s linear infinite alternate;
 }
 
-@keyframes visible {
-  0%,
-  100% {
+@keyframes appear {
+  0% {
     opacity: 0;
   }
-  25%,
-  75% {
-    opacity: 1;
+  100% {
+    opacity: 0.8;
   }
 }
 
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
 .btn-explore {
   border: none;
   background: #203040;
