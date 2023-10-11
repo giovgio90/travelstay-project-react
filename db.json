@@ -4,6 +4,7 @@
       "id": 1,
       "destination": "Roma",
       "duration": "7 giorni",
+      "date": "2023-11-05",
       "description": "Scopri la magia della 'Città Eterna' con il nostro coinvolgente viaggio romano di 7 giorni. Dall'iconica Basilica di San Pietro alle affascinanti strade di Trastevere, questo viaggio promette un'esperienza indimenticabile. Il tuo incantevole soggiorno inizia presso l'hotel 'La Dolce Vita,' un pittoresco appartamento situato nel cuore di Roma. Ammira le opere d'arte mozzafiato nei Musei Vaticani, passeggia lungo il fiume Tevere e assapora deliziosi cornetti nei caffè locali. Con connessione WiFi gratuita, cucina completamente attrezzata, aria condizionata e TV a schermo piatto, il tuo alloggio garantisce comfort e comodità. I nostri ospiti hanno elogiato le loro esperienze, con Alice123 che ha detto: 'La Dolce Vita è stato assolutamente delizioso. La sua posizione centrale ha reso facile esplorare Roma, e l'appartamento era accogliente e ben attrezzato.' Che tu stia partendo per una fuga romantica o per un'avventura in solitario, Roma ti aspetta per conquistare il tuo cuore. Prenota ora e immergiti nella ricca storia, cultura e bellezza di questa iconica città.",
       "price": 1000,
       "price_per_adult": 1000,
@@ -18,11 +19,7 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 2,
-        "amenities": [
-          "WiFi Gratuito",
-          "Aria Condizionata",
-          "TV"
-        ],
+        "amenities": ["WiFi Gratuito", "Aria Condizionata", "TV"],
         "reviews": [
           {
             "user": "Alice123",
@@ -48,11 +45,7 @@
         "verified": true
       },
       "cancellation_policy": "Moderata",
-      "dates_available": [
-        "2023-11-15",
-        "2023-11-22",
-        "2023-11-29"
-      ],
+      "dates_available": ["2023-11-15", "2023-11-22", "2023-11-29"],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -73,6 +66,7 @@
       "id": 2,
       "destination": "Firenze",
       "duration": "5 giorni",
+      "date": "2023-11-06",
       "description": "Esplora la bellezza artistica e culturale di Firenze con il nostro affascinante viaggio di 5 giorni. Dall'iconica Cattedrale di Santa Maria del Fiore ai magnifici Uffizi, questa esperienza promette di lasciarti senza fiato. Il tuo soggiorno inizia presso il 'Rinascimento Hotel,' un incantevole palazzo nel cuore di Firenze. Ammira le opere d'arte senza tempo di Michelangelo e Leonardo da Vinci, passeggiando per i vicoli storici e gustando autentica cucina toscana. Con WiFi gratuito, un ristorante raffinato, aria condizionata e una vista panoramica sulla città, il tuo alloggio offre comfort e lusso. I nostri ospiti hanno lodato le loro esperienze, con SofiaFlorence che ha detto: 'Il Rinascimento Hotel è un vero gioiello nascosto. La sua eleganza e la sua posizione centrale lo rendono una scelta ideale per chi visita Firenze.' Se desideri immergerti nella cultura e nell'arte rinascimentale, Firenze ti attende. Prenota ora e vivi un'esperienza senza tempo.",
       "price": 950,
       "price_per_adult": 950,
@@ -87,12 +81,7 @@
         "bedrooms": 2,
         "bathrooms": 2,
         "guests": 4,
-        "amenities": [
-          "WiFi Gratuito",
-          "Ristorante",
-          "Aria Condizionata",
-          "Vista Panoramica"
-        ],
+        "amenities": ["WiFi Gratuito", "Ristorante", "Aria Condizionata", "Vista Panoramica"],
         "reviews": [
           {
             "user": "SofiaFlorence",
@@ -117,11 +106,7 @@
         "verified": true
       },
       "cancellation_policy": "Flessibile",
-      "dates_available": [
-        "2023-11-10",
-        "2023-11-17",
-        "2023-11-24"
-      ],
+      "dates_available": ["2023-11-10", "2023-11-17", "2023-11-24"],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -134,6 +119,7 @@
       "id": 3,
       "destination": "Venezia",
       "duration": "4 giorni",
+      "date": "2023-11-08",
       "description": "Scopri la magia dell'incantevole Venezia con il nostro romantico viaggio di 4 giorni. Dall'iconica Piazza San Marco ai tranquilli canali, questa esperienza promette di trasportarti in un mondo di bellezza e amore. Il tuo soggiorno inizia presso il 'Canal Grande Palace,' un lussuoso palazzo veneziano affacciato sul Canal Grande. Ammira l'arte rinascimentale in ogni angolo della città, goditi un giro in gondola e assapora autentici piatti italiani. Con WiFi gratuito, una colazione gourmet, aria condizionata e una vista mozzafiato, il tuo alloggio offre un'esperienza unica. I nostri ospiti hanno elogiato le loro esperienze, con MariaVenezia che ha detto: 'Il Canal Grande Palace è un sogno diventato realtà. La sua posizione è impareggiabile e il palazzo è semplicemente stupendo.' Venezia è il luogo perfetto per una fuga romantica. Prenota ora e vivi un'esperienza indimenticabile.",
       "price": 1350,
       "price_per_adult": 1350,
@@ -148,12 +134,7 @@
         "bedrooms": 2,
         "bathrooms": 2,
         "guests": 4,
-        "amenities": [
-          "WiFi Gratuito",
-          "Colazione Gourmet",
-          "Aria Condizionata",
-          "Vista Mozzafiato"
-        ],
+        "amenities": ["WiFi Gratuito", "Colazione Gourmet", "Aria Condizionata", "Vista Mozzafiato"],
         "reviews": [
           {
             "user": "Maria45",
@@ -166,11 +147,7 @@
             "comment": "Una vacanza a Venezia non potrebbe essere migliore. Questo palazzo è il luogo perfetto per una fuga romantica."
           }
         ],
-        "images": [
-          "barcelona1.jpg",
-          "barcelona2.jpg",
-          "barcelona3.jpg"
-        ]
+        "images": ["barcelona1.jpg", "barcelona2.jpg", "barcelona3.jpg"]
       },
       "host": {
         "name": "Marco",
@@ -178,11 +155,7 @@
         "verified": true
       },
       "cancellation_policy": "Moderata",
-      "dates_available": [
-        "2023-09-15",
-        "2023-09-22",
-        "2023-09-29"
-      ],
+      "dates_available": ["2023-09-15", "2023-09-22", "2023-09-29"],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -203,6 +176,7 @@
       "id": 4,
       "destination": "Milano",
       "duration": "6 giorni",
+      "date": "2023-11-10",
       "description": "Esplora la vivace città di Milano con il nostro dinamico viaggio di 3 giorni. Dall'iconico Duomo ai moderni quartieri della moda, questa esperienza promette una miscela di storia e stile. Il tuo soggiorno inizia presso il 'Fashion Loft Apartment,' un lussuoso loft nel cuore di Milano. Scopri le ultime tendenze di moda, visita musei d'arte di fama mondiale e gusta la cucina milanese. Con WiFi gratuito, un'area salotto elegante, aria condizionata e una vista panoramica sulla città, il tuo alloggio offre stile e comfort. I nostri ospiti hanno lodato le loro esperienze, con LucaMilano che ha detto: 'Il Fashion Loft Apartment è un'oasi di eleganza nel cuore della città. La sua posizione è perfetta per lo shopping e l'esplorazione.' Milano è la capitale della moda e del design. Prenota ora e immergiti in questa metropoli trendy.",
       "price": 850,
       "price_per_adult": 850,
@@ -217,12 +191,7 @@
         "bedrooms": 1,
         "bathrooms": 1,
         "guests": 2,
-        "amenities": [
-          "WiFi Gratuito",
-          "Area Salotto",
-          "Aria Condizionata",
-          "Vista Panoramica"
-        ],
+        "amenities": ["WiFi Gratuito", "Area Salotto", "Aria Condizionata", "Vista Panoramica"],
         "reviews": [
           {
             "user": "Luchetto",
@@ -235,11 +204,7 @@
             "comment": "Milano è una città affascinante, e questo loft è il luogo ideale per esplorarla."
           }
         ],
-        "images": [
-          "rome1.jpg",
-          "rome2.jpg",
-          "rome3.jpg"
-        ]
+        "images": ["rome1.jpg", "rome2.jpg", "rome3.jpg"]
       },
       "host": {
         "name": "Luigi",
@@ -247,11 +212,7 @@
         "verified": true
       },
       "cancellation_policy": "Flessibile",
-      "dates_available": [
-        "2023-11-15",
-        "2023-11-22",
-        "2023-11-29"
-      ],
+      "dates_available": ["2023-11-15", "2023-11-22", "2023-11-29"],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -272,6 +233,7 @@
       "id": 5,
       "destination": "Napoli",
       "duration": "6 giorni",
+      "date": "2023-11-11",
       "description": "Esplora la vivace città di Napoli con il nostro entusiasmante viaggio di 6 giorni. Dall'iconico Castel dell'Ovo alle autentiche pizzerie, questa esperienza promette una miscela di cultura e gastronomia. Il tuo soggiorno inizia presso 'La Bella Napoli,' un'accogliente casa nel cuore di Napoli. Assapora la pizza napoletana, visita antiche rovine romane e goditi la vista sul Golfo di Napoli. Con WiFi gratuito, una cucina completamente attrezzata, aria condizionata e un balcone panoramico, il tuo alloggio offre comfort e autenticità. I nostri ospiti hanno elogiato le loro esperienze, con MarioPizzaLover che ha detto: 'La Bella Napoli è stato il luogo perfetto per gustare la vera pizza napoletana. La sua posizione è ideale per esplorare la città.' Napoli è famosa per la sua cucina e la sua storia. Prenota ora e immergiti in questa cultura unica.",
       "price": 1100,
       "price_per_adult": 1100,
@@ -286,12 +248,7 @@
         "bedrooms": 2,
         "bathrooms": 2,
         "guests": 4,
-        "amenities": [
-          "WiFi Gratuito",
-          "Cucina completamente attrezzata",
-          "Aria Condizionata",
-          "Balcone Panoramico"
-        ],
+        "amenities": ["WiFi Gratuito", "Cucina completamente attrezzata", "Aria Condizionata", "Balcone Panoramico"],
         "reviews": [
           {
             "user": "MarioPizzaLover",
@@ -304,11 +261,7 @@
             "comment": "Napoli è una città affascinante, e questo appartamento ha reso il nostro soggiorno ancora più memorabile."
           }
         ],
-        "images": [
-          "tokyo1.jpg",
-          "tokyo2.jpg",
-          "tokyo3.jpg"
-        ]
+        "images": ["tokyo1.jpg", "tokyo2.jpg", "tokyo3.jpg"]
       },
       "host": {
         "name": "Francesca",
@@ -316,11 +269,7 @@
         "verified": true
       },
       "cancellation_policy": "Moderata",
-      "dates_available": [
-        "2023-11-10",
-        "2023-11-17",
-        "2023-11-24"
-      ],
+      "dates_available": ["2023-11-10", "2023-11-17", "2023-11-24"],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -341,6 +290,7 @@
       "id": 6,
       "destination": "Amalfi",
       "duration": "5 giorni",
+      "date": "2023-11-13",
       "description": "Goditi la bellezza costiera di Amalfi con il nostro rilassante viaggio di 5 giorni. Dalle pittoresche spiagge ai villaggi in collina, questa esperienza promette tranquillità e autenticità. Il tuo soggiorno inizia presso 'Villa Amalfi View,' una splendida villa con vista sul mare. Rilassati sulla spiaggia, esplora le strade strette e tortuose di Amalfi e assapora la cucina mediterranea. Con WiFi gratuito, una piscina privata, aria condizionata e giardini terrazzati, la tua villa offre comfort e vista panoramica. I nostri ospiti hanno elogiato le loro esperienze, con ElenaBeachLover che ha detto: 'La Villa Amalfi View è un paradiso sulla costa. La vista è mozzafiato e la villa è perfetta per una vacanza di relax.' Amalfi è una gemma nascosta della costa italiana. Prenota ora e vivi un'esperienza costiera indimenticabile.",
       "price": 1550,
       "price_per_adult": 1550,
@@ -355,12 +305,7 @@
         "bedrooms": 3,
         "bathrooms": 2,
         "guests": 6,
-        "amenities": [
-          "WiFi Gratuito",
-          "Piscina Privata",
-          "Aria Condizionata",
-          "Giardini Terrazzati"
-        ],
+        "amenities": ["WiFi Gratuito", "Piscina Privata", "Aria Condizionata", "Giardini Terrazzati"],
         "reviews": [
           {
             "user": "ElenaBeachLover",
@@ -373,11 +318,7 @@
             "comment": "Amalfi è una meraviglia naturale, e questa villa ci ha permesso di sperimentarla appieno."
           }
         ],
-        "images": [
-          "sydney1.jpg",
-          "sydney2.jpg",
-          "sydney3.jpg"
-        ]
+        "images": ["sydney1.jpg", "sydney2.jpg", "sydney3.jpg"]
       },
       "host": {
         "name": "Emma",
@@ -385,11 +326,7 @@
         "verified": true
       },
       "cancellation_policy": "Severa",
-      "dates_available": [
-        "2023-11-05",
-        "2023-11-12",
-        "2023-11-19"
-      ],
+      "dates_available": ["2023-11-05", "2023-11-12", "2023-11-19"],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -410,6 +347,7 @@
       "id": 7,
       "destination": "Verona",
       "duration": "4 giorni",
+      "date": "2023-11-05",
       "description": "Explore the breathtaking landscapes and wildlife of South Africa.",
       "price": 1200,
       "price_per_adult": 1200,
@@ -424,12 +362,7 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": [
-          "WiFi Gratuito",
-          "Giardino Privato",
-          "Aria Condizionata",
-          "Posizione Tranquilla"
-        ],
+        "amenities": ["WiFi Gratuito", "Giardino Privato", "Aria Condizionata", "Posizione Tranquilla"],
         "reviews": [
           {
             "user": "GiuliaRomantica",
@@ -442,11 +375,7 @@
             "comment": "Verona è una città meravigliosa, e questa villa ha reso il nostro soggiorno ancora più speciale."
           }
         ],
-        "images": [
-          "capetown1.jpg",
-          "capetown2.jpg",
-          "capetown3.jpg"
-        ]
+        "images": ["capetown1.jpg", "capetown2.jpg", "capetown3.jpg"]
       },
       "host": {
         "name": "Antonio",
@@ -454,11 +383,7 @@
         "verified": true
       },
       "cancellation_policy": "Moderata",
-      "dates_available": [
-        "2023-11-15",
-        "2023-11-22",
-        "2023-11-29"
-      ],
+      "dates_available": ["2023-11-15", "2023-11-22", "2023-11-29"],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -479,6 +404,7 @@
       "id": 8,
       "destination": "Sorrento",
       "duration": "5 giorni",
+      "date": "2023-11-15",
       "description": "Esplora la splendida città costiera di Sorrento con il nostro incantevole viaggio di 5 giorni. Dalle scogliere mozzafiato alle spiagge pittoresche, questa esperienza promette relax e bellezza naturale. Il tuo soggiorno inizia presso 'Villa Sorrento Sea,' una villa con vista sul mare. Goditi il sole sulla spiaggia, assapora il limoncello locale e scopri la cultura sorrentina. Con WiFi gratuito, una piscina a sfioro, aria condizionata e una terrazza panoramica, la tua villa offre lusso e vista mozzafiato. I nostri ospiti hanno lodato le loro esperienze, con SofiaBeachLover che ha detto: 'La Villa Sorrento Sea è un paradiso sulla costa. La vista è spettacolare e la villa è perfetta per una vacanza di relax.' Sorrento è un gioiello della costa amalfitana. Prenota ora e goditi una vacanza in riva al mare indimenticabile.",
       "price": 1650,
       "price_per_adult": 1650,
@@ -493,12 +419,7 @@
         "bedrooms": 3,
         "bathrooms": 3,
         "guests": 6,
-        "amenities": [
-          "WiFi Gratuito",
-          "Piscina a Sfioro",
-          "Aria Condizionata",
-          "Terrazza Panoramica"
-        ],
+        "amenities": ["WiFi Gratuito", "Piscina a Sfioro", "Aria Condizionata", "Terrazza Panoramica"],
         "reviews": [
           {
             "user": "SofiaBeachLover",
@@ -511,11 +432,7 @@
             "comment": "Sorrento è un luogo incantevole, e questa villa ha reso il nostro soggiorno ancora più speciale."
           }
         ],
-        "images": [
-          "bali1.jpg",
-          "bali2.jpg",
-          "bali3.jpg"
-        ]
+        "images": ["bali1.jpg", "bali2.jpg", "bali3.jpg"]
       },
       "host": {
         "name": "Lorenzo",
@@ -523,11 +440,7 @@
         "verified": true
       },
       "cancellation_policy": "Moderata",
-      "dates_available": [
-        "2023-11-05",
-        "2023-11-12",
-        "2023-11-19"
-      ],
+      "dates_available": ["2023-11-05", "2023-11-12", "2023-11-19"],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -548,6 +461,7 @@
       "id": 9,
       "destination": "Bologna",
       "duration": "4 giorni",
+      "date": "2023-11-11",
       "description": "Scopri la deliziosa città di Bologna con il nostro gustoso viaggio di 4 giorni. Dall'iconica Torre degli Asinelli alle trattorie storiche, questa esperienza promette sapori autentici e storia affascinante. Il tuo soggiorno inizia presso 'Casa Bologna,' un'accogliente casa nel centro storico di Bologna. Assapora la pasta fresca, visita musei eccezionali e percorri i portici secolari. Con WiFi gratuito, una cucina ben attrezzata, aria condizionata e un'atmosfera accogliente, la tua casa offre comfort e convenienza. I nostri ospiti hanno elogiato le loro esperienze, con PaoloFoodie che ha detto: 'Casa Bologna è stata la base perfetta per esplorare i sapori di Bologna. La sua posizione è ideale per scoprire la città a piedi.' Bologna è la capitale gastronomica d'Italia. Prenota ora e delizati con questa esperienza culinaria.",
       "price": 990,
       "price_per_adult": 990,
@@ -562,12 +476,7 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": [
-          "WiFi Gratuito",
-          "Cucina Ben Attrezzata",
-          "Aria Condizionata",
-          "Atmosfera Accogliente"
-        ],
+        "amenities": ["WiFi Gratuito", "Cucina Ben Attrezzata", "Aria Condizionata", "Atmosfera Accogliente"],
         "reviews": [
           {
             "user": "PaoloFoodie",
@@ -580,11 +489,7 @@
             "comment": "Bologna è una città straordinaria, e questa casa ci ha fatto sentire come parte di essa."
           }
         ],
-        "images": [
-          "rio1.jpg",
-          "rio2.jpg",
-          "rio3.jpg"
-        ]
+        "images": ["rio1.jpg", "rio2.jpg", "rio3.jpg"]
       },
       "host": {
         "name": "Giulia",
@@ -592,11 +497,7 @@
         "verified": true
       },
       "cancellation_policy": "Flessibile",
-      "dates_available": [
-        "2023-11-10",
-        "2023-11-17",
-        "2023-11-24"
-      ],
+      "dates_available": ["2023-11-10", "2023-11-17", "2023-11-24"],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -617,6 +518,7 @@
       "id": 10,
       "destination": "Taormina",
       "duration": "5 giorni",
+      "date": "2023-11-08",
       "description": "Esplora la bellissima città costiera di Taormina con il nostro affascinante viaggio di 5 giorni. Dall'iconico Teatro Antico alle spiagge di Isola Bella, questa esperienza promette cultura e relax. Il tuo soggiorno inizia presso 'Villa Taormina View,' una villa con vista sul mare. Visita antichi siti greci, rilassati sulla spiaggia e gustati i piatti siciliani. Con WiFi gratuito, una piscina privata, aria condizionata e una terrazza panoramica, la tua villa offre comfort e vista mozzafiato. I nostri ospiti hanno lodato le loro esperienze, con AlessiaBeachLover che ha detto: 'La Villa Taormina View è un sogno diventato realtà. La vista è spettacolare e la villa è perfetta per una vacanza di relax.' Taormina è la perla della Sicilia. Prenota ora e goditi una vacanza in riva al mare indimenticabile.",
       "price": 1750,
       "price_per_adult": 1750,
@@ -631,12 +533,7 @@
         "bedrooms": 3,
         "bathrooms": 2,
         "guests": 6,
-        "amenities": [
-          "WiFi Gratuito",
-          "Piscina Privata",
-          "Aria Condizionata",
-          "Terrazza Panoramica"
-        ],
+        "amenities": ["WiFi Gratuito", "Piscina Privata", "Aria Condizionata", "Terrazza Panoramica"],
         "reviews": [
           {
             "user": "AlessiaBeachLover",
@@ -649,11 +546,7 @@
             "comment": "Taormina è un luogo magico, e questa villa ci ha permesso di viverlo appieno."
           }
         ],
-        "images": [
-          "machupicchu1.jpg",
-          "machupicchu2.jpg",
-          "machupicchu3.jpg"
-        ]
+        "images": ["machupicchu1.jpg", "machupicchu2.jpg", "machupicchu3.jpg"]
       },
       "host": {
         "name": "Alessio",
@@ -661,11 +554,7 @@
         "verified": true
       },
       "cancellation_policy": "Moderata",
-      "dates_available": [
-        "2023-11-05",
-        "2023-11-12",
-        "2023-11-19"
-      ],
+      "dates_available": ["2023-11-05", "2023-11-12", "2023-11-19"],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -692,12 +581,7 @@
       "bedrooms": 2,
       "bathrooms": 2,
       "guests": 4,
-      "amenities": [
-        "Free WiFi",
-        "Swimming Pool",
-        "Gym",
-        "Restaurant"
-      ],
+      "amenities": ["Free WiFi", "Swimming Pool", "Gym", "Restaurant"],
       "reviews": [
         {
           "user": "Guest123",
@@ -732,11 +616,7 @@
       "bedrooms": 3,
       "bathrooms": 3,
       "guests": 6,
-      "amenities": [
-        "Private Beach",
-        "Spa",
-        "Poolside Bar"
-      ],
+      "amenities": ["Private Beach", "Spa", "Poolside Bar"],
       "reviews": [
         {
           "user": "BeachLover",
@@ -771,11 +651,7 @@
       "bedrooms": 4,
       "bathrooms": 3,
       "guests": 8,
-      "amenities": [
-        "Ski-in/Ski-out",
-        "Hot Tub",
-        "Fireplace"
-      ],
+      "amenities": ["Ski-in/Ski-out", "Hot Tub", "Fireplace"],
       "reviews": [
         {
           "user": "SkiEnthusiast",
@@ -810,11 +686,7 @@
       "bedrooms": 5,
       "bathrooms": 4,
       "guests": 10,
-      "amenities": [
-        "Beachfront Access",
-        "Infinity Pool",
-        "Spa"
-      ],
+      "amenities": ["Beachfront Access", "Infinity Pool", "Spa"],
       "reviews": [
         {
           "user": "BeachBum",
@@ -849,11 +721,7 @@
       "bedrooms": 2,
       "bathrooms": 1,
       "guests": 4,
-      "amenities": [
-        "Lake View",
-        "Fireplace",
-        "Hiking Trails"
-      ],
+      "amenities": ["Lake View", "Fireplace", "Hiking Trails"],
       "reviews": [
         {
           "user": "NatureExplorer",
@@ -888,10 +756,7 @@
       "bedrooms": 1,
       "bathrooms": 1,
       "guests": 2,
-      "amenities": [
-        "City View",
-        "Room Service"
-      ],
+      "amenities": ["City View", "Room Service"],
       "reviews": [
         {
           "user": "CityTraveler",
@@ -926,11 +791,7 @@
       "bedrooms": 4,
       "bathrooms": 3,
       "guests": 8,
-      "amenities": [
-        "Beachfront Access",
-        "Private Pool",
-        "Ocean View"
-      ],
+      "amenities": ["Beachfront Access", "Private Pool", "Ocean View"],
       "reviews": [
         {
           "user": "BeachLoverX",
@@ -965,11 +826,7 @@
       "bedrooms": 3,
       "bathrooms": 2,
       "guests": 6,
-      "amenities": [
-        "Mountain View",
-        "Hot Tub",
-        "Ski Access"
-      ],
+      "amenities": ["Mountain View", "Hot Tub", "Ski Access"],
       "reviews": [
         {
           "user": "SkiLover",
@@ -1004,11 +861,7 @@
       "bedrooms": 2,
       "bathrooms": 1,
       "guests": 4,
-      "amenities": [
-        "River View",
-        "Fire Pit",
-        "Hiking Trails"
-      ],
+      "amenities": ["River View", "Fire Pit", "Hiking Trails"],
       "reviews": [
         {
           "user": "NatureLover456",
@@ -1043,10 +896,7 @@
       "bedrooms": 1,
       "bathrooms": 1,
       "guests": 2,
-      "amenities": [
-        "City View",
-        "Modern Design"
-      ],
+      "amenities": ["City View", "Modern Design"],
       "reviews": [
         {
           "user": "CityExplorer",
@@ -1081,11 +931,7 @@
       "bedrooms": 5,
       "bathrooms": 4,
       "guests": 10,
-      "amenities": [
-        "Antique Charm",
-        "Gardens",
-        "Fireplace"
-      ],
+      "amenities": ["Antique Charm", "Gardens", "Fireplace"],
       "reviews": [
         {
           "user": "HistoryBuff",
@@ -1120,11 +966,7 @@
       "bedrooms": 4,
       "bathrooms": 3,
       "guests": 8,
-      "amenities": [
-        "Beachfront Access",
-        "Hot Tub",
-        "Ocean View"
-      ],
+      "amenities": ["Beachfront Access", "Hot Tub", "Ocean View"],
       "reviews": [
         {
           "user": "BeachLover123",
@@ -1159,11 +1001,7 @@
       "bedrooms": 2,
       "bathrooms": 1,
       "guests": 4,
-      "amenities": [
-        "Mountain View",
-        "Fireplace",
-        "Hiking Trails"
-      ],
+      "amenities": ["Mountain View", "Fireplace", "Hiking Trails"],
       "reviews": [
         {
           "user": "MountainLover",
@@ -1198,11 +1036,7 @@
       "bedrooms": 2,
       "bathrooms": 2,
       "guests": 4,
-      "amenities": [
-        "City View",
-        "Pool",
-        "Gym"
-      ],
+      "amenities": ["City View", "Pool", "Gym"],
       "reviews": [
         {
           "user": "CityExplorerX",
@@ -1237,11 +1071,7 @@
       "bedrooms": 5,
       "bathrooms": 4,
       "guests": 10,
-      "amenities": [
-        "Mountain View",
-        "Hot Tub",
-        "Fireplace"
-      ],
+      "amenities": ["Mountain View", "Hot Tub", "Fireplace"],
       "reviews": [
         {
           "user": "NatureLoverX",
@@ -1276,10 +1106,7 @@
       "bedrooms": 1,
       "bathrooms": 1,
       "guests": 2,
-      "amenities": [
-        "City View",
-        "Modern Design"
-      ],
+      "amenities": ["City View", "Modern Design"],
       "reviews": [
         {
           "user": "CityExplorer123",
@@ -1314,11 +1141,7 @@
       "bedrooms": 5,
       "bathrooms": 4,
       "guests": 10,
-      "amenities": [
-        "Antique Charm",
-        "Gardens",
-        "Fireplace"
-      ],
+      "amenities": ["Antique Charm", "Gardens", "Fireplace"],
       "reviews": [
         {
           "user": "HistoryEnthusiast",
@@ -1353,11 +1176,7 @@
       "bedrooms": 2,
       "bathrooms": 2,
       "guests": 4,
-      "amenities": [
-        "Beachfront Access",
-        "Outdoor Shower",
-        "Ocean View"
-      ],
+      "amenities": ["Beachfront Access", "Outdoor Shower", "Ocean View"],
       "reviews": [
         {
           "user": "BeachLover789",
@@ -1392,11 +1211,7 @@
       "bedrooms": 3,
       "bathrooms": 2,
       "guests": 6,
-      "amenities": [
-        "Mountain View",
-        "Hot Tub",
-        "Ski Access"
-      ],
+      "amenities": ["Mountain View", "Hot Tub", "Ski Access"],
       "reviews": [
         {
           "user": "SkiLoverX",
@@ -1431,10 +1246,7 @@
       "bedrooms": 1,
       "bathrooms": 1,
       "guests": 2,
-      "amenities": [
-        "City View",
-        "Kitchenette"
-      ],
+      "amenities": ["City View", "Kitchenette"],
       "reviews": [
         {
           "user": "CityExplorer789",

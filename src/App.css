@@ -86,15 +86,17 @@
   white-space: nowrap;
   margin-left: 60px;
   opacity: 0.8;
-  animation: scroll 40s linear infinite;
+  animation: visible 10s linear infinite;
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(100%);
-  }
+@keyframes visible {
+  0%,
   100% {
-    transform: translateX(-100%);
+    opacity: 0;
+  }
+  25%,
+  75% {
+    opacity: 1;
   }
 }
 

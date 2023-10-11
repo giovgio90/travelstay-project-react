@@ -40,7 +40,7 @@ export const fetchTravelOffers = () => async (dispatch) => {
   }
 };
 
-export const fetchResultsOffers = (searchQuery) => async (dispatch) => {
+export const fetchResultsOffers = (searchQuery, maxBudget) => async (dispatch) => {
   try {
     dispatch({ type: "FETCH_TRAVEL_REQUEST" });
 

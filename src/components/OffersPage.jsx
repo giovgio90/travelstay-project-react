@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTravelOffers } from "../redux/actions";
 import { useEffect, useState } from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Dropdown, DropdownButton, Row } from "react-bootstrap";
 import Header from "./Header";
 import { Link } from "react-router-dom";
 import FooterTravelStay from "./FooterTravelStay";
@@ -38,12 +38,36 @@ const OffersPage = ({ travel }) => {
 
   const divClassName = isSticky ? "div-sticky" : "div-no-sticky";
 
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleSelect = (item) => {
+    setSelectedItem(item);
+  };
+
   return (
     <>
       <Header />
       <div className={divClassName}>
         <Container>
-          <h4>Viaggio e soggiorno</h4>
+          <div className="d-flex mb-3 align-items-center">
+            <div>
+              <h4 className="mb-0" style={{ paddingBottom: "5px" }}>
+                Viaggi con soggiorno:
+              </h4>
+            </div>
+            <div className="ms-auto">
+              <DropdownButton
+                variant="trasparent"
+                className="dropdown-basic-button"
+                title={selectedItem || "Filtra"}
+                onSelect={handleSelect}
+              >
+                <Dropdown.Item eventKey="Elemento 1">Elemento 1</Dropdown.Item>
+                <Dropdown.Item eventKey="Elemento 2">Elemento 2</Dropdown.Item>
+                <Dropdown.Item eventKey="Elemento 3">Elemento 3</Dropdown.Item>
+              </DropdownButton>
+            </div>
+          </div>
           <Row>
             {travelData.slice(0, visibleOffers).map((offer, id) => (
               <Col key={id} xs={12} md={6} lg={3}>
