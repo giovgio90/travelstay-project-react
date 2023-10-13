@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTravelOffers, setUser } from "../redux/actions";
+import { fetchTravelOffers, setUser, updateTravelOffer } from "../redux/actions";
 import { useEffect, useState } from "react";
 import {
   Button,
@@ -11,6 +11,7 @@ import {
   Form,
   FormControl,
   InputGroup,
+  Modal,
   Nav,
   Navbar,
   Row,
@@ -28,6 +29,8 @@ const OffersPage = ({ travel }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [budget, setBudget] = useState("");
   const [selectedBudget, setSelectedBudget] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editedOffer, setEditedOffer] = useState(null);
 
   const handleSelect = (item) => {
     setSelectedItem(item);
@@ -38,9 +41,19 @@ const OffersPage = ({ travel }) => {
     dispatch(setUser(null));
   };
 
+  const cleanedEmail = username && username.email ? username.email.trim().toLowerCase() : "";
+  const isAdmin = cleanedEmail === "giovanni@gmail.com";
+
   useEffect(() => {
     dispatch(fetchTravelOffers());
   }, [dispatch]);
+
+  const handleUpdateTravelOffer = () => {
+    if (isAdmin && editedOffer) {
+      dispatch(updateTravelOffer(editedOffer));
+      setIsModalOpen(false);
+    }
+  };
 
   const handleShowMoreClick = () => {
     setVisibleOffers((prevVisibleOffers) => prevVisibleOffers + 4);
@@ -161,7 +174,21 @@ const OffersPage = ({ travel }) => {
                       style={{ height: "230px", objectFit: "cover" }}
                     />
                     <Card.Body className="pb-2">
-                      <Card.Title style={{ fontSize: "1.2rem" }}>{offer.destination}</Card.Title>
+                      <div className="d-flex">
+                        <Card.Title style={{ fontSize: "1.2rem" }}>{offer.destination}</Card.Title>
+                        {isAdmin && (
+                          <Button
+                            variant="primary"
+                            className="ms-auto"
+                            onClick={() => {
+                              setEditedOffer(offer);
+                              setIsModalOpen(true);
+                            }}
+                          >
+                            Modifica
+                          </Button>
+                        )}
+                      </div>
                       <Card.Text>
                         <strong style={{ fontWeight: "500" }}>Durata:</strong>
                         <span
@@ -233,6 +260,58 @@ const OffersPage = ({ travel }) => {
           <StayOffers selectedBudget={selectedBudget} setSelectedBudget={setSelectedBudget} />
         </div>
       )}
+      {isAdmin && editedOffer && (
+        <Modal show={isModalOpen} onHide={() => setIsModalOpen(false)}>
+          <Modal.Header closeButton>
+            <Modal.Title>Modifica Offerta</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form>
+              <Form.Group>
+                <Form.Label>Destinazione</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={editedOffer.destination}
+                  onChange={(e) => setEditedOffer({ ...editedOffer, destination: e.target.value })}
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Durata</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={editedOffer.duration}
+                  onChange={(e) => setEditedOffer({ ...editedOffer, duration: e.target.value })}
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Prezzo per Adulti</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={editedOffer.price_per_adult}
+                  onChange={(e) => setEditedOffer({ ...editedOffer, price_per_adult: e.target.value })}
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Prezzo per Bambini</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={editedOffer.price_per_child}
+                  onChange={(e) => setEditedOffer({ ...editedOffer, price_per_child: e.target.value })}
+                />
+              </Form.Group>
+            </Form>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={() => setIsModalOpen(false)}>
+              Chiudi
+            </Button>
+            <Button variant="primary" onClick={handleUpdateTravelOffer}>
+              Salva
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )}
+
       <FooterTravelStay />
     </>
   );

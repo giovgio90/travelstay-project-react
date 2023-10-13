@@ -1,4 +1,11 @@
-import { FETCH_TRAVEL_REQUEST, FETCH_TRAVEL_SUCCESS, FETCH_TRAVEL_FAILURE } from "../actions";
+import {
+  FETCH_TRAVEL_REQUEST,
+  FETCH_TRAVEL_SUCCESS,
+  FETCH_TRAVEL_FAILURE,
+  UPDATE_TRAVEL_REQUEST,
+  UPDATE_TRAVEL_SUCCESS,
+  UPDATE_TRAVEL_FAILURE,
+} from "../actions";
 
 const initialState = {
   loading: false,
@@ -9,9 +16,11 @@ const initialState = {
 const travelReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_TRAVEL_REQUEST:
+    case UPDATE_TRAVEL_REQUEST:
       return {
         ...state,
         loading: true,
+        error: null,
       };
     case FETCH_TRAVEL_SUCCESS:
       return {
@@ -20,7 +29,22 @@ const travelReducer = (state = initialState, action) => {
         data: action.payload,
         error: null,
       };
+    case UPDATE_TRAVEL_SUCCESS:
+      // Aggiorna le offerte di viaggio con i nuovi dati
+      const updatedTravelData = state.data.map((offer) => {
+        if (offer.id === action.payload.id) {
+          return action.payload;
+        }
+        return offer;
+      });
+      return {
+        ...state,
+        loading: false,
+        data: updatedTravelData,
+        error: null,
+      };
     case FETCH_TRAVEL_FAILURE:
+    case UPDATE_TRAVEL_FAILURE:
       return {
         ...state,
         loading: false,

@@ -1,6 +1,9 @@
 export const FETCH_TRAVEL_REQUEST = "FETCH_TRAVEL_REQUEST";
 export const FETCH_TRAVEL_SUCCESS = "FETCH_TRAVEL_SUCCESS";
 export const FETCH_TRAVEL_FAILURE = "FETCH_TRAVEL_FAILURE";
+export const UPDATE_TRAVEL_REQUEST = "UPDATE_TRAVEL_REQUEST";
+export const UPDATE_TRAVEL_SUCCESS = "UPDATE_TRAVEL_SUCCESS";
+export const UPDATE_TRAVEL_FAILURE = "UPDATE_TRAVEL_FAILURE";
 
 export const FETCH_STAY_REQUEST = "FETCH_STAY_REQUEST";
 export const FETCH_STAY_SUCCESS = "FETCH_STAY_SUCCESS";
@@ -50,6 +53,26 @@ export const fetchResultsOffers = (searchQuery, maxBudget) => async (dispatch) =
     dispatch({ type: "FETCH_TRAVEL_SUCCESS", payload: data });
   } catch (error) {
     dispatch({ type: "FETCH_TRAVEL_FAILURE", payload: error.message });
+  }
+};
+
+export const updateTravelOffer = (offerData) => async (dispatch) => {
+  try {
+    dispatch({ type: UPDATE_TRAVEL_REQUEST });
+
+    const response = await fetch(`http://localhost:3030/travel/${offerData.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(offerData),
+    });
+
+    const data = await response.json();
+
+    dispatch({ type: UPDATE_TRAVEL_SUCCESS, payload: data });
+  } catch (error) {
+    dispatch({ type: UPDATE_TRAVEL_FAILURE, payload: error.message });
   }
 };
 
