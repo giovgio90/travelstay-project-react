@@ -51,7 +51,7 @@ const Header = () => {
       <div className="box-scrolls pt-1">
         <Container>
           <Row>
-            <div className="d-flex" style={{ backgroundColor: "#203040;" }}>
+            <div className="d-flex" style={{ backgroundColor: "#203040" }}>
               <Col md={4} lg={3} className="text-end">
                 <div className="static-text pe-3">
                   <h6>Offerte da non perdere:</h6>{" "}

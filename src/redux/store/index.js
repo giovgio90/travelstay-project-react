@@ -9,17 +9,21 @@ import stayReducer from "../reducers/stayReducer";
 import registerReducer from "../reducers/registerReducer";
 import userReducer from "../reducers/userReducer";
 import searchReducer from "../reducers/searchReducer";
+import roomReducer from "../reducers/roomReducer";
+import toursReducer from "../reducers/toursReducer";
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["register", "user", "travel", "stay", "cart"],
+  whitelist: ["register", "user", "travel", "rooms", "tours", "stay", "cart"],
 };
 
 const rootReducer = combineReducers({
   register: registerReducer,
   user: userReducer,
   travel: travelReducer,
+  tours: toursReducer,
+  rooms: roomReducer,
   search: searchReducer,
   stay: stayReducer,
   cart: cartReducer,

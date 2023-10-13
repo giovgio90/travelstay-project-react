@@ -137,6 +137,10 @@
   font-weight: 500;
 }
 
+.hide-input {
+  display: none;
+}
+
 /* DELUXE */
 
 .deluxe {

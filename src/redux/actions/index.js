@@ -146,3 +146,13 @@ export const setUser = (user) => {
     payload: user,
   };
 };
+
+export const updateRoom = (roomId, name, price) => ({
+  type: "UPDATE_ROOM",
+  payload: { roomId, name, price },
+});
+
+export const updateTour = (tourData) => ({
+  type: "UPDATE_TOUR",
+  payload: tourData,
+});

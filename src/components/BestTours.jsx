@@ -1,91 +1,55 @@
 import React, { useState, useEffect } from "react";
 import { Button, Card, Col, Modal, Row } from "react-bootstrap";
-import Italy from "../assets/Italy.jpg";
-import Greece from "../assets/Greece.jpg";
-import Ireland from "../assets/Ireland.jpg";
-import Dubai from "../assets/Dubai.jpg";
-import France from "../assets/France.jpg";
-import Spain from "../assets/Spain.jpg";
-import { useSelector } from "react-redux";
-
-const allTourData = [
-  {
-    id: 1,
-    title: "ROMA",
-    price: "A partire da 299€",
-    imageSrc: Italy,
-  },
-  {
-    id: 2,
-    title: "VENEZIA",
-    price: "A partire da 399€",
-    imageSrc: Greece,
-  },
-  {
-    id: 3,
-    title: "FIRENZE",
-    price: "A partire da 449€",
-    imageSrc: Ireland,
-  },
-  {
-    id: 4,
-    title: "AMALFI",
-    price: "A partire da 789€",
-    imageSrc: Dubai,
-  },
-  {
-    id: 5,
-    title: "CINQUE TERRE",
-    price: "A partire da 219€",
-    imageSrc: France,
-  },
-  {
-    id: 6,
-    title: "TAORMINA",
-    price: "A partire da 329€",
-    imageSrc: Spain,
-  },
-];
+import { useDispatch, useSelector } from "react-redux";
+import { updateTour } from "../redux/actions";
 
 const BestTours = () => {
+  const tours = useSelector((state) => state.tours);
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.username);
   const [tourData, setTourData] = useState([]);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [tourTitle, setTourTitle] = useState("");
   const [editingTourId, setEditingTourId] = useState(null);
-  const user = useSelector((state) => state.user.username);
-  console.log(user);
+  const [tourPrice, setTourPrice] = useState("");
 
   const cleanedEmail = user && user.email ? user.email.trim().toLowerCase() : "";
   const isAdmin = cleanedEmail === "giovanni@gmail.com";
-  console.log(isAdmin);
 
   useEffect(() => {
     const randomTours = [];
-    while (randomTours.length < 3) {
-      const randomIndex = Math.floor(Math.random() * allTourData.length);
-      const selectedTour = allTourData[randomIndex];
-      if (!randomTours.find((tour) => tour.id === selectedTour.id)) {
-        randomTours.push(selectedTour);
+    const usedIndexes = new Set();
+
+    while (randomTours.length < 3 && randomTours.length < tours.length) {
+      const randomIndex = Math.floor(Math.random() * tours.length);
+
+      if (!usedIndexes.has(randomIndex)) {
+        randomTours.push(tours[randomIndex]);
+        usedIndexes.add(randomIndex);
       }
     }
+
     setTourData(randomTours);
-  }, []);
+  }, [tours]);
 
   const handleOpenModal = (tour) => {
     setIsModalOpen(true);
     setTourTitle(tour.title);
+    setTourPrice(tour.price);
     setEditingTourId(tour.id);
   };
-
   const handleCloseModal = () => {
     setIsModalOpen(false);
     setTourTitle("");
     setEditingTourId(null);
   };
 
-  const handleTitleChange = (id, title) => {
-    const updatedTourData = tourData.map((tour) => (tour.id === id ? { ...tour, title } : tour));
-    setTourData(updatedTourData);
+  const handleTourChange = () => {
+    if (isAdmin) {
+      dispatch(updateTour({ id: editingTourId, title: tourTitle, price: tourPrice }));
+      handleCloseModal();
+    }
   };
 
   return (
@@ -98,7 +62,12 @@ const BestTours = () => {
               <div className="mt-auto">
                 <Card.Title className="display-3 pt-3 fw-bolder">
                   {tour.id === editingTourId ? (
-                    <input type="text" value={tourTitle} onChange={(e) => setTourTitle(e.target.value)} />
+                    <input
+                      type="text"
+                      value={tourTitle}
+                      onChange={(e) => setTourTitle(e.target.value)}
+                      style={{ display: isModalOpen ? "none" : "block" }}
+                    />
                   ) : (
                     tour.title
                   )}
@@ -119,22 +88,27 @@ const BestTours = () => {
       ))}
       <Modal show={isModalOpen} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Modifica Titolo del Tour</Modal.Title>
+          <Modal.Title>Modifica Tour</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <input type="text" value={tourTitle} onChange={(e) => setTourTitle(e.target.value)} />
+          <input
+            type="text"
+            placeholder="Titolo del Tour"
+            value={tourTitle}
+            onChange={(e) => setTourTitle(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Prezzo del Tour"
+            value={tourPrice}
+            onChange={(e) => setTourPrice(e.target.value)}
+          />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseModal}>
             Chiudi
           </Button>
-          <Button
-            variant="primary"
-            onClick={() => {
-              handleTitleChange(editingTourId, tourTitle);
-              handleCloseModal();
-            }}
-          >
+          <Button variant="primary" onClick={handleTourChange}>
             Salva
           </Button>
         </Modal.Footer>

@@ -32,7 +32,6 @@ const SearchSection = () => {
   };
 
   const formattedStartDate = startDate ? formatDate(startDate) : "";
-  console.log(formattedStartDate);
 
   return (
     <Form className="mb-3">
