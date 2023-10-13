@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Header from "./Header";
-import { Button, Card, Carousel, Col, Container, Modal, Row } from "react-bootstrap";
+import { Button, Card, Carousel, Col, Container, Form, Modal, Row } from "react-bootstrap";
 import FooterTravelStay from "./FooterTravelStay";
 import { PinMapFill, StarFill } from "react-bootstrap-icons";
 import ReservationForm from "./ReservationForm";
@@ -10,12 +10,43 @@ import { useEffect, useState } from "react";
 const OfferDetail = () => {
   const { id } = useParams();
   const travelData = useSelector((state) => state.travel.data);
+  const username = useSelector((state) => state.user.username);
 
   const offer = travelData.find((offer) => offer.id.toString() === id);
   console.log(offer);
 
   const [isSticky, setIsSticky] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [newReview, setNewReview] = useState([{ user: username.username, rating: "", comment: "" }]);
+
+  const handleAddReview = async (e) => {
+    e.preventDefault();
+
+    if (newReview.rating && newReview.comment) {
+      const reviewToAdd = {
+        user: username.username,
+        rating: parseFloat(newReview.rating),
+        comment: newReview.comment,
+      };
+
+      offer.reviews.push(reviewToAdd);
+
+      try {
+        await fetch(`http://localhost:3030/travel/${offer.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ reviews: offer.reviews }),
+        });
+
+        setShowModal(false);
+      } catch (error) {
+        console.error("Errore nell'aggiunta della recensione:", error);
+      }
+    } else {
+    }
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -102,8 +133,9 @@ const OfferDetail = () => {
               <p className="mb-0" style={{ fontWeight: "500" }}>
                 {offer.hotel.name}
               </p>
+
               <Button className="py-0" variant="trasparent" onClick={() => setShowModal(true)}>
-                {offer.hotel.reviews.length > 0 && (
+                {offer.reviews.length > 0 && (
                   <span className="d-flex" style={{ marginLeft: "5px" }}>
                     <div>
                       <StarFill className="pb-1" style={{ color: "yellow", fontSize: "1.2rem" }} />{" "}
@@ -111,11 +143,10 @@ const OfferDetail = () => {
                     <div>
                       <strong>
                         {(
-                          offer.hotel.reviews.reduce((total, review) => total + review.rating, 0) /
-                          offer.hotel.reviews.length
+                          offer.reviews.reduce((total, review) => total + review.rating, 0) / offer.reviews.length
                         ).toFixed(2)}
                       </strong>
-                      {"  "} {offer.hotel.reviews.length} recensioni
+                      {"  "} {offer.reviews.length} recensioni
                     </div>
                   </span>
                 )}
@@ -128,13 +159,40 @@ const OfferDetail = () => {
                   <Modal.Title>Recensioni</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                  {offer.hotel.reviews.map((review, index) => (
+                  {offer.reviews.map((review, index) => (
                     <div key={index}>
                       <h5>{review.user}</h5>
                       <p>Rating: {review.rating}</p>
                       <p>{review.comment}</p>
                     </div>
                   ))}
+                  <Form onSubmit={handleAddReview}>
+                    <Form.Group>
+                      <Form.Label>{username.username}</Form.Label>
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Valutazione</Form.Label>
+                      <Form.Control
+                        type="number"
+                        placeholder="Inserisci la tua valutazione"
+                        value={newReview.rating}
+                        onChange={(e) => setNewReview({ ...newReview, rating: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Commento</Form.Label>
+                      <Form.Control
+                        as="textarea"
+                        rows={3}
+                        placeholder="Inserisci il tuo commento"
+                        value={newReview.comment}
+                        onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Button variant="primary" type="submit">
+                      Aggiungi Recensione
+                    </Button>
+                  </Form>
                 </Modal.Body>
                 <Modal.Footer>
                   <Button variant="secondary" onClick={handleCloseModal}>

@@ -177,6 +177,14 @@
   transform: scale(1.1);
 }
 
+.margin-top-solo-soggiorno {
+  margin-top: 0rem; /* Imposta il margine diverso per "solo soggiorno" */
+}
+
+.margin-top-viaggi-con-soggiorno {
+  margin-top: 35px; /* Imposta il margine diverso per "viaggi con soggiorno" */
+}
+
 /*OFFER DETAIL*/
 .info-hotel {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

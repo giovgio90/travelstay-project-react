@@ -4,24 +4,31 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchstayOffers } from "../redux/actions";
 
-const StayOffers = () => {
+const StayOffers = ({ selectedBudget }) => {
   const dispatch = useDispatch();
   const travelData = useSelector((state) => state.stay.data);
-  const [visibleOffers, setVisibleOffers] = useState(4);
+  const [visibleOffers, setVisibleOffers] = useState(8);
 
   useEffect(() => {
     dispatch(fetchstayOffers());
   }, [dispatch]);
 
   const handleShowMoreClick = () => {
-    setVisibleOffers((prevVisibleOffers) => prevVisibleOffers + 4);
+    const remainingOffers = filteredOffers.length - visibleOffers;
+    const offersToShow = Math.min(4, remainingOffers);
+    setVisibleOffers(visibleOffers + offersToShow);
   };
+
+  const filteredOffers = selectedBudget
+    ? travelData.filter((offer) => offer.price_per_adult <= selectedBudget)
+    : travelData;
+
   return (
-    <div className="mt-5">
-      <Container>
-        <h4>Soggiorno</h4>
-        <Row>
-          {travelData.slice(0, visibleOffers).map((offer, id) => (
+    <Container>
+      <h4>Soggiorno</h4>
+      <Row>
+        {filteredOffers.length > 0 ? (
+          filteredOffers.slice(0, visibleOffers).map((offer, id) => (
             <Col key={id} xs={12} md={6} lg={3}>
               <Card className="offer-card mb-4 border-0">
                 <Card.Img
@@ -94,24 +101,26 @@ const StayOffers = () => {
                 </Link>
               </Card>
             </Col>
-          ))}
-        </Row>
-        {visibleOffers < travelData.length && (
-          <div className="text-center mt-1">
-            <Button
-              variant="transparent"
-              className="mx-auto pt-0 pb-2"
-              style={{
-                fontWeight: "500",
-              }}
-              onClick={handleShowMoreClick}
-            >
-              Visualizza Altro
-            </Button>
-          </div>
+          ))
+        ) : (
+          <p>Nessun risultato trovato</p>
         )}
-      </Container>
-    </div>
+      </Row>
+      {visibleOffers < travelData.length && (
+        <div className="text-center mt-1">
+          <Button
+            variant="transparent"
+            className="mx-auto pt-0 pb-2"
+            style={{
+              fontWeight: "500",
+            }}
+            onClick={handleShowMoreClick}
+          >
+            Visualizza Altro
+          </Button>
+        </div>
+      )}
+    </Container>
   );
 };
 
