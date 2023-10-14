@@ -1,6 +1,6 @@
 import Logo from "../assets/Logo.png";
 import React, { useState } from "react";
-import { Form, Button, Alert, Container, Row, Col } from "react-bootstrap";
+import { Form, Button, Alert, Container, Row, Col, Nav } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../redux/actions";
 import { Link } from "react-router-dom";
@@ -90,6 +90,9 @@ const LoginTravel = () => {
                       <Button variant="primary" type="submit" size="lg" className="btn-explore mt-4 rounded-5 px-5 ">
                         Login
                       </Button>
+                      <Nav.Link className="pe-lg-4 text-white" href="/register">
+                        Registrati
+                      </Nav.Link>
                       {showAlert && (
                         <Alert variant="danger" className="mt-3">
                           Utente non trovato

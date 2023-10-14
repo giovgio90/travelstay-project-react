@@ -100,7 +100,7 @@ const OffersPage = ({ travel }) => {
                       <span className="text-white me-2">
                         {username.gender === "female" ? "Benvenuta," : "Benvenuto,"} {username.username}
                       </span>
-                      <Link to="/" onClick={handleLogout}>
+                      <Link to="/login" onClick={handleLogout}>
                         <Button variant="trasparent" className="text-white align-self-center pt-0">
                           Logout
                         </Button>
@@ -204,7 +204,7 @@ const OffersPage = ({ travel }) => {
                           className="text-white px-2 mx-2 rounded-2"
                           style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
                         >
-                          {offer.price_per_adult}€
+                          {offer.price}€
                         </span>
                         <span className="ps-0">adulti</span>
                       </Card.Text>
@@ -287,8 +287,8 @@ const OffersPage = ({ travel }) => {
                 <Form.Label>Prezzo per Adulti</Form.Label>
                 <Form.Control
                   type="text"
-                  value={editedOffer.price_per_adult}
-                  onChange={(e) => setEditedOffer({ ...editedOffer, price_per_adult: e.target.value })}
+                  value={editedOffer.price}
+                  onChange={(e) => setEditedOffer({ ...editedOffer, price: e.target.value })}
                 />
               </Form.Group>
               <Form.Group>

@@ -5,9 +5,9 @@
       "destination": "Roma",
       "duration": "7 giorni",
       "date": "2023-11-05",
-      "description": "Scopri la magia della 'Città Eterna' con il nostro coinvolgente viaggio romano di 7 giorni. Dall'iconica Basilica di San Pietro alle affascinanti strade di Trastevere, questo viaggio promette un'esperienza indimenticabile. Il tuo incantevole soggiorno inizia presso l'hotel 'La Dolce Vita,' un pittoresco appartamento situato nel cuore di Roma. Ammira le opere d'arte mozzafiato nei Musei Vaticani, passeggia lungo il fiume Tevere e assapora deliziosi cornetti nei caffè locali. Con connessione WiFi gratuita, cucina completamente attrezzata, aria condizionata e TV a schermo piatto, il tuo alloggio garantisce comfort e comodità. I nostri ospiti hanno elogiato le loro esperienze, con Alice123 che ha detto: 'La Dolce Vita è stato assolutamente delizioso. La sua posizione centrale ha reso facile esplorare Roma, e l'appartamento era accogliente e ben attrezzato.' Che tu stia partendo per una fuga romantica o per un'avventura in solitario, Roma ti aspetta per conquistare il tuo cuore. Prenota ora e immergiti nella ricca storia, cultura e bellezza di questa iconica città.",
-      "price": 1000,
-      "price_per_adult": 1000,
+      "description": "Scopri la magia della 'Città Eterna' con il nostro coinvolgente viaggio romano di 7 giorni. Dall'iconica Basilica di San Pietro alle affascinanti strade di Trastevere, questo viaggio promette un'esperienza indimenticabile. Il tuo incantevole soggiorno inizia presso l'hotel 'La Dolce Vita,' un pittoresco appartamento situato nel cuore di Roma. Ammira le opere d'arte mozzafiato nei Musei Vaticani, passeggia lungo il fiume Tevere e assapora deliziosi cornetti nei caffè locali. Con connessione WiFi gratuita, cucina completamente attrezzata, aria condizionata e TV a schermo piatto, il tuo alloggio garantisce comfort e comodità. I nostri ospiti hanno elogiato le loro esperienze, con Alice123 che ha detto: 'La Dolce Vita è stato assolutamente delizioso. La sua posizione centrale ha reso facile esplorare Roma, e l'appartamento era accogliente e ben attrezzato.' Che tu stia partendo per una fuga romantica o per un'avventura in solitario, Roma ti aspetta per conquistare il tuo cuore. Prenota ora e immergiti nella ricca storia, cultura e bellezza di questa iconica città",
+      "price": "1000",
+      "price_per_adult": "1000",
       "price_per_child": 800,
       "image": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1996&q=80",
       "image_two": "https://images.unsplash.com/photo-1525874684015-58379d421a52?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
@@ -58,11 +58,6 @@
           "comment": "Viaggio indimenticabile!!"
         }
       ],
-      "host": {
-        "name": "Luca",
-        "superhost": true,
-        "verified": true
-      },
       "cancellation_policy": "Moderata",
       "dates_available": [
         "2023-11-15",
@@ -83,7 +78,12 @@
           "date": "2023-11-29",
           "price": 1180
         }
-      ]
+      ],
+      "host": {
+        "name": "Luca",
+        "superhost": true,
+        "verified": true
+      }
     },
     {
       "id": 2,
@@ -1537,6 +1537,13 @@
       "password": "1234567",
       "gender": "male",
       "id": "3oa3M0q"
+    },
+    {
+      "username": "Gabriele",
+      "email": "gabriele@gmail.com",
+      "password": "23456",
+      "gender": "male",
+      "id": "fP6lexD"
     }
   ]
 }

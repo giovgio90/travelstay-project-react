@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Card, Col, Modal, Row } from "react-bootstrap";
+import { Button, Card, Col, Form, Modal, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { updateTour } from "../redux/actions";
 
@@ -91,18 +91,26 @@ const BestTours = () => {
           <Modal.Title>Modifica Tour</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <input
-            type="text"
-            placeholder="Titolo del Tour"
-            value={tourTitle}
-            onChange={(e) => setTourTitle(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Prezzo del Tour"
-            value={tourPrice}
-            onChange={(e) => setTourPrice(e.target.value)}
-          />
+          <Form>
+            <Form.Group>
+              <Form.Label>Titolo del Tour</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Inserisci il titolo del tour"
+                value={tourTitle}
+                onChange={(e) => setTourTitle(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Prezzo del Tour</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Inserisci il prezzo del tour"
+                value={tourPrice}
+                onChange={(e) => setTourPrice(e.target.value)}
+              />
+            </Form.Group>
+          </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseModal}>

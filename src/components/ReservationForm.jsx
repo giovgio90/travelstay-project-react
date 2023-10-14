@@ -16,7 +16,7 @@ const ReservationForm = () => {
   const [children, setChildren] = useState(0);
 
   const calculateTotalPrice = () => {
-    const adultPrice = offer.price_per_adult;
+    const adultPrice = offer.price;
     const childPrice = offer.price_per_child;
     const totalAdultPrice = adults * adultPrice;
     const totalChildPrice = children * childPrice;

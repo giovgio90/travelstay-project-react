@@ -1,16 +1,23 @@
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Header from "./Header";
 import { Button, Card, Carousel, Col, Container, Form, Modal, Row } from "react-bootstrap";
 import FooterTravelStay from "./FooterTravelStay";
 import { PinMapFill, StarFill } from "react-bootstrap-icons";
 import ReservationForm from "./ReservationForm";
 import { useEffect, useState } from "react";
+import { updateTravelOffer } from "../redux/actions";
 
 const OfferDetail = () => {
   const { id } = useParams();
   const travelData = useSelector((state) => state.travel.data);
   const username = useSelector((state) => state.user.username);
+
+  const dispatch = useDispatch();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editedOffer, setEditedOffer] = useState(null);
+
+  const isAdmin = username && username.email === "giovanni@gmail.com";
 
   const offer = travelData.find((offer) => offer.id.toString() === id);
   console.log(offer);
@@ -63,6 +70,18 @@ const OfferDetail = () => {
     setShowModal(false);
   };
 
+  const handleEditOffer = () => {
+    setEditedOffer(offer);
+    setIsModalOpen(true);
+  };
+
+  const handleUpdateOffer = () => {
+    if (isAdmin && editedOffer) {
+      dispatch(updateTravelOffer(editedOffer));
+      setIsModalOpen(false);
+    }
+  };
+
   const homeClassName = isSticky ? "div-sticky" : "div-no-sticky";
 
   const handleScroll = () => {
@@ -105,6 +124,165 @@ const OfferDetail = () => {
           </Col>
         </Row>
         <Row className="position-relative">
+          <div>
+            {isAdmin && (
+              <Button variant="primary" onClick={handleEditOffer}>
+                Edit
+              </Button>
+            )}
+
+            {isAdmin && editedOffer && (
+              <Modal show={isModalOpen} onHide={() => setIsModalOpen(false)}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Edit Offer</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <Form>
+                    <Form.Group>
+                      <Form.Label>Destination</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={editedOffer.destination}
+                        onChange={(e) => setEditedOffer({ ...editedOffer, destination: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Duration</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={editedOffer.duration}
+                        onChange={(e) => setEditedOffer({ ...editedOffer, duration: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Description</Form.Label>
+                      <Form.Control
+                        as="textarea"
+                        rows={3}
+                        value={editedOffer.description}
+                        onChange={(e) => setEditedOffer({ ...editedOffer, description: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Price</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={editedOffer.price}
+                        onChange={(e) => setEditedOffer({ ...editedOffer, price: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Price</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={editedOffer.price_per_child}
+                        onChange={(e) => setEditedOffer({ ...editedOffer, price_per_child: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Image URL 1</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={editedOffer.image_one}
+                        onChange={(e) => setEditedOffer({ ...editedOffer, image_one: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Image URL 2</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={editedOffer.image_two}
+                        onChange={(e) => setEditedOffer({ ...editedOffer, image_two: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Image URL 3</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={editedOffer.image_three}
+                        onChange={(e) => setEditedOffer({ ...editedOffer, image_three: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Image URL 4</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={editedOffer.image_four}
+                        onChange={(e) => setEditedOffer({ ...editedOffer, image_four: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Hotel Name</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={editedOffer.hotel.name}
+                        onChange={(e) =>
+                          setEditedOffer({ ...editedOffer, hotel: { ...editedOffer.hotel, name: e.target.value } })
+                        }
+                      />
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Hotel Bedrooms</Form.Label>
+                      <Form.Control
+                        type="number"
+                        value={editedOffer.hotel.bedrooms}
+                        onChange={(e) =>
+                          setEditedOffer({
+                            ...editedOffer,
+                            hotel: { ...editedOffer.hotel, bedrooms: parseInt(e.target.value) },
+                          })
+                        }
+                      />
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Hotel Bathrooms</Form.Label>
+                      <Form.Control
+                        type="number"
+                        value={editedOffer.hotel.bathrooms}
+                        onChange={(e) =>
+                          setEditedOffer({
+                            ...editedOffer,
+                            hotel: { ...editedOffer.hotel, bathrooms: parseInt(e.target.value) },
+                          })
+                        }
+                      />
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Hotel Amenities</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={editedOffer.hotel.amenities.join(", ")}
+                        onChange={(e) =>
+                          setEditedOffer({
+                            ...editedOffer,
+                            hotel: { ...editedOffer.hotel, amenities: e.target.value.split(", ") },
+                          })
+                        }
+                      />
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>Host Name</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={editedOffer.host.name}
+                        onChange={(e) =>
+                          setEditedOffer({ ...editedOffer, host: { ...editedOffer.host, name: e.target.value } })
+                        }
+                      />
+                    </Form.Group>
+                  </Form>
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={() => setIsModalOpen(false)}>
+                    Close
+                  </Button>
+                  <Button variant="primary" onClick={handleUpdateOffer}>
+                    Save
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+            )}
+          </div>
           <Col md={8}>
             <h4>Dove alloggerai</h4>
             <Row>

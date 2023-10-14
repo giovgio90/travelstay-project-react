@@ -108,7 +108,7 @@ const Header = () => {
                       <span className="text-white me-2">
                         {username.gender === "female" ? "Benvenuta," : "Benvenuto,"} {username.username}
                       </span>
-                      <Link to="/" onClick={handleLogout}>
+                      <Link to="/login" onClick={handleLogout}>
                         <Button variant="trasparent" className="text-white align-self-center pt-0">
                           Logout
                         </Button>
