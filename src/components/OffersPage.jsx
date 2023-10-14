@@ -195,7 +195,7 @@ const OffersPage = ({ travel }) => {
                           className="text-white px-2 mx-2 rounded-2"
                           style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
                         >
-                          {offer.duration.toUpperCase()}
+                          {offer.duration ? offer.duration.toUpperCase() : ""}
                         </span>
                       </Card.Text>
                       <Card.Text className="pt-auto mb-0">

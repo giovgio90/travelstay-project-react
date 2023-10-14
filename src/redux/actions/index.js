@@ -8,6 +8,9 @@ export const UPDATE_TRAVEL_FAILURE = "UPDATE_TRAVEL_FAILURE";
 export const FETCH_STAY_REQUEST = "FETCH_STAY_REQUEST";
 export const FETCH_STAY_SUCCESS = "FETCH_STAY_SUCCESS";
 export const FETCH_STAY_FAILURE = "FETCH_STAY_FAILURE";
+export const UPDATE_STAY_REQUEST = "UPDATE_TRAVEL_REQUEST";
+export const UPDATE_STAY_SUCCESS = "UPDATE_TRAVEL_SUCCESS";
+export const UPDATE_STAY_FAILURE = "UPDATE_TRAVEL_FAILURE";
 
 export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
@@ -87,6 +90,26 @@ export const fetchstayOffers = () => async (dispatch) => {
     dispatch({ type: FETCH_STAY_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: FETCH_STAY_FAILURE, payload: error.message });
+  }
+};
+
+export const updateStayOffer = (offerData) => async (dispatch) => {
+  try {
+    dispatch({ type: UPDATE_TRAVEL_REQUEST });
+
+    const response = await fetch(`http://localhost:3030/hotels/${offerData.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(offerData),
+    });
+
+    const data = await response.json();
+
+    dispatch({ type: UPDATE_TRAVEL_SUCCESS, payload: data });
+  } catch (error) {
+    dispatch({ type: UPDATE_TRAVEL_FAILURE, payload: error.message });
   }
 };
 

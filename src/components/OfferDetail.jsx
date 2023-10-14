@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Header from "./Header";
 import { Button, Card, Carousel, Col, Container, Form, Modal, Row } from "react-bootstrap";
@@ -95,7 +95,9 @@ const OfferDetail = () => {
   return (
     <>
       <Header />
+
       <Container className={homeClassName}>
+        <Link to="/explore">Torna alle offerte</Link>
         <h4 className="d-flex align-items-center">
           <PinMapFill className="me-2" style={{ fontSize: "1.4rem" }} />
           {offer.destination}

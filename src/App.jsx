@@ -8,6 +8,7 @@ import LoginTravel from "./components/LoginTravel";
 import Cart from "./components/Cart";
 import RegisterPage from "./components/RegisterPage";
 import SearchResults from "./components/SearchResults";
+import OfferStayDetail from "./components/OfferStayDetail";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/results/:query" element={<SearchResults />} />
           <Route path="/explore" element={<OffersPage />} />
           <Route path="/explore/:id" element={<OfferDetail />} />
+          <Route path="/stay-offer/:stayId" element={<OfferStayDetail />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>

@@ -719,6 +719,7 @@
       "name": "Grand Hotel Paris",
       "city": "Paris",
       "type": "Hotel",
+      "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/88/f5/18716db0af813c769c3529b6617ff7557422c1841a46f1fbf3c3ae7f8381.jpeg",
       "bedrooms": 2,
       "bathrooms": 2,
       "guests": 4,
@@ -741,18 +742,14 @@
         }
       ],
       "images": [
-        "https://example.com/hotel1-image1.jpg",
-        "https://example.com/hotel1-image2.jpg",
-        "https://example.com/hotel1-image3.jpg",
-        "https://example.com/hotel1-image4.jpg"
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/88/f5/18716db0af813c769c3529b6617ff7557422c1841a46f1fbf3c3ae7f8381.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/ce/70/33dec22e66c60f4e8e3ba8d29bfccd4d7ee9f62792c3765f4127116f8dfd.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/df/b9/ec7e9b1e00672daa6d553354b5dd4dcb3839abbca4f410f792692c2afa7c.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/bb/b8/2e6f5e284fe51dcdabb95dc84ab9468c06ef5f0ef92eb36bfb2dc333813f.jpeg"
       ],
       "price_per_adult": 200,
       "price_per_child": 100,
-      "host": {
-        "name": "Emily",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "Emilia"
     },
     {
       "id": 2,
@@ -785,13 +782,9 @@
         "https://example.com/hotel2-image3.jpg",
         "https://example.com/hotel2-image4.jpg"
       ],
-      "price_per_adult": 300,
+      "price_per_adult": "290",
       "price_per_child": 150,
-      "host": {
-        "name": "Michael",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "Michael"
     },
     {
       "id": 3,
@@ -826,15 +819,11 @@
       ],
       "price_per_adult": 250,
       "price_per_child": 120,
-      "host": {
-        "name": "Daniel",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "Daniel"
     },
     {
       "id": 4,
-      "name": "Beachfront Paradise Resort",
+      "name": "Beachfront Paradise Resortr",
       "city": "Maui",
       "type": "Resort",
       "bedrooms": 5,
@@ -863,13 +852,9 @@
         "https://example.com/hotel4-image3.jpg",
         "https://example.com/hotel4-image4.jpg"
       ],
-      "price_per_adult": 350,
+      "price_per_adult": "400",
       "price_per_child": 180,
-      "host": {
-        "name": "Sophia",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "Sophia"
     },
     {
       "id": 5,
@@ -904,11 +889,7 @@
       ],
       "price_per_adult": 180,
       "price_per_child": 90,
-      "host": {
-        "name": "Olivia",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "Maria"
     },
     {
       "id": 6,
@@ -942,11 +923,7 @@
       ],
       "price_per_adult": 220,
       "price_per_child": 110,
-      "host": {
-        "name": "Liam",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "Liam"
     },
     {
       "id": 7,
@@ -981,11 +958,7 @@
       ],
       "price_per_adult": 400,
       "price_per_child": 200,
-      "host": {
-        "name": "Ava",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "Ava"
     },
     {
       "id": 8,
@@ -1020,11 +993,7 @@
       ],
       "price_per_adult": 280,
       "price_per_child": 140,
-      "host": {
-        "name": "Noah",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "Noah"
     },
     {
       "id": 9,
@@ -1059,11 +1028,7 @@
       ],
       "price_per_adult": 190,
       "price_per_child": 95,
-      "host": {
-        "name": "Oliver",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "Oliver"
     },
     {
       "id": 10,
@@ -1097,11 +1062,7 @@
       ],
       "price_per_adult": 210,
       "price_per_child": 105,
-      "host": {
-        "name": "Emma",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "Emma"
     },
     {
       "id": 11,
@@ -1136,11 +1097,7 @@
       ],
       "price_per_adult": 320,
       "price_per_child": 160,
-      "host": {
-        "name": "William",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "William"
     },
     {
       "id": 12,
@@ -1175,11 +1132,7 @@
       ],
       "price_per_adult": 380,
       "price_per_child": 190,
-      "host": {
-        "name": "Olivia",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "Olivia"
     },
     {
       "id": 13,
@@ -1214,11 +1167,7 @@
       ],
       "price_per_adult": 190,
       "price_per_child": 95,
-      "host": {
-        "name": "Oliver",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "Oliver"
     },
     {
       "id": 14,
@@ -1253,11 +1202,7 @@
       ],
       "price_per_adult": 220,
       "price_per_child": 110,
-      "host": {
-        "name": "Liam",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "Liam"
     },
     {
       "id": 15,
@@ -1292,11 +1237,7 @@
       ],
       "price_per_adult": 350,
       "price_per_child": 180,
-      "host": {
-        "name": "Sophia",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "Sophia"
     },
     {
       "id": 16,
@@ -1330,11 +1271,7 @@
       ],
       "price_per_adult": 210,
       "price_per_child": 105,
-      "host": {
-        "name": "Emma",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "Emma"
     },
     {
       "id": 17,
@@ -1369,11 +1306,7 @@
       ],
       "price_per_adult": 320,
       "price_per_child": 160,
-      "host": {
-        "name": "William",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "William"
     },
     {
       "id": 18,
@@ -1408,11 +1341,7 @@
       ],
       "price_per_adult": 300,
       "price_per_child": 150,
-      "host": {
-        "name": "Sophia",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "Sophia"
     },
     {
       "id": 19,
@@ -1447,11 +1376,7 @@
       ],
       "price_per_adult": 280,
       "price_per_child": 140,
-      "host": {
-        "name": "Daniel",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "Daniel"
     },
     {
       "id": 20,
@@ -1485,11 +1410,7 @@
       ],
       "price_per_adult": 220,
       "price_per_child": 110,
-      "host": {
-        "name": "Liam",
-        "superhost": true,
-        "verified": true
-      }
+      "host": "Liam"
     }
   ],
   "register": [
