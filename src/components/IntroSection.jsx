@@ -1,7 +1,16 @@
 import { Col, Container, Row } from "react-bootstrap";
 import BestTours from "./BestTours";
+import { useEffect, useState } from "react";
+import LoadingCard from "./LoadingCard";
 
 const IntroSection = () => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    // Simula il caricamento con un timeout (puoi rimuovere questo blocco in un'applicazione reale)
+    setTimeout(() => {
+      setLoading(false); // Imposta il caricamento su false per indicare che il caricamento è completo
+    }, 1000); // Simula un tempo di caricamento di 2 secondi
+  }, []);
   return (
     <Container>
       <Row className="justify-content-center pt-3">
@@ -15,7 +24,23 @@ const IntroSection = () => {
           </div>
         </Col>
       </Row>
-      <BestTours />
+      {loading ? (
+        <div className="d-flex">
+          <Row className="w-100">
+            <Col xs={12} md={12} lg={4}>
+              <LoadingCard />
+            </Col>
+            <Col xs={12} md={12} lg={4}>
+              <LoadingCard />
+            </Col>
+            <Col xs={12} md={12} lg={4}>
+              <LoadingCard />
+            </Col>
+          </Row>
+        </div>
+      ) : (
+        <BestTours />
+      )}
     </Container>
   );
 };

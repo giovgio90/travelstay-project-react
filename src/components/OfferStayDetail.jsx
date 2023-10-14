@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import Logo from "../assets/Logo.png";
 import FooterTravelStay from "./FooterTravelStay";
 import ReservationFormTwo from "./ReservationFormTwo";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { setUser, updateStayOffer } from "../redux/actions";
 
 const OfferStayDetail = () => {

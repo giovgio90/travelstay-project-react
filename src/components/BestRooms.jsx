@@ -1,7 +1,8 @@
 import { Button, Card, Col, Container, Modal, Row } from "react-bootstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateRoom } from "../redux/actions";
+import LoadingCard from "./LoadingCard";
 
 const BestRooms = () => {
   const roomData = useSelector((state) => state.rooms);
@@ -16,6 +17,8 @@ const BestRooms = () => {
   const cleanedEmail = user && user.email ? user.email.trim().toLowerCase() : "";
   const isAdmin = cleanedEmail === "giovanni@gmail.com";
   // console.log(isAdmin);
+
+  const [loading, setLoading] = useState(true);
 
   const handleOpenModal = (room) => {
     if (isAdmin) {
@@ -40,6 +43,13 @@ const BestRooms = () => {
     }
   };
 
+  useEffect(() => {
+    // Simula il caricamento con un timeout (puoi rimuovere questo blocco in un'applicazione reale)
+    setTimeout(() => {
+      setLoading(false); // Imposta il caricamento su false per indicare che il caricamento è completo
+    }, 2000); // Simula un tempo di caricamento di 2 secondi
+  }, []);
+
   return (
     <Container className="mt-4">
       <h3 className="text-center mb-4" style={{ fontSize: "2.1rem" }}>
@@ -48,22 +58,29 @@ const BestRooms = () => {
       <Row>
         {roomData.map((room) => (
           <Col key={room.id} xs={12} md={6} lg={3}>
-            <Card className="hover-scale bg-dark text-white text-center border-0 me-2 my-3" style={{ height: "400px" }}>
-              <Card.Img src={room.image} alt={room.name} style={{ objectFit: "cover", height: "100%" }} />
-              <Card.ImgOverlay className="card-tours d-flex flex-column justify-content-center align-items-center">
-                <div className="mt-auto">
-                  <Card.Text>{room.price}</Card.Text>
-                  {isAdmin && (
-                    <Button variant="primary" size="sm" className="ms-2" onClick={() => handleOpenModal(room)}>
-                      Modifica
-                    </Button>
-                  )}
-                </div>
-                <div className="mt-auto">
-                  <Button className="btn-tours">{room.name}</Button>
-                </div>
-              </Card.ImgOverlay>
-            </Card>
+            {loading ? ( // Mostra il componente di caricamento durante il caricamento
+              <LoadingCard />
+            ) : (
+              <Card
+                className="hover-scale bg-dark text-white text-center border-0 me-2 my-3"
+                style={{ height: "400px" }}
+              >
+                <Card.Img src={room.image} alt={room.name} style={{ objectFit: "cover", height: "100%" }} />
+                <Card.ImgOverlay className="card-tours d-flex flex-column justify-content-center align-items-center">
+                  <div className="mt-auto">
+                    <Card.Text>{room.price}</Card.Text>
+                    {isAdmin && (
+                      <Button variant="primary" size="sm" className="ms-2" onClick={() => handleOpenModal(room)}>
+                        Modifica
+                      </Button>
+                    )}
+                  </div>
+                  <div className="mt-auto">
+                    <Button className="btn-tours">{room.name}</Button>
+                  </div>
+                </Card.ImgOverlay>
+              </Card>
+            )}
           </Col>
         ))}
       </Row>

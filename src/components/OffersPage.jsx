@@ -20,6 +20,7 @@ import Logo from "../assets/Logo.png";
 import { Link } from "react-router-dom";
 import FooterTravelStay from "./FooterTravelStay";
 import StayOffers from "./StayOffers";
+import LoadingCard from "./LoadingCard";
 
 const OffersPage = ({ travel }) => {
   const dispatch = useDispatch();
@@ -31,6 +32,7 @@ const OffersPage = ({ travel }) => {
   const [selectedBudget, setSelectedBudget] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editedOffer, setEditedOffer] = useState(null);
+  const loading = useSelector((state) => state.travel.loading);
 
   const handleSelect = (item) => {
     setSelectedItem(item);
@@ -166,71 +168,75 @@ const OffersPage = ({ travel }) => {
                 : travelData.slice(0, visibleOffers)
               ).map((offer, id) => (
                 <Col key={id} xs={12} md={6} lg={3}>
-                  <Card className="offer-card mb-4 border-0">
-                    <Card.Img
-                      variant="top"
-                      src={offer.image}
-                      className="border-0 image-hover-scale"
-                      style={{ height: "230px", objectFit: "cover" }}
-                    />
-                    <Card.Body className="pb-2">
-                      <div className="d-flex">
-                        <Card.Title style={{ fontSize: "1.2rem" }}>{offer.destination}</Card.Title>
-                        {isAdmin && (
-                          <Button
-                            variant="primary"
-                            className="ms-auto"
-                            onClick={() => {
-                              setEditedOffer(offer);
-                              setIsModalOpen(true);
-                            }}
+                  {loading ? (
+                    <LoadingCard />
+                  ) : (
+                    <Card className="offer-card mb-4 border-0">
+                      <Card.Img
+                        variant="top"
+                        src={offer.image}
+                        className="border-0 image-hover-scale"
+                        style={{ height: "230px", objectFit: "cover" }}
+                      />
+                      <Card.Body className="pb-2">
+                        <div className="d-flex">
+                          <Card.Title style={{ fontSize: "1.2rem" }}>{offer.destination}</Card.Title>
+                          {isAdmin && (
+                            <Button
+                              variant="primary"
+                              className="ms-auto"
+                              onClick={() => {
+                                setEditedOffer(offer);
+                                setIsModalOpen(true);
+                              }}
+                            >
+                              Modifica
+                            </Button>
+                          )}
+                        </div>
+                        <Card.Text>
+                          <strong style={{ fontWeight: "500" }}>Durata:</strong>
+                          <span
+                            className="text-white px-2 mx-2 rounded-2"
+                            style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
                           >
-                            Modifica
-                          </Button>
-                        )}
-                      </div>
-                      <Card.Text>
-                        <strong style={{ fontWeight: "500" }}>Durata:</strong>
-                        <span
-                          className="text-white px-2 mx-2 rounded-2"
-                          style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
+                            {offer.duration ? offer.duration.toUpperCase() : ""}
+                          </span>
+                        </Card.Text>
+                        <Card.Text className="pt-auto mb-0">
+                          <strong style={{ fontWeight: "500" }}>Prezzo:</strong>
+                          <span
+                            className="text-white px-2 mx-2 rounded-2"
+                            style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
+                          >
+                            {offer.price}€
+                          </span>
+                          <span className="ps-0">adulti</span>
+                        </Card.Text>
+                        <Card.Text>
+                          <strong style={{ fontWeight: "500" }}>Prezzo:</strong>
+                          <span
+                            className="text-white px-2 mx-2 rounded-2"
+                            style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
+                          >
+                            {offer.price_per_child}€
+                          </span>
+                          <span className="ps-0">bambini</span>
+                        </Card.Text>
+                      </Card.Body>
+                      <Link to={`/explore/${offer.id}`} key={id} className="text-center">
+                        <Button
+                          variant="trasparent"
+                          className="mx-auto pt-0 pb-2 w-50"
+                          style={{
+                            fontWeight: "500",
+                          }}
                         >
-                          {offer.duration ? offer.duration.toUpperCase() : ""}
-                        </span>
-                      </Card.Text>
-                      <Card.Text className="pt-auto mb-0">
-                        <strong style={{ fontWeight: "500" }}>Prezzo:</strong>
-                        <span
-                          className="text-white px-2 mx-2 rounded-2"
-                          style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
-                        >
-                          {offer.price}€
-                        </span>
-                        <span className="ps-0">adulti</span>
-                      </Card.Text>
-                      <Card.Text>
-                        <strong style={{ fontWeight: "500" }}>Prezzo:</strong>
-                        <span
-                          className="text-white px-2 mx-2 rounded-2"
-                          style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
-                        >
-                          {offer.price_per_child}€
-                        </span>
-                        <span className="ps-0">bambini</span>
-                      </Card.Text>
-                    </Card.Body>
-                    <Link to={`/explore/${offer.id}`} key={id} className="text-center">
-                      <Button
-                        variant="trasparent"
-                        className="mx-auto pt-0 pb-2 w-50"
-                        style={{
-                          fontWeight: "500",
-                        }}
-                      >
-                        Scopri di più
-                      </Button>
-                    </Link>
-                  </Card>
+                          Scopri di più
+                        </Button>
+                      </Link>
+                    </Card>
+                  )}
                 </Col>
               ))}
             {(selectedItem === "Elemento 1" || selectedItem === "Elemento 3") &&

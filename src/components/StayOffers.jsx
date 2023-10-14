@@ -3,6 +3,7 @@ import { Button, Card, Col, Container, Modal, Row, Form } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchstayOffers, updateStayOffer } from "../redux/actions";
+import LoadingCard from "./LoadingCard";
 
 const StayOffers = ({ selectedBudget }) => {
   const dispatch = useDispatch();
@@ -10,6 +11,7 @@ const StayOffers = ({ selectedBudget }) => {
   const [visibleOffers, setVisibleOffers] = useState(8);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editedOffer, setEditedOffer] = useState(null);
+  const loading = useSelector((state) => state.stay.loading);
 
   const username = useSelector((state) => state.user.username);
 
@@ -44,90 +46,94 @@ const StayOffers = ({ selectedBudget }) => {
         {filteredOffers.length > 0 ? (
           filteredOffers.slice(0, visibleOffers).map((offer, id) => (
             <Col key={id} xs={12} md={6} lg={3}>
-              <Card className="offer-card mb-4 border-0">
-                <Card.Img
-                  variant="top"
-                  src={offer.image}
-                  className="border-0"
-                  style={{ height: "230px", objectFit: "cover" }}
-                />
-                <Card.Body className="pb-2">
-                  <div className="d-flex">
-                    <Card.Title style={{ fontSize: "1.2rem" }}>{offer.name}</Card.Title>
-                    {isAdmin && (
-                      <Button
-                        variant="primary"
-                        className="ms-auto"
-                        onClick={() => {
-                          setEditedOffer(offer);
-                          setIsModalOpen(true);
-                        }}
+              {loading ? (
+                <LoadingCard />
+              ) : (
+                <Card className="offer-card mb-4 border-0">
+                  <Card.Img
+                    variant="top"
+                    src={offer.image}
+                    className="border-0"
+                    style={{ height: "230px", objectFit: "cover" }}
+                  />
+                  <Card.Body className="pb-2">
+                    <div className="d-flex">
+                      <Card.Title style={{ fontSize: "1.2rem" }}>{offer.name}</Card.Title>
+                      {isAdmin && (
+                        <Button
+                          variant="primary"
+                          className="ms-auto"
+                          onClick={() => {
+                            setEditedOffer(offer);
+                            setIsModalOpen(true);
+                          }}
+                        >
+                          Modifica
+                        </Button>
+                      )}
+                    </div>
+                    <Card.Text>
+                      <strong style={{ fontWeight: "500" }}>Località:</strong>
+                      <span
+                        className="text-white px-2 mx-2 rounded-2"
+                        style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
                       >
-                        Modifica
-                      </Button>
-                    )}
-                  </div>
-                  <Card.Text>
-                    <strong style={{ fontWeight: "500" }}>Località:</strong>
-                    <span
-                      className="text-white px-2 mx-2 rounded-2"
-                      style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
-                    >
-                      {offer.city}
-                    </span>
-                  </Card.Text>
-                  <Card.Text>
-                    <strong style={{ fontWeight: "500" }}>Host:</strong>
-                    <span
-                      className="text-white px-2 mx-2 rounded-2"
-                      style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
-                    >
-                      {offer.host}
-                    </span>
-                  </Card.Text>
-                  <Card.Text>
-                    <strong style={{ fontWeight: "500" }}>Tipo struttura:</strong>
-                    <span
-                      className="text-white px-2 mx-2 rounded-2"
-                      style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
-                    >
-                      {offer.type}
-                    </span>
-                  </Card.Text>
+                        {offer.city}
+                      </span>
+                    </Card.Text>
+                    <Card.Text>
+                      <strong style={{ fontWeight: "500" }}>Host:</strong>
+                      <span
+                        className="text-white px-2 mx-2 rounded-2"
+                        style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
+                      >
+                        {offer.host}
+                      </span>
+                    </Card.Text>
+                    <Card.Text>
+                      <strong style={{ fontWeight: "500" }}>Tipo struttura:</strong>
+                      <span
+                        className="text-white px-2 mx-2 rounded-2"
+                        style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
+                      >
+                        {offer.type}
+                      </span>
+                    </Card.Text>
 
-                  <Card.Text className="pt-auto mb-0">
-                    <strong style={{ fontWeight: "500" }}>Prezzo:</strong>
-                    <span
-                      className="text-white px-2 mx-2 rounded-2"
-                      style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
+                    <Card.Text className="pt-auto mb-0">
+                      <strong style={{ fontWeight: "500" }}>Prezzo:</strong>
+                      <span
+                        className="text-white px-2 mx-2 rounded-2"
+                        style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
+                      >
+                        ${offer.price_per_adult}
+                      </span>
+                      <span className="ps-0">adulti</span>
+                    </Card.Text>
+                    <Card.Text>
+                      <strong style={{ fontWeight: "500" }}>Prezzo:</strong>
+                      <span
+                        className="text-white px-2 mx-2 rounded-2"
+                        style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
+                      >
+                        ${offer.price_per_child}
+                      </span>
+                      <span className="ps-0">bambini</span>
+                    </Card.Text>
+                  </Card.Body>
+                  <Link to={`/stay-offer/${offer.id}`} key={id} className="text-center">
+                    <Button
+                      variant="trasparent"
+                      className="mx-auto pt-0 pb-2 w-50"
+                      style={{
+                        fontWeight: "500",
+                      }}
                     >
-                      ${offer.price_per_adult}
-                    </span>
-                    <span className="ps-0">adulti</span>
-                  </Card.Text>
-                  <Card.Text>
-                    <strong style={{ fontWeight: "500" }}>Prezzo:</strong>
-                    <span
-                      className="text-white px-2 mx-2 rounded-2"
-                      style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
-                    >
-                      ${offer.price_per_child}
-                    </span>
-                    <span className="ps-0">bambini</span>
-                  </Card.Text>
-                </Card.Body>
-                <Link to={`/stay-offer/${offer.id}`} key={id} className="text-center">
-                  <Button
-                    variant="trasparent"
-                    className="mx-auto pt-0 pb-2 w-50"
-                    style={{
-                      fontWeight: "500",
-                    }}
-                  >
-                    Scopri di più
-                  </Button>
-                </Link>
-              </Card>
+                      Scopri di più
+                    </Button>
+                  </Link>
+                </Card>
+              )}
             </Col>
           ))
         ) : (

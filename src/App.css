@@ -90,6 +90,11 @@
   animation: appear 5s linear forwards, zoom 1s 0.5s linear infinite alternate;
 }
 
+/*LOADING */
+.card-loading {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 @keyframes appear {
   0% {
     opacity: 0;
