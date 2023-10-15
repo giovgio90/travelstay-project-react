@@ -84,13 +84,13 @@ const OffersPage = ({ travel }) => {
               <Nav.Link className="pe-lg-5 text-white" href="/">
                 HOME
               </Nav.Link>
-              <Nav.Link className="pe-lg-5 text-white" href="#about-us">
+              <Nav.Link className="pe-lg-5 text-white" href="/about-us">
                 CHI SIAMO
               </Nav.Link>
               <Nav.Link className="pe-lg-5 text-white" href="/explore">
                 OFFERTE
               </Nav.Link>
-              <Nav.Link className="pe-lg-5 text-white" href="#contact">
+              <Nav.Link className="pe-lg-5 text-white" href="/contact">
                 CONTATTI
               </Nav.Link>
             </Nav>

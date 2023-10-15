@@ -9,6 +9,8 @@ import Cart from "./components/Cart";
 import RegisterPage from "./components/RegisterPage";
 import SearchResults from "./components/SearchResults";
 import OfferStayDetail from "./components/OfferStayDetail";
+import ContactPage from "./components/ContactPage";
+import AboutUsPage from "./components/AboutUsPage";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginTravel />} />
           <Route path="/" element={<HomePage />} />
+          <Route path="/about-us" element={<AboutUsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/results/:query" element={<SearchResults />} />
           <Route path="/explore" element={<OffersPage />} />
           <Route path="/explore/:id" element={<OfferDetail />} />

@@ -56,6 +56,11 @@
           "user": "Michele",
           "rating": 5,
           "comment": "Viaggio indimenticabile!!"
+        },
+        {
+          "user": "Giovanni",
+          "rating": 5,
+          "comment": "Mi è piaciuto molto"
         }
       ],
       "cancellation_policy": "Moderata",
@@ -739,6 +744,11 @@
           "user": "TravelerX",
           "rating": 4,
           "comment": "Great amenities and friendly staff."
+        },
+        {
+          "user": "Giovanni",
+          "rating": 4,
+          "comment": "Molto bello"
         }
       ],
       "images": [
@@ -749,7 +759,12 @@
       ],
       "price_per_adult": 200,
       "price_per_child": 100,
-      "host": "Emilia"
+      "host": "Emilia",
+      "review": {
+        "user": "Giovanni12",
+        "rating": 5,
+        "comment": "Che meraviglia!"
+      }
     },
     {
       "id": 2,

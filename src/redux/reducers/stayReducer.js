@@ -5,6 +5,8 @@ import {
   UPDATE_STAY_REQUEST,
   UPDATE_STAY_SUCCESS,
   UPDATE_STAY_FAILURE,
+  ADD_REVIEW_SUCCESS,
+  ADD_REVIEW_FAILURE,
 } from "../actions";
 
 const initialState = {
@@ -48,6 +50,29 @@ const stayReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         data: [],
+        error: action.payload,
+      };
+    case ADD_REVIEW_SUCCESS:
+      // Aggiorna le recensioni con la nuova recensione aggiunta
+      const updatedDataWithReview = state.data.map((stay) => {
+        if (stay.id === action.payload.stayId) {
+          return {
+            ...stay,
+            reviews: [...stay.reviews, action.payload.review],
+          };
+        }
+        return stay;
+      });
+
+      return {
+        ...state,
+        data: updatedDataWithReview,
+      };
+
+    case ADD_REVIEW_FAILURE:
+      // Gestisci l'errore qui se necessario
+      return {
+        ...state,
         error: action.payload,
       };
     default:

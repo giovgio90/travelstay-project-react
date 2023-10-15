@@ -5,7 +5,8 @@ import Logo from "../assets/Logo.png";
 import FooterTravelStay from "./FooterTravelStay";
 import ReservationFormTwo from "./ReservationFormTwo";
 import { useState } from "react";
-import { setUser, updateStayOffer } from "../redux/actions";
+import { addReviewFailure, addReviewSuccess, setUser, updateStayOffer } from "../redux/actions";
+import { StarFill } from "react-bootstrap-icons";
 
 const OfferStayDetail = () => {
   const { stayId } = useParams();
@@ -21,6 +22,8 @@ const OfferStayDetail = () => {
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editedOffer, setEditedOffer] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [newReview, setNewReview] = useState([{ user: username.username, rating: "", comment: "" }]);
 
   const offer = travelData.find((offer) => offer.id.toString() === stayId);
 
@@ -38,6 +41,47 @@ const OfferStayDetail = () => {
       dispatch(updateStayOffer(editedOffer));
       setIsModalOpen(false);
     }
+  };
+
+  const handleAddReview = async (e) => {
+    e.preventDefault();
+
+    if (newReview.rating && newReview.comment) {
+      const reviewToAdd = {
+        user: username.username,
+        rating: parseFloat(newReview.rating),
+        comment: newReview.comment,
+      };
+
+      try {
+        const response = await fetch(`http://localhost:3030/hotels/${stayId}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ review: reviewToAdd }),
+        });
+
+        if (response.ok) {
+          // La recensione è stata aggiunta con successo sul server
+          dispatch(addReviewSuccess({ stayId: offer.id, review: reviewToAdd }));
+        } else {
+          // Gestisci l'errore in caso di errore di risposta dal server
+          console.error("Errore nell'aggiunta della recensione:", response.statusText);
+          dispatch(addReviewFailure("Errore nell'aggiunta della recensione"));
+        }
+      } catch (error) {
+        // Gestisci l'errore in caso di errore di rete o simile
+        console.error("Errore nell'aggiunta della recensione:", error);
+        dispatch(addReviewFailure("Errore nell'aggiunta della recensione"));
+      }
+    } else {
+      // Gestisci qui il caso in cui i dati della recensione non siano validi
+    }
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -58,13 +102,13 @@ const OfferStayDetail = () => {
               <Nav.Link className="pe-lg-5 text-white" href="/">
                 HOME
               </Nav.Link>
-              <Nav.Link className="pe-lg-5 text-white" href="#about-us">
+              <Nav.Link className="pe-lg-5 text-white" href="/about-us">
                 CHI SIAMO
               </Nav.Link>
               <Nav.Link className="pe-lg-5 text-white" href="/explore">
                 OFFERTE
               </Nav.Link>
-              <Nav.Link className="pe-lg-5 text-white" href="#contact">
+              <Nav.Link className="pe-lg-5 text-white" href="/contact">
                 CONTATTI
               </Nav.Link>
             </Nav>
@@ -240,8 +284,75 @@ const OfferStayDetail = () => {
           )}
           <Row>
             <Col md={8}>
+              <Button className="py-0" variant="trasparent" onClick={() => setShowModal(true)}>
+                {offer.reviews.length > 0 && (
+                  <span className="d-flex" style={{ marginLeft: "5px" }}>
+                    <div>
+                      <StarFill className="pb-1" style={{ color: "yellow", fontSize: "1.2rem" }} />{" "}
+                    </div>
+                    <div>
+                      <strong>
+                        {(
+                          offer.reviews.reduce((total, review) => total + review.rating, 0) / offer.reviews.length
+                        ).toFixed(2)}
+                      </strong>
+                      {"  "} {offer.reviews.length} recensioni
+                    </div>
+                  </span>
+                )}
+              </Button>
+              <div className="me-auto">
+                <Modal show={showModal} onHide={handleCloseModal}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Recensioni</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    {offer.reviews.map((review, index) => (
+                      <div key={index}>
+                        <h5>{review.user}</h5>
+                        <p>Rating: {review.rating}</p>
+                        <p>{review.comment}</p>
+                      </div>
+                    ))}
+                    <Form onSubmit={handleAddReview}>
+                      <Form.Group>
+                        <Form.Label>{username.username}</Form.Label>
+                      </Form.Group>
+                      <Form.Group>
+                        <Form.Label>Valutazione</Form.Label>
+                        <Form.Control
+                          type="number"
+                          placeholder="Inserisci la tua valutazione"
+                          value={newReview.rating}
+                          onChange={(e) => setNewReview({ ...newReview, rating: e.target.value })}
+                        />
+                      </Form.Group>
+                      <Form.Group>
+                        <Form.Label>Commento</Form.Label>
+                        <Form.Control
+                          as="textarea"
+                          rows={3}
+                          placeholder="Inserisci il tuo commento"
+                          value={newReview.comment}
+                          onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
+                        />
+                      </Form.Group>
+                      <Button variant="primary" type="submit">
+                        Aggiungi Recensione
+                      </Button>
+                    </Form>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={handleCloseModal}>
+                      Chiudi
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
+                <p>{offer.description}</p>
+              </div>
               <Card>
                 <Card.Img src={offer.images[0]} alt={offer.name} />
+
                 <Card.Body>
                   <Card.Title>{offer.name}</Card.Title>
                   <Card.Text>Località: {offer.city}</Card.Text>

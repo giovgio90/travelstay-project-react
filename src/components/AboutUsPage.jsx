@@ -1,80 +1,20 @@
-import { Button, Col, Container, Form, Nav, Navbar, Row } from "react-bootstrap";
+import { Container, Row, Col, Image, Navbar, Nav, Form, Button } from "react-bootstrap";
 import Logo from "../assets/Logo.png";
-import React, { useEffect, useState } from "react";
+import { setUser } from "../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchTravelOffers, setUser } from "../redux/actions";
+import FooterTravelStay from "./FooterTravelStay";
 
-const Header = () => {
-  const [isSticky, setIsSticky] = useState(false);
+const AboutUsPage = () => {
   const username = useSelector((state) => state.user.username);
-  const travelData = useSelector((state) => state.travel.data);
   const dispatch = useDispatch();
 
   const handleLogout = () => {
     dispatch(setUser(null));
   };
-
-  useEffect(() => {
-    dispatch(fetchTravelOffers());
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [dispatch]);
-
-  const handleScroll = () => {
-    if (window.scrollY > 30) {
-      setIsSticky(true);
-    } else {
-      setIsSticky(false);
-    }
-  };
-
-  const getRandomOffers = (count) => {
-    const shuffledData = [...travelData];
-    for (let i = shuffledData.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffledData[i], shuffledData[j]] = [shuffledData[j], shuffledData[i]];
-    }
-    return shuffledData.slice(0, count);
-  };
-
-  const randomOffers = getRandomOffers(3);
-
-  const headerClassName = `navbar-head py-3 ${isSticky ? "navbar-head" : "sticky-header"}`;
-
   return (
     <>
-      <div className="box-scrolls pt-1">
-        <Container>
-          <Row>
-            <div className="d-flex" style={{ backgroundColor: "#203040" }}>
-              <Col md={4} lg={3} className="text-end">
-                <div className="static-text pe-3">
-                  <h6>Offerte da non perdere:</h6>{" "}
-                </div>
-              </Col>
-              <Col xs={12} md={8} lg={9} className="align-self-center">
-                <div className="scrolling-text-container d-flex">
-                  {randomOffers.map((offer, id) => (
-                    <div key={id} className="scrolling-text">
-                      <h6>
-                        {offer.destination} - {offer.duration} -{" "}
-                        <span className="bg-danger text-white px-1 rounded-3">{offer.price}€</span>
-                      </h6>
-                    </div>
-                  ))}
-                </div>
-              </Col>
-            </div>
-          </Row>
-        </Container>
-      </div>
-
-      <Navbar expand="lg" className={headerClassName}>
+      <Navbar expand="lg" className="navbar-head py-3">
         <Container>
           <Navbar.Brand className="d-flex">
             <div className="me-1">
@@ -132,8 +72,35 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <div style={{ marginTop: "120px", marginBottom: "60px" }}>
+        <Container className="mt-5">
+          <h2>Chi Siamo</h2>
+          <Row className="mt-4">
+            <Col md={6}>
+              <p>
+                Benvenuti su TravelStay! Siamo un'azienda di viaggi specializzata in offerte di viaggi e soggiorno e
+                solo soggiorno, in destinazioni straordinarie di tutta Italia. La nostra missione è rendere le tue
+                vacanze indimenticabili offrendoti i migliori servizi e alloggi di qualità.
+              </p>
+              <p>
+                Con anni di esperienza nel settore dei viaggi, collaboriamo con i migliori alberghi e servizi per
+                offrirti le offerte più convenienti e le esperienze di viaggio più straordinarie.
+              </p>
+              <p>
+                Grazie per aver scelto TravelStay come tua agenzia di viaggi. Siamo entusiasti di aiutarti a pianificare
+                le tue prossime avventure e a creare ricordi indimenticabili. <a href="/contact">Contattaci</a> per
+                qualsiasi domanda o informazione di cui hai bisogno.
+              </p>
+            </Col>
+            <Col md={6}>
+              <Image src="https://via.placeholder.com/400" alt="Chi Siamo" fluid />
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <FooterTravelStay />
     </>
   );
 };
 
-export default Header;
+export default AboutUsPage;

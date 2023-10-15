@@ -11,6 +11,8 @@ export const FETCH_STAY_FAILURE = "FETCH_STAY_FAILURE";
 export const UPDATE_STAY_REQUEST = "UPDATE_TRAVEL_REQUEST";
 export const UPDATE_STAY_SUCCESS = "UPDATE_TRAVEL_SUCCESS";
 export const UPDATE_STAY_FAILURE = "UPDATE_TRAVEL_FAILURE";
+export const ADD_REVIEW_SUCCESS = "ADD_REVIEW_SUCCESS";
+export const ADD_REVIEW_FAILURE = "ADD_REVIEW_FAILURE";
 
 export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
@@ -201,4 +203,14 @@ export const updateRoom = (roomId, name, price) => ({
 export const updateTour = (tourData) => ({
   type: "UPDATE_TOUR",
   payload: tourData,
+});
+
+export const addReviewSuccess = (review) => ({
+  type: ADD_REVIEW_SUCCESS,
+  payload: review,
+});
+
+export const addReviewFailure = (error) => ({
+  type: ADD_REVIEW_FAILURE,
+  payload: error,
 });
