@@ -60,6 +60,11 @@ const BestTours = () => {
             <Card.Img src={tour.imageSrc} alt={tour.title} style={{ objectFit: "cover", height: "100%" }} />
             <Card.ImgOverlay className="card-tours d-flex flex-column justify-content-center align-items-center">
               <div className="mt-auto">
+                {isAdmin && (
+                  <Button variant="primary" size="sm" className="button-search" onClick={() => handleOpenModal(tour)}>
+                    Modifica
+                  </Button>
+                )}
                 <Card.Title className="display-3 pt-3 fw-bolder">
                   {tour.id === editingTourId ? (
                     <input
@@ -72,15 +77,12 @@ const BestTours = () => {
                     tour.title
                   )}
                 </Card.Title>
-                {isAdmin && (
-                  <Button variant="primary" size="sm" className="ms-2" onClick={() => handleOpenModal(tour)}>
-                    Modifica
-                  </Button>
-                )}
               </div>
               <div className="mt-auto">
                 <Card.Text>{tour.price}</Card.Text>
-                <Button className="btn-tours rounded-5">SCOPRI DI PIÚ</Button>
+                <Button className="button-search" style={{ fontWeight: "500" }}>
+                  SCOPRI DI PIÚ
+                </Button>
               </div>
             </Card.ImgOverlay>
           </Card>
@@ -88,12 +90,24 @@ const BestTours = () => {
       ))}
       <Modal show={isModalOpen} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Modifica Tour</Modal.Title>
+          <Modal.Title style={{ fontFamily: "Impact, san-serif", color: "#203040" }}>
+            Modifica anteprima Tour
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group>
-              <Form.Label>Titolo del Tour</Form.Label>
+            <Form.Group className="mb-2">
+              <Form.Label
+                style={{
+                  fontFamily: "Montserrat, sans-serif",
+                  fontSize: "0.9rem",
+                  color: "#203040",
+                  fontWeight: "bolder",
+                }}
+                className="mb-0"
+              >
+                Località
+              </Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Inserisci il titolo del tour"
@@ -102,7 +116,17 @@ const BestTours = () => {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Label>Prezzo del Tour</Form.Label>
+              <Form.Label
+                style={{
+                  fontFamily: "Montserrat, sans-serif",
+                  fontSize: "0.9rem",
+                  color: "#203040",
+                  fontWeight: "bolder",
+                }}
+                className="mb-0"
+              >
+                Prezzo
+              </Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Inserisci il prezzo del tour"
@@ -113,10 +137,10 @@ const BestTours = () => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseModal}>
-            Chiudi
+          <Button className="button-search" onClick={handleCloseModal}>
+            Annulla
           </Button>
-          <Button variant="primary" onClick={handleTourChange}>
+          <Button className="button-search" onClick={handleTourChange}>
             Salva
           </Button>
         </Modal.Footer>

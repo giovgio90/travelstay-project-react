@@ -3,8 +3,9 @@ import { useEffect } from "react";
 import Logo from "../assets/Logo.png";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { fetchResultsOffers, fetchTravelOffers, setUser } from "../redux/actions";
-import { Button, Card, Col, Container, Form, Nav, Navbar, Row } from "react-bootstrap";
+import { Badge, Button, Card, Col, Container, Form, Nav, NavDropdown, Navbar, Row } from "react-bootstrap";
 import FooterTravelStay from "./FooterTravelStay";
+import { AirplaneFill, Cart3, EnvelopeFill, HouseFill, PersonCircle, PersonFill } from "react-bootstrap-icons";
 
 const SearchResults = () => {
   const { query } = useParams();
@@ -17,6 +18,8 @@ const SearchResults = () => {
   const budget = parseFloat(searchParams.get("budget"));
 
   const username = useSelector((state) => state.user.username);
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const cartItemCount = cartItems.length;
 
   const handleLogout = () => {
     dispatch(setUser(null));
@@ -42,46 +45,72 @@ const SearchResults = () => {
 
   return (
     <>
-      <Navbar expand="lg" className="navbar-head py-3">
+      <Navbar expand="lg" className="navbar-head py-0">
         <Container>
           <Navbar.Brand className="d-flex">
-            <div className="me-1">
-              <img src={Logo} width="30" height="40" className="d-inline-block" alt="Logo" />
-            </div>
-            <div className="align-self-center">
-              <h4 className="mb-0 text-white">TRAVELSTAY</h4>
-            </div>
+            <Navbar.Brand className="d-flex  ms-2 me-0 ps-auto p-0">
+              <img src={Logo} width="80" height="80" alt="Logo" />
+            </Navbar.Brand>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="text-sm-center mx-lg-auto">
-              <Nav.Link className="pe-lg-5 text-white" href="/">
-                HOME
+              <Nav.Link className="pe-lg-5 d-flex" href="/">
+                <div className="d-flex align-items-center">
+                  <HouseFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0">HOME</h4>
+                </div>
               </Nav.Link>
-              <Nav.Link className="pe-lg-5 text-white" href="#about-us">
-                CHI SIAMO
+              <Nav.Link className=" pe-lg-5 d-flex" href="/about-us">
+                <div className="d-flex align-items-center">
+                  <PersonFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
+                </div>
               </Nav.Link>
-              <Nav.Link className="pe-lg-5 text-white" href="/explore">
-                OFFERTE
+
+              <Nav.Link className="pe-lg-5 " href="/explore">
+                <div className="nav-link d-flex align-items-center">
+                  <AirplaneFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0">OFFERTE</h4>
+                </div>
               </Nav.Link>
-              <Nav.Link className="pe-lg-5 text-white" href="#contact">
-                CONTATTI
+              <Nav.Link className=" pe-lg-5 " href="/contact">
+                <div className=" nav-link d-flex align-items-center">
+                  <EnvelopeFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0"> CONTATTI</h4>
+                </div>
               </Nav.Link>
             </Nav>
             <Form className="d-flex justify-content-center">
               <Row>
                 <Col>
                   {username ? (
-                    <div>
-                      <span className="text-white me-2">
-                        {username.gender === "female" ? "Benvenuta," : "Benvenuto,"} {username.username}
-                      </span>
-                      <Link to="/" onClick={handleLogout}>
-                        <Button variant="trasparent" className="text-white align-self-center pt-0">
-                          Logout
-                        </Button>
-                      </Link>
-                    </div>
+                    <>
+                      <div className="nav-link d-flex align-items-center">
+                        <Nav.Link href="/cart">
+                          <div className="d-flex align-items-center position-relative">
+                            <Cart3 className="nav-link me-4 text-white" style={{ fontSize: "1.7rem" }} />
+                            {cartItemCount > 0 && (
+                              <Badge
+                                pill
+                                bg="danger"
+                                className="cart-badge position-absolute top-0 end-0 translate-middle"
+                              >
+                                {cartItemCount}
+                              </Badge>
+                            )}
+                          </div>
+                        </Nav.Link>
+                        <PersonCircle className="me-2" style={{ fontSize: "1.5rem" }} />
+                        <NavDropdown title={username.username} id="basic-nav-dropdown">
+                          <NavDropdown.Item as={Link} to="/preferiti">
+                            Preferiti
+                          </NavDropdown.Item>
+                          <NavDropdown.Divider />
+                          <Link to="/login" onClick={handleLogout}>
+                            <Button variant="transparent" className="text-black align-self-center pt-0">
+                              Logout
+                            </Button>
+                          </Link>
+                        </NavDropdown>
+                      </div>
+                    </>
                   ) : (
                     <>
                       <div className="d-flex">
@@ -100,6 +129,7 @@ const SearchResults = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+
       <Container>
         <div className="search-results">
           <h4>Risultati di ricerca per: {query}</h4>

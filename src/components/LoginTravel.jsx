@@ -1,16 +1,28 @@
+import "../login.css";
 import Logo from "../assets/Logo.png";
 import React, { useState } from "react";
-import { Form, Button, Alert, Container, Row, Col, Nav } from "react-bootstrap";
+import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../redux/actions";
 import { Link } from "react-router-dom";
+import RegisterPage from "./RegisterPage";
+import Swal from "sweetalert2";
 
 const LoginTravel = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.username);
-  const [showAlert, setShowAlert] = useState(false);
+
+  const [showRegisterPage, setShowRegisterPage] = useState(false);
+
+  const handleSignUpClick = () => {
+    setShowRegisterPage(true);
+  };
+
+  const handleLoginClick = () => {
+    setShowRegisterPage(false);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,8 +38,13 @@ const LoginTravel = () => {
           dispatch(setUser(foundUser));
           console.log("Accesso riuscito");
         } else {
-          setShowAlert(true);
-          console.log("Utente non trovato");
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Utente non esistente",
+            showConfirmButton: false,
+            timer: 2500,
+          });
         }
       } else {
         console.error("Si è verificato un errore durante l'accesso");
@@ -38,75 +55,136 @@ const LoginTravel = () => {
   };
 
   return (
-    <div className="login">
-      <Container>
-        <Row>
-          <Col md={{ span: 6, offset: 3 }}>
-            <div className=" d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
-              <div className="login-input">
-                <div className="d-flex mb-5">
-                  <div className="me-1">
-                    <img src={Logo} width="25" height="35" className="d-inline-block" alt="Logo" />
-                  </div>
-                  <div className="align-self-center">
-                    <h4 className="mb-0 text-black" style={{ fontSize: "1.3rem" }}>
-                      TRAVELSTAY
-                    </h4>
-                  </div>
-                </div>
-                <Form onSubmit={handleSubmit}>
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Control
-                      style={{ background: "#ffffff90" }}
-                      type="text"
-                      size="sm"
-                      placeholder="Username"
-                      value={username}
-                      onChange={(e) => setUsername(e.target.value)}
-                      className="mb-3"
-                    />
-                  </Form.Group>
-
-                  <Form.Group controlId="formBasicPassword">
-                    <Form.Control
-                      className="mb-3"
-                      size="sm"
-                      style={{ background: "#ffffff90" }}
-                      type="password"
-                      placeholder="Password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      required
-                    />
-                  </Form.Group>
-                  {user ? (
-                    <Link to="/">
-                      <Button variant="success" size="lg" className="btn-explore mt-4 rounded-5 px-5 ">
-                        Accedi
-                      </Button>
-                    </Link>
-                  ) : (
-                    <>
-                      <Button variant="primary" type="submit" size="lg" className="btn-explore mt-4 rounded-5 px-5 ">
-                        Login
-                      </Button>
-                      <Nav.Link className="pe-lg-4 text-white" href="/register">
-                        Registrati
-                      </Nav.Link>
-                      {showAlert && (
-                        <Alert variant="danger" className="mt-3">
-                          Utente non trovato
-                        </Alert>
-                      )}
-                    </>
-                  )}
-                </Form>
+    <section className="user">
+      <div className="user_options-container">
+        <div className="user_options-text">
+          <Row>
+            <Col lg={1}></Col>
+            <Col lg={3} className="pe-0 ms-auto">
+              <div className="d-flex align-items-center h-100">
+                <img src={Logo} width="200" height="200" alt="Logo TravelStay" />
               </div>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-    </div>
+            </Col>
+            <Col lg={1}></Col>
+            <Col lg={7}>
+              <div className="user_options-unregistered px-0">
+                <h2
+                  className="user_unregistered-title "
+                  style={{ fontSize: "1.5rem", fontFamily: "Impact, san-serif", width: "250px" }}
+                >
+                  Non hai un account?
+                </h2>
+                <p
+                  className="user_unregistered-text"
+                  style={{ fontSize: "1rem", fontFamily: "Montserrat, sans-serif" }}
+                >
+                  Registrati e scopri le fantastiche offerte di viaggi e soggiorno su TravelStay!
+                </p>
+                <button className="user_unregistered-signup" onClick={handleSignUpClick}>
+                  Registrati
+                </button>
+              </div>
+            </Col>
+          </Row>
+
+          <div className="user_options-registered">
+            <h2 className="user_registered-title" style={{ fontSize: "1.6rem", fontFamily: "Impact, san-serif" }}>
+              Hai un account?
+            </h2>
+            <p
+              className="user_registered-text"
+              style={{ fontSize: "1rem", fontFamily: "Montserrat, sans-serif", fontWeight: "400" }}
+            >
+              Effettua l'accesso al tuo account
+            </p>
+            <button className="user_registered-login" onClick={handleLoginClick}>
+              Accedi
+            </button>
+          </div>
+        </div>
+
+        <div className={`user_options-forms ${showRegisterPage ? "bounceLeft" : "bounceRight"}`}>
+          {showRegisterPage ? (
+            <RegisterPage />
+          ) : (
+            <Container>
+              <Row className="justify-content-center">
+                <Col md={10}>
+                  <h2 className="text-center mt-2" style={{ fontFamily: "Impact, san-serif", fontSize: "2.2rem" }}>
+                    Accesso
+                  </h2>
+                  <Form onSubmit={handleSubmit}>
+                    <Form.Group controlId="formBasicEmail">
+                      <Form.Label
+                        className="mb-0"
+                        style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: "0.8rem",
+                          color: "#203040",
+                          fontWeight: "bolder",
+                          letterSpacing: "0.1rem",
+                        }}
+                      >
+                        NOME UTENTE
+                      </Form.Label>
+                      <Form.Control
+                        style={{ background: "#ffffff90" }}
+                        type="text"
+                        placeholder="Username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        className="mb-3"
+                      />
+                    </Form.Group>
+
+                    <Form.Group controlId="formBasicPassword">
+                      <Form.Label
+                        className="mb-0"
+                        style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: "0.8rem",
+                          color: "#203040",
+                          fontWeight: "bolder",
+                          letterSpacing: "0.1rem",
+                        }}
+                      >
+                        PASSWORD
+                      </Form.Label>
+                      <Form.Control
+                        className="mb-3"
+                        style={{ background: "#ffffff90" }}
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                      />
+                    </Form.Group>
+                    {user ? (
+                      <Link to="/">
+                        <div className="text-center mt-5">
+                          <Button size="lg" className="btn-explore mt-4  px-5 ">
+                            ACCEDI
+                          </Button>
+                        </div>
+                      </Link>
+                    ) : (
+                      <>
+                        <div className="text-center mt-4">
+                          <Button type="submit" size="lg" className="btn-explore mt-5  px-5 ">
+                            ACCEDI
+                          </Button>
+                        </div>
+                      </>
+                    )}
+                  </Form>
+                </Col>
+              </Row>
+            </Container>
+          )}
+        </div>
+      </div>
+    </section>
   );
 };
 

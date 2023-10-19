@@ -82,7 +82,7 @@ const ReservationForm = () => {
           </Dropdown.Menu>
         </Dropdown>
         <Link to="/cart">
-          <Button className="btn-explore mt-3" variant="primary" type="button" onClick={handleBookNowClick}>
+          <Button className="button-search mt-3" type="button" onClick={handleBookNowClick}>
             Vai al carrello
           </Button>
         </Link>

@@ -15,7 +15,6 @@ import toursReducer from "../reducers/toursReducer";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["register", "user", "travel", "tours", "rooms", "stay", "cart"],
 };
 
 const rootReducer = combineReducers({

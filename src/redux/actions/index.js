@@ -4,6 +4,8 @@ export const FETCH_TRAVEL_FAILURE = "FETCH_TRAVEL_FAILURE";
 export const UPDATE_TRAVEL_REQUEST = "UPDATE_TRAVEL_REQUEST";
 export const UPDATE_TRAVEL_SUCCESS = "UPDATE_TRAVEL_SUCCESS";
 export const UPDATE_TRAVEL_FAILURE = "UPDATE_TRAVEL_FAILURE";
+export const CREATE_TRAVEL_OFFER = "CREATE_TRAVEL_OFFER";
+export const DELETE_TRAVEL_OFFER = "DELETE_TRAVEL_OFFER";
 
 export const FETCH_STAY_REQUEST = "FETCH_STAY_REQUEST";
 export const FETCH_STAY_SUCCESS = "FETCH_STAY_SUCCESS";
@@ -13,6 +15,10 @@ export const UPDATE_STAY_SUCCESS = "UPDATE_TRAVEL_SUCCESS";
 export const UPDATE_STAY_FAILURE = "UPDATE_TRAVEL_FAILURE";
 export const ADD_REVIEW_SUCCESS = "ADD_REVIEW_SUCCESS";
 export const ADD_REVIEW_FAILURE = "ADD_REVIEW_FAILURE";
+export const ADD_STAY_OFFER_REQUEST = "ADD_STAY_OFFER_REQUEST";
+export const ADD_STAY_OFFER_SUCCESS = "ADD_STAY_OFFER_SUCCESS";
+export const ADD_STAY_OFFER_FAILURE = "ADD_STAY_OFFER_FAILURE";
+export const DELETE_STAY_OFFER = "DELETE_STAY_OFFER";
 
 export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
@@ -36,7 +42,7 @@ export const fetchTravelFailure = (error) => ({
 
 export const fetchTravelOffers = () => async (dispatch) => {
   try {
-    dispatch({ type: FETCH_TRAVEL_REQUEST }); // Azione di richiesta
+    dispatch({ type: FETCH_TRAVEL_REQUEST });
 
     const response = await fetch("http://localhost:3030/travel");
     const data = await response.json();
@@ -145,11 +151,6 @@ export const registrationFailure = (error) => ({
   payload: error,
 });
 
-export const setShowUserExistsAlert = (value) => ({
-  type: "SET_SHOW_USER_EXISTS_ALERT",
-  payload: value,
-});
-
 export const setShowSuccessAlert = (value) => ({
   type: "SET_SHOW_SUCCESS_ALERT",
   payload: value,
@@ -168,25 +169,25 @@ export const registerUser = (formData) => {
 
       if (response.ok) {
         const responseData = await response.json();
-
-        if (responseData.userExists) {
-          dispatch(setShowUserExistsAlert(true));
-        } else {
-          dispatch(setShowSuccessAlert(true));
-        }
-
         dispatch(registrationSuccess(responseData));
+        return responseData; // Restituisci i dati della risposta
       } else {
-        // La registrazione ha fallito
         console.error("Errore durante la registrazione");
         dispatch(registrationFailure("Errore durante la registrazione"));
+        return { userExists: false }; // Imposta userExists a false in caso di errore
       }
     } catch (error) {
       console.error("Si è verificato un errore durante la registrazione", error);
       dispatch(registrationFailure("Si è verificato un errore durante la registrazione"));
+      return { userExists: false }; // Imposta userExists a false in caso di errore
     }
   };
 };
+
+export const setUserExists = (value) => ({
+  type: "SET_USER_EXISTS",
+  payload: value,
+});
 
 export const setUser = (user) => {
   return {
@@ -214,3 +215,65 @@ export const addReviewFailure = (error) => ({
   type: ADD_REVIEW_FAILURE,
   payload: error,
 });
+
+export function addReview(review) {
+  return { type: ADD_REVIEW_SUCCESS, payload: { review } };
+}
+
+export const createTravelOffer = (newOfferData) => ({
+  type: CREATE_TRAVEL_OFFER,
+  payload: newOfferData,
+});
+
+export const deleteTravelOffer = (offerId) => ({
+  type: DELETE_TRAVEL_OFFER,
+  payload: offerId,
+});
+
+export const deleteStayOffer = (offerId) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3030/hotels/${offerId}`, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (response.status === 204) {
+          dispatch({
+            type: DELETE_STAY_OFFER,
+            payload: offerId,
+          });
+        } else {
+          console.error("Errore durante l'eliminazione dell'offerta");
+        }
+      })
+      .catch((error) => {
+        console.error("Errore durante l'eliminazione dell'offerta:", error);
+      });
+  };
+};
+
+export const addStayOffer = (newOfferData) => (dispatch) => {
+  dispatch({ type: ADD_STAY_OFFER_REQUEST });
+
+  // Esegui la richiesta POST utilizzando fetch
+  fetch("http://localhost:3030/hotels", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newOfferData),
+  })
+    .then((response) => {
+      if (response.status === 201) {
+        // Assumendo che la risposta HTTP corretta sia 201 Created
+        return response.json();
+      } else {
+        throw new Error("Errore durante l'aggiunta dell'offerta");
+      }
+    })
+    .then((data) => {
+      dispatch({ type: ADD_STAY_OFFER_SUCCESS, payload: data });
+    })
+    .catch((error) => {
+      dispatch({ type: ADD_STAY_OFFER_FAILURE, payload: error });
+    });
+};

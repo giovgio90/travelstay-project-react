@@ -6,14 +6,17 @@ const Deluxe = () => {
       <Container>
         <Card className="text-center py-5">
           <Card.Body>
-            <Card.Title className="display-5 pb-4" style={{ fontWeight: "500" }}>
+            <Card.Title className="display-5 pb-4" style={{ fontSize: "4rem", fontFamily: "Impact, sans-serif" }}>
               PACCHETTO COSTA AMALFITANA DELUXE
             </Card.Title>
-            <Card.Text className="px-2 fs-5 text-secondary" style={{ fontWeight: "400" }}>
+            <Card.Text
+              className="px-2 fs-5 text-secondary"
+              style={{ fontWeight: "400", fontFamily: "Montserrat, sans-serif" }}
+            >
               Esplora le meraviglie della Costa Amalfitana con il nostro pacchetto Deluxe. Un'esperienza unica di relax
               e avventura in un paradiso italiano.
             </Card.Text>
-            <Button variant="primary" size="lg" className="btn-explore mt-4 rounded-5 px-5 ">
+            <Button variant="primary" size="lg" className="button-search mt-4  px-5 ">
               PRENOTA ORA
             </Button>
           </Card.Body>

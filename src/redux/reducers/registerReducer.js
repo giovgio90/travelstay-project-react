@@ -8,6 +8,7 @@ const initialState = {
   registrationResponse: null,
   showSuccessAlert: false,
   error: null,
+  userExists: false,
 };
 
 const registerReducer = (state = initialState, action) => {
@@ -34,6 +35,12 @@ const registerReducer = (state = initialState, action) => {
         ...state,
         showSuccessAlert: action.payload,
       };
+    case "SET_USER_EXISTS":
+      return {
+        ...state,
+        userExists: action.payload,
+      };
+
     default:
       return state;
   }

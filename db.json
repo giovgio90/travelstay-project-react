@@ -2,123 +2,30 @@
   "travel": [
     {
       "id": 1,
-      "destination": "Roma",
-      "duration": "7 giorni",
-      "date": "2023-11-05",
-      "description": "Scopri la magia della 'Città Eterna' con il nostro coinvolgente viaggio romano di 7 giorni. Dall'iconica Basilica di San Pietro alle affascinanti strade di Trastevere, questo viaggio promette un'esperienza indimenticabile. Il tuo incantevole soggiorno inizia presso l'hotel 'La Dolce Vita,' un pittoresco appartamento situato nel cuore di Roma. Ammira le opere d'arte mozzafiato nei Musei Vaticani, passeggia lungo il fiume Tevere e assapora deliziosi cornetti nei caffè locali. Con connessione WiFi gratuita, cucina completamente attrezzata, aria condizionata e TV a schermo piatto, il tuo alloggio garantisce comfort e comodità. I nostri ospiti hanno elogiato le loro esperienze, con Alice123 che ha detto: 'La Dolce Vita è stato assolutamente delizioso. La sua posizione centrale ha reso facile esplorare Roma, e l'appartamento era accogliente e ben attrezzato.' Che tu stia partendo per una fuga romantica o per un'avventura in solitario, Roma ti aspetta per conquistare il tuo cuore. Prenota ora e immergiti nella ricca storia, cultura e bellezza di questa iconica città",
-      "price": "1000",
-      "price_per_adult": "1000",
-      "price_per_child": 800,
-      "image": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1996&q=80",
-      "image_two": "https://images.unsplash.com/photo-1525874684015-58379d421a52?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      "image_three": "https://images.unsplash.com/photo-1529260830199-42c24126f198?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1776&q=80",
-      "image_four": "https://images.unsplash.com/photo-1542820229-081e0c12af0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80",
-      "hotel": {
-        "name": "Hotel Bella Vita",
-        "type": "Hotel",
-        "bedrooms": 2,
-        "bathrooms": 1,
-        "guests": 2,
-        "amenities": [
-          "WiFi Gratuito",
-          "Aria Condizionata",
-          "TV"
-        ],
-        "images": [
-          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/88/f5/18716db0af813c769c3529b6617ff7557422c1841a46f1fbf3c3ae7f8381.jpeg",
-          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/ce/70/33dec22e66c60f4e8e3ba8d29bfccd4d7ee9f62792c3765f4127116f8dfd.jpeg",
-          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/df/b9/ec7e9b1e00672daa6d553354b5dd4dcb3839abbca4f410f792692c2afa7c.jpeg",
-          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/bb/b8/2e6f5e284fe51dcdabb95dc84ab9468c06ef5f0ef92eb36bfb2dc333813f.jpeg"
-        ]
-      },
-      "reviews": [
-        {
-          "user": "Alice123",
-          "rating": 4.5,
-          "comment": "L'hotel era accogliente e aveva una posizione fantastica. Abbiamo amato il nostro soggiorno a Roma."
-        },
-        {
-          "user": "BobViaggiatore",
-          "rating": 4,
-          "comment": "Questo hotel è stato perfetto per la nostra fuga romantica. Altamente raccomandato!"
-        },
-        {
-          "user": "Marco324",
-          "rating": 4,
-          "comment": "bello"
-        },
-        {
-          "user": "Giovanni12",
-          "rating": 5,
-          "comment": "Molto bello!!!"
-        },
-        {
-          "user": "Michele",
-          "rating": 5,
-          "comment": "Viaggio indimenticabile!!"
-        },
-        {
-          "user": "Giovanni",
-          "rating": 5,
-          "comment": "Mi è piaciuto molto"
-        }
-      ],
-      "cancellation_policy": "Moderata",
-      "dates_available": [
-        "2023-11-15",
-        "2023-11-22",
-        "2023-11-29"
-      ],
-      "instant_bookable": true,
-      "special_prices": [
-        {
-          "date": "2023-11-15",
-          "price": 1150
-        },
-        {
-          "date": "2023-11-22",
-          "price": 1100
-        },
-        {
-          "date": "2023-11-29",
-          "price": 1180
-        }
-      ],
-      "host": {
-        "name": "Luca",
-        "superhost": true,
-        "verified": true
-      }
-    },
-    {
-      "id": 2,
       "destination": "Firenze",
       "duration": "5 giorni",
+      "offer": "travel",
       "date": "2023-11-06",
       "description": "Esplora la bellezza artistica e culturale di Firenze con il nostro affascinante viaggio di 5 giorni. Dall'iconica Cattedrale di Santa Maria del Fiore ai magnifici Uffizi, questa esperienza promette di lasciarti senza fiato. Il tuo soggiorno inizia presso il 'Rinascimento Hotel,' un incantevole palazzo nel cuore di Firenze. Ammira le opere d'arte senza tempo di Michelangelo e Leonardo da Vinci, passeggiando per i vicoli storici e gustando autentica cucina toscana. Con WiFi gratuito, un ristorante raffinato, aria condizionata e una vista panoramica sulla città, il tuo alloggio offre comfort e lusso. I nostri ospiti hanno lodato le loro esperienze, con SofiaFlorence che ha detto: 'Il Rinascimento Hotel è un vero gioiello nascosto. La sua eleganza e la sua posizione centrale lo rendono una scelta ideale per chi visita Firenze.' Se desideri immergerti nella cultura e nell'arte rinascimentale, Firenze ti attende. Prenota ora e vivi un'esperienza senza tempo.",
       "price": 950,
       "price_per_adult": 950,
       "price_per_child": 700,
-      "image": "https://images.unsplash.com/photo-1590673452623-cf094b5e08f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1886&q=80",
-      "image_two": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2020&q=80",
-      "image_three": "https://images.unsplash.com/photo-1520939817895-060bdaf4fe1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1923&q=80",
-      "image_four": "https://images.unsplash.com/photo-1508050919630-b135583b29ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+      "image": "https://images.unsplash.com/photo-1570006468502-aa2730cbb00e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
+      "image_two": "https://images.unsplash.com/photo-1543429257-3eb0b65d9c58?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "image_three": "https://images.unsplash.com/photo-1601195576601-346d58e024c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1797&q=80",
+      "image_four": "https://images.unsplash.com/photo-1585595684482-984bf2cf8041?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       "hotel": {
         "name": "Rinascimento Hotel",
         "type": "Hotel",
         "bedrooms": 2,
         "bathrooms": 2,
         "guests": 4,
-        "amenities": [
-          "WiFi Gratuito",
-          "Ristorante",
-          "Aria Condizionata",
-          "Vista Panoramica"
-        ],
+        "amenities": ["WiFi Gratuito", "Ristorante", "Aria Condizionata", "Vista Panoramica"],
         "images": [
-          "/assets/images/NewYork_one.jpg",
-          "/assets/images/NewYork_two.jpg",
-          "/assets/images/NewYork_three.jpg"
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/93/d5/77bb521c29e2e65fb8b2dc9b843e7f7d35551f986cafaa35a02c60e68d00.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/d4/94/17bc5b0325f03554b1dbdb08a8dde0a42279459c315ff5429789e93b4f5a.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/f2/93/b366768e19aeb58d6ccdb20cd036927d54d3b5a82cb172c2ce2529b2fc5f.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/72/f2/5f1cd83c3f86355bd189227f5580b933d71c60e934b13409eb90c9dc582e.jpeg"
         ]
       },
       "reviews": [
@@ -138,17 +45,9 @@
           "comment": "Brutto"
         }
       ],
-      "host": {
-        "name": "Sara",
-        "superhost": true,
-        "verified": true
-      },
+      "host": "Sara",
       "cancellation_policy": "Flessibile",
-      "dates_available": [
-        "2023-11-10",
-        "2023-11-17",
-        "2023-11-24"
-      ],
+      "dates_available": ["2023-11-10", "2023-11-17", "2023-11-24"],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -158,34 +57,30 @@
       ]
     },
     {
-      "id": 3,
+      "id": 2,
       "destination": "Venezia",
       "duration": "4 giorni",
       "date": "2023-11-08",
-      "description": "Scopri la magia dell'incantevole Venezia con il nostro romantico viaggio di 4 giorni. Dall'iconica Piazza San Marco ai tranquilli canali, questa esperienza promette di trasportarti in un mondo di bellezza e amore. Il tuo soggiorno inizia presso il 'Canal Grande Palace,' un lussuoso palazzo veneziano affacciato sul Canal Grande. Ammira l'arte rinascimentale in ogni angolo della città, goditi un giro in gondola e assapora autentici piatti italiani. Con WiFi gratuito, una colazione gourmet, aria condizionata e una vista mozzafiato, il tuo alloggio offre un'esperienza unica. I nostri ospiti hanno elogiato le loro esperienze, con MariaVenezia che ha detto: 'Il Canal Grande Palace è un sogno diventato realtà. La sua posizione è impareggiabile e il palazzo è semplicemente stupendo.' Venezia è il luogo perfetto per una fuga romantica. Prenota ora e vivi un'esperienza indimenticabile.",
+      "description": "Scopri la magia dell'incantevole Venezia con il nostro romantico viaggio di 4 giorni. Dall'iconica Piazza San Marco ai tranquilli canali, questa esperienza promette di trasportarti in un mondo di bellezza e amore. Il tuo soggiorno inizia presso l'Hotel Fiore d'Italia, un lussuoso palazzo veneziano affacciato sul Canal Grande. Ammira l'arte rinascimentale in ogni angolo della città, goditi un giro in gondola e assapora autentici piatti italiani. Con WiFi gratuito, una colazione gourmet, aria condizionata e una vista mozzafiato, il tuo alloggio offre un'esperienza unica. I nostri ospiti hanno elogiato le loro esperienze, con MariaVenezia che ha detto: 'Il Canal Grande Palace è un sogno diventato realtà. La sua posizione è impareggiabile e il palazzo è semplicemente stupendo.' Venezia è il luogo perfetto per una fuga romantica. Prenota ora e vivi un'esperienza indimenticabile.",
       "price": 1350,
       "price_per_adult": 1350,
       "price_per_child": 900,
-      "image": "https://images.unsplash.com/photo-1552751118-d3cde54807de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80",
-      "image_two": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2020&q=80",
-      "image_three": "https://images.unsplash.com/photo-1520939817895-060bdaf4fe1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1923&q=80",
-      "image_four": "https://images.unsplash.com/photo-1508050919630-b135583b29ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+      "image": "https://images.pexels.com/photos/258196/pexels-photo-258196.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "image_two": "https://images.pexels.com/photos/1144265/pexels-photo-1144265.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "image_three": "https://images.pexels.com/photos/804954/pexels-photo-804954.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "image_four": "https://images.pexels.com/photos/847366/pexels-photo-847366.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "hotel": {
-        "name": "Canal Grande Palace",
-        "type": "Villa",
+        "name": "Hotel Fiore d'Italia",
+        "type": "Hotel",
         "bedrooms": 2,
         "bathrooms": 2,
         "guests": 4,
-        "amenities": [
-          "WiFi Gratuito",
-          "Colazione Gourmet",
-          "Aria Condizionata",
-          "Vista Mozzafiato"
-        ],
+        "amenities": ["WiFi Gratuito", "Colazione Gourmet", "Aria Condizionata", "Vista Mozzafiato"],
         "images": [
-          "barcelona1.jpg",
-          "barcelona2.jpg",
-          "barcelona3.jpg"
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/4d/5b/98e22528c909c74885ab6558d0753557b9d200b06c62da74a15dff64efbc.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/a2/09/da4db8be1c4219bd13ec11e394d89d337ee1c37f72bc6a70190cf5996740.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/d6/96/9ef2e34be08b99b6431ba93b8d76b16f90b871305c811411585f8dfd7d86.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/ea/f9/dacdee4e6dbbab59bae965a6a88f8eb12097625da5e7005f771a4a8de624.jpeg"
         ]
       },
       "reviews": [
@@ -200,17 +95,9 @@
           "comment": "Una vacanza a Venezia non potrebbe essere migliore. Questo palazzo è il luogo perfetto per una fuga romantica."
         }
       ],
-      "host": {
-        "name": "Marco",
-        "superhost": true,
-        "verified": true
-      },
+      "host": "Marco",
       "cancellation_policy": "Moderata",
-      "dates_available": [
-        "2023-09-15",
-        "2023-09-22",
-        "2023-09-29"
-      ],
+      "dates_available": ["2023-09-15", "2023-09-22", "2023-09-29"],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -228,34 +115,30 @@
       ]
     },
     {
-      "id": 4,
+      "id": 3,
       "destination": "Milano",
       "duration": "6 giorni",
       "date": "2023-11-10",
-      "description": "Esplora la vivace città di Milano con il nostro dinamico viaggio di 3 giorni. Dall'iconico Duomo ai moderni quartieri della moda, questa esperienza promette una miscela di storia e stile. Il tuo soggiorno inizia presso il 'Fashion Loft Apartment,' un lussuoso loft nel cuore di Milano. Scopri le ultime tendenze di moda, visita musei d'arte di fama mondiale e gusta la cucina milanese. Con WiFi gratuito, un'area salotto elegante, aria condizionata e una vista panoramica sulla città, il tuo alloggio offre stile e comfort. I nostri ospiti hanno lodato le loro esperienze, con LucaMilano che ha detto: 'Il Fashion Loft Apartment è un'oasi di eleganza nel cuore della città. La sua posizione è perfetta per lo shopping e l'esplorazione.' Milano è la capitale della moda e del design. Prenota ora e immergiti in questa metropoli trendy.",
+      "description": "Esplora la vivace città di Milano con il nostro dinamico viaggio di 3 giorni. Dall'iconico Duomo ai moderni quartieri della moda, questa esperienza promette una miscela di storia e stile. Il tuo soggiorno inizia presso il 'Fashion Apartment,' un lussuoso appartamento nel cuore di Milano. Scopri le ultime tendenze di moda, visita musei d'arte di fama mondiale e gusta la cucina milanese. Con WiFi gratuito, un'area salotto elegante, aria condizionata e una vista panoramica sulla città, il tuo alloggio offre stile e comfort. I nostri ospiti hanno lodato le loro esperienze, con LucaMilano che ha detto: 'Il Fashion Loft Apartment è un'oasi di eleganza nel cuore della città. La sua posizione è perfetta per lo shopping e l'esplorazione.' Milano è la capitale della moda e del design. Prenota ora e immergiti in questa metropoli trendy.",
       "price": 850,
       "price_per_adult": 850,
       "price_per_child": 600,
       "image": "https://images.unsplash.com/photo-1610016302534-6f67f1c968d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80",
-      "image_two": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2020&q=80",
-      "image_three": "https://images.unsplash.com/photo-1520939817895-060bdaf4fe1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1923&q=80",
-      "image_four": "https://images.unsplash.com/photo-1508050919630-b135583b29ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+      "image_two": "https://images.unsplash.com/photo-1572602648934-1d98de6dab48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "image_three": "https://images.unsplash.com/photo-1513581166391-887a96ddeafd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "image_four": "https://images.unsplash.com/photo-1541515425380-a981179ae37a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       "hotel": {
-        "name": "Fashion Loft Apartment",
-        "type": "Loft",
+        "name": "Fashion Apartment",
+        "type": "Casa",
         "bedrooms": 1,
         "bathrooms": 1,
         "guests": 2,
-        "amenities": [
-          "WiFi Gratuito",
-          "Area Salotto",
-          "Aria Condizionata",
-          "Vista Panoramica"
-        ],
+        "amenities": ["WiFi Gratuito", "Area Salotto", "Aria Condizionata", "Vista Panoramica"],
         "images": [
-          "rome1.jpg",
-          "rome2.jpg",
-          "rome3.jpg"
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/84/e8/97580db44c0bf20a21e70be18e0e114bf66cffbedd595665fc3ebec2ec95.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/a8/72/b2b3fa70e1931c4ada632795461c7292e3c3590985d0e3c3cce1173a55a1.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/93/ca/1e153dce271fc91c7073b56c0573870dab3659673249c370f458da88a7dd.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/4e/00/1d26e98b3d0cb5e20cce1cfda237fc8af6a7d7c2b08100c348c6f4585d86.jpeg"
         ]
       },
       "reviews": [
@@ -268,19 +151,16 @@
           "user": "ElenaFashionista",
           "rating": 4.5,
           "comment": "Milano è una città affascinante, e questo loft è il luogo ideale per esplorarla."
+        },
+        {
+          "user": "Giovanni45",
+          "rating": 4,
+          "comment": "Bello!"
         }
       ],
-      "host": {
-        "name": "Luigi",
-        "superhost": true,
-        "verified": true
-      },
+      "host": "Luigi",
       "cancellation_policy": "Flessibile",
-      "dates_available": [
-        "2023-11-15",
-        "2023-11-22",
-        "2023-11-29"
-      ],
+      "dates_available": ["2023-11-15", "2023-11-22", "2023-11-29"],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -298,34 +178,30 @@
       ]
     },
     {
-      "id": 5,
+      "id": 4,
       "destination": "Napoli",
       "duration": "6 giorni",
       "date": "2023-11-11",
-      "description": "Esplora la vivace città di Napoli con il nostro entusiasmante viaggio di 6 giorni. Dall'iconico Castel dell'Ovo alle autentiche pizzerie, questa esperienza promette una miscela di cultura e gastronomia. Il tuo soggiorno inizia presso 'La Bella Napoli,' un'accogliente casa nel cuore di Napoli. Assapora la pizza napoletana, visita antiche rovine romane e goditi la vista sul Golfo di Napoli. Con WiFi gratuito, una cucina completamente attrezzata, aria condizionata e un balcone panoramico, il tuo alloggio offre comfort e autenticità. I nostri ospiti hanno elogiato le loro esperienze, con MarioPizzaLover che ha detto: 'La Bella Napoli è stato il luogo perfetto per gustare la vera pizza napoletana. La sua posizione è ideale per esplorare la città.' Napoli è famosa per la sua cucina e la sua storia. Prenota ora e immergiti in questa cultura unica.",
+      "description": "Esplora la vivace città di Napoli con il nostro entusiasmante viaggio di 6 giorni. Dall'iconico Castel dell'Ovo alle autentiche pizzerie, questa esperienza promette una miscela di cultura e gastronomia. Il tuo soggiorno inizia presso 'Grand Hotel Bellavista' un'accogliente albergo nel cuore di Napoli. Assapora la pizza napoletana, visita antiche rovine romane e goditi la vista sul Golfo di Napoli. Con WiFi gratuito, una cucina completamente attrezzata, aria condizionata e un balcone panoramico, il tuo alloggio offre comfort e autenticità. I nostri ospiti hanno elogiato le loro esperienze, con MarioPizzaLover che ha detto: 'La Bella Napoli è stato il luogo perfetto per gustare la vera pizza napoletana. La sua posizione è ideale per esplorare la città.' Napoli è famosa per la sua cucina e la sua storia. Prenota ora e immergiti in questa cultura unica.",
       "price": 1100,
       "price_per_adult": 1100,
       "price_per_child": 750,
       "image": "https://images.unsplash.com/photo-1590663964384-e3bfac60bed7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1936&q=80",
-      "image_two": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2020&q=80",
-      "image_three": "https://images.unsplash.com/photo-1520939817895-060bdaf4fe1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1923&q=80",
-      "image_four": "https://images.unsplash.com/photo-1508050919630-b135583b29ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+      "image_two": "https://images.unsplash.com/photo-1581242125825-f9faf0f350bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "image_three": "https://images.unsplash.com/photo-1571075051578-c8cd15385f46?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+      "image_four": "https://images.unsplash.com/photo-1626360975884-e947c331a0d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       "hotel": {
-        "name": "La Bella Napoli",
-        "type": "Casa",
+        "name": "Grand Hotel Bellavista",
+        "type": "Hotel",
         "bedrooms": 2,
         "bathrooms": 2,
         "guests": 4,
-        "amenities": [
-          "WiFi Gratuito",
-          "Cucina completamente attrezzata",
-          "Aria Condizionata",
-          "Balcone Panoramico"
-        ],
+        "amenities": ["WiFi Gratuito", "Cucina completamente attrezzata", "Aria Condizionata", "Balcone Panoramico"],
         "images": [
-          "tokyo1.jpg",
-          "tokyo2.jpg",
-          "tokyo3.jpg"
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/74/83/9483f2456af60dffbd8567d0c6554580fd596a1b3c638404fde40dfc6aac.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/c3/55/b945f2d7891718df89f7f76ba4acc36c205dcb158a48d1573f0b84642762.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/b4/6a/f67adfbeb297e80a4f88056b941444aa50ebf69752437d6fc23245a8d9ac.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/b3/0a/24486b3e8337845ee6eac4afedbf2df5b154f47f4f40492c14b23e4ec2a7.jpeg"
         ]
       },
       "reviews": [
@@ -340,17 +216,9 @@
           "comment": "Napoli è una città affascinante, e questo appartamento ha reso il nostro soggiorno ancora più memorabile."
         }
       ],
-      "host": {
-        "name": "Francesca",
-        "superhost": true,
-        "verified": true
-      },
+      "host": "Francesca",
       "cancellation_policy": "Moderata",
-      "dates_available": [
-        "2023-11-10",
-        "2023-11-17",
-        "2023-11-24"
-      ],
+      "dates_available": ["2023-11-10", "2023-11-17", "2023-11-24"],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -368,34 +236,30 @@
       ]
     },
     {
-      "id": 6,
+      "id": 5,
       "destination": "Amalfi",
       "duration": "5 giorni",
       "date": "2023-11-13",
-      "description": "Goditi la bellezza costiera di Amalfi con il nostro rilassante viaggio di 5 giorni. Dalle pittoresche spiagge ai villaggi in collina, questa esperienza promette tranquillità e autenticità. Il tuo soggiorno inizia presso 'Villa Amalfi View,' una splendida villa con vista sul mare. Rilassati sulla spiaggia, esplora le strade strette e tortuose di Amalfi e assapora la cucina mediterranea. Con WiFi gratuito, una piscina privata, aria condizionata e giardini terrazzati, la tua villa offre comfort e vista panoramica. I nostri ospiti hanno elogiato le loro esperienze, con ElenaBeachLover che ha detto: 'La Villa Amalfi View è un paradiso sulla costa. La vista è mozzafiato e la villa è perfetta per una vacanza di relax.' Amalfi è una gemma nascosta della costa italiana. Prenota ora e vivi un'esperienza costiera indimenticabile.",
+      "description": "Goditi la bella costiera di Amalfi con il nostro rilassante viaggio di 5 giorni. Dalle pittoresche spiagge ai villaggi in collina, questa esperienza promette tranquillità e autenticità. Il tuo soggiorno inizia presso 'Villa Amalfi View,' una splendida villa con vista sul mare. Rilassati sulla spiaggia, esplora le strade strette e tortuose di Amalfi e assapora la cucina mediterranea. Con WiFi gratuito, una piscina privata, aria condizionata e giardini terrazzati, la tua villa offre comfort e vista panoramica. I nostri ospiti hanno elogiato le loro esperienze, con ElenaBeachLover che ha detto: 'La Villa Amalfi View è un paradiso sulla costa. La vista è mozzafiato e la villa è perfetta per una vacanza di relax.' Amalfi è una gemma nascosta della costa italiana. Prenota ora e vivi un'esperienza costiera indimenticabile.",
       "price": 1550,
       "price_per_adult": 1550,
       "price_per_child": 1000,
       "image": "https://images.unsplash.com/photo-1583844056361-4418a8f2a985?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-      "image_two": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2020&q=80",
-      "image_three": "https://images.unsplash.com/photo-1520939817895-060bdaf4fe1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1923&q=80",
-      "image_four": "https://images.unsplash.com/photo-1508050919630-b135583b29ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+      "image_two": "https://plus.unsplash.com/premium_photo-1676528716949-99ad31eb406b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "image_three": "https://images.unsplash.com/photo-1612698093158-e07ac200d44e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "image_four": "https://images.unsplash.com/photo-1509644206292-332a259c8172?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       "hotel": {
         "name": "Villa Amalfi View",
         "type": "Villa",
         "bedrooms": 3,
         "bathrooms": 2,
         "guests": 6,
-        "amenities": [
-          "WiFi Gratuito",
-          "Piscina Privata",
-          "Aria Condizionata",
-          "Giardini Terrazzati"
-        ],
+        "amenities": ["WiFi Gratuito", "Piscina Privata", "Aria Condizionata", "Giardini Terrazzati"],
         "images": [
-          "sydney1.jpg",
-          "sydney2.jpg",
-          "sydney3.jpg"
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/e2/be/6edf6a6fe575320ae2236049e6cb73bd56f3c5a4639d0a36989a324e32d6.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/1d/cf/5b7152a6cead456fe1acb7bace9234ba2ec2470dd2522a4a530045d2db53.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/cd/41/efb6bec3d94e37e5b7ecd7e84fa0e2c2f60bbd3f550471112f41ac5430f4.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/a3/9d/f1334fb8aa63de9ecd93d0b6d7ebf9bafa3f8a570382eb3cae5637e01840.jpeg"
         ]
       },
       "reviews": [
@@ -410,17 +274,9 @@
           "comment": "Amalfi è una meraviglia naturale, e questa villa ci ha permesso di sperimentarla appieno."
         }
       ],
-      "host": {
-        "name": "Emma",
-        "superhost": true,
-        "verified": true
-      },
+      "host": "Emma",
       "cancellation_policy": "Severa",
-      "dates_available": [
-        "2023-11-05",
-        "2023-11-12",
-        "2023-11-19"
-      ],
+      "dates_available": ["2023-11-05", "2023-11-12", "2023-11-19"],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -438,34 +294,30 @@
       ]
     },
     {
-      "id": 7,
+      "id": 6,
       "destination": "Verona",
       "duration": "4 giorni",
       "date": "2023-11-05",
-      "description": "Explore the breathtaking landscapes and wildlife of South Africa.",
+      "description": "Hai sempre sognato di visitare Verona? Ora è il momento di farlo in grande stile! Il nostro tour di 5 giorni ti condurrà attraverso le bellezze di Verona, da Piazza delle Erbe all'Arena di Verona, dall'antico Ponte Pietra al romantico balcone di Giulietta. E cosa c'è di meglio di un soggiorno presso la rinomata Villa dei Sogni? Questa villa esclusiva offre non solo comfort di prima classe ma anche una vista panoramica mozzafiato sulla città. Rilassati nella piscina privata, esplora i giardini terrazzati o semplicemente goditi l'aria condizionata e il WiFi gratuito. Un'esperienza unica per gli amanti della cultura, della storia e del lusso. Non perdere questa opportunità di scoprire Verona con stile e comfort. Prenota ora e inizia il tuo viaggio verso la Villa dei Sogni.",
       "price": 1200,
       "price_per_adult": 1200,
       "price_per_child": 800,
       "image": "https://images.unsplash.com/photo-1518204213685-466b68a6d0f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
-      "image_two": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2020&q=80",
-      "image_three": "https://images.unsplash.com/photo-1520939817895-060bdaf4fe1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1923&q=80",
-      "image_four": "https://images.unsplash.com/photo-1508050919630-b135583b29ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+      "image_two": "https://images.unsplash.com/photo-1555796861-b29396df890e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "image_three": "https://images.unsplash.com/photo-1551806580-e668327b0611?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+      "image_four": "https://images.unsplash.com/photo-1601303318777-369b8954cfb1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       "hotel": {
-        "name": "Villa Verona",
+        "name": "Villa dei Sogni",
         "type": "Villa",
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": [
-          "WiFi Gratuito",
-          "Giardino Privato",
-          "Aria Condizionata",
-          "Posizione Tranquilla"
-        ],
+        "amenities": ["WiFi Gratuito", "Giardino Privato", "Aria Condizionata", "Posizione Tranquilla"],
         "images": [
-          "capetown1.jpg",
-          "capetown2.jpg",
-          "capetown3.jpg"
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/e2/28/ceba10b9123e49d5547e58e13cf2e19305a4d207bbd3a77454aa98118195.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/3a/7c/18a2d6b056dcc8454e41449561bd31ad5d8fd9fe48f232c969211c7ec1c9.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/e2/0f/798af09af6cdfbd26000056ca74435ca1e02b12df2059239e04ae6d1ad1a.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/ac/79/78f10207ce5aa4aeaed9d7b8e0b1f06cd867603f1978186b1e4295e460aa.jpeg"
         ]
       },
       "reviews": [
@@ -480,17 +332,9 @@
           "comment": "Verona è una città meravigliosa, e questa villa ha reso il nostro soggiorno ancora più speciale."
         }
       ],
-      "host": {
-        "name": "Antonio",
-        "superhost": true,
-        "verified": true
-      },
+      "host": "Antonio",
       "cancellation_policy": "Moderata",
-      "dates_available": [
-        "2023-11-15",
-        "2023-11-22",
-        "2023-11-29"
-      ],
+      "dates_available": ["2023-11-15", "2023-11-22", "2023-11-29"],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -508,34 +352,30 @@
       ]
     },
     {
-      "id": 8,
+      "id": 7,
       "destination": "Sorrento",
       "duration": "5 giorni",
       "date": "2023-11-15",
-      "description": "Esplora la splendida città costiera di Sorrento con il nostro incantevole viaggio di 5 giorni. Dalle scogliere mozzafiato alle spiagge pittoresche, questa esperienza promette relax e bellezza naturale. Il tuo soggiorno inizia presso 'Villa Sorrento Sea,' una villa con vista sul mare. Goditi il sole sulla spiaggia, assapora il limoncello locale e scopri la cultura sorrentina. Con WiFi gratuito, una piscina a sfioro, aria condizionata e una terrazza panoramica, la tua villa offre lusso e vista mozzafiato. I nostri ospiti hanno lodato le loro esperienze, con SofiaBeachLover che ha detto: 'La Villa Sorrento Sea è un paradiso sulla costa. La vista è spettacolare e la villa è perfetta per una vacanza di relax.' Sorrento è un gioiello della costa amalfitana. Prenota ora e goditi una vacanza in riva al mare indimenticabile.",
+      "description": "Esplora la splendida città costiera di Sorrento con il nostro incantevole viaggio di 5 giorni. Dalle scogliere mozzafiato alle spiagge pittoresche, questa esperienza promette relax e bellezza naturale. Il tuo soggiorno inizia presso 'Hotel delle Stelle,' un albergo con vista sul mare. Goditi il sole sulla spiaggia, assapora il limoncello locale e scopri la cultura sorrentina. Con WiFi gratuito, una piscina a sfioro, aria condizionata e una terrazza panoramica, la tua villa offre lusso e vista mozzafiato. I nostri ospiti hanno lodato le loro esperienze, con SofiaBeachLover che ha detto: 'La Villa Sorrento Sea è un paradiso sulla costa. La vista è spettacolare e la villa è perfetta per una vacanza di relax.' Sorrento è un gioiello della costa amalfitana. Prenota ora e goditi una vacanza in riva al mare indimenticabile.",
       "price": 1650,
       "price_per_adult": 1650,
       "price_per_child": 1100,
       "image": "https://images.unsplash.com/photo-1596299444021-ddf77bd21e83?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
-      "image_two": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2020&q=80",
-      "image_three": "https://images.unsplash.com/photo-1520939817895-060bdaf4fe1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1923&q=80",
-      "image_four": "https://images.unsplash.com/photo-1508050919630-b135583b29ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+      "image_two": "https://images.unsplash.com/photo-1502825305473-fedeffa5b12c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80",
+      "image_three": "https://images.unsplash.com/photo-1529914266944-527632c9ea58?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "image_four": "https://images.unsplash.com/photo-1592484149049-d3b6c5c64ca6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       "hotel": {
-        "name": "Hotel Sorrento Sea",
+        "name": "Hotel delle Stelle",
         "type": "Hotel",
         "bedrooms": 3,
         "bathrooms": 3,
         "guests": 6,
-        "amenities": [
-          "WiFi Gratuito",
-          "Piscina a Sfioro",
-          "Aria Condizionata",
-          "Terrazza Panoramica"
-        ],
+        "amenities": ["WiFi Gratuito", "Piscina a Sfioro", "Aria Condizionata", "Terrazza Panoramica"],
         "images": [
-          "bali1.jpg",
-          "bali2.jpg",
-          "bali3.jpg"
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/b6/bd/f06a2f5e387fbab2df64a2261cb4c869f3cc3b851b6d7f212161d7c8ba43.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/c4/1e/cdc851aeb3f5f0788fc96105fc42265f7a42f1d1801e533b47650f7b7d5d.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/5e/bc/d9a564ca761b698c0c030b502fa83d98f7f0bfe7ea0ddc5ce4f0d831ba11.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/2e/97/7fc5fa239d817bd7e5b20c113c54df41be36c4b8d40523d46110ccf9d76c.jpeg"
         ]
       },
       "reviews": [
@@ -550,17 +390,9 @@
           "comment": "Sorrento è un luogo incantevole, e questa villa ha reso il nostro soggiorno ancora più speciale."
         }
       ],
-      "host": {
-        "name": "Lorenzo",
-        "superhost": true,
-        "verified": true
-      },
+      "host": "Lorenzo",
       "cancellation_policy": "Moderata",
-      "dates_available": [
-        "2023-11-05",
-        "2023-11-12",
-        "2023-11-19"
-      ],
+      "dates_available": ["2023-11-05", "2023-11-12", "2023-11-19"],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -578,34 +410,30 @@
       ]
     },
     {
-      "id": 9,
+      "id": 8,
       "destination": "Bologna",
       "duration": "4 giorni",
       "date": "2023-11-11",
-      "description": "Scopri la deliziosa città di Bologna con il nostro gustoso viaggio di 4 giorni. Dall'iconica Torre degli Asinelli alle trattorie storiche, questa esperienza promette sapori autentici e storia affascinante. Il tuo soggiorno inizia presso 'Casa Bologna,' un'accogliente casa nel centro storico di Bologna. Assapora la pasta fresca, visita musei eccezionali e percorri i portici secolari. Con WiFi gratuito, una cucina ben attrezzata, aria condizionata e un'atmosfera accogliente, la tua casa offre comfort e convenienza. I nostri ospiti hanno elogiato le loro esperienze, con PaoloFoodie che ha detto: 'Casa Bologna è stata la base perfetta per esplorare i sapori di Bologna. La sua posizione è ideale per scoprire la città a piedi.' Bologna è la capitale gastronomica d'Italia. Prenota ora e delizati con questa esperienza culinaria.",
+      "description": "Scopri la deliziosa città di Bologna con il nostro gustoso viaggio di 4 giorni. Dall'iconica Torre degli Asinelli alle trattorie storiche, questa esperienza promette sapori autentici e storia affascinante. Il tuo soggiorno inizia presso 'Grand Hotel delle Palme', un'accogliente albergo nel centro storico di Bologna. Assapora la pasta fresca, visita musei eccezionali e percorri i portici secolari. Con WiFi gratuito, una cucina ben attrezzata, aria condizionata e un'atmosfera accogliente, la tua casa offre comfort e convenienza. I nostri ospiti hanno elogiato le loro esperienze, con PaoloFoodie che ha detto: 'Casa Bologna è stata la base perfetta per esplorare i sapori di Bologna. La sua posizione è ideale per scoprire la città a piedi.' Bologna è la capitale gastronomica d'Italia. Prenota ora e delizati con questa esperienza culinaria.",
       "price": 990,
-      "price_per_adult": "990",
+      "price_per_adult": 990,
       "price_per_child": 700,
       "image": "https://images.unsplash.com/photo-1445265005361-ae273d6a1e16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2048&q=80",
-      "image_two": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2020&q=80",
-      "image_three": "https://images.unsplash.com/photo-1520939817895-060bdaf4fe1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1923&q=80",
-      "image_four": "https://images.unsplash.com/photo-1508050919630-b135583b29ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+      "image_two": "https://images.unsplash.com/photo-1445265005361-ae273d6a1e16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2048&q=80",
+      "image_three": "https://images.unsplash.com/photo-1599932904138-305485fdcee7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "image_four": "https://images.unsplash.com/photo-1477915737647-b5246ee6de6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       "hotel": {
-        "name": "Casa Crystal",
-        "type": "Casa",
+        "name": "Grand Hotel delle Palme",
+        "type": "Hotel",
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": [
-          "WiFi Gratuito",
-          "Cucina Ben Attrezzata",
-          "Aria Condizionata",
-          "Atmosfera Accogliente"
-        ],
+        "amenities": ["WiFi Gratuito", "Cucina Ben Attrezzata", "Aria Condizionata", "Atmosfera Accogliente"],
         "images": [
-          "rio1.jpg",
-          "rio2.jpg",
-          "rio3.jpg"
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/29/67/6ecdf75d2c98e12c585fd6c56edddb9f3408cd421e7e77b9b7a80aa2f9bb.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/8d/3e/5f3570b86d2978cff69c44c1676bc921c2c19bd57a77bdaf1f6f1922f25e.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/c5/b9/d427920db08ef378e04551da57167485baff8e7aecb395df0fd7ac70e09e.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/37/50/a9939f44f7879a04fea995cdb83eb80d012e5b16f81ecdd6ed5b786c1806.jpeg"
         ]
       },
       "reviews": [
@@ -620,17 +448,9 @@
           "comment": "Bologna è una città straordinaria, e questa casa ci ha fatto sentire come parte di essa."
         }
       ],
-      "host": {
-        "name": "Giulia",
-        "superhost": true,
-        "verified": true
-      },
+      "host": "Giulia",
       "cancellation_policy": "Flessibile",
-      "dates_available": [
-        "2023-11-10",
-        "2023-11-17",
-        "2023-11-24"
-      ],
+      "dates_available": ["2023-11-10", "2023-11-17", "2023-11-24"],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -648,34 +468,30 @@
       ]
     },
     {
-      "id": 10,
+      "id": 9,
       "destination": "Taormina",
       "duration": "5 giorni",
       "date": "2023-11-08",
-      "description": "Esplora la bellissima città costiera di Taormina con il nostro affascinante viaggio di 5 giorni. Dall'iconico Teatro Antico alle spiagge di Isola Bella, questa esperienza promette cultura e relax. Il tuo soggiorno inizia presso 'Villa Taormina View,' una villa con vista sul mare. Visita antichi siti greci, rilassati sulla spiaggia e gustati i piatti siciliani. Con WiFi gratuito, una piscina privata, aria condizionata e una terrazza panoramica, la tua villa offre comfort e vista mozzafiato. I nostri ospiti hanno lodato le loro esperienze, con AlessiaBeachLover che ha detto: 'La Villa Taormina View è un sogno diventato realtà. La vista è spettacolare e la villa è perfetta per una vacanza di relax.' Taormina è la perla della Sicilia. Prenota ora e goditi una vacanza in riva al mare indimenticabile.",
+      "description": "Esplora la bellissima città costiera di Taormina con il nostro affascinante viaggio di 5 giorni. Dall'iconico Teatro Antico alle spiagge di Isola Bella, questa esperienza promette cultura e relax. Il tuo soggiorno inizia presso 'Villa delle Acque' una villa con vista sul mare. Visita antichi siti greci, rilassati sulla spiaggia e gustati i piatti siciliani. Con WiFi gratuito, una piscina privata, aria condizionata e una terrazza panoramica, la tua villa offre comfort e vista mozzafiato. I nostri ospiti hanno lodato le loro esperienze, con AlessiaBeachLover che ha detto: 'La Villa Taormina View è un sogno diventato realtà. La vista è spettacolare e la villa è perfetta per una vacanza di relax.' Taormina è la perla della Sicilia. Prenota ora e goditi una vacanza in riva al mare indimenticabile.",
       "price": 1750,
       "price_per_adult": 1750,
       "price_per_child": 1200,
       "image": "https://images.unsplash.com/photo-1602359394198-b6cfc9dc17fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
-      "image_two": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2020&q=80",
-      "image_three": "https://images.unsplash.com/photo-1520939817895-060bdaf4fe1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1923&q=80",
-      "image_four": "https://images.unsplash.com/photo-1508050919630-b135583b29ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+      "image_two": "https://plus.unsplash.com/premium_photo-1676497323594-81366200fcbb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "image_three": "https://images.unsplash.com/photo-1679710611883-4c8441bf12f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "image_four": "https://images.unsplash.com/photo-1678043006565-1a2c3eec0796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2066&q=80",
       "hotel": {
-        "name": "Villa Taormina View",
+        "name": "Villa delle Acque",
         "type": "Villa",
         "bedrooms": 3,
         "bathrooms": 2,
         "guests": 6,
-        "amenities": [
-          "WiFi Gratuito",
-          "Piscina Privata",
-          "Aria Condizionata",
-          "Terrazza Panoramica"
-        ],
+        "amenities": ["WiFi Gratuito", "Piscina Privata", "Aria Condizionata", "Terrazza Panoramica"],
         "images": [
-          "machupicchu1.jpg",
-          "machupicchu2.jpg",
-          "machupicchu3.jpg"
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/a1/12/33f567cb7d874b48e2175e91e1b521ab083e5a46688e12f82dbea1aa64ae.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/96/a2/209c4b797c4c79e7bf434f3abcac83299cbc1a0675ff312cbea88adfcbf8.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/49/0c/daf45f66415c87e091d4d91b8570d43c20bbc7c0c6c6b91fa1d5a6deccea.jpeg",
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/65/cb/e27e5acd25890cc96159297bb0388a616b609a0c7d8ee774b4883b4e08d0.jpeg"
         ]
       },
       "reviews": [
@@ -690,17 +506,9 @@
           "comment": "Taormina è un luogo magico, e questa villa ci ha permesso di viverlo appieno."
         }
       ],
-      "host": {
-        "name": "Alessio",
-        "superhost": true,
-        "verified": true
-      },
+      "host": "Alessio",
       "cancellation_policy": "Moderata",
-      "dates_available": [
-        "2023-11-05",
-        "2023-11-12",
-        "2023-11-19"
-      ],
+      "dates_available": ["2023-11-05", "2023-11-12", "2023-11-19"],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -721,34 +529,40 @@
   "hotels": [
     {
       "id": 1,
-      "name": "Grand Hotel Paris",
-      "city": "Paris",
+      "name": "Hotel San Marco",
+      "city": "Salerno",
       "type": "Hotel",
+      "offer": "stay",
       "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/88/f5/18716db0af813c769c3529b6617ff7557422c1841a46f1fbf3c3ae7f8381.jpeg",
       "bedrooms": 2,
       "bathrooms": 2,
       "guests": 4,
-      "amenities": [
-        "Free WiFi",
-        "Swimming Pool",
-        "Gym",
-        "Restaurant"
-      ],
+      "amenities": ["WiFi gratuito", "Piscina", "Palestra", "Ristorante"],
       "reviews": [
         {
           "user": "Guest123",
           "rating": 4.5,
-          "comment": "A wonderful stay at Grand Hotel Paris!"
+          "comment": "Un soggiorno meraviglioso!"
         },
         {
           "user": "TravelerX",
           "rating": 4,
-          "comment": "Great amenities and friendly staff."
+          "comment": "Ottimi servizi e personale cordiale."
         },
         {
           "user": "Giovanni",
           "rating": 4,
           "comment": "Molto bello"
+        },
+        {
+          "user": "Giovanni12",
+          "rating": "3",
+          "comment": "Bellooooo"
+        },
+        {
+          "user": "Giovanni",
+          "rating": "3",
+          "comment": "Bello"
         }
       ],
       "images": [
@@ -757,675 +571,338 @@
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/df/b9/ec7e9b1e00672daa6d553354b5dd4dcb3839abbca4f410f792692c2afa7c.jpeg",
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/bb/b8/2e6f5e284fe51dcdabb95dc84ab9468c06ef5f0ef92eb36bfb2dc333813f.jpeg"
       ],
-      "price_per_adult": 200,
-      "price_per_child": 100,
-      "host": "Emilia",
-      "review": {
-        "user": "Giovanni12",
-        "rating": 5,
-        "comment": "Che meraviglia!"
-      }
+      "price_per_adult": 230,
+      "price_per_child": 110,
+      "host": "Emilia"
     },
     {
       "id": 2,
-      "name": "Luxury Beach Resort",
-      "city": "Miami",
-      "type": "Resort",
-      "bedrooms": 3,
-      "bathrooms": 3,
-      "guests": 6,
-      "amenities": [
-        "Private Beach",
-        "Spa",
-        "Poolside Bar"
-      ],
-      "reviews": [
-        {
-          "user": "BeachLover",
-          "rating": 4.8,
-          "comment": "The private beach is amazing!"
-        },
-        {
-          "user": "SunSeeker",
-          "rating": 4.7,
-          "comment": "Great resort for a sunny vacation."
-        }
-      ],
-      "images": [
-        "https://example.com/hotel2-image1.jpg",
-        "https://example.com/hotel2-image2.jpg",
-        "https://example.com/hotel2-image3.jpg",
-        "https://example.com/hotel2-image4.jpg"
-      ],
-      "price_per_adult": "290",
-      "price_per_child": 150,
-      "host": "Michael"
-    },
-    {
-      "id": 3,
-      "name": "Mountain View Lodge",
-      "city": "Aspen",
-      "type": "Lodge",
+      "name": "Villa Paradiso",
+      "city": "Positano",
+      "type": "Villa",
+      "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/80/c7/6d2fc95315ae431cb07abaef68701c3c7db80ecbceb01311a12a5b6ad6e5.jpeg",
       "bedrooms": 4,
       "bathrooms": 3,
       "guests": 8,
-      "amenities": [
-        "Ski-in/Ski-out",
-        "Hot Tub",
-        "Fireplace"
-      ],
+      "amenities": ["Piscina privata", "Giardino lussureggiante", "Cucina gourmet", "Jacuzzi"],
       "reviews": [
         {
-          "user": "SkiEnthusiast",
+          "user": "FamilySmith",
           "rating": 4.9,
-          "comment": "Perfect location for skiing!"
+          "comment": "Un'esperienza unica in una villa spettacolare."
         },
         {
-          "user": "NatureLover",
-          "rating": 4.6,
-          "comment": "Cozy lodge with stunning views."
+          "user": "TravelerC",
+          "rating": 4.7,
+          "comment": "Tutto perfetto, non avremmo potuto chiedere di meglio."
+        },
+        {
+          "user": "Elena",
+          "rating": 4.8,
+          "comment": "Indimenticabile! La villa è un sogno."
         }
       ],
       "images": [
-        "https://example.com/hotel3-image1.jpg",
-        "https://example.com/hotel3-image2.jpg",
-        "https://example.com/hotel3-image3.jpg",
-        "https://example.com/hotel3-image4.jpg"
+        "https://example.com/villa-image-1.jpeg",
+        "https://example.com/villa-image-1a.jpeg",
+        "https://example.com/villa-image-1b.jpeg"
       ],
-      "price_per_adult": 250,
-      "price_per_child": 120,
-      "host": "Daniel"
+      "price_per_adult": 350,
+      "price_per_child": 150,
+      "host": "Isabella"
+    },
+    {
+      "id": 3,
+      "name": "Resort Splendido",
+      "city": "Ravello",
+      "type": "Resort",
+      "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/6c/9e/7562ecfbca97d2ef737e3747507df83a301118d2ec9bdcfb7ec049c24620.jpeg",
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "guests": 2,
+      "amenities": ["Spiaggia privata", "Ristorante gourmet", "Spa di lusso", "Escursioni guidate"],
+      "reviews": [
+        {
+          "user": "CoppiaFelice",
+          "rating": 4.7,
+          "comment": "Il paradiso in Terra, perfetto per una luna di miele."
+        },
+        {
+          "user": "TravelerD",
+          "rating": 4.6,
+          "comment": "Tutti i comfort in un luogo incantevole."
+        },
+        {
+          "user": "Marco",
+          "rating": 4.4,
+          "comment": "Relax totale con panorami mozzafiato."
+        }
+      ],
+      "images": [
+        "https://example.com/resort-image-1.jpeg",
+        "https://example.com/resort-image-1a.jpeg",
+        "https://example.com/resort-image-1b.jpeg"
+      ],
+      "price_per_adult": 400,
+      "price_per_child": 200,
+      "host": "Giuseppe"
     },
     {
       "id": 4,
-      "name": "Beachfront Paradise Resortr",
-      "city": "Maui",
-      "type": "Resort",
-      "bedrooms": 5,
-      "bathrooms": 4,
-      "guests": 10,
-      "amenities": [
-        "Beachfront Access",
-        "Infinity Pool",
-        "Spa"
-      ],
+      "name": "Hotel Mare",
+      "city": "Cagliari",
+      "type": "Hotel",
+      "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/70/f8/8bd25f332007924c14fc352df074ec9831d89193214d1ef49a2b62d67537.jpeg",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "guests": 6,
+      "amenities": ["Accesso diretto alla spiaggia", "Piscina", "Ristorante vista mare", "Centro benessere"],
       "reviews": [
         {
-          "user": "BeachBum",
-          "rating": 4.7,
-          "comment": "Paradise on the beach!"
+          "user": "ViaggiatoreSardegna",
+          "rating": 4.8,
+          "comment": "Una vacanza indimenticabile sulla costa sarda."
         },
         {
-          "user": "Vacationer123",
+          "user": "OspiteRilassato",
+          "rating": 4.7,
+          "comment": "Tutti i comfort in un'atmosfera rilassante."
+        },
+        {
+          "user": "Giulia",
           "rating": 4.5,
-          "comment": "A dream vacation spot."
+          "comment": "Splendida vista mare e personale gentile."
         }
       ],
       "images": [
-        "https://example.com/hotel4-image1.jpg",
-        "https://example.com/hotel4-image2.jpg",
-        "https://example.com/hotel4-image3.jpg",
-        "https://example.com/hotel4-image4.jpg"
+        "https://example.com/sardegna-hotel-image-1.jpeg",
+        "https://example.com/sardegna-hotel-image-1a.jpeg",
+        "https://example.com/sardegna-hotel-image-1b.jpeg"
       ],
-      "price_per_adult": "400",
-      "price_per_child": 180,
-      "host": "Sophia"
+      "price_per_adult": 300,
+      "price_per_child": 150,
+      "host": "Luca"
     },
     {
       "id": 5,
-      "name": "Rustic Cabin Retreat",
-      "city": "Lake Tahoe",
-      "type": "Cabin",
+      "name": "Casa Relax",
+      "city": "Lecce",
+      "type": "Casa",
+      "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/a2/95/c08a6ce18dca3839a7fbda0e251291d157eebfd84b8d089fa92471e1790f.jpeg",
       "bedrooms": 2,
-      "bathrooms": 1,
+      "bathrooms": 2,
       "guests": 4,
-      "amenities": [
-        "Lake View",
-        "Fireplace",
-        "Hiking Trails"
-      ],
+      "amenities": ["Patio privato", "Cucina moderna", "Giardino tranquillo", "Parcheggio gratuito"],
       "reviews": [
         {
-          "user": "NatureExplorer",
-          "rating": 4.4,
-          "comment": "Beautiful cabin with great lake views."
+          "user": "FamigliaPuglia",
+          "rating": 4.6,
+          "comment": "Un'oasi di tranquillità nel cuore di Puglia."
         },
         {
-          "user": "AdventureSeeker",
-          "rating": 4.2,
-          "comment": "Perfect for a quiet getaway."
+          "user": "TravelerPuglia",
+          "rating": 4.3,
+          "comment": "Casa ben arredata e comoda per esplorare la regione."
+        },
+        {
+          "user": "Antonio",
+          "rating": 4.4,
+          "comment": "Tutto perfetto per una vacanza rilassante."
         }
       ],
       "images": [
-        "https://example.com/hotel5-image1.jpg",
-        "https://example.com/hotel5-image2.jpg",
-        "https://example.com/hotel5-image3.jpg",
-        "https://example.com/hotel5-image4.jpg"
+        "https://example.com/puglia-casa-image-1.jpeg",
+        "https://example.com/puglia-casa-image-1a.jpeg",
+        "https://example.com/puglia-casa-image-1b.jpeg"
       ],
-      "price_per_adult": 180,
-      "price_per_child": 90,
+      "price_per_adult": 220,
+      "price_per_child": 110,
       "host": "Maria"
     },
     {
       "id": 6,
-      "name": "Downtown Boutique Hotel",
-      "city": "New York",
-      "type": "Hotel",
-      "bedrooms": 1,
-      "bathrooms": 1,
-      "guests": 2,
-      "amenities": [
-        "City View",
-        "Room Service"
-      ],
+      "name": "Villa Vista Mare",
+      "city": "Tropea",
+      "type": "Villa",
+      "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/a2/13/203e796c54fd9664072780eef7095a9d25adbfd9e058157028154142516a.jpeg",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "guests": 8,
+      "amenities": ["Piscina privata", "Terrazza panoramica", "Cucina moderna", "Giardino lussureggiante"],
       "reviews": [
         {
-          "user": "CityTraveler",
-          "rating": 4.6,
-          "comment": "Great location in the heart of the city."
+          "user": "FamigliaCalabria",
+          "rating": 4.9,
+          "comment": "Una villa con vista mozzafiato su Tropea."
         },
         {
-          "user": "SoloExplorer",
-          "rating": 4.3,
-          "comment": "Cozy hotel for solo travelers."
+          "user": "ViaggiatoriFelici",
+          "rating": 4.7,
+          "comment": "Una vacanza da sogno in una villa di lusso."
+        },
+        {
+          "user": "Lucia",
+          "rating": 4.8,
+          "comment": "Indimenticabile! Consigliata a tutti."
         }
       ],
       "images": [
-        "https://example.com/hotel6-image1.jpg",
-        "https://example.com/hotel6-image2.jpg",
-        "https://example.com/hotel6-image3.jpg",
-        "https://example.com/hotel6-image4.jpg"
+        "https://example.com/calabria-villa-image-1.jpeg",
+        "https://example.com/calabria-villa-image-1a.jpeg",
+        "https://example.com/calabria-villa-image-1b.jpeg"
       ],
-      "price_per_adult": 220,
-      "price_per_child": 110,
-      "host": "Liam"
+      "price_per_adult": 320,
+      "price_per_child": 160,
+      "host": "Roberto"
     },
     {
       "id": 7,
-      "name": "Seaside Villa",
-      "city": "Malibu",
-      "type": "Villa",
-      "bedrooms": 4,
-      "bathrooms": 3,
-      "guests": 8,
-      "amenities": [
-        "Beachfront Access",
-        "Private Pool",
-        "Ocean View"
-      ],
-      "reviews": [
-        {
-          "user": "BeachLoverX",
-          "rating": 4.9,
-          "comment": "A dream villa by the beach!"
-        },
-        {
-          "user": "Vacationer456",
-          "rating": 4.8,
-          "comment": "Relaxing stay with stunning ocean views."
-        }
-      ],
-      "images": [
-        "https://example.com/hotel7-image1.jpg",
-        "https://example.com/hotel7-image2.jpg",
-        "https://example.com/hotel7-image3.jpg",
-        "https://example.com/hotel7-image4.jpg"
-      ],
-      "price_per_adult": 400,
-      "price_per_child": 200,
-      "host": "Ava"
-    },
-    {
-      "id": 8,
-      "name": "Alpine Chalet",
-      "city": "Zermatt",
-      "type": "Chalet",
-      "bedrooms": 3,
-      "bathrooms": 2,
-      "guests": 6,
-      "amenities": [
-        "Mountain View",
-        "Hot Tub",
-        "Ski Access"
-      ],
-      "reviews": [
-        {
-          "user": "SkiLover",
-          "rating": 4.7,
-          "comment": "Perfect chalet for a skiing holiday!"
-        },
-        {
-          "user": "MountainExplorer",
-          "rating": 4.5,
-          "comment": "Amazing views and cozy chalet."
-        }
-      ],
-      "images": [
-        "https://example.com/hotel8-image1.jpg",
-        "https://example.com/hotel8-image2.jpg",
-        "https://example.com/hotel8-image3.jpg",
-        "https://example.com/hotel8-image4.jpg"
-      ],
-      "price_per_adult": 280,
-      "price_per_child": 140,
-      "host": "Noah"
-    },
-    {
-      "id": 9,
-      "name": "Riverside Cabin",
-      "city": "Denver",
-      "type": "Cabin",
-      "bedrooms": 2,
-      "bathrooms": 1,
-      "guests": 4,
-      "amenities": [
-        "River View",
-        "Fire Pit",
-        "Hiking Trails"
-      ],
-      "reviews": [
-        {
-          "user": "NatureLover456",
-          "rating": 4.4,
-          "comment": "Peaceful cabin by the river."
-        },
-        {
-          "user": "AdventureSeekerX",
-          "rating": 4.2,
-          "comment": "A great place to disconnect."
-        }
-      ],
-      "images": [
-        "https://example.com/hotel9-image1.jpg",
-        "https://example.com/hotel9-image2.jpg",
-        "https://example.com/hotel9-image3.jpg",
-        "https://example.com/hotel9-image4.jpg"
-      ],
-      "price_per_adult": 190,
-      "price_per_child": 95,
-      "host": "Oliver"
-    },
-    {
-      "id": 10,
-      "name": "Urban Loft",
-      "city": "San Francisco",
-      "type": "Loft",
+      "name": "Resort Relax",
+      "city": "Rimini",
+      "type": "Resort",
+      "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/56/af/04f07fc9f9e9db2f8573f519f15f0c1ed4cb69169e11f15b04ff73948bee.jpeg",
       "bedrooms": 1,
       "bathrooms": 1,
       "guests": 2,
-      "amenities": [
-        "City View",
-        "Modern Design"
-      ],
+      "amenities": ["Spiaggia privata", "Ristorante gourmet", "Piscina con vista sul mare", "Spa di lusso"],
       "reviews": [
         {
-          "user": "CityExplorer",
+          "user": "CoppiaFeliceEmilia",
+          "rating": 4.7,
+          "comment": "Il paradiso in riva al mare, perfetto per una fuga romantica."
+        },
+        {
+          "user": "TravelerEmilia",
           "rating": 4.6,
-          "comment": "Great loft in the heart of the city."
+          "comment": "Tutti i comfort in un ambiente di lusso."
         },
         {
-          "user": "SoloTravelerX",
-          "rating": 4.3,
-          "comment": "Perfect for solo travelers."
+          "user": "Elisa",
+          "rating": 4.4,
+          "comment": "Relax totale e servizio impeccabile."
         }
       ],
       "images": [
-        "https://example.com/hotel10-image1.jpg",
-        "https://example.com/hotel10-image2.jpg",
-        "https://example.com/hotel10-image3.jpg",
-        "https://example.com/hotel10-image4.jpg"
-      ],
-      "price_per_adult": 210,
-      "price_per_child": 105,
-      "host": "Emma"
-    },
-    {
-      "id": 11,
-      "name": "Historic Manor",
-      "city": "Charleston",
-      "type": "Manor",
-      "bedrooms": 5,
-      "bathrooms": 4,
-      "guests": 10,
-      "amenities": [
-        "Antique Charm",
-        "Gardens",
-        "Fireplace"
-      ],
-      "reviews": [
-        {
-          "user": "HistoryBuff",
-          "rating": 4.7,
-          "comment": "A glimpse into the past in this historic manor."
-        },
-        {
-          "user": "GardenEnthusiast",
-          "rating": 4.5,
-          "comment": "Beautiful gardens and charming interiors."
-        }
-      ],
-      "images": [
-        "https://example.com/hotel11-image1.jpg",
-        "https://example.com/hotel11-image2.jpg",
-        "https://example.com/hotel11-image3.jpg",
-        "https://example.com/hotel11-image4.jpg"
-      ],
-      "price_per_adult": 320,
-      "price_per_child": 160,
-      "host": "William"
-    },
-    {
-      "id": 12,
-      "name": "Sunny Beachfront House",
-      "city": "Santa Monica",
-      "type": "House",
-      "bedrooms": 4,
-      "bathrooms": 3,
-      "guests": 8,
-      "amenities": [
-        "Beachfront Access",
-        "Hot Tub",
-        "Ocean View"
-      ],
-      "reviews": [
-        {
-          "user": "BeachLover123",
-          "rating": 4.8,
-          "comment": "A perfect beachfront getaway!"
-        },
-        {
-          "user": "Vacationer789",
-          "rating": 4.7,
-          "comment": "Relaxing by the beach was amazing."
-        }
-      ],
-      "images": [
-        "https://example.com/hotel12-image1.jpg",
-        "https://example.com/hotel12-image2.jpg",
-        "https://example.com/hotel12-image3.jpg",
-        "https://example.com/hotel12-image4.jpg"
+        "https://example.com/emiliaromagna-resort-image-1.jpeg",
+        "https://example.com/emiliaromagna-resort-image-1a.jpeg",
+        "https://example.com/emiliaromagna-resort-image-1b.jpeg"
       ],
       "price_per_adult": 380,
       "price_per_child": 190,
-      "host": "Olivia"
+      "host": "Lorenzo"
     },
     {
-      "id": 13,
-      "name": "Cozy Mountain Cabin",
-      "city": "Denver",
-      "type": "Cabin",
-      "bedrooms": 2,
-      "bathrooms": 1,
-      "guests": 4,
-      "amenities": [
-        "Mountain View",
-        "Fireplace",
-        "Hiking Trails"
-      ],
-      "reviews": [
-        {
-          "user": "MountainLover",
-          "rating": 4.5,
-          "comment": "A perfect mountain escape."
-        },
-        {
-          "user": "NatureHiker",
-          "rating": 4.3,
-          "comment": "Great location for hiking."
-        }
-      ],
-      "images": [
-        "https://example.com/hotel13-image1.jpg",
-        "https://example.com/hotel13-image2.jpg",
-        "https://example.com/hotel13-image3.jpg",
-        "https://example.com/hotel13-image4.jpg"
-      ],
-      "price_per_adult": 190,
-      "price_per_child": 95,
-      "host": "Oliver"
-    },
-    {
-      "id": 14,
-      "name": "City View Apartment",
-      "city": "Los Angeles",
-      "type": "Apartment",
+      "id": 8,
+      "name": "Hotel Paradiso",
+      "city": "Costa Smeralda",
+      "type": "Hotel",
+      "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/e9/73/543a7402fde52ddce0a9507bbb6f9cd3ad4484f4e35016528b5cbf228244.jpeg",
       "bedrooms": 2,
       "bathrooms": 2,
       "guests": 4,
       "amenities": [
-        "City View",
-        "Pool",
-        "Gym"
+        "Accesso diretto alla spiaggia",
+        "Piscina con vista mare",
+        "Ristorante gourmet",
+        "Centro benessere"
       ],
       "reviews": [
         {
-          "user": "CityExplorerX",
-          "rating": 4.7,
-          "comment": "Great apartment with stunning city views."
-        },
-        {
-          "user": "Traveler456",
-          "rating": 4.5,
-          "comment": "Convenient location for exploring the city."
-        }
-      ],
-      "images": [
-        "https://example.com/hotel14-image1.jpg",
-        "https://example.com/hotel14-image2.jpg",
-        "https://example.com/hotel14-image3.jpg",
-        "https://example.com/hotel14-image4.jpg"
-      ],
-      "price_per_adult": 220,
-      "price_per_child": 110,
-      "host": "Liam"
-    },
-    {
-      "id": 15,
-      "name": "Luxury Mountain Retreat",
-      "city": "Lake Tahoe",
-      "type": "House",
-      "bedrooms": 5,
-      "bathrooms": 4,
-      "guests": 10,
-      "amenities": [
-        "Mountain View",
-        "Hot Tub",
-        "Fireplace"
-      ],
-      "reviews": [
-        {
-          "user": "NatureLoverX",
+          "user": "FamigliaCosta",
           "rating": 4.9,
-          "comment": "A luxurious mountain getaway!"
+          "comment": "Una vacanza di lusso sulla Costa Smeralda."
         },
         {
-          "user": "SkiEnthusiastX",
+          "user": "ViaggiatoriSardegna",
           "rating": 4.8,
-          "comment": "Perfect for a ski trip."
+          "comment": "Tutto perfetto, ci torneremo sicuramente."
+        },
+        {
+          "user": "Carla",
+          "rating": 4.7,
+          "comment": "Il miglior hotel sulla spiaggia."
         }
       ],
       "images": [
-        "https://example.com/hotel15-image1.jpg",
-        "https://example.com/hotel15-image2.jpg",
-        "https://example.com/hotel15-image3.jpg",
-        "https://example.com/hotel15-image4.jpg"
+        "https://example.com/sardegna-hotel-image-2.jpeg",
+        "https://example.com/sardegna-hotel-image-2a.jpeg",
+        "https://example.com/sardegna-hotel-image-2b.jpeg"
       ],
       "price_per_adult": 350,
-      "price_per_child": 180,
-      "host": "Sophia"
+      "price_per_child": 175,
+      "host": "Giovanni"
     },
     {
-      "id": 16,
-      "name": "Modern City Loft",
-      "city": "San Francisco",
-      "type": "Loft",
+      "id": 9,
+      "name": "Trullo Magico",
+      "city": "Alberobello",
+      "type": "Casa",
+      "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/5d/fa/9d202e6f049ba1fd00a773f6b16deb36982ec6b8ae31c0d199c3e51bd75a.jpeg",
       "bedrooms": 1,
       "bathrooms": 1,
       "guests": 2,
-      "amenities": [
-        "City View",
-        "Modern Design"
-      ],
+      "amenities": ["Casa tradizionale", "Giardino privato", "Cucina tipica pugliese", "Parcheggio gratuito"],
       "reviews": [
         {
-          "user": "CityExplorer123",
+          "user": "CoppiaPuglia",
+          "rating": 4.7,
+          "comment": "Un'esperienza autentica in un trullo incantevole."
+        },
+        {
+          "user": "ViaggiatoriPuglia",
           "rating": 4.6,
-          "comment": "Sleek and modern loft in the city."
+          "comment": "Un soggiorno unico nel cuore di Alberobello."
         },
         {
-          "user": "SoloTraveler456",
-          "rating": 4.3,
-          "comment": "Perfect for solo travelers."
-        }
-      ],
-      "images": [
-        "https://example.com/hotel16-image1.jpg",
-        "https://example.com/hotel16-image2.jpg",
-        "https://example.com/hotel16-image3.jpg",
-        "https://example.com/hotel16-image4.jpg"
-      ],
-      "price_per_adult": 210,
-      "price_per_child": 105,
-      "host": "Emma"
-    },
-    {
-      "id": 17,
-      "name": "Historic Mansion",
-      "city": "Charleston",
-      "type": "Mansion",
-      "bedrooms": 5,
-      "bathrooms": 4,
-      "guests": 10,
-      "amenities": [
-        "Antique Charm",
-        "Gardens",
-        "Fireplace"
-      ],
-      "reviews": [
-        {
-          "user": "HistoryEnthusiast",
-          "rating": 4.7,
-          "comment": "A step back in time in this historic mansion."
-        },
-        {
-          "user": "GardenLover",
+          "user": "Giuseppe",
           "rating": 4.5,
-          "comment": "Gorgeous gardens and elegant interiors."
+          "comment": "Un'immersione nella cultura pugliese."
         }
       ],
       "images": [
-        "https://example.com/hotel17-image1.jpg",
-        "https://example.com/hotel17-image2.jpg",
-        "https://example.com/hotel17-image3.jpg",
-        "https://example.com/hotel17-image4.jpg"
+        "https://example.com/puglia-casa-image-2.jpeg",
+        "https://example.com/puglia-casa-image-2a.jpeg",
+        "https://example.com/puglia-casa-image-2b.jpeg"
       ],
-      "price_per_adult": 320,
-      "price_per_child": 160,
-      "host": "William"
+      "price_per_adult": 180,
+      "price_per_child": 90,
+      "host": "Antonia"
     },
     {
-      "id": 18,
-      "name": "Beachfront Bungalow",
-      "city": "Maui",
-      "type": "Bungalow",
-      "bedrooms": 2,
-      "bathrooms": 2,
-      "guests": 4,
-      "amenities": [
-        "Beachfront Access",
-        "Outdoor Shower",
-        "Ocean View"
-      ],
-      "reviews": [
-        {
-          "user": "BeachLover789",
-          "rating": 4.8,
-          "comment": "Paradise by the beach!"
-        },
-        {
-          "user": "Vacationer101",
-          "rating": 4.7,
-          "comment": "Unforgettable beachfront experience."
-        }
-      ],
-      "images": [
-        "https://example.com/hotel18-image1.jpg",
-        "https://example.com/hotel18-image2.jpg",
-        "https://example.com/hotel18-image3.jpg",
-        "https://example.com/hotel18-image4.jpg"
-      ],
-      "price_per_adult": 300,
-      "price_per_child": 150,
-      "host": "Sophia"
-    },
-    {
-      "id": 19,
-      "name": "Secluded Mountain Chalet",
-      "city": "Aspen",
-      "type": "Chalet",
+      "id": 10,
+      "name": "Villa Relax",
+      "city": "Ravenna",
+      "type": "Villa",
+      "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/e6/af/68baac1d5a98a29133a3fb3d52584162dc24df48fdf830b602765200c839.jpeg",
       "bedrooms": 3,
       "bathrooms": 2,
       "guests": 6,
-      "amenities": [
-        "Mountain View",
-        "Hot Tub",
-        "Ski Access"
-      ],
+      "amenities": ["Piscina privata", "Giardino lussureggiante", "Cucina moderna", "Jacuzzi"],
       "reviews": [
         {
-          "user": "SkiLoverX",
-          "rating": 4.7,
-          "comment": "Perfect chalet for a skiing getaway!"
+          "user": "FamigliaEmilia",
+          "rating": 4.9,
+          "comment": "Una villa di lusso per una vacanza indimenticabile."
         },
         {
-          "user": "MountainExplorerX",
-          "rating": 4.5,
-          "comment": "Breathtaking mountain views."
+          "user": "ViaggiatoriEmilia",
+          "rating": 4.8,
+          "comment": "Tutto perfetto, non avremmo potuto chiedere di meglio."
+        },
+        {
+          "user": "Isabella",
+          "rating": 4.7,
+          "comment": "Un'oasi di relax con tutti i comfort."
         }
       ],
       "images": [
-        "https://example.com/hotel19-image1.jpg",
-        "https://example.com/hotel19-image2.jpg",
-        "https://example.com/hotel19-image3.jpg",
-        "https://example.com/hotel19-image4.jpg"
+        "https://example.com/emiliaromagna-villa-image-1.jpeg",
+        "https://example.com/emiliaromagna-villa-image-1a.jpeg",
+        "https://example.com/emiliaromagna-villa-image-1b.jpeg"
       ],
       "price_per_adult": 280,
       "price_per_child": 140,
-      "host": "Daniel"
-    },
-    {
-      "id": 20,
-      "name": "Urban Studio Apartment",
-      "city": "New York",
-      "type": "Apartment",
-      "bedrooms": 1,
-      "bathrooms": 1,
-      "guests": 2,
-      "amenities": [
-        "City View",
-        "Kitchenette"
-      ],
-      "reviews": [
-        {
-          "user": "CityExplorer789",
-          "rating": 4.6,
-          "comment": "Convenient and modern studio in the city."
-        },
-        {
-          "user": "SoloTraveler101",
-          "rating": 4.3,
-          "comment": "Ideal for solo travelers exploring the city."
-        }
-      ],
-      "images": [
-        "https://example.com/hotel20-image1.jpg",
-        "https://example.com/hotel20-image2.jpg",
-        "https://example.com/hotel20-image3.jpg",
-        "https://example.com/hotel20-image4.jpg"
-      ],
-      "price_per_adult": 220,
-      "price_per_child": 110,
-      "host": "Liam"
+      "host": "Roberto"
     }
   ],
   "register": [
@@ -1480,6 +957,27 @@
       "password": "23456",
       "gender": "male",
       "id": "fP6lexD"
+    },
+    {
+      "username": "Giovanni123",
+      "email": "giovi@gmail.com",
+      "password": "121212",
+      "gender": "male",
+      "id": "xzmnIXH"
+    },
+    {
+      "username": "Giacomo23",
+      "email": "giacomo23@gmail.com",
+      "password": "123456",
+      "gender": "male",
+      "id": "qpETdSa"
+    },
+    {
+      "username": "Giovanni45",
+      "email": "giovanni45@gmail.com",
+      "password": "12345",
+      "gender": "male",
+      "id": "6hFCZfG"
     }
   ]
 }

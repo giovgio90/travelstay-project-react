@@ -7,7 +7,7 @@
   margin-top: 0.3px;
   width: 100%;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 6px 20px rgba(0, 0, 0, 0.19);
-  z-index: 1;
+  z-index: 1000;
 }
 
 .sticky-header {
@@ -18,8 +18,21 @@
 
   width: 100%;
 
-  z-index: 1;
+  z-index: 1000;
   margin-top: 0.4px;
+}
+
+.nav-link {
+  color: white;
+}
+
+.nav-link:hover {
+  color: #203040;
+}
+
+.navbar-nav .nav-item .nav-link .dropdown-menu {
+  left: auto;
+  right: 0;
 }
 
 /*SEARCHBAR*/
@@ -29,6 +42,31 @@
   border: 1px solid transparent;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   backdrop-filter: blur(2px);
+}
+
+.button-search {
+  background-color: #203040;
+  border: 2px solid #203040;
+}
+
+.button-search:hover {
+  color: #203040;
+  background-color: #f1f1f1;
+  border: 2px solid #203040;
+  --bs-btn-color: unset !important;
+  --bs-btn-bg: unset !important;
+  --bs-btn-border-color: unset !important;
+  --bs-btn-hover-color: unset !important;
+  --bs-btn-hover-bg: unset !important;
+  --bs-btn-hover-border-color: unset !important;
+  --bs-btn-focus-shadow-rgb: unset !important;
+  --bs-btn-active-color: unset !important;
+  --bs-btn-active-bg: unset !important;
+  --bs-btn-active-border-color: unset !important;
+  --bs-btn-active-shadow: unset !important;
+  --bs-btn-disabled-color: unset !important;
+  --bs-btn-disabled-bg: unset !important;
+  --bs-btn-disabled-border-color: unset !important;
 }
 
 /*SEARCH RESULTS*/
@@ -46,7 +84,7 @@
 
 .home-sticky {
   text-align: center;
-  margin-top: 80px;
+  margin-top: 89px;
 }
 
 .home-no-sticky {
@@ -54,8 +92,7 @@
 }
 
 .header-background {
-  background-image: linear-gradient(rgba(11, 70, 148, 0.349), rgba(33, 51, 75, 0.144)),
-    url("./assets/haley-phelps-S-llxYh3GzI-unsplash.jpg");
+  background-image: linear-gradient(rgba(11, 70, 148, 0.349), rgba(33, 51, 75, 0.144)), url("./assets/TravelLogin.png");
   height: 100vh;
   background-size: cover;
 }
@@ -84,10 +121,9 @@
   font-size: 18px;
   color: white;
   white-space: nowrap;
-  margin-left: 60px;
+  margin-left: 45px;
   opacity: 0.8;
   position: relative;
-  animation: appear 5s linear forwards, zoom 1s 0.5s linear infinite alternate;
 }
 
 /*LOADING */
@@ -113,10 +149,47 @@
   }
 }
 .btn-explore {
-  border: none;
-  background: #203040;
+  border: 1px solid rgba(34, 34, 34, 0.85);
+  border-radius: 3px;
+  background: white;
+  color: rgba(34, 34, 34, 0.85);
   font-size: 1rem;
   font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.1rem;
+  --bs-btn-color: unset;
+  --bs-btn-bg: unset;
+  --bs-btn-border-color: unset;
+  --bs-btn-hover-color: unset;
+  --bs-btn-hover-bg: unset;
+  --bs-btn-hover-border-color: unset;
+  --bs-btn-focus-shadow-rgb: unset;
+  --bs-btn-active-color: unset !important;
+  --bs-btn-active-bg: unset;
+  --bs-btn-active-border-color: unset;
+  --bs-btn-active-shadow: unset;
+  --bs-btn-disabled-color: unset;
+  --bs-btn-disabled-bg: unset;
+  --bs-btn-disabled-border-color: unset;
+}
+
+.btn-explore:hover {
+  color: white;
+  background: #203040;
+  --bs-btn-color: unset;
+  --bs-btn-bg: unset;
+  --bs-btn-border-color: unset;
+  --bs-btn-hover-color: unset;
+  --bs-btn-hover-bg: unset;
+  --bs-btn-hover-border-color: unset;
+  --bs-btn-focus-shadow-rgb: unset;
+  --bs-btn-active-color: unset !important;
+  --bs-btn-active-bg: unset;
+  --bs-btn-active-border-color: unset;
+  --bs-btn-active-shadow: unset;
+  --bs-btn-disabled-color: unset;
+  --bs-btn-disabled-bg: unset;
+  --bs-btn-disabled-border-color: unset;
 }
 
 /* INTRO */
@@ -168,6 +241,40 @@
   border: none;
 }
 
+.upwards-animation {
+  transition: transform 0.3s ease;
+}
+
+.invisible {
+  transform: translateY(40%);
+  transition: transform 0.3s ease;
+}
+
+.button-news {
+  background-color: #203040;
+  border: 2px solid #f1f1f1;
+}
+
+.button-news:hover {
+  color: #203040;
+  background-color: #f1f1f1;
+  border: 2px solid #f1f1f1;
+  --bs-btn-color: unset !important;
+  --bs-btn-bg: unset !important;
+  --bs-btn-border-color: unset !important;
+  --bs-btn-hover-color: unset !important;
+  --bs-btn-hover-bg: unset !important;
+  --bs-btn-hover-border-color: unset !important;
+  --bs-btn-focus-shadow-rgb: unset !important;
+  --bs-btn-active-color: unset !important;
+  --bs-btn-active-bg: unset !important;
+  --bs-btn-active-border-color: unset !important;
+  --bs-btn-active-shadow: unset !important;
+  --bs-btn-disabled-color: unset !important;
+  --bs-btn-disabled-bg: unset !important;
+  --bs-btn-disabled-border-color: unset !important;
+}
+
 /* OFFERS EXPLORE NOW */
 
 .offer-card {
@@ -187,11 +294,15 @@
 }
 
 .margin-top-solo-soggiorno {
-  margin-top: 0rem; /* Imposta il margine diverso per "solo soggiorno" */
+  margin-top: 0rem;
 }
 
 .margin-top-viaggi-con-soggiorno {
-  margin-top: 35px; /* Imposta il margine diverso per "viaggi con soggiorno" */
+  margin-top: 35px;
+}
+
+.custom-modal {
+  z-index: 2000;
 }
 
 /*OFFER DETAIL*/
@@ -200,10 +311,54 @@
   border-radius: 10px;
 }
 
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 250px;
+  height: 250px;
+
+  opacity: 0.6;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.swiper-slide-active {
+  width: 400px;
+  height: 400px;
+  opacity: 1;
+}
+
 /*FOOTER*/
 
 .footer-travel {
   background: #203040;
+}
+
+.button-footer {
+  color: #cbcbcb;
+}
+
+.button-footer:hover {
+  text-decoration-color: white;
+  text-decoration-line: underline;
+  color: white;
+}
+
+.social {
+  color: #cbcbcb;
+}
+
+.social:hover {
+  transform: scale(1.5);
+  transition: transform 0.3s;
+  color: white;
 }
 
 /*LOGIN*/
@@ -250,10 +405,6 @@
 
   .carousel {
     width: 100% !important;
-  }
-
-  .static-text {
-    display: none;
   }
 }
 

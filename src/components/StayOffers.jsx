@@ -1,19 +1,57 @@
 import { useEffect, useState } from "react";
+
 import { Button, Card, Col, Container, Modal, Row, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchstayOffers, updateStayOffer } from "../redux/actions";
+import { addStayOffer, deleteStayOffer, fetchstayOffers, updateStayOffer } from "../redux/actions";
 import LoadingCard from "./LoadingCard";
+import { Scrollbar } from "react-scrollbars-custom";
 
 const StayOffers = ({ selectedBudget }) => {
   const dispatch = useDispatch();
   const travelData = useSelector((state) => state.stay.data);
   const [visibleOffers, setVisibleOffers] = useState(8);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [editedOffer, setEditedOffer] = useState(null);
   const loading = useSelector((state) => state.stay.loading);
 
   const username = useSelector((state) => state.user.username);
+  const [newOffer, setNewOffer] = useState({
+    name: "",
+    city: "",
+    type: "",
+    image: "",
+    bedrooms: "",
+    bathrooms: "",
+    guests: "",
+    amenities: [],
+    reviews: [],
+    images: [],
+    price_per_adult: 0,
+    price_per_child: 0,
+    host: "",
+  });
+
+  const handleAddOffer = () => {
+    dispatch(addStayOffer(newOffer));
+    setNewOffer({
+      name: "",
+      city: "",
+      type: "",
+      image: "",
+      bedrooms: "",
+      bathrooms: "",
+      guests: "",
+      amenities: [],
+      reviews: [],
+      images: [],
+      price_per_adult: 0,
+      price_per_child: 0,
+      host: "",
+    });
+    setShowModal(false);
+  };
 
   const cleanedEmail = username && username.email ? username.email.trim().toLowerCase() : "";
   const isAdmin = cleanedEmail === "giovanni@gmail.com";
@@ -39,9 +77,264 @@ const StayOffers = ({ selectedBudget }) => {
     ? travelData.filter((offer) => offer.price_per_adult <= selectedBudget)
     : travelData;
 
+  const handleDeleteOffer = (offerId) => {
+    if (isAdmin && window.confirm("Sei sicuro di voler eliminare questa offerta?")) {
+      dispatch(deleteStayOffer(offerId));
+    }
+  };
+
   return (
     <Container>
-      <h4>Soggiorno</h4>
+      <div className="d-flex align-items-center mb-2">
+        <h4 className="mb-0" style={{ fontSize: "2rem", fontFamily: "Impact, san-serif", color: "#203040" }}>
+          Soggiorno
+        </h4>
+        {isAdmin && (
+          <div>
+            <Button className="button-search mx-3" onClick={() => setShowModal(true)}>
+              Aggiungi Offerta
+            </Button>
+            <Modal show={showModal} size="lg" onHide={() => setShowModal(false)}>
+              <Modal.Header closeButton>
+                <Modal.Title style={{ fontFamily: "Impact, san-serif", color: "#203040" }}>
+                  Inserisci una nuova offerta
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <Scrollbar style={{ width: "100%", height: 360, color: "#203040" }}>
+                  <Form className="mx-2">
+                    <Form.Group className="mb-2">
+                      <Form.Label
+                        style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: "0.9rem",
+                          color: "#203040",
+                          fontWeight: "bolder",
+                        }}
+                        className="mb-0"
+                      >
+                        Nome
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={newOffer.name}
+                        onChange={(e) => setNewOffer({ ...newOffer, name: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group className="mb-2">
+                      <Form.Label
+                        style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: "0.9rem",
+                          color: "#203040",
+                          fontWeight: "bolder",
+                        }}
+                        className="mb-0"
+                      >
+                        Città
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={newOffer.city}
+                        onChange={(e) => setNewOffer({ ...newOffer, city: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group className="mb-2">
+                      <Form.Label
+                        style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: "0.9rem",
+                          color: "#203040",
+                          fontWeight: "bolder",
+                        }}
+                        className="mb-0"
+                      >
+                        Tipo Struttura
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={newOffer.type}
+                        onChange={(e) => setNewOffer({ ...newOffer, type: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group className="mb-2">
+                      <Form.Label
+                        style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: "0.9rem",
+                          color: "#203040",
+                          fontWeight: "bolder",
+                        }}
+                        className="mb-0"
+                      >
+                        Immagine copertina (URL)
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={newOffer.image}
+                        onChange={(e) => setNewOffer({ ...newOffer, image: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group className="mb-2">
+                      <Form.Label
+                        style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: "0.9rem",
+                          color: "#203040",
+                          fontWeight: "bolder",
+                        }}
+                        className="mb-0"
+                      >
+                        Stanze
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={newOffer.bedrooms}
+                        onChange={(e) => setNewOffer({ ...newOffer, bedrooms: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group className="mb-2">
+                      <Form.Label
+                        style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: "0.9rem",
+                          color: "#203040",
+                          fontWeight: "bolder",
+                        }}
+                        className="mb-0"
+                      >
+                        Bagni
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={newOffer.bathrooms}
+                        onChange={(e) => setNewOffer({ ...newOffer, bathrooms: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group className="mb-2">
+                      <Form.Label
+                        style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: "0.9rem",
+                          color: "#203040",
+                          fontWeight: "bolder",
+                        }}
+                        className="mb-0"
+                      >
+                        Ospiti
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={newOffer.guests}
+                        onChange={(e) => setNewOffer({ ...newOffer, guests: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group className="mb-2">
+                      <Form.Label
+                        style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: "0.9rem",
+                          color: "#203040",
+                          fontWeight: "bolder",
+                        }}
+                        className="mb-0"
+                      >
+                        Prezzo adulto
+                      </Form.Label>
+                      <Form.Control
+                        type="number"
+                        value={newOffer.price_per_adult}
+                        onChange={(e) => setNewOffer({ ...newOffer, price_per_adult: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group className="mb-2">
+                      <Form.Label
+                        style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: "0.9rem",
+                          color: "#203040",
+                          fontWeight: "bolder",
+                        }}
+                        className="mb-0"
+                      >
+                        Prezzo bambino
+                      </Form.Label>
+                      <Form.Control
+                        type="number"
+                        value={newOffer.price_per_child}
+                        onChange={(e) => setNewOffer({ ...newOffer, price_per_child: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group className="mb-2">
+                      <Form.Label
+                        style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: "0.9rem",
+                          color: "#203040",
+                          fontWeight: "bolder",
+                        }}
+                        className="mb-0"
+                      >
+                        Host
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={newOffer.host}
+                        onChange={(e) => setNewOffer({ ...newOffer, host: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group className="mb-2">
+                      <Form.Label
+                        style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: "0.9rem",
+                          color: "#203040",
+                          fontWeight: "bolder",
+                        }}
+                        className="mb-0"
+                      >
+                        Servizi (separati da virgole)
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={newOffer.amenities.join(",")}
+                        onChange={(e) => setNewOffer({ ...newOffer, amenities: e.target.value.split(",") })}
+                      />
+                    </Form.Group>
+
+                    <Form.Group className="mb-2">
+                      <Form.Label
+                        style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: "0.9rem",
+                          color: "#203040",
+                          fontWeight: "bolder",
+                        }}
+                        className="mb-0"
+                      >
+                        Immagini (URL separati da virgole)
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={newOffer.images.join(",")}
+                        onChange={(e) => setNewOffer({ ...newOffer, images: e.target.value.split(",") })}
+                      />
+                    </Form.Group>
+                  </Form>
+                </Scrollbar>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button className="button-search" onClick={() => setShowModal(false)}>
+                  Annulla
+                </Button>
+                <Button className="button-search" onClick={handleAddOffer}>
+                  Salva
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </div>
+        )}
+      </div>
       <Row>
         {filteredOffers.length > 0 ? (
           filteredOffers.slice(0, visibleOffers).map((offer, id) => (
@@ -50,19 +343,22 @@ const StayOffers = ({ selectedBudget }) => {
                 <LoadingCard />
               ) : (
                 <Card className="offer-card mb-4 border-0">
-                  <Card.Img
-                    variant="top"
-                    src={offer.image}
-                    className="border-0"
-                    style={{ height: "230px", objectFit: "cover" }}
-                  />
+                  <Link to={`/stay-offer/${offer.id}`} key={id} className="text-center">
+                    <Card.Img
+                      variant="top"
+                      src={offer.image}
+                      className="border-0 image-hover-scale"
+                      style={{ height: "230px", objectFit: "cover" }}
+                    />
+                  </Link>
                   <Card.Body className="pb-2">
                     <div className="d-flex">
                       <Card.Title style={{ fontSize: "1.2rem" }}>{offer.name}</Card.Title>
                       {isAdmin && (
                         <Button
                           variant="primary"
-                          className="ms-auto"
+                          size="sm"
+                          className="ms-auto button-search"
                           onClick={() => {
                             setEditedOffer(offer);
                             setIsModalOpen(true);
@@ -121,23 +417,35 @@ const StayOffers = ({ selectedBudget }) => {
                       <span className="ps-0">bambini</span>
                     </Card.Text>
                   </Card.Body>
-                  <Link to={`/stay-offer/${offer.id}`} key={id} className="text-center">
-                    <Button
-                      variant="trasparent"
-                      className="mx-auto pt-0 pb-2 w-50"
-                      style={{
-                        fontWeight: "500",
-                      }}
-                    >
-                      Scopri di più
-                    </Button>
-                  </Link>
+                  <div className="text-center">
+                    <Link to={`/stay-offer/${offer.id}`} key={id} className="text-center">
+                      <Button
+                        variant="trasparent"
+                        className="mx-auto pt-0 pb-2 w-50"
+                        style={{
+                          fontWeight: "500",
+                        }}
+                      >
+                        Scopri di più
+                      </Button>
+                    </Link>
+                    {isAdmin && (
+                      <Button
+                        variant="danger"
+                        size="sm"
+                        onClick={() => handleDeleteOffer(offer.id)}
+                        className=" button-search rounded-5 bg-danger border border-danger mb-2"
+                      >
+                        <i className="bi bi-trash"></i>
+                      </Button>
+                    )}
+                  </div>
                 </Card>
               )}
             </Col>
           ))
         ) : (
-          <p>Nessun risultato trovato</p>
+          <p style={{ height: "45vh" }}>Nessun risultato trovato</p>
         )}
       </Row>
       {visibleOffers < travelData.length && (
@@ -155,75 +463,147 @@ const StayOffers = ({ selectedBudget }) => {
         </div>
       )}
       {isAdmin && editedOffer && (
-        <Modal show={isModalOpen} onHide={() => setIsModalOpen(false)}>
+        <Modal className="custom-modal" show={isModalOpen} size="lg" onHide={() => setIsModalOpen(false)}>
           <Modal.Header closeButton>
-            <Modal.Title>Modifica Offerta</Modal.Title>
+            <Modal.Title style={{ fontFamily: "Impact, san-serif", color: "#203040" }}>Modifica Offerta</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form>
-              <Form.Group>
-                <Form.Label>Image URL 1</Form.Label>
-                <Form.Control
-                  type="text"
-                  value={editedOffer.image}
-                  onChange={(e) => setEditedOffer({ ...editedOffer, image: e.target.value })}
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Label>Nome struttura</Form.Label>
-                <Form.Control
-                  type="text"
-                  value={editedOffer.name}
-                  onChange={(e) => setEditedOffer({ ...editedOffer, name: e.target.value })}
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Label>Località</Form.Label>
-                <Form.Control
-                  type="text"
-                  value={editedOffer.city}
-                  onChange={(e) => setEditedOffer({ ...editedOffer, city: e.target.value })}
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Label>Host</Form.Label>
-                <Form.Control
-                  type="text"
-                  value={editedOffer.host}
-                  onChange={(e) => setEditedOffer({ ...editedOffer, host: e.target.value })}
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Label>Tipo struttura</Form.Label>
-                <Form.Control
-                  type="text"
-                  value={editedOffer.type}
-                  onChange={(e) => setEditedOffer({ ...editedOffer, type: e.target.value })}
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Label>Prezzo per Adulti</Form.Label>
-                <Form.Control
-                  type="text"
-                  value={editedOffer.price_per_adult}
-                  onChange={(e) => setEditedOffer({ ...editedOffer, price_per_adult: e.target.value })}
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Label>Prezzo per Bambini</Form.Label>
-                <Form.Control
-                  type="text"
-                  value={editedOffer.price_per_child}
-                  onChange={(e) => setEditedOffer({ ...editedOffer, price_per_child: e.target.value })}
-                />
-              </Form.Group>
-            </Form>
+            <Scrollbar style={{ width: "100%", height: 360, color: "#203040" }}>
+              <Form className="modal-content border border-white ms-1" style={{ width: "99%" }}>
+                <Form.Group className="mb-2">
+                  <Form.Label
+                    className="mb-0"
+                    style={{
+                      fontFamily: "Montserrat, sans-serif",
+                      fontSize: "0.9rem",
+                      color: "#203040",
+                      fontWeight: "bolder",
+                    }}
+                  >
+                    Immagine copertina (URL)
+                  </Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={editedOffer.image}
+                    onChange={(e) => setEditedOffer({ ...editedOffer, image: e.target.value })}
+                  />
+                </Form.Group>
+                <Form.Group className="mb-2">
+                  <Form.Label
+                    className="mb-0"
+                    style={{
+                      fontFamily: "Montserrat, sans-serif",
+                      fontSize: "0.9rem",
+                      color: "#203040",
+                      fontWeight: "bolder",
+                    }}
+                  >
+                    Nome struttura
+                  </Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={editedOffer.name}
+                    onChange={(e) => setEditedOffer({ ...editedOffer, name: e.target.value })}
+                  />
+                </Form.Group>
+                <Form.Group className="mb-2">
+                  <Form.Label
+                    className="mb-0"
+                    style={{
+                      fontFamily: "Montserrat, sans-serif",
+                      fontSize: "0.9rem",
+                      color: "#203040",
+                      fontWeight: "bolder",
+                    }}
+                  >
+                    Località
+                  </Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={editedOffer.city}
+                    onChange={(e) => setEditedOffer({ ...editedOffer, city: e.target.value })}
+                  />
+                </Form.Group>
+                <Form.Group className="mb-2">
+                  <Form.Label
+                    className="mb-0"
+                    style={{
+                      fontFamily: "Montserrat, sans-serif",
+                      fontSize: "0.9rem",
+                      color: "#203040",
+                      fontWeight: "bolder",
+                    }}
+                  >
+                    Host
+                  </Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={editedOffer.host}
+                    onChange={(e) => setEditedOffer({ ...editedOffer, host: e.target.value })}
+                  />
+                </Form.Group>
+                <Form.Group className="mb-2">
+                  <Form.Label
+                    className="mb-0"
+                    style={{
+                      fontFamily: "Montserrat, sans-serif",
+                      fontSize: "0.9rem",
+                      color: "#203040",
+                      fontWeight: "bolder",
+                    }}
+                  >
+                    Tipo struttura
+                  </Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={editedOffer.type}
+                    onChange={(e) => setEditedOffer({ ...editedOffer, type: e.target.value })}
+                  />
+                </Form.Group>
+                <Form.Group className="mb-2">
+                  <Form.Label
+                    className="mb-0"
+                    style={{
+                      fontFamily: "Montserrat, sans-serif",
+                      fontSize: "0.9rem",
+                      color: "#203040",
+                      fontWeight: "bolder",
+                    }}
+                  >
+                    Prezzo per Adulti
+                  </Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={editedOffer.price_per_adult}
+                    onChange={(e) => setEditedOffer({ ...editedOffer, price_per_adult: parseFloat(e.target.value) })}
+                  />
+                </Form.Group>
+                <Form.Group className="mb-2">
+                  <Form.Label
+                    className="mb-0"
+                    style={{
+                      fontFamily: "Montserrat, sans-serif",
+                      fontSize: "0.9rem",
+                      color: "#203040",
+                      fontWeight: "bolder",
+                    }}
+                  >
+                    Prezzo per Bambini
+                  </Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={editedOffer.price_per_child}
+                    onChange={(e) => setEditedOffer({ ...editedOffer, price_per_child: parseFloat(e.target.value) })}
+                  />
+                </Form.Group>
+              </Form>
+            </Scrollbar>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={() => setIsModalOpen(false)}>
-              Chiudi
+            <Button className="button-search" onClick={() => setIsModalOpen(false)}>
+              Annulla
             </Button>
-            <Button variant="primary" onClick={handleUpdateStayOffer}>
+            <Button className="button-search" onClick={handleUpdateStayOffer}>
               Salva
             </Button>
           </Modal.Footer>

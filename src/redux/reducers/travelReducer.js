@@ -5,12 +5,16 @@ import {
   UPDATE_TRAVEL_REQUEST,
   UPDATE_TRAVEL_SUCCESS,
   UPDATE_TRAVEL_FAILURE,
+  ADD_REVIEW_SUCCESS,
+  CREATE_TRAVEL_OFFER,
+  DELETE_TRAVEL_OFFER,
 } from "../actions";
 
 const initialState = {
   loading: false,
   data: [],
   error: null,
+  reviews: [],
 };
 
 const travelReducer = (state = initialState, action) => {
@@ -30,7 +34,6 @@ const travelReducer = (state = initialState, action) => {
         error: null,
       };
     case UPDATE_TRAVEL_SUCCESS:
-      // Aggiorna le offerte di viaggio con i nuovi dati
       const updatedTravelData = state.data.map((offer) => {
         if (offer.id === action.payload.id) {
           return action.payload;
@@ -51,6 +54,23 @@ const travelReducer = (state = initialState, action) => {
         data: [],
         error: action.payload,
       };
+    case ADD_REVIEW_SUCCESS:
+      return {
+        ...state,
+        reviews: [...state.reviews, action.payload.review],
+      };
+    case CREATE_TRAVEL_OFFER:
+      return {
+        ...state,
+        data: [...state.data, action.payload],
+      };
+    case DELETE_TRAVEL_OFFER:
+      const updatedTravelDataAfterDeletion = state.data.filter((offer) => offer.id !== action.payload);
+      return {
+        ...state,
+        data: updatedTravelDataAfterDeletion,
+      };
+
     default:
       return state;
   }

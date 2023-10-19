@@ -1,4 +1,4 @@
-import { Button, Card, Col, Container, Modal, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Form, Modal, Row } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateRoom } from "../redux/actions";
@@ -44,21 +44,20 @@ const BestRooms = () => {
   };
 
   useEffect(() => {
-    // Simula il caricamento con un timeout (puoi rimuovere questo blocco in un'applicazione reale)
     setTimeout(() => {
-      setLoading(false); // Imposta il caricamento su false per indicare che il caricamento è completo
-    }, 2000); // Simula un tempo di caricamento di 2 secondi
+      setLoading(false);
+    }, 2000);
   }, []);
 
   return (
-    <Container className="mt-4">
-      <h3 className="text-center mb-4" style={{ fontSize: "2.1rem" }}>
+    <Container>
+      <h3 className="text-center mb-4" style={{ fontSize: "2.4rem", fontFamily: "Impact, sans-serif" }}>
         LE MIGLIORI OFFERTE DI SOGGIORNO
       </h3>
       <Row>
         {roomData.map((room) => (
           <Col key={room.id} xs={12} md={6} lg={3}>
-            {loading ? ( // Mostra il componente di caricamento durante il caricamento
+            {loading ? (
               <LoadingCard />
             ) : (
               <Card
@@ -68,15 +67,17 @@ const BestRooms = () => {
                 <Card.Img src={room.image} alt={room.name} style={{ objectFit: "cover", height: "100%" }} />
                 <Card.ImgOverlay className="card-tours d-flex flex-column justify-content-center align-items-center">
                   <div className="mt-auto">
-                    <Card.Text>{room.price}</Card.Text>
                     {isAdmin && (
-                      <Button variant="primary" size="sm" className="ms-2" onClick={() => handleOpenModal(room)}>
+                      <Button className="button-search ms-2" size="sm" onClick={() => handleOpenModal(room)}>
                         Modifica
                       </Button>
                     )}
+                    <Card.Text>{room.price}€/notte</Card.Text>
                   </div>
                   <div className="mt-auto">
-                    <Button className="btn-tours">{room.name}</Button>
+                    <Button className=" button-search" style={{ fontWeight: "500" }}>
+                      {room.name}
+                    </Button>
                   </div>
                 </Card.ImgOverlay>
               </Card>
@@ -86,27 +87,57 @@ const BestRooms = () => {
       </Row>
       <Modal show={isModalOpen} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Modifica Stanza</Modal.Title>
+          <Modal.Title style={{ fontFamily: "Impact, san-serif", color: "#203040" }}>
+            Modifica anteprima stanza
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <input
-            type="text"
-            placeholder="Nome della Stanza"
-            value={roomName}
-            onChange={(e) => setRoomName(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Prezzo della Stanza"
-            value={roomPrice}
-            onChange={(e) => setRoomPrice(e.target.value)}
-          />
+          <Form>
+            <Form.Group className="mb-2">
+              <Form.Label
+                style={{
+                  fontFamily: "Montserrat, sans-serif",
+                  fontSize: "0.9rem",
+                  color: "#203040",
+                  fontWeight: "bolder",
+                }}
+                className="mb-0"
+              >
+                Nome stanza
+              </Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Inserisci il titolo del tour"
+                value={roomName}
+                onChange={(e) => setRoomName(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group className="mb-2">
+              <Form.Label
+                style={{
+                  fontFamily: "Montserrat, sans-serif",
+                  fontSize: "0.9rem",
+                  color: "#203040",
+                  fontWeight: "bolder",
+                }}
+                className="mb-0"
+              >
+                Prezzo
+              </Form.Label>
+              <Form.Control
+                type="number"
+                placeholder="Inserisci il titolo del tour"
+                value={roomPrice}
+                onChange={(e) => setRoomPrice(e.target.value)}
+              />
+            </Form.Group>
+          </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseModal}>
-            Chiudi
+          <Button className="button-search" onClick={handleCloseModal}>
+            Annulla
           </Button>
-          <Button variant="primary" onClick={handleRoomChange}>
+          <Button className="button-search" onClick={handleRoomChange}>
             Salva
           </Button>
         </Modal.Footer>

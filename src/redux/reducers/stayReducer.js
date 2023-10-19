@@ -6,13 +6,15 @@ import {
   UPDATE_STAY_SUCCESS,
   UPDATE_STAY_FAILURE,
   ADD_REVIEW_SUCCESS,
-  ADD_REVIEW_FAILURE,
+  DELETE_STAY_OFFER,
+  ADD_STAY_OFFER_SUCCESS,
 } from "../actions";
 
 const initialState = {
   loading: false,
   data: [],
   error: null,
+  reviews: [],
 };
 
 const stayReducer = (state = initialState, action) => {
@@ -31,7 +33,6 @@ const stayReducer = (state = initialState, action) => {
         error: null,
       };
     case UPDATE_STAY_SUCCESS:
-      // Aggiorna le offerte di viaggio con i nuovi dati
       const updatedStayData = state.data.map((offer) => {
         if (offer.id === action.payload.id) {
           return action.payload;
@@ -53,27 +54,20 @@ const stayReducer = (state = initialState, action) => {
         error: action.payload,
       };
     case ADD_REVIEW_SUCCESS:
-      // Aggiorna le recensioni con la nuova recensione aggiunta
-      const updatedDataWithReview = state.data.map((stay) => {
-        if (stay.id === action.payload.stayId) {
-          return {
-            ...stay,
-            reviews: [...stay.reviews, action.payload.review],
-          };
-        }
-        return stay;
-      });
-
       return {
         ...state,
-        data: updatedDataWithReview,
+        reviews: [...state.reviews, action.payload.review],
       };
-
-    case ADD_REVIEW_FAILURE:
-      // Gestisci l'errore qui se necessario
+    case ADD_STAY_OFFER_SUCCESS:
       return {
         ...state,
-        error: action.payload,
+        data: [...state.data, action.payload],
+      };
+    case DELETE_STAY_OFFER:
+      const updatedStayDataAfterDeletion = state.data.filter((offer) => offer.id !== action.payload);
+      return {
+        ...state,
+        data: updatedStayDataAfterDeletion,
       };
     default:
       return state;
