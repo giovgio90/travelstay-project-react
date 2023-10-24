@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Card, Col, Form, Modal, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { updateTour } from "../redux/actions";
+import { Link } from "react-router-dom";
 
 const BestTours = () => {
   const tours = useSelector((state) => state.tours);
@@ -10,7 +11,7 @@ const BestTours = () => {
   const [tourData, setTourData] = useState([]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [tourTitle, setTourTitle] = useState("");
+  const [tourCity, setTourCity] = useState("");
   const [editingTourId, setEditingTourId] = useState(null);
   const [tourPrice, setTourPrice] = useState("");
 
@@ -35,19 +36,19 @@ const BestTours = () => {
 
   const handleOpenModal = (tour) => {
     setIsModalOpen(true);
-    setTourTitle(tour.title);
+    setTourCity(tour.city);
     setTourPrice(tour.price);
     setEditingTourId(tour.id);
   };
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    setTourTitle("");
+    setTourCity("");
     setEditingTourId(null);
   };
 
   const handleTourChange = () => {
     if (isAdmin) {
-      dispatch(updateTour({ id: editingTourId, title: tourTitle, price: tourPrice }));
+      dispatch(updateTour({ id: editingTourId, city: tourCity, price: tourPrice }));
       handleCloseModal();
     }
   };
@@ -57,7 +58,7 @@ const BestTours = () => {
       {tourData.map((tour) => (
         <Col key={tour.id} xs={12} md={12} lg={4}>
           <Card className="bg-dark text-white text-center border-0 me-2 mb-3 hover-scale" style={{ height: "400px" }}>
-            <Card.Img src={tour.imageSrc} alt={tour.title} style={{ objectFit: "cover", height: "100%" }} />
+            <Card.Img src={tour.image} alt={tour.city} style={{ objectFit: "cover", height: "100%" }} />
             <Card.ImgOverlay className="card-tours d-flex flex-column justify-content-center align-items-center">
               <div className="mt-auto">
                 {isAdmin && (
@@ -69,20 +70,22 @@ const BestTours = () => {
                   {tour.id === editingTourId ? (
                     <input
                       type="text"
-                      value={tourTitle}
-                      onChange={(e) => setTourTitle(e.target.value)}
+                      value={tourCity}
+                      onChange={(e) => setTourCity(e.target.value)}
                       style={{ display: isModalOpen ? "none" : "block" }}
                     />
                   ) : (
-                    tour.title
+                    tour.city
                   )}
                 </Card.Title>
               </div>
               <div className="mt-auto">
-                <Card.Text>{tour.price}</Card.Text>
-                <Button className="button-search" style={{ fontWeight: "500" }}>
-                  SCOPRI DI PIÚ
-                </Button>
+                <Card.Text>A partire da {tour.price},00 €</Card.Text>
+                <Link to={`/tour-detail/${tour.id}`}>
+                  <Button className="button-search" style={{ fontWeight: "500" }}>
+                    SCOPRI DI PIÚ
+                  </Button>
+                </Link>
               </div>
             </Card.ImgOverlay>
           </Card>
@@ -111,8 +114,8 @@ const BestTours = () => {
               <Form.Control
                 type="text"
                 placeholder="Inserisci il titolo del tour"
-                value={tourTitle}
-                onChange={(e) => setTourTitle(e.target.value)}
+                value={tourCity}
+                onChange={(e) => setTourCity(e.target.value)}
               />
             </Form.Group>
             <Form.Group>

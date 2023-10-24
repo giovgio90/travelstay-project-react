@@ -19,8 +19,10 @@ const ContactPage = () => {
   const username = useSelector((state) => state.user.username);
   const [showAlert, setShowAlert] = useState(false);
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cart.cartItems);
-  const cartItemCount = cartItems.length;
+  const cartItemsTravel = useSelector((state) => state.cart.cartItemsTravel);
+  const cartItemsStay = useSelector((state) => state.cart.cartItemsStay);
+  const cartItemsRoom = useSelector((state) => state.cart.cartItemsRoom);
+  const cartItemCount = cartItemsTravel.length + cartItemsStay.length + cartItemsRoom.length;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -120,16 +122,16 @@ const ContactPage = () => {
         </Container>
       </Navbar>
       <div style={{ marginTop: "120px", marginBottom: "60px" }}>
-        <Container className="my-3">
+        <Container className="mt-3 mb-2">
           <Link to="/">
             <ArrowLeftCircleFill style={{ fontSize: "1.7rem", color: "#203040" }} />
           </Link>
         </Container>
         <Container>
-          <Row>
+          <Row className="align-items-center" style={{ height: "60vh" }}>
             <Col xs={12} md={6}>
               <h2
-                className=" mb-4"
+                className=" mb-2"
                 style={{
                   fontFamily: "Impact, sans-serif",
                 }}

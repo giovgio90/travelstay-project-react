@@ -11,8 +11,10 @@ const Header = () => {
   const username = useSelector((state) => state.user.username);
   const travelData = useSelector((state) => state.travel.data);
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cart.cartItems);
-  const cartItemCount = cartItems.length;
+  const cartItemsTravel = useSelector((state) => state.cart.cartItemsTravel);
+  const cartItemsStay = useSelector((state) => state.cart.cartItemsStay);
+  const cartItemsRoom = useSelector((state) => state.cart.cartItemsRoom);
+  const cartItemCount = cartItemsTravel.length + cartItemsStay.length + cartItemsRoom.length;
 
   const handleLogout = () => {
     dispatch(setUser(null));
@@ -64,10 +66,12 @@ const Header = () => {
                 <div className="scrolling-text-container d-flex ">
                   {randomOffers.map((offer, id) => (
                     <div key={id} className="scrolling-text ">
-                      <h6 className="mb-1 pe-5 pe-sm-0 pe-md-0">
-                        {offer.destination} - {offer.duration} -{" "}
-                        <span className="bg-danger text-white px-1 rounded-3">{offer.price}€</span>
-                      </h6>
+                      <Link to={`/explore/${offer.id}`} className="text-decoration-none text-white">
+                        <h6 className="mb-1 pe-5 pe-sm-0 pe-md-0">
+                          {offer.destination} - {offer.duration} -{" "}
+                          <span className="bg-danger text-white px-1 rounded-3">{offer.price}€</span>
+                        </h6>
+                      </Link>
                     </div>
                   ))}
                 </div>
@@ -123,9 +127,11 @@ const Header = () => {
                     </Nav.Link>
                     <PersonCircle className="me-2" style={{ fontSize: "1.5rem" }} />
                     <NavDropdown title={username.username} id="basic-nav-dropdown">
-                      <NavDropdown.Item as={Link} to="/preferiti">
-                        Preferiti
-                      </NavDropdown.Item>
+                      <Link to="/preferiti">
+                        <Button variant="transparent" className="text-black align-self-center pt-0">
+                          Preferiti
+                        </Button>
+                      </Link>
                       <NavDropdown.Divider />
                       <Link to="/login" onClick={handleLogout}>
                         <Button variant="transparent" className="text-black align-self-center pt-0">

@@ -6,6 +6,7 @@
       "duration": "5 giorni",
       "offer": "travel",
       "date": "2023-11-06",
+      "tax": 8,
       "description": "Esplora la bellezza artistica e culturale di Firenze con il nostro affascinante viaggio di 5 giorni. Dall'iconica Cattedrale di Santa Maria del Fiore ai magnifici Uffizi, questa esperienza promette di lasciarti senza fiato. Il tuo soggiorno inizia presso il 'Rinascimento Hotel,' un incantevole palazzo nel cuore di Firenze. Ammira le opere d'arte senza tempo di Michelangelo e Leonardo da Vinci, passeggiando per i vicoli storici e gustando autentica cucina toscana. Con WiFi gratuito, un ristorante raffinato, aria condizionata e una vista panoramica sulla città, il tuo alloggio offre comfort e lusso. I nostri ospiti hanno lodato le loro esperienze, con SofiaFlorence che ha detto: 'Il Rinascimento Hotel è un vero gioiello nascosto. La sua eleganza e la sua posizione centrale lo rendono una scelta ideale per chi visita Firenze.' Se desideri immergerti nella cultura e nell'arte rinascimentale, Firenze ti attende. Prenota ora e vivi un'esperienza senza tempo.",
       "price": 950,
       "price_per_adult": 950,
@@ -20,7 +21,12 @@
         "bedrooms": 2,
         "bathrooms": 2,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Ristorante", "Aria Condizionata", "Vista Panoramica"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Ristorante",
+          "Aria Condizionata",
+          "Vista Panoramica"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/93/d5/77bb521c29e2e65fb8b2dc9b843e7f7d35551f986cafaa35a02c60e68d00.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/d4/94/17bc5b0325f03554b1dbdb08a8dde0a42279459c315ff5429789e93b4f5a.jpeg",
@@ -43,11 +49,20 @@
           "user": "Giovanni12",
           "rating": 2,
           "comment": "Brutto"
+        },
+        {
+          "user": "Giovanni12",
+          "rating": 4,
+          "comment": "Carino!"
         }
       ],
       "host": "Sara",
       "cancellation_policy": "Flessibile",
-      "dates_available": ["2023-11-10", "2023-11-17", "2023-11-24"],
+      "dates_available": [
+        "2023-11-10",
+        "2023-11-17",
+        "2023-11-24"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -60,7 +75,9 @@
       "id": 2,
       "destination": "Venezia",
       "duration": "4 giorni",
+      "offer": "travel",
       "date": "2023-11-08",
+      "tax": 9,
       "description": "Scopri la magia dell'incantevole Venezia con il nostro romantico viaggio di 4 giorni. Dall'iconica Piazza San Marco ai tranquilli canali, questa esperienza promette di trasportarti in un mondo di bellezza e amore. Il tuo soggiorno inizia presso l'Hotel Fiore d'Italia, un lussuoso palazzo veneziano affacciato sul Canal Grande. Ammira l'arte rinascimentale in ogni angolo della città, goditi un giro in gondola e assapora autentici piatti italiani. Con WiFi gratuito, una colazione gourmet, aria condizionata e una vista mozzafiato, il tuo alloggio offre un'esperienza unica. I nostri ospiti hanno elogiato le loro esperienze, con MariaVenezia che ha detto: 'Il Canal Grande Palace è un sogno diventato realtà. La sua posizione è impareggiabile e il palazzo è semplicemente stupendo.' Venezia è il luogo perfetto per una fuga romantica. Prenota ora e vivi un'esperienza indimenticabile.",
       "price": 1350,
       "price_per_adult": 1350,
@@ -75,7 +92,12 @@
         "bedrooms": 2,
         "bathrooms": 2,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Colazione Gourmet", "Aria Condizionata", "Vista Mozzafiato"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Colazione Gourmet",
+          "Aria Condizionata",
+          "Vista Mozzafiato"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/4d/5b/98e22528c909c74885ab6558d0753557b9d200b06c62da74a15dff64efbc.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/a2/09/da4db8be1c4219bd13ec11e394d89d337ee1c37f72bc6a70190cf5996740.jpeg",
@@ -93,11 +115,25 @@
           "user": "LuigiGondoliero",
           "rating": 4.6,
           "comment": "Una vacanza a Venezia non potrebbe essere migliore. Questo palazzo è il luogo perfetto per una fuga romantica."
+        },
+        {
+          "user": "Giovanni",
+          "rating": 4,
+          "comment": "Bello!!!"
+        },
+        {
+          "user": "Giovanni",
+          "rating": 2,
+          "comment": "male male"
         }
       ],
       "host": "Marco",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2023-09-15", "2023-09-22", "2023-09-29"],
+      "dates_available": [
+        "2023-09-15",
+        "2023-09-22",
+        "2023-09-29"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -118,7 +154,9 @@
       "id": 3,
       "destination": "Milano",
       "duration": "6 giorni",
+      "offer": "travel",
       "date": "2023-11-10",
+      "tax": 12,
       "description": "Esplora la vivace città di Milano con il nostro dinamico viaggio di 3 giorni. Dall'iconico Duomo ai moderni quartieri della moda, questa esperienza promette una miscela di storia e stile. Il tuo soggiorno inizia presso il 'Fashion Apartment,' un lussuoso appartamento nel cuore di Milano. Scopri le ultime tendenze di moda, visita musei d'arte di fama mondiale e gusta la cucina milanese. Con WiFi gratuito, un'area salotto elegante, aria condizionata e una vista panoramica sulla città, il tuo alloggio offre stile e comfort. I nostri ospiti hanno lodato le loro esperienze, con LucaMilano che ha detto: 'Il Fashion Loft Apartment è un'oasi di eleganza nel cuore della città. La sua posizione è perfetta per lo shopping e l'esplorazione.' Milano è la capitale della moda e del design. Prenota ora e immergiti in questa metropoli trendy.",
       "price": 850,
       "price_per_adult": 850,
@@ -133,7 +171,12 @@
         "bedrooms": 1,
         "bathrooms": 1,
         "guests": 2,
-        "amenities": ["WiFi Gratuito", "Area Salotto", "Aria Condizionata", "Vista Panoramica"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Area Salotto",
+          "Aria Condizionata",
+          "Vista Panoramica"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/84/e8/97580db44c0bf20a21e70be18e0e114bf66cffbedd595665fc3ebec2ec95.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/a8/72/b2b3fa70e1931c4ada632795461c7292e3c3590985d0e3c3cce1173a55a1.jpeg",
@@ -156,11 +199,20 @@
           "user": "Giovanni45",
           "rating": 4,
           "comment": "Bello!"
+        },
+        {
+          "user": "Giovanni",
+          "rating": 5,
+          "comment": "Bellissimo!!"
         }
       ],
       "host": "Luigi",
       "cancellation_policy": "Flessibile",
-      "dates_available": ["2023-11-15", "2023-11-22", "2023-11-29"],
+      "dates_available": [
+        "2023-11-15",
+        "2023-11-22",
+        "2023-11-29"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -181,7 +233,9 @@
       "id": 4,
       "destination": "Napoli",
       "duration": "6 giorni",
+      "offer": "travel",
       "date": "2023-11-11",
+      "tax": 7,
       "description": "Esplora la vivace città di Napoli con il nostro entusiasmante viaggio di 6 giorni. Dall'iconico Castel dell'Ovo alle autentiche pizzerie, questa esperienza promette una miscela di cultura e gastronomia. Il tuo soggiorno inizia presso 'Grand Hotel Bellavista' un'accogliente albergo nel cuore di Napoli. Assapora la pizza napoletana, visita antiche rovine romane e goditi la vista sul Golfo di Napoli. Con WiFi gratuito, una cucina completamente attrezzata, aria condizionata e un balcone panoramico, il tuo alloggio offre comfort e autenticità. I nostri ospiti hanno elogiato le loro esperienze, con MarioPizzaLover che ha detto: 'La Bella Napoli è stato il luogo perfetto per gustare la vera pizza napoletana. La sua posizione è ideale per esplorare la città.' Napoli è famosa per la sua cucina e la sua storia. Prenota ora e immergiti in questa cultura unica.",
       "price": 1100,
       "price_per_adult": 1100,
@@ -196,7 +250,12 @@
         "bedrooms": 2,
         "bathrooms": 2,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Cucina completamente attrezzata", "Aria Condizionata", "Balcone Panoramico"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Cucina completamente attrezzata",
+          "Aria Condizionata",
+          "Balcone Panoramico"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/74/83/9483f2456af60dffbd8567d0c6554580fd596a1b3c638404fde40dfc6aac.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/c3/55/b945f2d7891718df89f7f76ba4acc36c205dcb158a48d1573f0b84642762.jpeg",
@@ -218,7 +277,11 @@
       ],
       "host": "Francesca",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2023-11-10", "2023-11-17", "2023-11-24"],
+      "dates_available": [
+        "2023-11-10",
+        "2023-11-17",
+        "2023-11-24"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -239,7 +302,9 @@
       "id": 5,
       "destination": "Amalfi",
       "duration": "5 giorni",
+      "offer": "travel",
       "date": "2023-11-13",
+      "tax": 11,
       "description": "Goditi la bella costiera di Amalfi con il nostro rilassante viaggio di 5 giorni. Dalle pittoresche spiagge ai villaggi in collina, questa esperienza promette tranquillità e autenticità. Il tuo soggiorno inizia presso 'Villa Amalfi View,' una splendida villa con vista sul mare. Rilassati sulla spiaggia, esplora le strade strette e tortuose di Amalfi e assapora la cucina mediterranea. Con WiFi gratuito, una piscina privata, aria condizionata e giardini terrazzati, la tua villa offre comfort e vista panoramica. I nostri ospiti hanno elogiato le loro esperienze, con ElenaBeachLover che ha detto: 'La Villa Amalfi View è un paradiso sulla costa. La vista è mozzafiato e la villa è perfetta per una vacanza di relax.' Amalfi è una gemma nascosta della costa italiana. Prenota ora e vivi un'esperienza costiera indimenticabile.",
       "price": 1550,
       "price_per_adult": 1550,
@@ -254,7 +319,12 @@
         "bedrooms": 3,
         "bathrooms": 2,
         "guests": 6,
-        "amenities": ["WiFi Gratuito", "Piscina Privata", "Aria Condizionata", "Giardini Terrazzati"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Piscina Privata",
+          "Aria Condizionata",
+          "Giardini Terrazzati"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/e2/be/6edf6a6fe575320ae2236049e6cb73bd56f3c5a4639d0a36989a324e32d6.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/1d/cf/5b7152a6cead456fe1acb7bace9234ba2ec2470dd2522a4a530045d2db53.jpeg",
@@ -276,7 +346,11 @@
       ],
       "host": "Emma",
       "cancellation_policy": "Severa",
-      "dates_available": ["2023-11-05", "2023-11-12", "2023-11-19"],
+      "dates_available": [
+        "2023-11-05",
+        "2023-11-12",
+        "2023-11-19"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -297,7 +371,9 @@
       "id": 6,
       "destination": "Verona",
       "duration": "4 giorni",
+      "offer": "travel",
       "date": "2023-11-05",
+      "tax": 7,
       "description": "Hai sempre sognato di visitare Verona? Ora è il momento di farlo in grande stile! Il nostro tour di 5 giorni ti condurrà attraverso le bellezze di Verona, da Piazza delle Erbe all'Arena di Verona, dall'antico Ponte Pietra al romantico balcone di Giulietta. E cosa c'è di meglio di un soggiorno presso la rinomata Villa dei Sogni? Questa villa esclusiva offre non solo comfort di prima classe ma anche una vista panoramica mozzafiato sulla città. Rilassati nella piscina privata, esplora i giardini terrazzati o semplicemente goditi l'aria condizionata e il WiFi gratuito. Un'esperienza unica per gli amanti della cultura, della storia e del lusso. Non perdere questa opportunità di scoprire Verona con stile e comfort. Prenota ora e inizia il tuo viaggio verso la Villa dei Sogni.",
       "price": 1200,
       "price_per_adult": 1200,
@@ -312,7 +388,12 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Giardino Privato", "Aria Condizionata", "Posizione Tranquilla"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Giardino Privato",
+          "Aria Condizionata",
+          "Posizione Tranquilla"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/e2/28/ceba10b9123e49d5547e58e13cf2e19305a4d207bbd3a77454aa98118195.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/3a/7c/18a2d6b056dcc8454e41449561bd31ad5d8fd9fe48f232c969211c7ec1c9.jpeg",
@@ -330,11 +411,25 @@
           "user": "AntonioWineLover",
           "rating": 4,
           "comment": "Verona è una città meravigliosa, e questa villa ha reso il nostro soggiorno ancora più speciale."
+        },
+        {
+          "user": "Giovanni",
+          "rating": 4,
+          "comment": "ssdf"
+        },
+        {
+          "user": "Giovanni",
+          "rating": 4,
+          "comment": "fgdgd"
         }
       ],
       "host": "Antonio",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2023-11-15", "2023-11-22", "2023-11-29"],
+      "dates_available": [
+        "2023-11-15",
+        "2023-11-22",
+        "2023-11-29"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -355,7 +450,9 @@
       "id": 7,
       "destination": "Sorrento",
       "duration": "5 giorni",
+      "offer": "travel",
       "date": "2023-11-15",
+      "tax": 9,
       "description": "Esplora la splendida città costiera di Sorrento con il nostro incantevole viaggio di 5 giorni. Dalle scogliere mozzafiato alle spiagge pittoresche, questa esperienza promette relax e bellezza naturale. Il tuo soggiorno inizia presso 'Hotel delle Stelle,' un albergo con vista sul mare. Goditi il sole sulla spiaggia, assapora il limoncello locale e scopri la cultura sorrentina. Con WiFi gratuito, una piscina a sfioro, aria condizionata e una terrazza panoramica, la tua villa offre lusso e vista mozzafiato. I nostri ospiti hanno lodato le loro esperienze, con SofiaBeachLover che ha detto: 'La Villa Sorrento Sea è un paradiso sulla costa. La vista è spettacolare e la villa è perfetta per una vacanza di relax.' Sorrento è un gioiello della costa amalfitana. Prenota ora e goditi una vacanza in riva al mare indimenticabile.",
       "price": 1650,
       "price_per_adult": 1650,
@@ -370,7 +467,12 @@
         "bedrooms": 3,
         "bathrooms": 3,
         "guests": 6,
-        "amenities": ["WiFi Gratuito", "Piscina a Sfioro", "Aria Condizionata", "Terrazza Panoramica"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Piscina a Sfioro",
+          "Aria Condizionata",
+          "Terrazza Panoramica"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/b6/bd/f06a2f5e387fbab2df64a2261cb4c869f3cc3b851b6d7f212161d7c8ba43.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/c4/1e/cdc851aeb3f5f0788fc96105fc42265f7a42f1d1801e533b47650f7b7d5d.jpeg",
@@ -392,7 +494,11 @@
       ],
       "host": "Lorenzo",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2023-11-05", "2023-11-12", "2023-11-19"],
+      "dates_available": [
+        "2023-11-05",
+        "2023-11-12",
+        "2023-11-19"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -413,7 +519,9 @@
       "id": 8,
       "destination": "Bologna",
       "duration": "4 giorni",
+      "offer": "travel",
       "date": "2023-11-11",
+      "tax": 10,
       "description": "Scopri la deliziosa città di Bologna con il nostro gustoso viaggio di 4 giorni. Dall'iconica Torre degli Asinelli alle trattorie storiche, questa esperienza promette sapori autentici e storia affascinante. Il tuo soggiorno inizia presso 'Grand Hotel delle Palme', un'accogliente albergo nel centro storico di Bologna. Assapora la pasta fresca, visita musei eccezionali e percorri i portici secolari. Con WiFi gratuito, una cucina ben attrezzata, aria condizionata e un'atmosfera accogliente, la tua casa offre comfort e convenienza. I nostri ospiti hanno elogiato le loro esperienze, con PaoloFoodie che ha detto: 'Casa Bologna è stata la base perfetta per esplorare i sapori di Bologna. La sua posizione è ideale per scoprire la città a piedi.' Bologna è la capitale gastronomica d'Italia. Prenota ora e delizati con questa esperienza culinaria.",
       "price": 990,
       "price_per_adult": 990,
@@ -428,7 +536,12 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Cucina Ben Attrezzata", "Aria Condizionata", "Atmosfera Accogliente"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Cucina Ben Attrezzata",
+          "Aria Condizionata",
+          "Atmosfera Accogliente"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/29/67/6ecdf75d2c98e12c585fd6c56edddb9f3408cd421e7e77b9b7a80aa2f9bb.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/8d/3e/5f3570b86d2978cff69c44c1676bc921c2c19bd57a77bdaf1f6f1922f25e.jpeg",
@@ -450,7 +563,11 @@
       ],
       "host": "Giulia",
       "cancellation_policy": "Flessibile",
-      "dates_available": ["2023-11-10", "2023-11-17", "2023-11-24"],
+      "dates_available": [
+        "2023-11-10",
+        "2023-11-17",
+        "2023-11-24"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -471,7 +588,9 @@
       "id": 9,
       "destination": "Taormina",
       "duration": "5 giorni",
+      "offer": "travel",
       "date": "2023-11-08",
+      "tax": 9,
       "description": "Esplora la bellissima città costiera di Taormina con il nostro affascinante viaggio di 5 giorni. Dall'iconico Teatro Antico alle spiagge di Isola Bella, questa esperienza promette cultura e relax. Il tuo soggiorno inizia presso 'Villa delle Acque' una villa con vista sul mare. Visita antichi siti greci, rilassati sulla spiaggia e gustati i piatti siciliani. Con WiFi gratuito, una piscina privata, aria condizionata e una terrazza panoramica, la tua villa offre comfort e vista mozzafiato. I nostri ospiti hanno lodato le loro esperienze, con AlessiaBeachLover che ha detto: 'La Villa Taormina View è un sogno diventato realtà. La vista è spettacolare e la villa è perfetta per una vacanza di relax.' Taormina è la perla della Sicilia. Prenota ora e goditi una vacanza in riva al mare indimenticabile.",
       "price": 1750,
       "price_per_adult": 1750,
@@ -486,7 +605,12 @@
         "bedrooms": 3,
         "bathrooms": 2,
         "guests": 6,
-        "amenities": ["WiFi Gratuito", "Piscina Privata", "Aria Condizionata", "Terrazza Panoramica"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Piscina Privata",
+          "Aria Condizionata",
+          "Terrazza Panoramica"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/a1/12/33f567cb7d874b48e2175e91e1b521ab083e5a46688e12f82dbea1aa64ae.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/96/a2/209c4b797c4c79e7bf434f3abcac83299cbc1a0675ff312cbea88adfcbf8.jpeg",
@@ -508,7 +632,11 @@
       ],
       "host": "Alessio",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2023-11-05", "2023-11-12", "2023-11-19"],
+      "dates_available": [
+        "2023-11-05",
+        "2023-11-12",
+        "2023-11-19"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -537,7 +665,12 @@
       "bedrooms": 2,
       "bathrooms": 2,
       "guests": 4,
-      "amenities": ["WiFi gratuito", "Piscina", "Palestra", "Ristorante"],
+      "amenities": [
+        "WiFi gratuito",
+        "Piscina",
+        "Palestra",
+        "Ristorante"
+      ],
       "reviews": [
         {
           "user": "Guest123",
@@ -563,6 +696,11 @@
           "user": "Giovanni",
           "rating": "3",
           "comment": "Bello"
+        },
+        {
+          "user": "Admin",
+          "rating": 4,
+          "comment": "WoW!!"
         }
       ],
       "images": [
@@ -573,6 +711,7 @@
       ],
       "price_per_adult": 230,
       "price_per_child": 110,
+      "tax": 9,
       "host": "Emilia"
     },
     {
@@ -580,11 +719,17 @@
       "name": "Villa Paradiso",
       "city": "Positano",
       "type": "Villa",
+      "offer": "stay",
       "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/80/c7/6d2fc95315ae431cb07abaef68701c3c7db80ecbceb01311a12a5b6ad6e5.jpeg",
       "bedrooms": 4,
       "bathrooms": 3,
       "guests": 8,
-      "amenities": ["Piscina privata", "Giardino lussureggiante", "Cucina gourmet", "Jacuzzi"],
+      "amenities": [
+        "Piscina privata",
+        "Giardino lussureggiante",
+        "Cucina gourmet",
+        "Jacuzzi"
+      ],
       "reviews": [
         {
           "user": "FamilySmith",
@@ -600,6 +745,11 @@
           "user": "Elena",
           "rating": 4.8,
           "comment": "Indimenticabile! La villa è un sogno."
+        },
+        {
+          "user": "Giovanni",
+          "rating": "3",
+          "comment": "Bellissimo!!"
         }
       ],
       "images": [
@@ -609,6 +759,7 @@
       ],
       "price_per_adult": 350,
       "price_per_child": 150,
+      "tax": 8,
       "host": "Isabella"
     },
     {
@@ -616,11 +767,17 @@
       "name": "Resort Splendido",
       "city": "Ravello",
       "type": "Resort",
+      "offer": "stay",
       "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/6c/9e/7562ecfbca97d2ef737e3747507df83a301118d2ec9bdcfb7ec049c24620.jpeg",
       "bedrooms": 1,
       "bathrooms": 1,
       "guests": 2,
-      "amenities": ["Spiaggia privata", "Ristorante gourmet", "Spa di lusso", "Escursioni guidate"],
+      "amenities": [
+        "Spiaggia privata",
+        "Ristorante gourmet",
+        "Spa di lusso",
+        "Escursioni guidate"
+      ],
       "reviews": [
         {
           "user": "CoppiaFelice",
@@ -645,6 +802,7 @@
       ],
       "price_per_adult": 400,
       "price_per_child": 200,
+      "tax": 10,
       "host": "Giuseppe"
     },
     {
@@ -652,11 +810,17 @@
       "name": "Hotel Mare",
       "city": "Cagliari",
       "type": "Hotel",
+      "offer": "stay",
       "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/70/f8/8bd25f332007924c14fc352df074ec9831d89193214d1ef49a2b62d67537.jpeg",
       "bedrooms": 3,
       "bathrooms": 2,
       "guests": 6,
-      "amenities": ["Accesso diretto alla spiaggia", "Piscina", "Ristorante vista mare", "Centro benessere"],
+      "amenities": [
+        "Accesso diretto alla spiaggia",
+        "Piscina",
+        "Ristorante vista mare",
+        "Centro benessere"
+      ],
       "reviews": [
         {
           "user": "ViaggiatoreSardegna",
@@ -681,6 +845,7 @@
       ],
       "price_per_adult": 300,
       "price_per_child": 150,
+      "tax": 6,
       "host": "Luca"
     },
     {
@@ -688,11 +853,17 @@
       "name": "Casa Relax",
       "city": "Lecce",
       "type": "Casa",
+      "offer": "stay",
       "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/a2/95/c08a6ce18dca3839a7fbda0e251291d157eebfd84b8d089fa92471e1790f.jpeg",
       "bedrooms": 2,
       "bathrooms": 2,
       "guests": 4,
-      "amenities": ["Patio privato", "Cucina moderna", "Giardino tranquillo", "Parcheggio gratuito"],
+      "amenities": [
+        "Patio privato",
+        "Cucina moderna",
+        "Giardino tranquillo",
+        "Parcheggio gratuito"
+      ],
       "reviews": [
         {
           "user": "FamigliaPuglia",
@@ -717,6 +888,7 @@
       ],
       "price_per_adult": 220,
       "price_per_child": 110,
+      "tax": 8,
       "host": "Maria"
     },
     {
@@ -724,11 +896,17 @@
       "name": "Villa Vista Mare",
       "city": "Tropea",
       "type": "Villa",
+      "offer": "stay",
       "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/a2/13/203e796c54fd9664072780eef7095a9d25adbfd9e058157028154142516a.jpeg",
       "bedrooms": 4,
       "bathrooms": 3,
       "guests": 8,
-      "amenities": ["Piscina privata", "Terrazza panoramica", "Cucina moderna", "Giardino lussureggiante"],
+      "amenities": [
+        "Piscina privata",
+        "Terrazza panoramica",
+        "Cucina moderna",
+        "Giardino lussureggiante"
+      ],
       "reviews": [
         {
           "user": "FamigliaCalabria",
@@ -753,6 +931,7 @@
       ],
       "price_per_adult": 320,
       "price_per_child": 160,
+      "tax": 12,
       "host": "Roberto"
     },
     {
@@ -760,11 +939,17 @@
       "name": "Resort Relax",
       "city": "Rimini",
       "type": "Resort",
+      "offer": "stay",
       "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/56/af/04f07fc9f9e9db2f8573f519f15f0c1ed4cb69169e11f15b04ff73948bee.jpeg",
       "bedrooms": 1,
       "bathrooms": 1,
       "guests": 2,
-      "amenities": ["Spiaggia privata", "Ristorante gourmet", "Piscina con vista sul mare", "Spa di lusso"],
+      "amenities": [
+        "Spiaggia privata",
+        "Ristorante gourmet",
+        "Piscina con vista sul mare",
+        "Spa di lusso"
+      ],
       "reviews": [
         {
           "user": "CoppiaFeliceEmilia",
@@ -789,6 +974,7 @@
       ],
       "price_per_adult": 380,
       "price_per_child": 190,
+      "tax": 9,
       "host": "Lorenzo"
     },
     {
@@ -796,6 +982,7 @@
       "name": "Hotel Paradiso",
       "city": "Costa Smeralda",
       "type": "Hotel",
+      "offer": "stay",
       "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/e9/73/543a7402fde52ddce0a9507bbb6f9cd3ad4484f4e35016528b5cbf228244.jpeg",
       "bedrooms": 2,
       "bathrooms": 2,
@@ -830,6 +1017,7 @@
       ],
       "price_per_adult": 350,
       "price_per_child": 175,
+      "tax": 7,
       "host": "Giovanni"
     },
     {
@@ -837,11 +1025,17 @@
       "name": "Trullo Magico",
       "city": "Alberobello",
       "type": "Casa",
+      "offer": "stay",
       "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/5d/fa/9d202e6f049ba1fd00a773f6b16deb36982ec6b8ae31c0d199c3e51bd75a.jpeg",
       "bedrooms": 1,
       "bathrooms": 1,
       "guests": 2,
-      "amenities": ["Casa tradizionale", "Giardino privato", "Cucina tipica pugliese", "Parcheggio gratuito"],
+      "amenities": [
+        "Casa tradizionale",
+        "Giardino privato",
+        "Cucina tipica pugliese",
+        "Parcheggio gratuito"
+      ],
       "reviews": [
         {
           "user": "CoppiaPuglia",
@@ -866,6 +1060,7 @@
       ],
       "price_per_adult": 180,
       "price_per_child": 90,
+      "tax": 10,
       "host": "Antonia"
     },
     {
@@ -873,11 +1068,17 @@
       "name": "Villa Relax",
       "city": "Ravenna",
       "type": "Villa",
+      "offer": "stay",
       "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/e6/af/68baac1d5a98a29133a3fb3d52584162dc24df48fdf830b602765200c839.jpeg",
       "bedrooms": 3,
       "bathrooms": 2,
       "guests": 6,
-      "amenities": ["Piscina privata", "Giardino lussureggiante", "Cucina moderna", "Jacuzzi"],
+      "amenities": [
+        "Piscina privata",
+        "Giardino lussureggiante",
+        "Cucina moderna",
+        "Jacuzzi"
+      ],
       "reviews": [
         {
           "user": "FamigliaEmilia",
@@ -902,6 +1103,7 @@
       ],
       "price_per_adult": 280,
       "price_per_child": 140,
+      "tax": 9,
       "host": "Roberto"
     }
   ],
@@ -945,9 +1147,9 @@
       "id": "i3G7xl2"
     },
     {
-      "username": "Giovanni",
+      "username": "Admin",
       "email": "giovanni@gmail.com",
-      "password": "1234567",
+      "password": "admin",
       "gender": "male",
       "id": "3oa3M0q"
     },

@@ -8,6 +8,7 @@ import {
   ADD_REVIEW_SUCCESS,
   CREATE_TRAVEL_OFFER,
   DELETE_TRAVEL_OFFER,
+  TOGGLE_TRAVEL_FAVORITE,
 } from "../actions";
 
 const initialState = {
@@ -15,6 +16,7 @@ const initialState = {
   data: [],
   error: null,
   reviews: [],
+  favorites: [],
 };
 
 const travelReducer = (state = initialState, action) => {
@@ -70,6 +72,22 @@ const travelReducer = (state = initialState, action) => {
         ...state,
         data: updatedTravelDataAfterDeletion,
       };
+    case TOGGLE_TRAVEL_FAVORITE:
+      const offerId = action.payload;
+      if (state.favorites.includes(offerId)) {
+        const updatedFavorites = state.favorites.filter((id) => id !== offerId);
+        console.log(`Offerta viaggio con ID ${offerId} rimossa dai preferiti`);
+        return {
+          ...state,
+          favorites: updatedFavorites,
+        };
+      } else {
+        console.log(`Offerta viaggio con ID ${offerId} aggiunta ai preferiti`);
+        return {
+          ...state,
+          favorites: [...state.favorites, offerId],
+        };
+      }
 
     default:
       return state;

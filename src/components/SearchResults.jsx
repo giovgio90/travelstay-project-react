@@ -18,8 +18,10 @@ const SearchResults = () => {
   const budget = parseFloat(searchParams.get("budget"));
 
   const username = useSelector((state) => state.user.username);
-  const cartItems = useSelector((state) => state.cart.cartItems);
-  const cartItemCount = cartItems.length;
+  const cartItemsTravel = useSelector((state) => state.cart.cartItemsTravel);
+  const cartItemsStay = useSelector((state) => state.cart.cartItemsStay);
+  const cartItemsRoom = useSelector((state) => state.cart.cartItemsRoom);
+  const cartItemCount = cartItemsTravel.length + cartItemsStay.length + cartItemsRoom.length;
 
   const handleLogout = () => {
     dispatch(setUser(null));
@@ -134,7 +136,7 @@ const SearchResults = () => {
         <div className="search-results">
           <h4>Risultati di ricerca per: {query}</h4>
           {filteredResults.length === 0 ? (
-            <p style={{ height: "300px" }}>Nessun risultato trovato</p>
+            <p style={{ height: "65vh" }}>Nessun risultato trovato</p>
           ) : (
             <Row>
               {filteredResults.map((offer, id) => (

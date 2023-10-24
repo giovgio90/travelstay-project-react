@@ -8,6 +8,7 @@ import {
   ADD_REVIEW_SUCCESS,
   DELETE_STAY_OFFER,
   ADD_STAY_OFFER_SUCCESS,
+  TOGGLE_STAY_FAVORITE,
 } from "../actions";
 
 const initialState = {
@@ -15,6 +16,7 @@ const initialState = {
   data: [],
   error: null,
   reviews: [],
+  favorites: [],
 };
 
 const stayReducer = (state = initialState, action) => {
@@ -69,6 +71,22 @@ const stayReducer = (state = initialState, action) => {
         ...state,
         data: updatedStayDataAfterDeletion,
       };
+    case TOGGLE_STAY_FAVORITE:
+      const offerId = action.payload;
+      if (state.favorites.includes(offerId)) {
+        const updatedFavorites = state.favorites.filter((id) => id !== offerId);
+        console.log(`Offerta soggiorno con ID ${offerId} rimossa dai preferiti`);
+        return {
+          ...state,
+          favorites: updatedFavorites,
+        };
+      } else {
+        console.log(`Offerta soggiorno con ID ${offerId} aggiunta ai preferiti`);
+        return {
+          ...state,
+          favorites: [...state.favorites, offerId],
+        };
+      }
     default:
       return state;
   }

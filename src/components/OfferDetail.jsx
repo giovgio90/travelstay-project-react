@@ -1,8 +1,9 @@
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/effect-creative";
 import "swiper/css/scrollbar";
-
+import { FaBath, FaBed, FaBuilding, FaCog, FaUser } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Logo from "../assets/Logo.png";
@@ -12,6 +13,7 @@ import {
   AirplaneFill,
   ArrowLeftCircleFill,
   Cart3,
+  ClockFill,
   EnvelopeFill,
   HouseFill,
   PersonCircle,
@@ -23,8 +25,9 @@ import ReservationForm from "./ReservationForm";
 import { useState } from "react";
 import { setUser, updateTravelOffer } from "../redux/actions";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
+import { Autoplay, EffectCoverflow, EffectCreative, Pagination } from "swiper/modules";
 import { Scrollbar } from "react-scrollbars-custom";
+import Rating from "react-rating";
 
 const OfferDetail = () => {
   const { id } = useParams();
@@ -37,8 +40,10 @@ const OfferDetail = () => {
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editedOffer, setEditedOffer] = useState(null);
-  const cartItems = useSelector((state) => state.cart.cartItems);
-  const cartItemCount = cartItems.length;
+  const cartItemsTravel = useSelector((state) => state.cart.cartItemsTravel);
+  const cartItemsStay = useSelector((state) => state.cart.cartItemsStay);
+  const cartItemsRoom = useSelector((state) => state.cart.cartItemsRoom);
+  const cartItemCount = cartItemsTravel.length + cartItemsStay.length + cartItemsRoom.length;
 
   const isAdmin = username && username.email === "giovanni@gmail.com";
 
@@ -47,6 +52,16 @@ const OfferDetail = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [newReview, setNewReview] = useState([{ user: username.username, rating: "", comment: "" }]);
+
+  const [showFullDescription, setShowFullDescription] = useState(false);
+
+  const handleShowFullDescription = () => {
+    setShowFullDescription(true);
+  };
+
+  const handleShowLessDescription = () => {
+    setShowFullDescription(false);
+  };
 
   const handleAddReview = async (e) => {
     e.preventDefault();
@@ -208,7 +223,7 @@ const OfferDetail = () => {
                 {offer.destination}
               </h4>
             </div>
-            <div className="ms-5 mt-4">
+            <div className="ms-auto mt-4">
               {isAdmin && (
                 <Button className="button-search" onClick={handleEditOffer}>
                   Modifica
@@ -222,7 +237,7 @@ const OfferDetail = () => {
                 effect={"coverflow"}
                 grabCursor={true}
                 slidesPerView={3}
-                spaceBetween={10}
+                spaceBetween={12}
                 loop={true}
                 centeredSlides={true}
                 coverflowEffect={{
@@ -240,23 +255,23 @@ const OfferDetail = () => {
                   disableOnInteraction: false,
                 }}
               >
-                <SwiperSlide className="my-2">
-                  <img src={offer.image_two} alt={offer.destination} />
+                <SwiperSlide className="my-2 rounded-3">
+                  <img src={offer.image_two} alt={offer.destination} className="rounded-3" />
                 </SwiperSlide>
-                <SwiperSlide className="my-2">
-                  <img src={offer.image_three} alt={offer.destination} />
+                <SwiperSlide className="my-2 rounded-3">
+                  <img src={offer.image_three} alt={offer.destination} className="rounded-3" />
                 </SwiperSlide>
-                <SwiperSlide className="my-2">
-                  <img src={offer.image_four} alt={offer.destination} />
+                <SwiperSlide className="my-2 rounded-3">
+                  <img src={offer.image_four} alt={offer.destination} className="rounded-2" />
                 </SwiperSlide>
-                <SwiperSlide className="my-2">
-                  <img src={offer.image_two} alt={offer.destination} />
+                <SwiperSlide className="my-2 rounded-3">
+                  <img src={offer.image_two} alt={offer.destination} className="rounded-2" />
                 </SwiperSlide>
-                <SwiperSlide className="my-2">
-                  <img src={offer.image_three} alt={offer.destination} />
+                <SwiperSlide className="my-2 rounded-3">
+                  <img src={offer.image_three} alt={offer.destination} className="rounded-2" />
                 </SwiperSlide>
-                <SwiperSlide className="my-2">
-                  <img src={offer.image_four} alt={offer.destination} />
+                <SwiperSlide className="my-2 rounded-3">
+                  <img src={offer.image_four} alt={offer.destination} className="rounded-2" />
                 </SwiperSlide>
               </Swiper>
             </Col>
@@ -566,159 +581,288 @@ const OfferDetail = () => {
                 </Modal>
               )}
             </div>
-            <Col md={8}>
-              <h4>Dove alloggerai</h4>
+            <Col md={7}>
+              <h4 style={{ fontFamily: "Montserrat, sans-serif", fontWeight: "600" }}>Dove alloggerai</h4>
 
               <Row>
-                <Col md={12} className="d-flex">
-                  <Card className="m-1" style={{ height: "170px", width: "280px" }}>
-                    <Card.Img src={offer.hotel.images[0]} alt="Immagine 1" />
-                  </Card>
-
-                  <Card className="m-1 " style={{ height: "185px", width: "280px" }}>
-                    <Card.Img src={offer.hotel.images[1]} alt="Immagine 2" />
-                  </Card>
-                </Col>
-              </Row>
-              <Row className="mb-3">
-                <Col md={12} className="d-flex">
-                  <Card className="m-1" style={{ height: "170px", width: "280px" }}>
-                    <Card.Img src={offer.hotel.images[2]} alt="Immagine 3" />
-                  </Card>
-
-                  <Card className="m-1" style={{ height: "185px", width: "280px" }}>
-                    <Card.Img
-                      src={offer.hotel.images[3]}
-                      alt="Immagine 4"
-                      style={{ height: "185px", width: "280px" }}
-                    />
-                  </Card>
+                <Col xs={12} md={10} className="d-flex">
+                  <Swiper
+                    grabCursor={true}
+                    effect={"creative"}
+                    creativeEffect={{
+                      prev: {
+                        shadow: true,
+                        translate: [0, 0, -400],
+                      },
+                      next: {
+                        translate: ["100%", 0, 0],
+                      },
+                    }}
+                    modules={[EffectCreative]}
+                    className="mySwiper"
+                  >
+                    <SwiperSlide>
+                      <img className="rounded-3" src={offer.hotel.images[0]} alt="Immagine hotel" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img className="rounded-3" src={offer.hotel.images[1]} alt="Immagine hotel" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img className="rounded-3" src={offer.hotel.images[2]} alt="Immagine hotel" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img className="rounded-3" src={offer.hotel.images[3]} alt="Immagine hotel" />
+                    </SwiperSlide>
+                  </Swiper>
                 </Col>
               </Row>
               <div className="d-flex align-items-center mb-3">
-                <p className="mb-0" style={{ fontWeight: "500" }}>
+                <FaBuilding className="me-1" />{" "}
+                <p
+                  className="mb-0"
+                  style={{ fontFamily: "Montserrat, sans-serif", fontSize: "1.2rem", fontWeight: "600" }}
+                >
                   {offer.hotel.name}
                 </p>
-
-                <Button className="py-0" variant="trasparent" onClick={() => setShowModal(true)}>
-                  {offer.reviews.length > 0 && (
-                    <span className="d-flex" style={{ marginLeft: "5px" }}>
-                      <div>
-                        <StarFill className="pb-1" style={{ color: "yellow", fontSize: "1.2rem" }} />{" "}
-                      </div>
-                      <div>
-                        <strong>
-                          {(
-                            offer.reviews.reduce((total, review) => total + review.rating, 0) / offer.reviews.length
-                          ).toFixed(2)}
-                        </strong>
-                        {"  "} {offer.reviews.length} recensioni
-                      </div>
-                    </span>
-                  )}
-                </Button>
               </div>
 
               <div className="me-auto">
-                <Modal show={showModal} onHide={handleCloseModal}>
-                  <Modal.Header closeButton>
-                    <Modal.Title>Recensioni</Modal.Title>
+                <Modal show={showModal} size="lg" onHide={handleCloseModal}>
+                  <Modal.Header closeButton style={{ backgroundColor: "#203040" }}>
+                    <Modal.Title style={{ color: "white", fontFamily: "Impact, sans-serif", fontSize: "2rem" }}>
+                      Recensioni
+                    </Modal.Title>
                   </Modal.Header>
-                  <Modal.Body>
-                    {offer.reviews.map((review, index) => (
-                      <div key={index}>
-                        <h5>{review.user}</h5>
-                        <p>Rating: {review.rating}</p>
-                        <p>{review.comment}</p>
-                      </div>
-                    ))}
-                    <Form onSubmit={handleAddReview}>
-                      <Form.Group>
-                        <Form.Label>{username.username}</Form.Label>
-                      </Form.Group>
-                      <Form.Group>
-                        <Form.Label>Valutazione</Form.Label>
-                        <Form.Control
-                          type="number"
-                          placeholder="Inserisci la tua valutazione"
-                          value={newReview.rating}
-                          onChange={(e) => setNewReview({ ...newReview, rating: e.target.value })}
-                        />
-                      </Form.Group>
-                      <Form.Group>
-                        <Form.Label>Commento</Form.Label>
-                        <Form.Control
-                          as="textarea"
-                          rows={3}
-                          placeholder="Inserisci il tuo commento"
-                          value={newReview.comment}
-                          onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
-                        />
-                      </Form.Group>
-                      <Button variant="primary" type="submit">
-                        Aggiungi Recensione
-                      </Button>
-                    </Form>
-                  </Modal.Body>
+                  <Scrollbar style={{ width: "100%", height: 360, color: "#203040" }}>
+                    <Modal.Body>
+                      {offer.reviews.map((review, index) => (
+                        <div key={index}>
+                          <h5 style={{ fontFamily: "Montserrat, sans-serif", fontWeight: "700" }}>{review.user}</h5>
+                          <div className="d-flex align-items-center">
+                            <div>
+                              <p className="mb-0 me-2" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                                Valutazione:
+                              </p>
+                            </div>
+                            <div className="p-1 rounded-2" style={{ backgroundColor: "#203040" }}>
+                              <strong className="text-white">{review.rating}</strong>
+                              <StarFill className="pb-1" style={{ color: "rgb(197, 235, 27)", fontSize: "1.5rem" }} />
+                            </div>
+                          </div>
+                          <p className="mt-2">
+                            <span className="me-2" style={{ fontFamily: "Montserrat. sans-serif" }}>
+                              Commento:
+                            </span>
+                            <span style={{ fontStyle: "italic", fontWeight: "500" }}>"{review.comment}"</span>
+                          </p>
+                          <hr />
+                        </div>
+                      ))}
+
+                      <Form onSubmit={handleAddReview}>
+                        <Form.Group>
+                          <Form.Label className="mt-3">
+                            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "1.3rem" }}>
+                              {" "}
+                              <strong>{username.username}</strong>, lascia una recensione!
+                            </p>
+                          </Form.Label>
+                        </Form.Group>
+                        <Form.Group className="d-flex align-items-center">
+                          <div>
+                            <Form.Label
+                              style={{
+                                fontFamily: "Montserrat, sans-serif",
+                                fontSize: "0.9rem",
+                                color: "#203040",
+                                fontWeight: "bolder",
+                              }}
+                              className="mb-0 me-2"
+                            >
+                              Valutazione:{" "}
+                            </Form.Label>
+                          </div>
+                          <div>
+                            <Rating
+                              initialRating={newReview.rating}
+                              emptySymbol={<span className="rating-icon">&#9734;</span>}
+                              fullSymbol={<span className="rating-icon">&#9733;</span>}
+                              onClick={(value) => setNewReview({ ...newReview, rating: value })}
+                            />
+                          </div>
+                        </Form.Group>
+                        <Form.Group>
+                          <Form.Label
+                            className="mb-0"
+                            style={{
+                              fontFamily: "Montserrat, sans-serif",
+                              fontSize: "0.9rem",
+                              color: "#203040",
+                              fontWeight: "bolder",
+                            }}
+                          >
+                            Commento
+                          </Form.Label>
+                          <Form.Control
+                            className="mb-2"
+                            as="textarea"
+                            rows={3}
+                            placeholder="Inserisci il tuo commento"
+                            value={newReview.comment}
+                            onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
+                          />
+                        </Form.Group>
+                        <div className="text-center">
+                          <Button className="button-search" type="submit">
+                            Aggiungi Recensione
+                          </Button>
+                        </div>
+                      </Form>
+                    </Modal.Body>
+                  </Scrollbar>
                   <Modal.Footer>
-                    <Button variant="secondary" onClick={handleCloseModal}>
+                    <Button className="button-search" onClick={handleCloseModal}>
                       Chiudi
                     </Button>
                   </Modal.Footer>
                 </Modal>
-                <p>{offer.description}</p>
+                <p
+                  className="mb-0"
+                  style={{
+                    fontFamily: "Montserrat, sans-serif",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    display: "-webkit-box",
+                    WebkitLineClamp: showFullDescription ? "inherit" : 4,
+                    WebkitBoxOrient: "vertical",
+                  }}
+                >
+                  {offer.description}
+                </p>
+                {offer.description.length > 4 && (
+                  <div className="text-center">
+                    {showFullDescription ? (
+                      <Button
+                        className="bg-white border-white text-black"
+                        style={{ fontWeight: "600" }}
+                        onClick={handleShowLessDescription}
+                      >
+                        Mostra meno
+                      </Button>
+                    ) : (
+                      <Button
+                        className="bg-white border-white text-black"
+                        style={{ fontWeight: "600" }}
+                        onClick={handleShowFullDescription}
+                      >
+                        Mostra altro
+                      </Button>
+                    )}
+                  </div>
+                )}
               </div>
 
-              <Row>
-                <Col md={10}>
+              <Row className="mt-3 mb-5">
+                <Col md={9}>
                   <div>
-                    <div className="info-hotel border border-1 mb-2 p-3">
+                    <div
+                      style={{ fontFamily: "Montserrat, sans-serif" }}
+                      className="info-hotel border border-1 mb-2 p-3"
+                    >
                       <Row>
-                        <Col md={3}>
-                          <p>
-                            <strong>Duration:</strong>
-                          </p>
+                        <Col md={3} className="d-flex align-items-center  mb-3">
+                          <div>
+                            <ClockFill className="me-1" />
+                          </div>
+                          <div>
+                            <p className="mb-0">
+                              <strong>Durata:</strong>
+                            </p>
+                          </div>
                         </Col>
                         <Col md={6}>{offer.duration}</Col>
                       </Row>
                       <Row>
-                        <Col md={3}>
-                          <p>
-                            <strong>Host:</strong>
-                          </p>
+                        <Col md={3} className="d-flex align-items-center mb-3">
+                          <div>
+                            <FaUser className="me-1" />
+                          </div>
+                          <div>
+                            <p className="mb-0">
+                              <strong>Host:</strong>
+                            </p>
+                          </div>
                         </Col>
                         <Col md={6}>{offer.host}</Col>
                       </Row>
                       <Row>
-                        <Col md={3}>
-                          <p>
-                            <strong>Stanze:</strong>
-                          </p>
+                        <Col md={3} className="d-flex align-items-center mb-3">
+                          <div>
+                            <FaBed className="me-1" />
+                          </div>
+                          <div>
+                            <p className="mb-0">
+                              <strong>Stanze:</strong>
+                            </p>
+                          </div>
                         </Col>
                         <Col md={6}>{offer.hotel.bedrooms}</Col>
                       </Row>
                       <Row>
-                        <Col md={3}>
-                          <p>
-                            <strong>Bagni:</strong>
-                          </p>
+                        <Col md={3} className="d-flex align-items-center mb-3">
+                          <div>
+                            <FaBath className="me-1" />
+                          </div>
+                          <div>
+                            <p className="mb-0">
+                              <strong>Bagni:</strong>
+                            </p>
+                          </div>
                         </Col>
                         <Col md={6}>{offer.hotel.bathrooms}</Col>
                       </Row>
                       <Row>
-                        <Col md={3}>
-                          <p>
-                            <strong>Servizi:</strong>
-                          </p>
+                        <Col md={3} className="d-flex align-items-center mb-3">
+                          <div>
+                            <FaCog className="me-1" />
+                          </div>
+                          <div>
+                            <p className="mb-0">
+                              <strong>Servizi:</strong>
+                            </p>
+                          </div>
                         </Col>
-                        <Col md={6}>{offer.hotel.amenities.join(", ")}</Col>
+                        <Col md={9}>{offer.hotel.amenities.join(", ")}</Col>
+                        <div className="text-end">
+                          <Button className=" mt-2" variant="trasparent" onClick={() => setShowModal(true)}>
+                            {offer.reviews.length > 0 && (
+                              <span className="d-flex" style={{ marginLeft: "5px" }}>
+                                <div>
+                                  <StarFill
+                                    className="pb-1"
+                                    style={{ color: "rgb(197, 235, 27)", fontSize: "1.5rem" }}
+                                  />{" "}
+                                </div>
+                                <div className="text-black">
+                                  <strong>
+                                    {(
+                                      offer.reviews.reduce((total, review) => total + review.rating, 0) /
+                                      offer.reviews.length
+                                    ).toFixed(2)}
+                                  </strong>
+                                  {"  "} {offer.reviews.length} recensioni
+                                </div>
+                              </span>
+                            )}
+                          </Button>
+                        </div>
                       </Row>
                     </div>
                   </div>
                 </Col>
               </Row>
             </Col>
-            <Col md={4} className="ms-auto">
+            <Col md={4} className="ms-auto mb-5">
               <div className="position-sticky" style={{ top: "110px" }}>
                 <ReservationForm />
               </div>

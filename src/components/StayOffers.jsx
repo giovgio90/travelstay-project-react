@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Modal, Row, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addStayOffer, deleteStayOffer, fetchstayOffers, updateStayOffer } from "../redux/actions";
+import { addStayOffer, deleteStayOffer, fetchstayOffers, toggleFavoriteTwo, updateStayOffer } from "../redux/actions";
 import LoadingCard from "./LoadingCard";
 import { Scrollbar } from "react-scrollbars-custom";
+import { BookmarkStar, BookmarkStarFill } from "react-bootstrap-icons";
 
 const StayOffers = ({ selectedBudget }) => {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ const StayOffers = ({ selectedBudget }) => {
   const [showModal, setShowModal] = useState(false);
   const [editedOffer, setEditedOffer] = useState(null);
   const loading = useSelector((state) => state.stay.loading);
+  const favorites = useSelector((state) => state.stay.favorites);
 
   const username = useSelector((state) => state.user.username);
   const [newOffer, setNewOffer] = useState({
@@ -39,6 +41,7 @@ const StayOffers = ({ selectedBudget }) => {
       name: "",
       city: "",
       type: "",
+      offer: "stay",
       image: "",
       bedrooms: "",
       bathrooms: "",
@@ -81,6 +84,9 @@ const StayOffers = ({ selectedBudget }) => {
     if (isAdmin && window.confirm("Sei sicuro di voler eliminare questa offerta?")) {
       dispatch(deleteStayOffer(offerId));
     }
+  };
+  const handleToggleFavorite = (offerId) => {
+    dispatch(toggleFavoriteTwo(offerId));
   };
 
   return (
@@ -343,14 +349,30 @@ const StayOffers = ({ selectedBudget }) => {
                 <LoadingCard />
               ) : (
                 <Card className="offer-card mb-4 border-0">
-                  <Link to={`/stay-offer/${offer.id}`} key={id} className="text-center">
-                    <Card.Img
-                      variant="top"
-                      src={offer.image}
-                      className="border-0 image-hover-scale"
-                      style={{ height: "230px", objectFit: "cover" }}
-                    />
-                  </Link>
+                  <div style={{ position: "relative" }}>
+                    <Link to={`/stay-offer/${offer.id}`} key={id} className="text-center">
+                      <Card.Img
+                        variant="top"
+                        src={offer.image}
+                        className="border-0 image-hover-scale"
+                        style={{ height: "230px", objectFit: "cover" }}
+                      />
+                    </Link>
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "10px",
+                        right: "10px",
+
+                        fontSize: "24px",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => handleToggleFavorite(offer.id)}
+                    >
+                      {favorites.includes(offer.id) ? <BookmarkStarFill color="red" /> : <BookmarkStar color="red" />}
+                    </div>
+                  </div>
+
                   <Card.Body className="pb-2">
                     <div className="d-flex">
                       <Card.Title style={{ fontSize: "1.2rem" }}>{offer.name}</Card.Title>
@@ -421,9 +443,10 @@ const StayOffers = ({ selectedBudget }) => {
                     <Link to={`/stay-offer/${offer.id}`} key={id} className="text-center">
                       <Button
                         variant="trasparent"
-                        className="mx-auto pt-0 pb-2 w-50"
+                        className="button-discover mx-auto pt-0 pb-2 w-50"
                         style={{
                           fontWeight: "500",
+                          color: "#203040",
                         }}
                       >
                         Scopri di più
@@ -445,16 +468,17 @@ const StayOffers = ({ selectedBudget }) => {
             </Col>
           ))
         ) : (
-          <p style={{ height: "45vh" }}>Nessun risultato trovato</p>
+          <p style={{ height: "60vh" }}>Nessun risultato trovato</p>
         )}
       </Row>
-      {visibleOffers < travelData.length && (
+      {filteredOffers.length > 8 && (
         <div className="text-center mt-1">
           <Button
             variant="transparent"
             className="mx-auto pt-0 pb-2"
             style={{
               fontWeight: "500",
+              color: "#203040",
             }}
             onClick={handleShowMoreClick}
           >

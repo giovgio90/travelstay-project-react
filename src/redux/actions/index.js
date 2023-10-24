@@ -6,6 +6,7 @@ export const UPDATE_TRAVEL_SUCCESS = "UPDATE_TRAVEL_SUCCESS";
 export const UPDATE_TRAVEL_FAILURE = "UPDATE_TRAVEL_FAILURE";
 export const CREATE_TRAVEL_OFFER = "CREATE_TRAVEL_OFFER";
 export const DELETE_TRAVEL_OFFER = "DELETE_TRAVEL_OFFER";
+export const TOGGLE_TRAVEL_FAVORITE = "TOGGLE_TRAVEL_FAVORITE";
 
 export const FETCH_STAY_REQUEST = "FETCH_STAY_REQUEST";
 export const FETCH_STAY_SUCCESS = "FETCH_STAY_SUCCESS";
@@ -19,10 +20,19 @@ export const ADD_STAY_OFFER_REQUEST = "ADD_STAY_OFFER_REQUEST";
 export const ADD_STAY_OFFER_SUCCESS = "ADD_STAY_OFFER_SUCCESS";
 export const ADD_STAY_OFFER_FAILURE = "ADD_STAY_OFFER_FAILURE";
 export const DELETE_STAY_OFFER = "DELETE_STAY_OFFER";
+export const TOGGLE_STAY_FAVORITE = "TOGGLE_STAY_FAVORITE";
 
-export const ADD_TO_CART = "ADD_TO_CART";
-export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+export const ADD_TO_CART_TRAVEL = "ADD_TO_CART_TRAVEL";
+export const ADD_TO_CART_STAY = "ADD_TO_CART_STAY";
+export const REMOVE_FROM_CART_TRAVEL = "REMOVE_FROM_CART_TRAVEL";
+
+export const REMOVE_FROM_CART_STAY = "REMOVE_FROM_CART_STAY";
 export const UPDATE_QUANTITY = "UPDATE_QUANTITY";
+
+export const ADD_TO_CART_ROOM = "ADD_TO_CART_ROOM";
+export const ADD_TO_CART_TOUR = "ADD_TO_CART_TOUR";
+export const REMOVE_FROM_CART_ROOM = "REMOVE_FROM_CART_ROOM";
+export const REMOVE_FROM_CART_TOUR = "REMOVE_FROM_CART_TOUR";
 
 export const SET_USER = "SET_USER";
 
@@ -121,14 +131,46 @@ export const updateStayOffer = (offerData) => async (dispatch) => {
   }
 };
 
-export const addToCart = (product) => ({
-  type: ADD_TO_CART,
-  payload: product,
+export const addToCartTravel = (item) => {
+  return {
+    type: ADD_TO_CART_TRAVEL,
+    payload: item,
+  };
+};
+
+export const addToCartStay = (item) => ({
+  type: ADD_TO_CART_STAY,
+  payload: item,
 });
 
-export const removeFromCart = (productId) => ({
-  type: REMOVE_FROM_CART,
+export const addToCartRoom = (room) => ({
+  type: ADD_TO_CART_ROOM,
+  payload: room,
+});
+
+export const addToCartTour = (tour) => ({
+  type: ADD_TO_CART_ROOM,
+  payload: tour,
+});
+
+export const removeFromCartTravel = (productId) => ({
+  type: REMOVE_FROM_CART_TRAVEL,
   payload: productId,
+});
+
+export const removeFromCartStay = (productId) => ({
+  type: REMOVE_FROM_CART_STAY,
+  payload: productId,
+});
+
+export const removeFromCartRoom = (roomId) => ({
+  type: REMOVE_FROM_CART_ROOM,
+  payload: roomId,
+});
+
+export const removeFromCartTour = (tourId) => ({
+  type: REMOVE_FROM_CART_ROOM,
+  payload: tourId,
 });
 
 export const updateQuantity = (productId, quantity) => ({
@@ -170,16 +212,16 @@ export const registerUser = (formData) => {
       if (response.ok) {
         const responseData = await response.json();
         dispatch(registrationSuccess(responseData));
-        return responseData; // Restituisci i dati della risposta
+        return responseData;
       } else {
         console.error("Errore durante la registrazione");
         dispatch(registrationFailure("Errore durante la registrazione"));
-        return { userExists: false }; // Imposta userExists a false in caso di errore
+        return { userExists: false };
       }
     } catch (error) {
       console.error("Si è verificato un errore durante la registrazione", error);
       dispatch(registrationFailure("Si è verificato un errore durante la registrazione"));
-      return { userExists: false }; // Imposta userExists a false in caso di errore
+      return { userExists: false };
     }
   };
 };
@@ -254,7 +296,6 @@ export const deleteStayOffer = (offerId) => {
 export const addStayOffer = (newOfferData) => (dispatch) => {
   dispatch({ type: ADD_STAY_OFFER_REQUEST });
 
-  // Esegui la richiesta POST utilizzando fetch
   fetch("http://localhost:3030/hotels", {
     method: "POST",
     headers: {
@@ -264,7 +305,6 @@ export const addStayOffer = (newOfferData) => (dispatch) => {
   })
     .then((response) => {
       if (response.status === 201) {
-        // Assumendo che la risposta HTTP corretta sia 201 Created
         return response.json();
       } else {
         throw new Error("Errore durante l'aggiunta dell'offerta");
@@ -276,4 +316,49 @@ export const addStayOffer = (newOfferData) => (dispatch) => {
     .catch((error) => {
       dispatch({ type: ADD_STAY_OFFER_FAILURE, payload: error });
     });
+};
+
+export const toggleFavorite = (offerId) => {
+  return {
+    type: TOGGLE_TRAVEL_FAVORITE,
+    payload: offerId,
+  };
+};
+
+export const toggleFavoriteTwo = (offerId) => {
+  return {
+    type: TOGGLE_STAY_FAVORITE,
+    payload: offerId,
+  };
+};
+
+export const updateOffer = (offer) => {
+  return {
+    type: "UPDATE_OFFER",
+    payload: offer,
+  };
+};
+
+export const addReviewTwo = (roomId, user, rating, comment) => {
+  return {
+    type: "ADD_REVIEW",
+    payload: {
+      roomId,
+      user,
+      rating,
+      comment,
+    },
+  };
+};
+
+export const addReviewThree = (tourId, user, rating, comment) => {
+  return {
+    type: "ADD_REVIEW",
+    payload: {
+      tourId,
+      user,
+      rating,
+      comment,
+    },
+  };
 };

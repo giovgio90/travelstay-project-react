@@ -17,8 +17,10 @@ import {
 const AboutUsPage = () => {
   const username = useSelector((state) => state.user.username);
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cart.cartItems);
-  const cartItemCount = cartItems.length;
+  const cartItemsTravel = useSelector((state) => state.cart.cartItemsTravel);
+  const cartItemsStay = useSelector((state) => state.cart.cartItemsStay);
+  const cartItemsRoom = useSelector((state) => state.cart.cartItemsRoom);
+  const cartItemCount = cartItemsTravel.length + cartItemsStay.length + cartItemsRoom.length;
 
   const handleLogout = () => {
     dispatch(setUser(null));
@@ -108,13 +110,13 @@ const AboutUsPage = () => {
         </Container>
       </Navbar>
       <div style={{ marginTop: "120px", marginBottom: "60px" }}>
-        <Container className="my-3">
+        <Container className="mt-3">
           <Link to="/">
             <ArrowLeftCircleFill style={{ fontSize: "1.7rem", color: "#203040" }} />
           </Link>
         </Container>
         <Container>
-          <Row className="mt-4 align-items-center">
+          <Row className="mt-4 align-items-center" style={{ height: "60vh" }}>
             <Col xs={12} md={7}>
               <h2
                 style={{
@@ -128,9 +130,9 @@ const AboutUsPage = () => {
                   fontFamily: "Montserrat, sans-serif",
                 }}
               >
-                Benvenuti su TravelStay! Siamo un'azienda di viaggi specializzata in offerte di viaggi e soggiorno e
-                solo soggiorno, in destinazioni straordinarie di tutta Italia. La nostra missione è rendere le tue
-                vacanze indimenticabili offrendoti i migliori servizi e alloggi di qualità.
+                Benvenuti su TravelStay! Siamo un'agenzia specializzata in offerte di viaggi e soggiorno e solo
+                soggiorno, in destinazioni straordinarie di tutta Italia. La nostra missione è rendere le tue vacanze
+                indimenticabili offrendoti i migliori servizi e alloggi di qualità.
               </p>
               <p
                 style={{

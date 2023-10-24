@@ -1,6 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
-import { createTravelOffer, deleteTravelOffer, fetchTravelOffers, setUser, updateTravelOffer } from "../redux/actions";
-import { useEffect, useState } from "react";
+import {
+  createTravelOffer,
+  deleteTravelOffer,
+  fetchTravelOffers,
+  setUser,
+  toggleFavorite,
+  updateTravelOffer,
+} from "../redux/actions";
+import { useEffect, useRef, useState } from "react";
 import {
   Badge,
   Button,
@@ -23,7 +30,16 @@ import FooterTravelStay from "./FooterTravelStay";
 import StayOffers from "./StayOffers";
 import LoadingCard from "./LoadingCard";
 
-import { AirplaneFill, Cart3, EnvelopeFill, HouseFill, PersonCircle, PersonFill } from "react-bootstrap-icons";
+import {
+  AirplaneFill,
+  BookmarkStar,
+  BookmarkStarFill,
+  Cart3,
+  EnvelopeFill,
+  HouseFill,
+  PersonCircle,
+  PersonFill,
+} from "react-bootstrap-icons";
 import { Scrollbar } from "react-scrollbars-custom";
 
 const OffersPage = ({ travel }) => {
@@ -39,12 +55,14 @@ const OffersPage = ({ travel }) => {
   const [editedOffer, setEditedOffer] = useState(null);
   const loading = useSelector((state) => state.travel.loading);
   const [showModal, setShowModal] = useState(false);
+  const favorites = useSelector((state) => state.travel.favorites);
   const [updateCount, setUpdateCount] = useState(0);
   const [newOfferData, setNewOfferData] = useState({
     destination: "",
     duration: "",
     date: "",
     description: "",
+    offer: "stay",
     price: 0,
     price_per_adult: 0,
     price_per_child: 0,
@@ -64,12 +82,18 @@ const OffersPage = ({ travel }) => {
     reviews: [],
     host: "",
   });
-  const cartItems = useSelector((state) => state.cart.cartItems);
-  const cartItemCount = cartItems.length;
+  const cartItemsTravel = useSelector((state) => state.cart.cartItemsTravel);
+  const cartItemsStay = useSelector((state) => state.cart.cartItemsStay);
+  const cartItemsRoom = useSelector((state) => state.cart.cartItemsRoom);
+  const cartItemCount = cartItemsTravel.length + cartItemsStay.length + cartItemsRoom.length;
+
+  const dropdownRef = useRef(null);
 
   const handleSelect = (item) => {
     setSelectedItem(item);
   };
+
+  const [tempSelectedItem, setTempSelectedItem] = useState(selectedItem);
 
   const username = useSelector((state) => state.user.username);
   const handleLogout = () => {
@@ -95,7 +119,12 @@ const OffersPage = ({ travel }) => {
   };
 
   const handleApplyFilter = () => {
+    setSelectedItem(tempSelectedItem);
     setSelectedBudget(budget);
+    setIsDropdownOpen(false);
+    if (dropdownRef.current) {
+      dropdownRef.current.click();
+    }
   };
 
   const handleCreateOffer = () => {
@@ -138,9 +167,13 @@ const OffersPage = ({ travel }) => {
     }
   };
 
+  const handleToggleFavorite = (offerId) => {
+    dispatch(toggleFavorite(offerId));
+  };
+
   return (
     <>
-      <Navbar expand="lg" className="navbar-head py-0">
+      <Navbar expand="lg" className="navbar-head py-0" style={{ zIndex: "1000" }}>
         <Container>
           <Navbar.Brand className="d-flex align-center ms-2 me-0 ps-auto">
             <img src={Logo} width="80" height="80" alt="Logo" />
@@ -591,44 +624,49 @@ const OffersPage = ({ travel }) => {
             <div className="ms-auto">
               <DropdownButton
                 variant="transparent"
-                className="dropdown-basic-button  rounded-2"
-                style={{ fontFamily: "Montserrat, sans-serif", border: "3px solid #203040" }}
+                className="button-filter rounded-2 "
                 title={isDropdownOpen ? "Filtra" : "Filtra" || selectedItem}
                 onSelect={handleSelect}
                 onToggle={(isOpen) => setIsDropdownOpen(isOpen)}
                 drop="left"
+                ref={dropdownRef}
               >
-                <Form className="px-3">
+                <Form className="px-3" style={{ fontFamily: "Montserrat, sans-serif" }}>
                   <Form.Check
                     type="checkbox"
                     label="Solo viaggi con soggiorno"
-                    checked={selectedItem === "Elemento 1"}
-                    onChange={() => handleSelect("Elemento 1")}
+                    checked={tempSelectedItem === "Elemento 1"}
+                    onChange={() => setTempSelectedItem("Elemento 1")}
                   />
                   <Form.Check
                     type="checkbox"
                     label="Solo soggiorno"
-                    checked={selectedItem === "Elemento 2"}
-                    onChange={() => handleSelect("Elemento 2")}
+                    checked={tempSelectedItem === "Elemento 2"}
+                    onChange={() => setTempSelectedItem("Elemento 2")}
                   />
                   <Form.Check
                     type="checkbox"
                     label="Visualizza entrambe"
-                    checked={selectedItem === "Elemento 3"}
-                    onChange={() => handleSelect("Elemento 3")}
+                    checked={tempSelectedItem === "Elemento 3"}
+                    onChange={() => setTempSelectedItem("Elemento 3")}
                   />
                 </Form>
-                <InputGroup className="mt-3 mx-2">
+                <Form.Label className="mb-0 ms-2 mt-3">Imposta budget</Form.Label>
+                <InputGroup className="mt-0 d-flex">
                   <FormControl
+                    className="m-2"
                     type="number"
+                    size="mlg"
                     placeholder="Budget"
                     value={budget}
                     onChange={(e) => setBudget(e.target.value)}
                   />
-                  <Button className="button-search me-3" onClick={handleApplyFilter}>
-                    Applica
-                  </Button>
                 </InputGroup>
+                <div className="text-center">
+                  <Button className="button-search" onClick={handleApplyFilter}>
+                    Applica filtri
+                  </Button>
+                </div>
               </DropdownButton>
             </div>
           </div>
@@ -646,116 +684,141 @@ const OffersPage = ({ travel }) => {
               </div>
             )}
             {(selectedItem === "Elemento 1" || selectedItem === "Elemento 3") &&
-              (selectedBudget
-                ? travelData.filter((offer) => offer.price_per_adult <= selectedBudget).slice(0, visibleOffers)
-                : travelData.slice(0, visibleOffers)
-              ).map((offer, id) => (
-                <Col key={id} xs={12} md={6} lg={3}>
-                  {loading ? (
-                    <LoadingCard />
-                  ) : (
-                    <Card className="offer-card mb-4 border-0">
-                      <Card.Img
-                        variant="top"
-                        src={offer.image}
-                        className="border-0 image-hover-scale"
-                        style={{ height: "230px", objectFit: "cover" }}
-                      />
-                      <Card.Body className="pb-2">
-                        <div className="d-flex">
-                          <Card.Title style={{ fontSize: "1.2rem" }}>{offer.destination}</Card.Title>
-                          {isAdmin && (
+              (selectedBudget ? travelData.filter((offer) => offer.price_per_adult <= selectedBudget) : travelData)
+                .slice(0, visibleOffers)
+                .map((offer, id) => (
+                  <Col key={id} xs={12} md={6} lg={3}>
+                    {loading ? (
+                      <LoadingCard />
+                    ) : (
+                      <Card className="offer-card mb-4 border-0">
+                        <div style={{ position: "relative" }}>
+                          <Card.Img
+                            variant="top"
+                            src={offer.image}
+                            className="border-0 image-hover-scale"
+                            style={{ height: "230px", objectFit: "cover" }}
+                          />
+                          <div
+                            style={{
+                              position: "absolute",
+                              top: "10px",
+                              right: "10px",
+
+                              fontSize: "24px", // Dimensione dell'icona del cuore
+                              cursor: "pointer",
+                            }}
+                            onClick={() => handleToggleFavorite(offer.id)}
+                          >
+                            {favorites.includes(offer.id) ? (
+                              <BookmarkStarFill color="red" />
+                            ) : (
+                              <BookmarkStar color="red" />
+                            )}
+                          </div>
+                        </div>
+                        <Card.Body className="pb-2">
+                          <div className="d-flex">
+                            <Card.Title style={{ fontSize: "1.2rem" }}>{offer.destination}</Card.Title>
+                            {isAdmin && (
+                              <Button
+                                variant="primary"
+                                size="sm"
+                                className="ms-auto button-search"
+                                onClick={() => {
+                                  setEditedOffer(offer);
+                                  setIsModalOpen(true);
+                                }}
+                              >
+                                Modifica
+                              </Button>
+                            )}
+                          </div>
+                          <Card.Text>
+                            <strong style={{ fontWeight: "500" }}>Durata:</strong>
+                            <span
+                              className="text-white px-2 mx-2 rounded-2"
+                              style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
+                            >
+                              {offer.duration ? offer.duration.toUpperCase() : ""}
+                            </span>
+                          </Card.Text>
+                          <Card.Text className="pt-auto mb-0">
+                            <strong style={{ fontWeight: "500" }}>Prezzo:</strong>
+                            <span
+                              className="text-white px-2 mx-2 rounded-2"
+                              style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
+                            >
+                              {offer.price}€
+                            </span>
+                            <span className="ps-0">adulti</span>
+                          </Card.Text>
+                          <Card.Text>
+                            <strong style={{ fontWeight: "500" }}>Prezzo:</strong>
+                            <span
+                              className="text-white px-2 mx-2 rounded-2"
+                              style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
+                            >
+                              {offer.price_per_child}€
+                            </span>
+                            <span className="ps-0">bambini</span>
+                          </Card.Text>
+                        </Card.Body>
+                        <div className="text-center">
+                          <Link to={`/explore/${offer.id}`} key={id} className="text-center">
                             <Button
-                              variant="primary"
-                              size="sm"
-                              className="ms-auto button-search"
-                              onClick={() => {
-                                setEditedOffer(offer);
-                                setIsModalOpen(true);
+                              variant="trasparent"
+                              className="button-discover mx-auto pt-0 pb-2 w-50"
+                              style={{
+                                fontWeight: "500",
+                                color: "#203040",
                               }}
                             >
-                              Modifica
+                              Scopri di più
+                            </Button>
+                          </Link>
+
+                          {isAdmin && (
+                            <Button
+                              variant="danger"
+                              size="sm"
+                              className=" button-search rounded-5 bg-danger border border-danger mb-2"
+                              onClick={() => handleDeleteOffer(offer.id)}
+                            >
+                              <i className="bi bi-trash"></i>
                             </Button>
                           )}
                         </div>
-                        <Card.Text>
-                          <strong style={{ fontWeight: "500" }}>Durata:</strong>
-                          <span
-                            className="text-white px-2 mx-2 rounded-2"
-                            style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
-                          >
-                            {offer.duration ? offer.duration.toUpperCase() : ""}
-                          </span>
-                        </Card.Text>
-                        <Card.Text className="pt-auto mb-0">
-                          <strong style={{ fontWeight: "500" }}>Prezzo:</strong>
-                          <span
-                            className="text-white px-2 mx-2 rounded-2"
-                            style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
-                          >
-                            {offer.price}€
-                          </span>
-                          <span className="ps-0">adulti</span>
-                        </Card.Text>
-                        <Card.Text>
-                          <strong style={{ fontWeight: "500" }}>Prezzo:</strong>
-                          <span
-                            className="text-white px-2 mx-2 rounded-2"
-                            style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
-                          >
-                            {offer.price_per_child}€
-                          </span>
-                          <span className="ps-0">bambini</span>
-                        </Card.Text>
-                      </Card.Body>
-                      <div className="text-center">
-                        <Link to={`/explore/${offer.id}`} key={id} className="text-center">
-                          <Button
-                            variant="trasparent"
-                            className="mx-auto pt-0 pb-2 w-50"
-                            style={{
-                              fontWeight: "500",
-                            }}
-                          >
-                            Scopri di più
-                          </Button>
-                        </Link>
-
-                        {isAdmin && (
-                          <Button
-                            variant="danger"
-                            size="sm"
-                            className=" button-search rounded-5 bg-danger border border-danger mb-2"
-                            onClick={() => handleDeleteOffer(offer.id)}
-                          >
-                            <i className="bi bi-trash"></i>
-                          </Button>
-                        )}
-                      </div>
-                    </Card>
-                  )}
-                </Col>
-              ))}
+                      </Card>
+                    )}
+                  </Col>
+                ))}
+            {(selectedItem === "Elemento 1" && selectedBudget
+              ? travelData.filter((offer) => offer.price_per_adult <= selectedBudget).length === 0
+              : travelData.length === 0) && <p style={{ height: "60vh" }}>Nessun risultato trovato</p>}
             {(selectedItem === "Elemento 1" || selectedItem === "Elemento 3") &&
               selectedItem === "Elemento 3" &&
               selectedBudget &&
               !travelData.some((offer) => offer.price_per_adult <= selectedBudget) && <p>Nessun risultato trovato</p>}
           </Row>
 
-          {(selectedItem === "Elemento 1" || selectedItem === "Elemento 3") && visibleOffers < travelData.length && (
-            <div className="text-center mt-1">
-              <Button
-                variant="transparent"
-                className="mx-auto pt-0 pb-2"
-                style={{
-                  fontWeight: "500",
-                }}
-                onClick={handleShowMoreClick}
-              >
-                Visualizza Altro
-              </Button>
-            </div>
-          )}
+          {(selectedItem === "Elemento 1" || selectedItem === "Elemento 3") &&
+            (selectedBudget ? travelData.filter((offer) => offer.price_per_adult <= selectedBudget) : travelData)
+              .length > 8 && (
+              <div className="text-center mt-1">
+                <Button
+                  variant="transparent"
+                  className="mx-auto pt-0 pb-2"
+                  style={{
+                    fontWeight: "500",
+                    color: "#203040",
+                  }}
+                  onClick={handleShowMoreClick}
+                >
+                  Visualizza Altro
+                </Button>
+              </div>
+            )}
         </Container>
       </div>
       {(selectedItem === "Elemento 2" || selectedItem === "Elemento 3") && (

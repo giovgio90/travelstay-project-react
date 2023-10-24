@@ -10,6 +10,12 @@
   z-index: 1000;
 }
 
+.dropdown-menu[data-bs-popper] {
+  top: 112%;
+  left: -70px;
+  margin-top: var(--bs-dropdown-spacer);
+}
+
 .sticky-header {
   background-color: #2030408e;
 
@@ -305,6 +311,40 @@
   z-index: 2000;
 }
 
+.modal {
+  padding-right: 0px !important;
+}
+
+.modal-open {
+  overflow: visible !important;
+  padding-right: 0px !important;
+}
+
+.button-discover:hover {
+  text-decoration-line: underline;
+}
+
+.button-filter {
+  font-family: Montserrat, sans-serif;
+  border: 3px solid #203040;
+  color: white;
+  background-color: #203040;
+  border: 2px solid #203040;
+}
+
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+  /* Stile attivo */
+
+  border-color: white;
+}
+
+.btn {
+  --bs-btn-color: white;
+}
+
 /*OFFER DETAIL*/
 .info-hotel {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -335,6 +375,11 @@
   opacity: 1;
 }
 
+.rating-icon {
+  color: rgb(197, 235, 27);
+  font-size: 1.7rem;
+}
+
 /*FOOTER*/
 
 .footer-travel {
@@ -359,6 +404,102 @@
   transform: scale(1.5);
   transition: transform 0.3s;
   color: white;
+}
+
+/*RESERVATION FORM*/
+.reservation-form-container {
+  border: 2px solid #203040;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+/*CART CONTAINER*/
+
+.cart-container {
+  border: 2px solid #203040;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+/*PAYMENT*/
+
+.custom-modal-header {
+  background-color: #203040;
+  color: #fff;
+  font-family: Impact, sans-serif;
+  font-size: 1rem;
+  border-bottom: none;
+
+  padding: 20px;
+}
+
+.custom-modal-title {
+  font-size: 24px;
+}
+
+.custom-modal-footer {
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+}
+
+.button-payment {
+  background-color: #203040;
+  text-decoration: none;
+  color: white;
+  padding-inline: 5px;
+  padding-block: 0px;
+  border-radius: 6px;
+}
+
+.button-payment:hover {
+  background-color: #f1f1f1;
+  color: #203040;
+}
+
+.swal2-title {
+  color: black;
+  font-family: Montserrat, sans-serif;
+}
+
+.swal2-popup {
+  /* Regola la distanza dalla parte superiore */
+
+  background-color: #f0f0f0;
+  border: 2px solid #333;
+  border-radius: 10px;
+}
+
+/* Stili per i pulsanti */
+.custom-button {
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.custom-button.btn-secondary {
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+.custom-button.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Stili per il modulo di input */
+.custom-form-label {
+  font-weight: bold;
+}
+
+.custom-form-control {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.custom-form-control:focus {
+  border-color: #007bff;
+  box-shadow: none;
 }
 
 /*LOGIN*/

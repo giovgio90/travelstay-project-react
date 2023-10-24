@@ -2,22 +2,29 @@ import { useState } from "react";
 import { Button, Col, Dropdown, Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { addToCartTravel } from "../redux/actions";
+import { addToCartTour } from "../redux/actions";
 
-const ReservationForm = () => {
-  const { id } = useParams();
+const ReservationFormFour = () => {
+  const { tourId } = useParams();
   const dispatch = useDispatch();
-  const travelData = useSelector((state) => state.travel.data);
+  const tour = useSelector((state) => state.tours.find((r) => r.id === parseInt(tourId)));
+  console.log(tour);
 
-  const offer = travelData.find((offer) => offer.id.toString() === id);
+  let offer;
 
-  console.log(offer);
+  if (tour.offer) {
+    const matchingOffers = tour.offers.filter((offer) => offer.id.toString() === tourId);
+    if (matchingOffers.length > 0) {
+      offer = matchingOffers[0];
+    }
+  }
+
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
 
   const calculateTotalPrice = () => {
-    const adultPrice = offer.price;
-    const childPrice = offer.price_per_child;
+    const adultPrice = tour.price;
+    const childPrice = tour.price_per_child;
     const totalAdultPrice = adults * adultPrice;
     const totalChildPrice = children * childPrice;
     return totalAdultPrice + totalChildPrice;
@@ -36,35 +43,30 @@ const ReservationForm = () => {
   const handleBookClick = () => {
     const totalPeople = adults + children;
     const productToAddToCart = {
-      id: offer.id,
-      destination: offer.destination,
-      duration: offer.duration,
-      date: offer.date,
-      offer: offer.offer,
-      image: offer.image,
-      tax: offer.tax,
-      hotel: offer.hotel.name,
+      id: tour.id,
+      city: tour.city,
+      image: tour.image,
       price: calculateTotalPrice(),
       quantity: totalPeople,
       adults: adults,
       children: children,
     };
-    dispatch(addToCartTravel(productToAddToCart));
+    dispatch(addToCartTour(productToAddToCart));
   };
 
   return (
-    <div className="reservation-form-container rounded-2 p-3 my-3">
+    <div className="reservation-form-container rounded-2 p-3">
       <Form className="reservation-form">
         <h6 style={{ fontFamily: "Montserrat, sans-serif" }}>
           <span> Prezzo per adulto:</span>{" "}
-          <span className="p-1 rounded-2" style={{ color: "black", fontWeight: "600" }}>
-            {offer.price},00 €
+          <span className="p-1 rounded-2" style={{ color: "white", backgroundColor: "red" }}>
+            {tour.price}€
           </span>
         </h6>
         <h6 style={{ fontFamily: "Montserrat, sans-serif" }}>
           <span>Prezzo per bambino:</span>{" "}
-          <span className="p-1 rounded-2" style={{ color: "black", fontWeight: "600" }}>
-            {offer.price_per_child},00 €
+          <span className="p-1 rounded-2" style={{ color: "white", backgroundColor: "red" }}>
+            {tour.price_per_child}€
           </span>
         </h6>
 
@@ -75,7 +77,7 @@ const ReservationForm = () => {
           <Dropdown.Menu>
             <Dropdown.Item onClick={(e) => e.stopPropagation()}>
               <Row className="align-items-center">
-                <Form.Group controlId="adults" className="d-flex align-items-center mb-0">
+                <Form.Group controlId="adults" className="d-flex mb-0">
                   <Col xs={3}>
                     <Form.Label className="me-5" style={{ fontFamily: "Montserrat, sans-serif" }}>
                       <h6 className="mb-0">Adulti:</h6>
@@ -106,8 +108,8 @@ const ReservationForm = () => {
         <hr />
         <h4 className="mt-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
           Prezzo totale:{" "}
-          <span className="p-1 rounded-2" style={{ color: "black", fontWeight: "600" }}>
-            {calculateTotalPrice()},00 €
+          <span className="p-1 rounded-2" style={{ color: "white", backgroundColor: "red" }}>
+            {calculateTotalPrice()}€
           </span>
         </h4>
         <Row>
@@ -125,11 +127,11 @@ const ReservationForm = () => {
           </Col>
         </Row>
         <p className="mt-2 mb-0" style={{ fontFamily: "Montserrat, sans-serif" }}>
-          Il prezzo totale del viaggio include l'IVA e tutti i costi applicabili
+          Il prezzo totale del soggiorno include l'IVA e tutti i costi applicabili
         </p>
       </Form>
     </div>
   );
 };
 
-export default ReservationForm;
+export default ReservationFormFour;

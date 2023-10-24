@@ -1,14 +1,6 @@
-import "swiper/css";
-import "swiper/css/effect-creative";
-
-import { Button, Card, Col, Container, Modal, Row, Form, Navbar, Nav, NavDropdown, Badge } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
-import Logo from "../assets/Logo.png";
-import FooterTravelStay from "./FooterTravelStay";
-import ReservationFormTwo from "./ReservationFormTwo";
 import { useState } from "react";
-import { setUser, updateStayOffer } from "../redux/actions";
+import Logo from "../assets/Logo.png";
+import { Badge, Button, Card, Col, Container, Form, Modal, Nav, NavDropdown, Navbar, Row } from "react-bootstrap";
 import {
   AirplaneFill,
   ArrowLeftCircleFill,
@@ -20,88 +12,61 @@ import {
   PinMapFill,
   StarFill,
 } from "react-bootstrap-icons";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams, Link } from "react-router-dom";
+import { addReviewTwo, setUser, updateOffer } from "../redux/actions";
 import { Scrollbar } from "react-scrollbars-custom";
+import ReservationFormThree from "./ReservationFormThree";
+import FooterTravelStay from "./FooterTravelStay";
 import Rating from "react-rating";
 
-import { EffectCreative } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-const OfferStayDetail = () => {
-  const { stayId } = useParams();
-  const travelData = useSelector((state) => state.stay.data);
+const RoomDetail = () => {
+  const { id } = useParams();
+  const room = useSelector((state) => state.rooms.find((r) => r.id === parseInt(id)));
+  const dispatch = useDispatch();
+  const [showModal, setShowModal] = useState(false);
   const username = useSelector((state) => state.user.username);
 
   const handleLogout = () => {
     dispatch(setUser(null));
   };
-
-  const isAdmin = username && username.email === "giovanni@gmail.com";
-
-  const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editedOffer, setEditedOffer] = useState(null);
-  const [showModal, setShowModal] = useState(false);
+
+  const handleEditOffer = () => {
+    setEditedOffer(room);
+    setIsModalOpen(true);
+  };
+
+  const handleUpdateOffer = () => {
+    if (isAdmin && editedOffer) {
+      dispatch(updateOffer(editedOffer));
+      setIsModalOpen(false);
+    }
+  };
+
+  const handleAddReview = () => {
+    if (newReview.rating > 0 && newReview.comment.trim() !== "") {
+      dispatch(addReviewTwo(room.id, username.username, newReview.rating, newReview.comment));
+
+      setNewReview({ rating: 0, comment: "" });
+    }
+  };
+
   const [newReview, setNewReview] = useState([{ user: username.username, rating: "", comment: "" }]);
   const cartItemsTravel = useSelector((state) => state.cart.cartItemsTravel);
   const cartItemsStay = useSelector((state) => state.cart.cartItemsStay);
   const cartItemsRoom = useSelector((state) => state.cart.cartItemsRoom);
   const cartItemCount = cartItemsTravel.length + cartItemsStay.length + cartItemsRoom.length;
 
-  const offer = travelData.find((offer) => offer.id.toString() === stayId);
+  const isAdmin = username && username.email === "giovanni@gmail.com";
 
-  if (!offer) {
+  if (!room) {
     return <div>Offerta non trovata</div>;
   }
 
-  const handleEditOffer = () => {
-    setEditedOffer(offer);
-    setIsModalOpen(true);
-  };
-
-  const handleUpdateOffer = () => {
-    if (isAdmin && editedOffer) {
-      dispatch(updateStayOffer(editedOffer));
-      setIsModalOpen(false);
-    }
-  };
-
-  const handleAddReview = async (e) => {
-    e.preventDefault();
-
-    if (newReview.rating && newReview.comment) {
-      const reviewToAdd = {
-        user: username.username,
-        rating: newReview.rating,
-        comment: newReview.comment,
-      };
-
-      try {
-        const response = await fetch(`http://localhost:3030/hotels/${stayId}`, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ reviews: [...offer.reviews, reviewToAdd] }),
-        });
-
-        if (response.ok) {
-          const updatedOffer = {
-            ...offer,
-            reviews: [...offer.reviews, reviewToAdd],
-          };
-
-          dispatch(updateStayOffer(updatedOffer));
-
-          setShowModal(false);
-          setNewReview({ user: username.username, rating: "", comment: "" });
-        } else {
-          console.error("Errore nell'aggiunta della recensione:", response.status);
-        }
-      } catch (error) {
-        console.error("Errore nell'aggiunta della recensione:", error);
-      }
-    } else {
-    }
+  const openModal = () => {
+    setShowModal(true);
   };
 
   const handleCloseModal = () => {
@@ -194,7 +159,7 @@ const OfferStayDetail = () => {
       </Navbar>
       <div style={{ marginTop: "110px" }}>
         <Container>
-          <Link to="/explore">
+          <Link to="/">
             <ArrowLeftCircleFill className="mt-2" style={{ fontSize: "1.7rem", color: "#203040" }} />
           </Link>
         </Container>
@@ -219,7 +184,7 @@ const OfferStayDetail = () => {
                         }}
                         className="mb-0"
                       >
-                        Nome Hotel
+                        Nome Camera
                       </Form.Label>
                       <Form.Control
                         type="text"
@@ -245,6 +210,7 @@ const OfferStayDetail = () => {
                         onChange={(e) => setEditedOffer({ ...editedOffer, city: e.target.value })}
                       />
                     </Form.Group>
+
                     <Form.Group className="mb-2">
                       <Form.Label
                         style={{
@@ -255,15 +221,15 @@ const OfferStayDetail = () => {
                         }}
                         className="mb-0"
                       >
-                        Tipo struttura
+                        Descrizione
                       </Form.Label>
                       <Form.Control
-                        as="textarea"
-                        rows={3}
-                        value={editedOffer.type}
-                        onChange={(e) => setEditedOffer({ ...editedOffer, type: e.target.value })}
+                        type="text"
+                        value={editedOffer.description}
+                        onChange={(e) => setEditedOffer({ ...editedOffer, description: e.target.value })}
                       />
                     </Form.Group>
+
                     <Form.Group className="mb-2">
                       <Form.Label
                         style={{
@@ -278,10 +244,11 @@ const OfferStayDetail = () => {
                       </Form.Label>
                       <Form.Control
                         type="text"
-                        value={editedOffer.price_per_adult}
+                        value={editedOffer.price_per_adult === null ? "" : editedOffer.price_per_adult}
                         onChange={(e) => {
-                          const price_per_adult = parseFloat(e.target.value);
-                          setEditedOffer({ ...editedOffer, price_per_adult });
+                          const inputValue = e.target.value;
+                          const numericValue = inputValue.trim() === "" ? null : parseFloat(inputValue);
+                          setEditedOffer({ ...editedOffer, price_per_adult: numericValue });
                         }}
                       />
                     </Form.Group>
@@ -299,10 +266,11 @@ const OfferStayDetail = () => {
                       </Form.Label>
                       <Form.Control
                         type="text"
-                        value={editedOffer.price_per_child}
+                        value={editedOffer.price_per_child === null ? "" : editedOffer.price_per_child}
                         onChange={(e) => {
-                          const price_per_child = parseFloat(e.target.value);
-                          setEditedOffer({ ...editedOffer, price_per_child });
+                          const inputValue = e.target.value;
+                          const numericValue = inputValue.trim() === "" ? null : parseFloat(inputValue);
+                          setEditedOffer({ ...editedOffer, price_per_child: numericValue });
                         }}
                       />
                     </Form.Group>
@@ -470,184 +438,161 @@ const OfferStayDetail = () => {
             </Modal>
           )}
           <Row>
-            <div className="d-flex align-items-center mb-3 mt-4">
-              <div className="d-flex align-items-center">
-                <PinMapFill className="me-2" style={{ fontSize: "2.5rem" }} />
-                <h4 style={{ fontSize: "2.5rem", fontFamily: "Impact, san-serif", color: "#203040" }} className="mb-0">
-                  {offer.name}
-                </h4>
+            <Col md={8} className="mt-4">
+              <div className="d-flex align-items-center mb-3">
+                <div className="d-flex align-items-center">
+                  <PinMapFill className="me-2" style={{ fontSize: "2.5rem" }} />
+                  <h4
+                    style={{ fontSize: "2.5rem", fontFamily: "Impact, sans-serif", color: "#203040" }}
+                    className="mb-0"
+                  >
+                    {room.name}
+                  </h4>
+                </div>
+                <div className="mx-5">
+                  {isAdmin && (
+                    <Button className="button-search" onClick={handleEditOffer}>
+                      Modifica
+                    </Button>
+                  )}
+                </div>
               </div>
-              <div className="mx-5">
-                {isAdmin && (
-                  <Button className="button-search" onClick={handleEditOffer}>
-                    Modifica
-                  </Button>
-                )}
-              </div>
-            </div>
-            <Col md={7} className="mt-4">
               <Card>
-                <Swiper
-                  grabCursor={true}
-                  effect={"creative"}
-                  creativeEffect={{
-                    prev: {
-                      shadow: true,
-                      translate: [0, 0, -400],
-                    },
-                    next: {
-                      translate: ["100%", 0, 0],
-                    },
-                  }}
-                  modules={[EffectCreative]}
-                  className="mySwiper"
-                >
-                  <SwiperSlide style={{ maxHeight: "380px" }}>
-                    <img src={offer.images[0]} alt={offer.images} className="rounded-3" />
-                  </SwiperSlide>
-                  <SwiperSlide style={{ maxHeight: "380px" }}>
-                    <img src={offer.images[1]} alt={offer.images} className="rounded-3" />
-                  </SwiperSlide>
-                  <SwiperSlide style={{ maxHeight: "380px" }}>
-                    <img src={offer.images[2]} alt={offer.images} className="rounded-3" />
-                  </SwiperSlide>
-                  <SwiperSlide style={{ maxHeight: "380px" }}>
-                    <img src={offer.images[3]} alt={offer.images} className="rounded-3" />
-                  </SwiperSlide>
-                </Swiper>
-                <Button className="py-0" variant="trasparent" onClick={() => setShowModal(true)}>
-                  {offer.reviews.length > 0 && (
+                <Card.Img src={room.images[0]} alt={room.name} />
+                <Button className="py-0" variant="transparent" onClick={openModal}>
+                  {room.reviews.length > 0 && (
                     <span className="d-flex" style={{ marginLeft: "5px" }}>
                       <div>
-                        <StarFill className="pb-1" style={{ color: "yellow", fontSize: "1.2rem" }} />{" "}
+                        <StarFill className="pb-1" style={{ color: "yellow", fontSize: "1.2rem" }} />
                       </div>
                       <div className="text-black">
                         <strong>
                           {(
-                            offer.reviews.reduce((total, review) => total + review.rating, 0) / offer.reviews.length
+                            room.reviews.reduce((total, review) => total + review.rating, 0) / room.reviews.length
                           ).toFixed(2)}
                         </strong>
-                        {"  "} {offer.reviews.length} recensioni
+                        {"  "} {room.reviews.length} recensioni
                       </div>
                     </span>
                   )}
                 </Button>
-                <div className="me-auto">
-                  <Modal show={showModal} size="lg" onHide={handleCloseModal}>
-                    <Modal.Header closeButton style={{ backgroundColor: "#203040" }}>
-                      <Modal.Title style={{ color: "white", fontFamily: "Impact, sans-serif", fontSize: "2rem" }}>
-                        Recensioni
-                      </Modal.Title>
-                    </Modal.Header>
-                    <Scrollbar style={{ width: "100%", height: 360, color: "#203040" }}>
-                      <Modal.Body>
-                        {offer.reviews.map((review, index) => (
-                          <div key={index}>
-                            <h5 style={{ fontFamily: "Montserrat, sans-serif", fontWeight: "700" }}>{review.user}</h5>
-                            <div className="d-flex align-items-center">
-                              <div>
-                                <p className="mb-0 me-2" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                                  Valutazione:
-                                </p>
-                              </div>
-                              <div className="p-1 rounded-2" style={{ backgroundColor: "#203040" }}>
-                                <strong className="text-white">{review.rating}</strong>
-                                <StarFill className="pb-1" style={{ color: "rgb(197, 235, 27)", fontSize: "1.5rem" }} />
-                              </div>
-                            </div>
-                            <p className="mt-2">
-                              <span className="me-2" style={{ fontFamily: "Montserrat. sans-serif" }}>
-                                Commento:
-                              </span>
-                              <span style={{ fontStyle: "italic", fontWeight: "500" }}>"{review.comment}"</span>
-                            </p>
-                            <hr />
-                          </div>
-                        ))}
-                        <Form onSubmit={handleAddReview}>
-                          <Form.Group>
-                            <Form.Label>
-                              {" "}
-                              <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "1.3rem" }}>
-                                {" "}
-                                <strong>{username.username}</strong>, lascia una recensione!
+                <Modal show={showModal} size="lg" onHide={handleCloseModal}>
+                  <Modal.Header closeButton style={{ backgroundColor: "#203040" }}>
+                    <Modal.Title style={{ color: "white", fontFamily: "Impact, sans-serif", fontSize: "2rem" }}>
+                      Recensioni
+                    </Modal.Title>
+                  </Modal.Header>
+                  <Scrollbar style={{ width: "100%", height: 360, color: "#203040" }}>
+                    <Modal.Body>
+                      {room.reviews.map((review, index) => (
+                        <div key={index}>
+                          <h5 style={{ fontFamily: "Montserrat, sans-serif", fontWeight: "700" }}>{review.user}</h5>
+                          <div className="d-flex align-items-center">
+                            <div>
+                              <p className="mb-0 me-2" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                                Valutazione:
                               </p>
-                            </Form.Label>
-                          </Form.Group>
-                          <Form.Group className="d-flex align-items-center">
-                            <div>
-                              <Form.Label
-                                style={{
-                                  fontFamily: "Montserrat, sans-serif",
-                                  fontSize: "0.9rem",
-                                  color: "#203040",
-                                  fontWeight: "bolder",
-                                }}
-                                className="mb-0 me-2"
-                              >
-                                Valutazione:{" "}
-                              </Form.Label>
                             </div>
-                            <div>
-                              <Rating
-                                initialRating={newReview.rating}
-                                emptySymbol={<span className="rating-icon">&#9734;</span>}
-                                fullSymbol={<span className="rating-icon">&#9733;</span>}
-                                onClick={(value) => setNewReview({ ...newReview, rating: value })}
-                              />
+                            <div className="p-1 rounded-2" style={{ backgroundColor: "#203040" }}>
+                              <strong className="text-white">{review.rating}</strong>
+                              <StarFill className="pb-1" style={{ color: "rgb(197, 235, 27)", fontSize: "1.5rem" }} />
                             </div>
-                          </Form.Group>
-                          <Form.Group>
+                          </div>
+                          <p className="mt-2">
+                            <span className="me-2" style={{ fontFamily: "Montserrat. sans-serif" }}>
+                              Commento:
+                            </span>
+                            <span style={{ fontStyle: "italic", fontWeight: "500" }}>"{review.comment}"</span>
+                          </p>
+                          <hr />
+                        </div>
+                      ))}
+                      <Form onSubmit={handleAddReview}>
+                        <Form.Group>
+                          <Form.Label>
+                            {" "}
+                            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "1.3rem" }}>
+                              {" "}
+                              <strong>{username.username}</strong>, lascia una recensione!
+                            </p>
+                          </Form.Label>
+                        </Form.Group>
+                        <Form.Group className="d-flex align-items-center">
+                          <div>
                             <Form.Label
-                              className="mb-0"
                               style={{
                                 fontFamily: "Montserrat, sans-serif",
                                 fontSize: "0.9rem",
                                 color: "#203040",
                                 fontWeight: "bolder",
                               }}
+                              className="mb-0 me-2"
                             >
-                              Commento
+                              Valutazione:{" "}
                             </Form.Label>
-                            <Form.Control
-                              className="mb-2"
-                              as="textarea"
-                              rows={3}
-                              placeholder="Inserisci il tuo commento"
-                              value={newReview.comment}
-                              onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
-                            />
-                          </Form.Group>
-                          <div className="text-center">
-                            <Button className="button-search" type="submit">
-                              Aggiungi Recensione
-                            </Button>
                           </div>
-                        </Form>
-                      </Modal.Body>
-                    </Scrollbar>
-                    <Modal.Footer>
-                      <Button className="button-search" onClick={handleCloseModal}>
-                        Chiudi
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
-                  <h4>{offer.city}</h4>
-                </div>
+                          <div>
+                            <Rating
+                              initialRating={newReview.rating}
+                              emptySymbol={<span className="rating-icon">&#9734;</span>}
+                              fullSymbol={<span className="rating-icon">&#9733;</span>}
+                              onClick={(value) => setNewReview({ ...newReview, rating: value })}
+                            />
+                          </div>
+                        </Form.Group>
+                        <Form.Group>
+                          <Form.Label
+                            className="mb-0"
+                            style={{
+                              fontFamily: "Montserrat, sans-serif",
+                              fontSize: "0.9rem",
+                              color: "#203040",
+                              fontWeight: "bolder",
+                            }}
+                          >
+                            Commento
+                          </Form.Label>
+                          <Form.Control
+                            className="mb-2"
+                            as="textarea"
+                            rows={3}
+                            placeholder="Inserisci il tuo commento"
+                            value={newReview.comment}
+                            onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
+                          />
+                        </Form.Group>
+                        <div className="text-center">
+                          <Button className="button-search" type="submit">
+                            Aggiungi Recensione
+                          </Button>
+                        </div>
+                      </Form>
+                    </Modal.Body>
+                  </Scrollbar>
+                  <Modal.Footer>
+                    <Button className="button-search" onClick={handleCloseModal}>
+                      Chiudi
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
+
                 <Card.Body>
-                  <Card.Text>Host: {offer.host}</Card.Text>
-                  <Card.Text>Tipo struttura: {offer.type}</Card.Text>
-                  <Card.Text>Prezzo per Adulti: {offer.price_per_adult}€</Card.Text>
-                  <Card.Text>Prezzo per Bambini: {offer.price_per_child}€</Card.Text>
-                  <Card.Text>Stanze: {offer.bedrooms}</Card.Text>
-                  <Card.Text>Bagni: {offer.bathrooms}</Card.Text>
-                  <Card.Text>Servizi: {offer.amenities.join(", ")}</Card.Text>
+                  <Card.Title>{room.name}</Card.Title>
+                  <Card.Text>Descrizione: {room.description}</Card.Text>
+                  <Card.Text>Località: {room.city}</Card.Text>
+                  <Card.Text>Host: {room.host}</Card.Text>
+
+                  <Card.Text>Prezzo per Adulti: {room.price_per_adult}€</Card.Text>
+                  <Card.Text>Prezzo per Bambini: {room.price_per_child}€</Card.Text>
+                  <Card.Text>Stanze: {room.bedrooms}</Card.Text>
+                  <Card.Text>Bagni: {room.bathrooms}</Card.Text>
+                  <Card.Text>Servizi: {room.amenities.join(", ")}</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
             <Col md={4} className="ms-auto">
-              <div className="position-sticky" style={{ top: "110px", marginBottom: "60px" }}>
-                <ReservationFormTwo />
+              <div className="position-sticky" style={{ top: "110px" }}>
+                <ReservationFormThree />
               </div>
             </Col>
           </Row>
@@ -658,4 +603,4 @@ const OfferStayDetail = () => {
   );
 };
 
-export default OfferStayDetail;
+export default RoomDetail;

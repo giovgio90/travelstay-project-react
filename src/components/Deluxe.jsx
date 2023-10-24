@@ -1,10 +1,18 @@
 import { Button, Card, Container } from "react-bootstrap";
+import { StarFill } from "react-bootstrap-icons";
 
 const Deluxe = () => {
   return (
     <div className="deluxe d-flex justify-content-center align-items-center mb-5">
       <Container>
         <Card className="text-center py-5">
+          <div style={{ fontSize: "2rem", color: "rgb(197, 235, 27)" }}>
+            <StarFill />
+            <StarFill className="mx-1" />
+            <StarFill />
+            <StarFill className="mx-1" />
+            <StarFill />
+          </div>
           <Card.Body>
             <Card.Title className="display-5 pb-4" style={{ fontSize: "4rem", fontFamily: "Impact, sans-serif" }}>
               PACCHETTO COSTA AMALFITANA DELUXE

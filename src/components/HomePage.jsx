@@ -2,6 +2,7 @@ import BestRooms from "./BestRooms";
 import Deluxe from "./Deluxe";
 import FooterTravelStay from "./FooterTravelStay";
 import Header from "./Header";
+
 import IntroSection from "./IntroSection";
 import MainSection from "./MainSection";
 import NewsletterSignup from "./NewsletterSignup";
