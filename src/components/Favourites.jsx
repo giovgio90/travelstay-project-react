@@ -4,7 +4,15 @@ import FooterTravelStay from "./FooterTravelStay";
 import Logo from "../assets/Logo.png";
 import { Badge, Button, Col, Container, Form, Nav, NavDropdown, Navbar, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { AirplaneFill, Cart3, EnvelopeFill, HouseFill, PersonCircle, PersonFill } from "react-bootstrap-icons";
+import {
+  AirplaneFill,
+  ArrowLeftCircleFill,
+  Cart3,
+  EnvelopeFill,
+  HouseFill,
+  PersonCircle,
+  PersonFill,
+} from "react-bootstrap-icons";
 
 const Favourites = () => {
   const favoritesTravel = useSelector((state) => state.travel.favorites);
@@ -15,7 +23,14 @@ const Favourites = () => {
   const cartItemsTravel = useSelector((state) => state.cart.cartItemsTravel);
   const cartItemsStay = useSelector((state) => state.cart.cartItemsStay);
   const cartItemsRoom = useSelector((state) => state.cart.cartItemsRoom);
-  const cartItemCount = cartItemsTravel.length + cartItemsStay.length + cartItemsRoom.length;
+  const cartItemsTour = useSelector((state) => state.cart.cartItemsTour);
+  const cartItemsDeluxe = useSelector((state) => state.cart.cartItemsDeluxe);
+  const cartItemCount =
+    cartItemsTravel.length +
+    cartItemsStay.length +
+    cartItemsRoom.length +
+    cartItemsTour.length +
+    cartItemsDeluxe.length;
   const username = useSelector((state) => state.user.username);
   const handleLogout = () => {
     dispatch(setUser(null));
@@ -41,23 +56,27 @@ const Favourites = () => {
             <Nav className="text-sm-center mx-lg-auto">
               <Nav.Link className="pe-lg-5 d-flex" href="/">
                 <div className="d-flex align-items-center">
-                  <HouseFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0">HOME</h4>
+                  <HouseFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0">HOME</h4>
                 </div>
               </Nav.Link>
               <Nav.Link className=" pe-lg-5 d-flex" href="/about-us">
                 <div className="d-flex align-items-center">
-                  <PersonFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
+                  <PersonFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
                 </div>
               </Nav.Link>
 
               <Nav.Link className="pe-lg-5 " href="/explore">
                 <div className="nav-link d-flex align-items-center">
-                  <AirplaneFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0">OFFERTE</h4>
+                  <AirplaneFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0">OFFERTE</h4>
                 </div>
               </Nav.Link>
               <Nav.Link className=" pe-lg-5 " href="/contact">
                 <div className=" nav-link d-flex align-items-center">
-                  <EnvelopeFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0"> CONTATTI</h4>
+                  <EnvelopeFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0"> CONTATTI</h4>
                 </div>
               </Nav.Link>
             </Nav>
@@ -69,7 +88,7 @@ const Favourites = () => {
                       <div className="nav-link d-flex align-items-center">
                         <Nav.Link href="/cart">
                           <div className="d-flex align-items-center position-relative">
-                            <Cart3 className="nav-link me-4 text-white" style={{ fontSize: "1.7rem" }} />
+                            <Cart3 className="nav-link me-4" style={{ fontSize: "1.7rem" }} />
                             {cartItemCount > 0 && (
                               <Badge
                                 pill
@@ -81,7 +100,7 @@ const Favourites = () => {
                             )}
                           </div>
                         </Nav.Link>
-                        <PersonCircle className="me-2" style={{ fontSize: "1.5rem" }} />
+                        <PersonCircle className="me-2 text-white" style={{ fontSize: "1.5rem" }} />
                         <NavDropdown title={username.username} id="basic-nav-dropdown">
                           <NavDropdown.Item as={Link} to="/preferiti">
                             Preferiti
@@ -115,11 +134,17 @@ const Favourites = () => {
       </Navbar>
 
       <Container style={{ marginTop: "120px", minHeight: "70vh" }}>
+        <Link to="/">
+          <ArrowLeftCircleFill className="mt-2 mb-4" style={{ fontSize: "1.7rem", color: "#203040" }} />
+        </Link>
+
         <Row>
           <Col xs={12} md={12} lg={6} className="mb-3">
-            <h2 style={{ fontFamily: "Impact, sans-serif", fontSize: "2.5rem" }}>Viaggi preferiti</h2>
+            <h2 className="favorite-title" style={{ fontFamily: "Impact, sans-serif", fontSize: "2.5rem" }}>
+              Viaggi preferiti
+            </h2>
             {favoritesTravel.length === 0 ? (
-              <p>Non ci sono offerte favorite al momento.</p>
+              <p style={{ fontFamily: "Montserrat, sans-serif" }}>Non ci sono offerte favorite al momento.</p>
             ) : (
               <>
                 {favoritesTravel.map((offerId) => {
@@ -172,9 +197,11 @@ const Favourites = () => {
             )}
           </Col>
           <Col xs={12} md={12} lg={6} className="mb-3">
-            <h2 style={{ fontFamily: "Impact, sans-serif", fontSize: "2.5rem" }}>Soggiorni preferiti</h2>
+            <h2 className="favorite-title" style={{ fontFamily: "Impact, sans-serif", fontSize: "2.5rem" }}>
+              Soggiorni preferiti
+            </h2>
             {favoritesStay.length === 0 ? (
-              <p>Non ci sono offerte favorite al momento.</p>
+              <p style={{ fontFamily: "Montserrat, sans-serif" }}>Non ci sono offerte favorite al momento.</p>
             ) : (
               <>
                 {favoritesStay.map((offerId) => {

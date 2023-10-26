@@ -20,7 +20,14 @@ const AboutUsPage = () => {
   const cartItemsTravel = useSelector((state) => state.cart.cartItemsTravel);
   const cartItemsStay = useSelector((state) => state.cart.cartItemsStay);
   const cartItemsRoom = useSelector((state) => state.cart.cartItemsRoom);
-  const cartItemCount = cartItemsTravel.length + cartItemsStay.length + cartItemsRoom.length;
+  const cartItemsTour = useSelector((state) => state.cart.cartItemsTour);
+  const cartItemsDeluxe = useSelector((state) => state.cart.cartItemsDeluxe);
+  const cartItemCount =
+    cartItemsTravel.length +
+    cartItemsStay.length +
+    cartItemsRoom.length +
+    cartItemsTour.length +
+    cartItemsDeluxe.length;
 
   const handleLogout = () => {
     dispatch(setUser(null));
@@ -37,23 +44,27 @@ const AboutUsPage = () => {
             <Nav className="text-sm-center mx-lg-auto">
               <Nav.Link className="pe-lg-5 d-flex" href="/">
                 <div className="d-flex align-items-center">
-                  <HouseFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0">HOME</h4>
+                  <HouseFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0">HOME</h4>
                 </div>
               </Nav.Link>
               <Nav.Link className=" pe-lg-5 d-flex" href="/about-us">
                 <div className="d-flex align-items-center">
-                  <PersonFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
+                  <PersonFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
                 </div>
               </Nav.Link>
 
               <Nav.Link className="pe-lg-5 " href="/explore">
                 <div className="nav-link d-flex align-items-center">
-                  <AirplaneFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0">OFFERTE</h4>
+                  <AirplaneFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0">OFFERTE</h4>
                 </div>
               </Nav.Link>
               <Nav.Link className=" pe-lg-5 " href="/contact">
                 <div className=" nav-link d-flex align-items-center">
-                  <EnvelopeFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0"> CONTATTI</h4>
+                  <EnvelopeFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0"> CONTATTI</h4>
                 </div>
               </Nav.Link>
             </Nav>
@@ -65,7 +76,7 @@ const AboutUsPage = () => {
                       <div className="nav-link d-flex align-items-center">
                         <Nav.Link href="/cart">
                           <div className="d-flex align-items-center position-relative">
-                            <Cart3 className="nav-link me-4 text-white" style={{ fontSize: "1.7rem" }} />
+                            <Cart3 className="nav-link me-4" style={{ fontSize: "1.7rem" }} />
                             {cartItemCount > 0 && (
                               <Badge
                                 pill
@@ -77,7 +88,7 @@ const AboutUsPage = () => {
                             )}
                           </div>
                         </Nav.Link>
-                        <PersonCircle className="me-2" style={{ fontSize: "1.5rem" }} />
+                        <PersonCircle className="me-2 text-white" style={{ fontSize: "1.5rem" }} />
                         <NavDropdown title={username.username} id="basic-nav-dropdown">
                           <NavDropdown.Item as={Link} to="/preferiti">
                             Preferiti
@@ -116,9 +127,10 @@ const AboutUsPage = () => {
           </Link>
         </Container>
         <Container>
-          <Row className="mt-4 align-items-center" style={{ height: "60vh" }}>
+          <Row className="mt-4 align-items-center" style={{ minHeight: "60vh" }}>
             <Col xs={12} md={7}>
               <h2
+                className="about-us-title"
                 style={{
                   fontFamily: "Impact, sans-serif",
                 }}

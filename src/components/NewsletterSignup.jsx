@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button, Modal, Container, Row, Col, InputGroup } from "react-bootstrap";
+import Swal from "sweetalert2";
 
 const NewsletterSignup = () => {
   const [email, setEmail] = useState("");
@@ -28,12 +29,22 @@ const NewsletterSignup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setShowModal(true);
+    Swal.fire({
+      icon: "success",
+      title: "Grazie per l'iscrizione!",
+      showClass: {
+        popup: "animate__animated animate__slideInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+      showConfirmButton: false,
+      timer: 3000,
+    });
 
     setTimeout(() => {
       setEmail("");
-      setShowModal(false);
-    }, 5000);
+    }, 3000);
   };
 
   return (

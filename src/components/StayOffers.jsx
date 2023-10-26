@@ -98,11 +98,11 @@ const StayOffers = ({ selectedBudget }) => {
         {isAdmin && (
           <div>
             <Button className="button-search mx-3" onClick={() => setShowModal(true)}>
-              Aggiungi Offerta
+              Aggiungi nuovi soggiorni
             </Button>
             <Modal show={showModal} size="lg" onHide={() => setShowModal(false)}>
-              <Modal.Header closeButton>
-                <Modal.Title style={{ fontFamily: "Impact, san-serif", color: "#203040" }}>
+              <Modal.Header style={{ backgroundColor: "#203040" }} closeButton>
+                <Modal.Title style={{ fontFamily: "Impact, san-serif", color: "white" }}>
                   Inserisci una nuova offerta
                 </Modal.Title>
               </Modal.Header>
@@ -424,7 +424,7 @@ const StayOffers = ({ selectedBudget }) => {
                         className="text-white px-2 mx-2 rounded-2"
                         style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
                       >
-                        ${offer.price_per_adult}
+                        {offer.price_per_adult},00 €
                       </span>
                       <span className="ps-0">adulti</span>
                     </Card.Text>
@@ -434,7 +434,7 @@ const StayOffers = ({ selectedBudget }) => {
                         className="text-white px-2 mx-2 rounded-2"
                         style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
                       >
-                        ${offer.price_per_child}
+                        {offer.price_per_child},00 €
                       </span>
                       <span className="ps-0">bambini</span>
                     </Card.Text>
@@ -488,8 +488,8 @@ const StayOffers = ({ selectedBudget }) => {
       )}
       {isAdmin && editedOffer && (
         <Modal className="custom-modal" show={isModalOpen} size="lg" onHide={() => setIsModalOpen(false)}>
-          <Modal.Header closeButton>
-            <Modal.Title style={{ fontFamily: "Impact, san-serif", color: "#203040" }}>Modifica Offerta</Modal.Title>
+          <Modal.Header style={{ backgroundColor: "#203040" }} closeButton>
+            <Modal.Title style={{ fontFamily: "Impact, san-serif", color: "white" }}>Modifica Offerta</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Scrollbar style={{ width: "100%", height: 360, color: "#203040" }}>

@@ -1,52 +1,37 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Logo from "../assets/Logo.png";
-import {
-  Badge,
-  Button,
-  Card,
-  Col,
-  Container,
-  Form,
-  Image,
-  Modal,
-  Nav,
-  NavDropdown,
-  Navbar,
-  Row,
-} from "react-bootstrap";
+import { Badge, Button, Card, Col, Container, Form, Modal, Nav, NavDropdown, Navbar, Row } from "react-bootstrap";
 import {
   AirplaneFill,
   ArrowLeftCircleFill,
   Cart3,
+  ClockFill,
   EnvelopeFill,
   HouseFill,
   PersonCircle,
   PersonFill,
+  PinMapFill,
   StarFill,
 } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
-import { addReviewThree, setUser, updateTour } from "../redux/actions";
+import { addReviewFour, setUser, updateDeluxe } from "../redux/actions";
 import { Scrollbar } from "react-scrollbars-custom";
 
 import FooterTravelStay from "./FooterTravelStay";
 import Rating from "react-rating";
-import ReservationFormFour from "./ReservationFormFour";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import LoadingTwo from "./LoadingTwo";
 
-const TourDetail = () => {
-  const { tourId } = useParams();
-  const tour = useSelector((state) => state.tours.find((r) => r.id === parseInt(tourId)));
+import ReservationFormFive from "./ReservationFive";
+import { FaCog, FaTimes, FaUser } from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCreative, Navigation } from "swiper/modules";
+
+const DeluxeOfferDetail = () => {
+  const { deluxeId } = useParams();
+  const deluxe = useSelector((state) => state.deluxe.find((r) => r.id === parseInt(deluxeId)));
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const username = useSelector((state) => state.user.username);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  }, []);
 
   const handleLogout = () => {
     dispatch(setUser(null));
@@ -55,20 +40,20 @@ const TourDetail = () => {
   const [editedOffer, setEditedOffer] = useState(null);
 
   const handleEditOffer = () => {
-    setEditedOffer(tour);
+    setEditedOffer(deluxe);
     setIsModalOpen(true);
   };
 
   const handleUpdateOffer = () => {
     if (isAdmin && editedOffer) {
-      dispatch(updateTour(editedOffer));
+      dispatch(updateDeluxe(editedOffer));
       setIsModalOpen(false);
     }
   };
 
   const handleAddReview = () => {
     if (newReview.rating > 0 && newReview.comment.trim() !== "") {
-      dispatch(addReviewThree(tour.id, username.username, newReview.rating, newReview.comment));
+      dispatch(addReviewFour(deluxe.id, username.username, newReview.rating, newReview.comment));
 
       setNewReview({ rating: 0, comment: "" });
     }
@@ -89,7 +74,7 @@ const TourDetail = () => {
 
   const isAdmin = username && username.email === "giovanni@gmail.com";
 
-  if (!tour) {
+  if (!deluxe) {
     return <div>Offerta non trovata</div>;
   }
 
@@ -214,30 +199,12 @@ const TourDetail = () => {
                         }}
                         className="mb-0"
                       >
-                        Località
+                        Nome Pacchetto
                       </Form.Label>
                       <Form.Control
                         type="text"
-                        value={editedOffer.destination}
-                        onChange={(e) => setEditedOffer({ ...editedOffer, destination: e.target.value })}
-                      />
-                    </Form.Group>
-                    <Form.Group className="mb-2">
-                      <Form.Label
-                        style={{
-                          fontFamily: "Montserrat, sans-serif",
-                          fontSize: "0.9rem",
-                          color: "#203040",
-                          fontWeight: "bolder",
-                        }}
-                        className="mb-0"
-                      >
-                        Regione
-                      </Form.Label>
-                      <Form.Control
-                        type="text"
-                        value={editedOffer.region}
-                        onChange={(e) => setEditedOffer({ ...editedOffer, region: e.target.value })}
+                        value={editedOffer.name}
+                        onChange={(e) => setEditedOffer({ ...editedOffer, name: e.target.value })}
                       />
                     </Form.Group>
 
@@ -275,7 +242,7 @@ const TourDetail = () => {
                       <Form.Control
                         type="text"
                         value={editedOffer.duration}
-                        onChange={(e) => setEditedOffer({ ...editedOffer, durata: e.target.value })}
+                        onChange={(e) => setEditedOffer({ ...editedOffer, duration: e.target.value })}
                       />
                     </Form.Group>
 
@@ -289,38 +256,15 @@ const TourDetail = () => {
                         }}
                         className="mb-0"
                       >
-                        Tappe
+                        Servizi inclusi
                       </Form.Label>
                       <Form.Control
                         type="text"
-                        value={editedOffer.highlights.join(", ")}
+                        value={editedOffer.includedServices.join(", ")}
                         onChange={(e) =>
                           setEditedOffer({
                             ...editedOffer,
-                            highlights: e.target.value.split(", "),
-                          })
-                        }
-                      />
-                    </Form.Group>
-                    <Form.Group className="mb-2">
-                      <Form.Label
-                        style={{
-                          fontFamily: "Montserrat, sans-serif",
-                          fontSize: "0.9rem",
-                          color: "#203040",
-                          fontWeight: "bolder",
-                        }}
-                        className="mb-0"
-                      >
-                        Descrizione tappe
-                      </Form.Label>
-                      <Form.Control
-                        type="text"
-                        value={editedOffer.highlights_description.join(", ")}
-                        onChange={(e) =>
-                          setEditedOffer({
-                            ...editedOffer,
-                            highlights_description: e.target.value.split(", "),
+                            includedServices: e.target.value.split(", "),
                           })
                         }
                       />
@@ -348,6 +292,7 @@ const TourDetail = () => {
                         }}
                       />
                     </Form.Group>
+
                     <Form.Group className="mb-2">
                       <Form.Label
                         style={{
@@ -370,79 +315,6 @@ const TourDetail = () => {
                         }}
                       />
                     </Form.Group>
-
-                    <Form.Group className="mb-2">
-                      <Form.Label
-                        style={{
-                          fontFamily: "Montserrat, sans-serif",
-                          fontSize: "0.9rem",
-                          color: "#203040",
-                          fontWeight: "bolder",
-                        }}
-                        className="mb-0"
-                      >
-                        Immagine 1 (URL)
-                      </Form.Label>
-                      <Form.Control
-                        type="text"
-                        value={editedOffer.image}
-                        onChange={(e) => setEditedOffer({ ...editedOffer, image: e.target.value })}
-                      />
-                    </Form.Group>
-                    <Form.Group className="mb-2">
-                      <Form.Label
-                        style={{
-                          fontFamily: "Montserrat, sans-serif",
-                          fontSize: "0.9rem",
-                          color: "#203040",
-                          fontWeight: "bolder",
-                        }}
-                        className="mb-0"
-                      >
-                        Immagine 2 (URL)
-                      </Form.Label>
-                      <Form.Control
-                        type="text"
-                        value={editedOffer.images[0]}
-                        onChange={(e) => setEditedOffer({ ...editedOffer, images: e.target.value })}
-                      />
-                    </Form.Group>
-                    <Form.Group className="mb-2">
-                      <Form.Label
-                        style={{
-                          fontFamily: "Montserrat, sans-serif",
-                          fontSize: "0.9rem",
-                          color: "#203040",
-                          fontWeight: "bolder",
-                        }}
-                        className="mb-0"
-                      >
-                        Immagine 3 (URL)
-                      </Form.Label>
-                      <Form.Control
-                        type="text"
-                        value={editedOffer.images[1]}
-                        onChange={(e) => setEditedOffer({ ...editedOffer, images: e.target.value })}
-                      />
-                    </Form.Group>
-                    <Form.Group className="mb-2">
-                      <Form.Label
-                        style={{
-                          fontFamily: "Montserrat, sans-serif",
-                          fontSize: "0.9rem",
-                          color: "#203040",
-                          fontWeight: "bolder",
-                        }}
-                        className="mb-0"
-                      >
-                        Immagine 4 (URL)
-                      </Form.Label>
-                      <Form.Control
-                        type="text"
-                        value={editedOffer.images[2]}
-                        onChange={(e) => setEditedOffer({ ...editedOffer, images: e.target.value })}
-                      />
-                    </Form.Group>
                   </Form>
                 </Scrollbar>
               </Modal.Body>
@@ -456,15 +328,17 @@ const TourDetail = () => {
               </Modal.Footer>
             </Modal>
           )}
-          <div className="d-flex align-items-center mt-4 mb-2">
-            <div className="d-flex align-items-center">
-              <FaMapMarkerAlt className="me-2" style={{ color: "#203040", fontSize: "2.3rem" }} />
-              <h4 style={{ fontSize: "2.5rem", fontFamily: "Impact, sans-serif", color: "#203040" }} className="mb-0">
-                {tour.destination} - {tour.region}
+          <div className="d-flex align-items-center mt-3 mb-0">
+            <div className="d-flex  mt-4">
+              <StarFill className="me-2 pt-1" style={{ color: "rgb(197, 235, 27)", fontSize: "2.8rem" }} />
+              <h4
+                style={{ fontSize: "2.5rem", fontFamily: "Impact, sans-serif", color: "#203040" }}
+                className="mb-0 mb-4"
+              >
+                {deluxe.name}
               </h4>
             </div>
-
-            <div className="ms-auto">
+            <div className="ms-auto ">
               {isAdmin && (
                 <Button className="button-search" onClick={handleEditOffer}>
                   Modifica
@@ -472,9 +346,10 @@ const TourDetail = () => {
               )}
             </div>
           </div>
-          <Row className="mb-5">
-            <Col xs={12} md={12} lg={7} className="mt-4">
-              <p style={{ fontFamily: "Montserrat, sans-serif" }}>{tour.description}</p>
+          <Row className="mb-5" style={{ fontFamily: "Montserrat, sans-serif" }}>
+            <Col xs={12} md={12} lg={7} className="mt-3">
+              <p>{deluxe.description}</p>
+
               <Modal show={showModal} size="lg" onHide={handleCloseModal}>
                 <Modal.Header closeButton style={{ backgroundColor: "#203040" }}>
                   <Modal.Title style={{ color: "white", fontFamily: "Impact, sans-serif", fontSize: "2rem" }}>
@@ -483,7 +358,7 @@ const TourDetail = () => {
                 </Modal.Header>
                 <Scrollbar style={{ width: "100%", height: 360, color: "#203040" }}>
                   <Modal.Body>
-                    {tour.reviews.map((review, index) => (
+                    {deluxe.reviews.map((review, index) => (
                       <div key={index}>
                         <h5 style={{ fontFamily: "Montserrat, sans-serif", fontWeight: "700" }}>{review.user}</h5>
                         <div className="d-flex align-items-center">
@@ -574,95 +449,93 @@ const TourDetail = () => {
                   </Button>
                 </Modal.Footer>
               </Modal>
-              <h4 className="mb-0 mt-5" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                Tour - {tour.duration}
-              </h4>
-              {loading ? (
-                <LoadingTwo />
-              ) : (
-                <Card className="border-white" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                  <Card.Body>
-                    <Row>
-                      <Col xs={12} md={12} lg={6} className="px-0">
-                        <Image src={tour.images[0]} className="w-100 rounded-2" />
-                      </Col>
-
-                      <Col xs={12} md={12} lg={6} className="ps-2 py-1">
-                        <Card.Text className="mb-1" style={{ fontWeight: "600" }}>
-                          {" "}
-                          {tour.highlights[0]}
-                        </Card.Text>
-                        <Card.Text> {tour.highlights_description[0]}</Card.Text>
-                      </Col>
-                    </Row>
-                  </Card.Body>
-                </Card>
-              )}
-              <hr />
-              {loading ? (
-                <LoadingTwo />
-              ) : (
-                <Card className="border-white" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                  <Card.Body>
-                    <Row>
-                      <Col xs={12} md={12} lg={6} className="px-0">
-                        <Image src={tour.images[1]} className="w-100 rounded-2" />
-                      </Col>
-                      <Col xs={12} md={12} lg={6} className="ps-2 py-1">
-                        <Card.Text className="mb-1" style={{ fontWeight: "600" }}>
-                          {" "}
-                          {tour.highlights[1]}
-                        </Card.Text>
-                        <Card.Text> {tour.highlights_description[1]}</Card.Text>
-                      </Col>
-                    </Row>
-                  </Card.Body>
-                </Card>
-              )}
-              <hr />
-              {loading ? (
-                <LoadingTwo />
-              ) : (
-                <Card className="border-white" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                  <Card.Body>
-                    <Row>
-                      <Col xs={12} md={12} lg={6} className="px-0">
-                        <Image src={tour.images[2]} className="w-100 rounded-2" />
-                      </Col>
-                      <Col xs={12} md={12} lg={6} className="ps-2 py-1">
-                        <Card.Text className="mb-1" style={{ fontWeight: "600" }}>
-                          {" "}
-                          {tour.highlights[2]}
-                        </Card.Text>
-                        <Card.Text> {tour.highlights_description[2]}</Card.Text>
-                      </Col>
-                    </Row>
-                  </Card.Body>
-                </Card>
-              )}
-              <div className="text-end">
-                <Button className="py-0" variant="transparent" onClick={openModal}>
-                  {tour.reviews.length > 0 && (
-                    <span className="d-flex" style={{ marginLeft: "5px" }}>
+              <Swiper
+                grabCursor={true}
+                effect={"creative"}
+                navigation={true}
+                creativeEffect={{
+                  prev: {
+                    shadow: true,
+                    translate: [0, 0, -400],
+                  },
+                  next: {
+                    translate: ["100%", 0, 0],
+                  },
+                }}
+                modules={[Navigation, EffectCreative]}
+                className="mySwiper mb-4"
+                style={{ width: "100%", height: "400px" }}
+              >
+                {deluxe.images.map((image, index) => (
+                  <SwiperSlide key={index} style={{ display: "flex", justifyContent: "center" }}>
+                    <img
+                      src={image}
+                      alt={deluxe.name}
+                      className="rounded-3"
+                      style={{ width: "100%", height: "100%" }}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+              <Card className="mb-2">
+                <Card.Body>
+                  <Row>
+                    <Col xs={3} md={3} className="d-flex align-items-center">
                       <div>
-                        <StarFill className="pb-1" style={{ color: "rgb(197, 235, 27)", fontSize: "1.5rem" }} />{" "}
+                        <ClockFill className="me-1" />
                       </div>
-                      <div className="text-black">
-                        <strong>
-                          {(
-                            tour.reviews.reduce((total, review) => total + review.rating, 0) / tour.reviews.length
-                          ).toFixed(2)}
-                        </strong>
-                        {"  "} {tour.reviews.length} recensioni
+                      <div>
+                        <p className="mb-0">
+                          <strong>Durata:</strong>
+                        </p>
                       </div>
-                    </span>
-                  )}
-                </Button>
-              </div>
+                    </Col>
+                    <Col xs={9} md={9}>
+                      {deluxe.duration}
+                    </Col>
+                  </Row>
+                  <hr />
+                  <Row>
+                    <Col xs={3} md={3} className="d-flex align-items-center">
+                      <div>
+                        <FaCog className="me-1" />
+                      </div>
+                      <div>
+                        <p className="mb-0">
+                          <strong>Servizi:</strong>
+                        </p>
+                      </div>
+                    </Col>
+                    <Col xs={9} md={9} className="mb-2">
+                      {deluxe.includedServices.join(", ")}
+                    </Col>
+                  </Row>
+                  <div className="text-end">
+                    <Button className="ms-auto py-0" variant="transparent" onClick={openModal}>
+                      {deluxe.reviews.length > 0 && (
+                        <span className="d-flex" style={{ marginLeft: "5px" }}>
+                          <div>
+                            <StarFill className="pb-1" style={{ color: "rgb(197, 235, 27)", fontSize: "1.5rem" }} />{" "}
+                          </div>
+                          <div className="text-black">
+                            <strong>
+                              {(
+                                deluxe.reviews.reduce((total, review) => total + review.rating, 0) /
+                                deluxe.reviews.length
+                              ).toFixed(2)}
+                            </strong>
+                            {"  "} {deluxe.reviews.length} recensioni
+                          </div>
+                        </span>
+                      )}
+                    </Button>
+                  </div>
+                </Card.Body>
+              </Card>
             </Col>
             <Col xs={12} md={12} lg={4} className="ms-auto">
-              <div className="position-sticky" style={{ top: "110px" }}>
-                <ReservationFormFour />
+              <div className="position-sticky mt-3" style={{ top: "110px" }}>
+                <ReservationFormFive />
               </div>
             </Col>
           </Row>
@@ -673,4 +546,4 @@ const TourDetail = () => {
   );
 };
 
-export default TourDetail;
+export default DeluxeOfferDetail;

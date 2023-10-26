@@ -11,7 +11,7 @@ const LoadingCard = () => {
           justifyContent: "center",
           alignItems: "center",
           height: "230px",
-          backgroundColor: "grey",
+          backgroundColor: "#75a6ff",
         }}
       >
         <Spinner animation="border" variant="light" />
@@ -31,7 +31,7 @@ const LoadingCard = () => {
           <Button
             className="border border-none disabled placeholder mx-auto col-6 text-center"
             aria-disabled="true"
-            style={{ height: "25px", backgroundColor: "#0d151d" }}
+            style={{ height: "25px", backgroundColor: "#203040" }}
           ></Button>
         </div>
       </Card.Body>

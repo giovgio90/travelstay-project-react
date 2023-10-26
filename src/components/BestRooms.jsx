@@ -40,7 +40,7 @@ const BestRooms = () => {
 
   const handleRoomChange = () => {
     if (isAdmin) {
-      dispatch(updateRoom(editingRoomId, roomName, roomPrice));
+      dispatch(updateRoom({ id: editingRoomId, name: roomName, price: roomPrice }));
       handleCloseModal();
     }
   };
@@ -64,7 +64,7 @@ const BestRooms = () => {
             ) : (
               <Card
                 className="hover-scale bg-dark text-white text-center border-0 me-2 my-3"
-                style={{ height: "400px" }}
+                style={{ width: "100%", height: "400px" }}
               >
                 <Card.Img src={room.image} alt={room.name} style={{ objectFit: "cover", height: "100%" }} />
                 <Card.ImgOverlay className="card-tours d-flex flex-column justify-content-center align-items-center">
@@ -74,7 +74,7 @@ const BestRooms = () => {
                         Modifica
                       </Button>
                     )}
-                    <Card.Text style={{ fontFamily: "Montserrat, sans-serif", fontSize: "1.5rem" }}>
+                    <Card.Text className="ms-auto" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "1.5rem" }}>
                       {room.price},00 €/notte
                     </Card.Text>
                   </div>
@@ -92,8 +92,8 @@ const BestRooms = () => {
         ))}
       </Row>
       <Modal show={isModalOpen} onHide={handleCloseModal}>
-        <Modal.Header closeButton>
-          <Modal.Title style={{ fontFamily: "Impact, san-serif", color: "#203040" }}>
+        <Modal.Header style={{ backgroundColor: "#203040" }} closeButton>
+          <Modal.Title style={{ fontFamily: "Impact, san-serif", color: "white" }}>
             Modifica anteprima stanza
           </Modal.Title>
         </Modal.Header>

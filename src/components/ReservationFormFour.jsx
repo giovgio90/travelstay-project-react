@@ -2,21 +2,21 @@ import { useState } from "react";
 import { Button, Col, Dropdown, Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { addToCartRoom } from "../redux/actions";
+import { addToCartTour } from "../redux/actions";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-const ReservationFormThree = () => {
-  const { id } = useParams();
+const ReservationFormFour = () => {
+  const { tourId } = useParams();
   const dispatch = useDispatch();
   const [selectedDate, setSelectedDate] = useState("");
-  const room = useSelector((state) => state.rooms.find((r) => r.id === parseInt(id)));
-  console.log(room);
+  const tour = useSelector((state) => state.tours.find((r) => r.id === parseInt(tourId)));
+  console.log(tour);
 
   let offer;
 
-  if (room.offers) {
-    const matchingOffers = room.offers.filter((offer) => offer.id.toString() === id);
+  if (tour.offers) {
+    const matchingOffers = tour.offers.filter((offer) => offer.id.toString() === tourId);
     if (matchingOffers.length > 0) {
       // eslint-disable-next-line no-unused-vars
       offer = matchingOffers[0];
@@ -27,8 +27,8 @@ const ReservationFormThree = () => {
   const [children, setChildren] = useState(0);
 
   const calculateTotalPrice = () => {
-    const adultPrice = room.price_per_adult;
-    const childPrice = room.price_per_child;
+    const adultPrice = tour.price;
+    const childPrice = tour.price_per_child;
     const totalAdultPrice = adults * adultPrice;
     const totalChildPrice = children * childPrice;
     return totalAdultPrice + totalChildPrice;
@@ -47,33 +47,33 @@ const ReservationFormThree = () => {
   const handleBookClick = () => {
     const totalPeople = adults + children;
     const productToAddToCart = {
-      id: room.id,
-      name: room.name,
-      destination: room.destination,
-      image: room.images[0],
-      date: selectedDate,
-      offer: room.offer,
+      id: tour.id,
+      destination: tour.destination,
+      duration: tour.duration,
+      image: tour.images[0],
       price: calculateTotalPrice(),
       quantity: totalPeople,
+      offer: tour.offer,
       adults: adults,
       children: children,
+      date: selectedDate,
     };
-    dispatch(addToCartRoom(productToAddToCart));
+    dispatch(addToCartTour(productToAddToCart));
   };
 
   return (
-    <div className="reservation-form-container rounded-2 p-3 mt-5">
+    <div className="reservation-form-container rounded-2 p-3">
       <Form className="reservation-form">
         <h6 style={{ fontFamily: "Montserrat, sans-serif" }}>
           <span> Prezzo per adulto:</span>{" "}
           <span className="p-1 rounded-2" style={{ fontWeight: "600" }}>
-            {room.price_per_adult},00 €
+            {tour.price},00 €
           </span>
         </h6>
         <h6 style={{ fontFamily: "Montserrat, sans-serif" }}>
           <span>Prezzo per bambino:</span>{" "}
           <span className="p-1 rounded-2" style={{ fontWeight: "600" }}>
-            {room.price_per_child},00 €
+            {tour.price_per_child},00 €
           </span>
         </h6>
 
@@ -153,4 +153,4 @@ const ReservationFormThree = () => {
   );
 };
 
-export default ReservationFormThree;
+export default ReservationFormFour;

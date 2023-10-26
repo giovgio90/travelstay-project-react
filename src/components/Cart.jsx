@@ -3,6 +3,7 @@ import Logo from "../assets/Logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchTravelOffers,
+  removeFromCartDeluxe,
   removeFromCartRoom,
   removeFromCartStay,
   removeFromCartTour,
@@ -21,9 +22,15 @@ const Cart = () => {
   const cartItemsStay = useSelector((state) => state.cart.cartItemsStay);
   const cartItemsRoom = useSelector((state) => state.cart.cartItemsRoom);
   const cartItemsTour = useSelector((state) => state.cart.cartItemsTour);
+  const cartItemsDeluxe = useSelector((state) => state.cart.cartItemsDeluxe);
   console.log(cartItemsTour);
-  const cartItemCount = cartItemsTravel.length + cartItemsStay.length + cartItemsRoom.length + cartItemsTour.length;
-  const cartItems = [...cartItemsTravel, ...cartItemsStay, ...cartItemsRoom, ...cartItemsTour];
+  const cartItemCount =
+    cartItemsTravel.length +
+    cartItemsStay.length +
+    cartItemsRoom.length +
+    cartItemsTour.length +
+    cartItemsDeluxe.length;
+  const cartItems = [...cartItemsTravel, ...cartItemsStay, ...cartItemsRoom, ...cartItemsTour, ...cartItemsDeluxe];
 
   console.log(cartItems);
 
@@ -42,6 +49,7 @@ const Cart = () => {
     cartItemsStay.forEach((item) => dispatch(removeFromCartStay(item.id)));
     cartItemsRoom.forEach((room) => dispatch(removeFromCartRoom(room.id)));
     cartItemsTour.forEach((tour) => dispatch(removeFromCartTour(tour.id)));
+    cartItemsDeluxe.forEach((deluxe) => dispatch(removeFromCartDeluxe(deluxe.id)));
   };
 
   useEffect(() => {
@@ -74,6 +82,7 @@ const Cart = () => {
     const itemToRemoveStay = cartItemsStay.find((item) => item.id === productId);
     const itemToRemoveRoom = cartItemsRoom.find((item) => item.id === productId);
     const itemToRemoveTour = cartItemsTour.find((item) => item.id === productId);
+    const itemToRemoveDeluxe = cartItemsDeluxe.find((item) => item.id === productId);
 
     if (itemToRemoveTravel) {
       dispatch(removeFromCartTravel(productId));
@@ -83,6 +92,8 @@ const Cart = () => {
       dispatch(removeFromCartRoom(productId));
     } else if (itemToRemoveTour) {
       dispatch(removeFromCartTour(productId));
+    } else if (itemToRemoveDeluxe) {
+      dispatch(removeFromCartDeluxe(productId));
     }
   };
   const calculateTotal = () => {
@@ -117,23 +128,27 @@ const Cart = () => {
             <Nav className="justify-content-center mx-lg-auto">
               <Nav.Link className="pe-lg-5 d-flex" href="/">
                 <div className="d-flex align-items-center justify-content-center">
-                  <HouseFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0">HOME</h4>
+                  <HouseFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0">HOME</h4>
                 </div>
               </Nav.Link>
               <Nav.Link className=" pe-lg-5 d-flex" href="/about-us">
                 <div className="d-flex align-items-center">
-                  <PersonFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
+                  <PersonFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
                 </div>
               </Nav.Link>
 
               <Nav.Link className="pe-lg-5 " href="/explore">
                 <div className="nav-link d-flex align-items-center">
-                  <AirplaneFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0">OFFERTE</h4>
+                  <AirplaneFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0">OFFERTE</h4>
                 </div>
               </Nav.Link>
               <Nav.Link className=" pe-lg-5 " href="/contact">
                 <div className=" nav-link d-flex align-items-center">
-                  <EnvelopeFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0"> CONTATTI</h4>
+                  <EnvelopeFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0"> CONTATTI</h4>
                 </div>
               </Nav.Link>
             </Nav>
@@ -143,7 +158,7 @@ const Cart = () => {
                   <div className="nav-link d-flex align-items-center">
                     <Nav.Link href="/cart">
                       <div className="d-flex align-items-center position-relative">
-                        <Cart3 className="nav-link me-4 text-white" style={{ fontSize: "1.7rem" }} />
+                        <Cart3 className="nav-link me-4 " style={{ fontSize: "1.7rem" }} />
                         {cartItemCount > 0 && (
                           <Badge pill bg="danger" className="cart-badge position-absolute top-0 end-0 translate-middle">
                             {cartItemCount}
@@ -151,7 +166,7 @@ const Cart = () => {
                         )}
                       </div>
                     </Nav.Link>
-                    <PersonCircle className="me-2" style={{ fontSize: "1.5rem" }} />
+                    <PersonCircle className="me-2 text-white" style={{ fontSize: "1.5rem" }} />
                     <NavDropdown title={username.username} id="basic-nav-dropdown">
                       <Link to="/preferiti">
                         <Button variant="transparent" className="text-black align-self-center pt-0">
@@ -199,7 +214,7 @@ const Cart = () => {
                       <div style={{ fontFamily: "Montserrat, sans-serif" }}>
                         <div className="d-flex align-items-center">
                           <Card.Title className="mb-3" style={{ fontSize: "1.6rem", fontWeight: "600" }}>
-                            {item.destination || item.name || item.city}
+                            {item.destination || item.name}
                           </Card.Title>
                           <Button
                             className="ms-auto"
@@ -210,6 +225,12 @@ const Cart = () => {
                             Rimuovi dal carrello
                           </Button>
                         </div>
+                        {item.date ? (
+                          <Card.Text>
+                            <span style={{ fontSize: "1.2rem", fontWeight: "600" }}>Data</span>{" "}
+                            <p>{formatItalianDate(item.date)}</p>
+                          </Card.Text>
+                        ) : null}
                         {item.type ? (
                           <Card.Text>
                             <span style={{ fontSize: "1.2rem", fontWeight: "600" }}>Tipo struttura</span>{" "}
@@ -226,15 +247,10 @@ const Cart = () => {
                             </Card.Text>
                           ) : null}
                         </Card.Text>
-                        {item.city ? (
+                        {item.destination ? (
                           <Card.Text>
-                            <span style={{ fontSize: "1.2rem", fontWeight: "600" }}>Località</span> <p>{item.city}</p>
-                          </Card.Text>
-                        ) : null}
-                        {item.duration ? (
-                          <Card.Text>
-                            <span style={{ fontSize: "1.2rem", fontWeight: "600" }}>Data</span>{" "}
-                            <p>{formatItalianDate(item.date)}</p>
+                            <span style={{ fontSize: "1.2rem", fontWeight: "600" }}>Località</span>{" "}
+                            <p>{item.destination}</p>
                           </Card.Text>
                         ) : null}
 
@@ -269,12 +285,35 @@ const Cart = () => {
                         <Col xs={7}>
                           <div key={item.id}>
                             <div className="d-flex">
-                              <p className="mb-0">{item.price},00 €</p>
-                              {item.duration ? <span className="mx-1">•</span> : null}
-                              <p className="mb-0">{item.duration ? <span>{item.duration}</span> : ""}</p>
+                              <p className="mb-0">{item.offer === "travel" ? <p>{item.price},00 €</p> : null}</p>
+                              <p className="mb-0">{item.offer === "stay" ? <p>{item.price},00 €/ notte</p> : null}</p>
+                              <p className="mb-0">{item.offer === "room" ? <p>{item.price},00 €/ notte</p> : null}</p>
+                              <p className="mb-0">{item.offer === "tour" ? <p>{item.price},00 €</p> : null}</p>
+                              <p className="mb-0">{item.type_offer === "deluxe" ? <p>{item.price},00 €</p> : null}</p>
+                              {item.offer === "travel" ? <span className="mx-1">•</span> : null}
+                              <p className="mb-0">{item.offer === "travel" ? <span>{item.duration}</span> : ""}</p>
+                            </div>
+
+                            <div>
+                              <p className="mb-0">{item.offer === "travel" ? <p>Viaggio con soggiorno</p> : null}</p>
                             </div>
                             <div>
-                              <p className="mb-0">{item.duration ? <p>Viaggio con soggiorno</p> : null}</p>
+                              <p className="mb-0">{item.offer === "stay" ? <p>Soggiorno</p> : null}</p>
+                            </div>
+                            <div>
+                              <p className="mb-0">{item.offer === "room" ? <p>{item.name}</p> : null}</p>
+                            </div>
+                            <div>
+                              <p className="mb-0">{item.offer === "tour" ? <p>Tour - {item.duration}</p> : null}</p>
+                            </div>
+                            <div>
+                              <p className="mb-0">
+                                {item.type_offer === "deluxe" ? (
+                                  <p>
+                                    {item.name} • {item.duration}
+                                  </p>
+                                ) : null}
+                              </p>
                             </div>
                           </div>
                         </Col>

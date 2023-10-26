@@ -1,8 +1,10 @@
 import {
+  ADD_TO_CART_DELUXE,
   ADD_TO_CART_ROOM,
   ADD_TO_CART_STAY,
   ADD_TO_CART_TOUR,
   ADD_TO_CART_TRAVEL,
+  REMOVE_FROM_CART_DELUXE,
   REMOVE_FROM_CART_ROOM,
   REMOVE_FROM_CART_STAY,
   REMOVE_FROM_CART_TOUR,
@@ -14,13 +16,25 @@ const initialState = {
   cartItemsStay: [],
   cartItemsRoom: [],
   cartItemsTour: [],
+  cartItemsDeluxe: [],
 };
 
 const cartReducer = (state = initialState, action) => {
+  let newItemTravel,
+    existingItemTravel,
+    newItemStay,
+    existingItemStay,
+    newItemRoom,
+    existingItemRoom,
+    newItemTour,
+    existingItemTour,
+    newItemDeluxe,
+    existingItemDeluxe;
+
   switch (action.type) {
     case ADD_TO_CART_TRAVEL:
-      const newItemTravel = action.payload;
-      const existingItemTravel = state.cartItemsTravel.find((item) => item.id === newItemTravel.id);
+      newItemTravel = action.payload;
+      existingItemTravel = state.cartItemsTravel.find((item) => item.id === newItemTravel.id);
 
       if (existingItemTravel) {
         return {
@@ -37,8 +51,8 @@ const cartReducer = (state = initialState, action) => {
       }
 
     case ADD_TO_CART_STAY:
-      const newItemStay = action.payload;
-      const existingItemStay = state.cartItemsStay.find((item) => item.id === newItemStay.id);
+      newItemStay = action.payload;
+      existingItemStay = state.cartItemsStay.find((item) => item.id === newItemStay.id);
 
       if (existingItemStay) {
         return {
@@ -55,8 +69,8 @@ const cartReducer = (state = initialState, action) => {
       }
 
     case ADD_TO_CART_ROOM:
-      const newItemRoom = action.payload;
-      const existingItemRoom = state.cartItemsRoom.find((item) => item.id === newItemRoom.id);
+      newItemRoom = action.payload;
+      existingItemRoom = state.cartItemsRoom.find((item) => item.id === newItemRoom.id);
 
       if (existingItemRoom) {
         return {
@@ -73,8 +87,8 @@ const cartReducer = (state = initialState, action) => {
       }
 
     case ADD_TO_CART_TOUR:
-      const newItemTour = action.payload;
-      const existingItemTour = state.cartItemsTour.find((item) => item.id === newItemTour.id);
+      newItemTour = action.payload;
+      existingItemTour = state.cartItemsTour.find((item) => item.id === newItemTour.id);
 
       if (existingItemTour) {
         return {
@@ -86,7 +100,25 @@ const cartReducer = (state = initialState, action) => {
       } else {
         return {
           ...state,
-          cartItemsRoom: [...state.cartItemsRoom, newItemRoom],
+          cartItemsTour: [...state.cartItemsTour, newItemTour],
+        };
+      }
+
+    case ADD_TO_CART_DELUXE:
+      newItemDeluxe = action.payload;
+      existingItemDeluxe = state.cartItemsDeluxe.find((item) => item.id === newItemDeluxe.id);
+
+      if (existingItemDeluxe) {
+        return {
+          ...state,
+          cartItemsDeluxe: state.cartItemsDeluxe.map((item) =>
+            item.id === newItemDeluxe.id ? { ...item, quantity: item.quantity + newItemDeluxe.quantity } : item
+          ),
+        };
+      } else {
+        return {
+          ...state,
+          cartItemsDeluxe: [...state.cartItemsDeluxe, newItemDeluxe],
         };
       }
 
@@ -116,6 +148,13 @@ const cartReducer = (state = initialState, action) => {
       return {
         ...state,
         cartItemsTour: state.cartItemsTour.filter((item) => item.id !== productIdTour),
+      };
+
+    case REMOVE_FROM_CART_DELUXE:
+      const productIdDeluxe = action.payload;
+      return {
+        ...state,
+        cartItemsDeluxe: state.cartItemsDeluxe.filter((item) => item.id !== productIdDeluxe),
       };
 
     default:

@@ -85,7 +85,14 @@ const OffersPage = ({ travel }) => {
   const cartItemsTravel = useSelector((state) => state.cart.cartItemsTravel);
   const cartItemsStay = useSelector((state) => state.cart.cartItemsStay);
   const cartItemsRoom = useSelector((state) => state.cart.cartItemsRoom);
-  const cartItemCount = cartItemsTravel.length + cartItemsStay.length + cartItemsRoom.length;
+  const cartItemsTour = useSelector((state) => state.cart.cartItemsTour);
+  const cartItemsDeluxe = useSelector((state) => state.cart.cartItemsDeluxe);
+  const cartItemCount =
+    cartItemsTravel.length +
+    cartItemsStay.length +
+    cartItemsRoom.length +
+    cartItemsTour.length +
+    cartItemsDeluxe.length;
 
   const dropdownRef = useRef(null);
 
@@ -183,23 +190,27 @@ const OffersPage = ({ travel }) => {
             <Nav className="text-sm-center mx-lg-auto">
               <Nav.Link className="pe-lg-5 d-flex" href="/">
                 <div className="d-flex align-items-center">
-                  <HouseFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0">HOME</h4>
+                  <HouseFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0">HOME</h4>
                 </div>
               </Nav.Link>
               <Nav.Link className=" pe-lg-5 d-flex" href="/about-us">
                 <div className="d-flex align-items-center">
-                  <PersonFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
+                  <PersonFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
                 </div>
               </Nav.Link>
 
               <Nav.Link className="pe-lg-5 " href="/explore">
                 <div className="nav-link d-flex align-items-center">
-                  <AirplaneFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0">OFFERTE</h4>
+                  <AirplaneFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0">OFFERTE</h4>
                 </div>
               </Nav.Link>
               <Nav.Link className=" pe-lg-5 " href="/contact">
                 <div className=" nav-link d-flex align-items-center">
-                  <EnvelopeFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0"> CONTATTI</h4>
+                  <EnvelopeFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0"> CONTATTI</h4>
                 </div>
               </Nav.Link>
             </Nav>
@@ -211,7 +222,7 @@ const OffersPage = ({ travel }) => {
                       <div className="nav-link d-flex align-items-center">
                         <Nav.Link href="/cart">
                           <div className="d-flex align-items-center position-relative">
-                            <Cart3 className="nav-link me-4 text-white" style={{ fontSize: "1.7rem" }} />
+                            <Cart3 className="nav-link me-4" style={{ fontSize: "1.7rem" }} />
                             {cartItemCount > 0 && (
                               <Badge
                                 pill
@@ -223,7 +234,7 @@ const OffersPage = ({ travel }) => {
                             )}
                           </div>
                         </Nav.Link>
-                        <PersonCircle className="me-2" style={{ fontSize: "1.5rem" }} />
+                        <PersonCircle className="me-2 text-white" style={{ fontSize: "1.5rem" }} />
                         <NavDropdown title={username.username} id="basic-nav-dropdown">
                           <NavDropdown.Item as={Link} to="/preferiti">
                             Preferiti
@@ -260,8 +271,8 @@ const OffersPage = ({ travel }) => {
           <div className="d-flex mb-3 align-items-center">
             <div>
               <Modal show={showModal} size="lg" onHide={() => setShowModal(false)}>
-                <Modal.Header closeButton>
-                  <Modal.Title style={{ fontFamily: "Impact, san-serif", color: "#203040" }}>
+                <Modal.Header style={{ backgroundColor: "#203040" }} closeButton>
+                  <Modal.Title style={{ fontFamily: "Impact, san-serif", color: "white" }}>
                     Inserisci una nuova offerta
                   </Modal.Title>
                 </Modal.Header>
@@ -678,7 +689,7 @@ const OffersPage = ({ travel }) => {
                 </h4>
                 {isAdmin && (
                   <Button className="button-search mx-3" onClick={() => setShowModal(true)}>
-                    Aggiungi nuova offerte
+                    Aggiungi nuovi viaggi
                   </Button>
                 )}
               </div>
@@ -734,6 +745,15 @@ const OffersPage = ({ travel }) => {
                               </Button>
                             )}
                           </div>
+                          <Card.Text className="mb-0">
+                            <strong style={{ fontWeight: "500" }}>Data:</strong>
+                            <span
+                              className="text-white px-2 mx-2 rounded-2"
+                              style={{ fontWeight: "500", fontSize: "0,9rem", background: "#203040" }}
+                            >
+                              {offer.date.split("-").reverse().join("/")}
+                            </span>
+                          </Card.Text>
                           <Card.Text>
                             <strong style={{ fontWeight: "500" }}>Durata:</strong>
                             <span
@@ -743,25 +763,24 @@ const OffersPage = ({ travel }) => {
                               {offer.duration ? offer.duration.toUpperCase() : ""}
                             </span>
                           </Card.Text>
-                          <Card.Text className="pt-auto mb-0">
-                            <strong style={{ fontWeight: "500" }}>Prezzo:</strong>
+
+                          <Card.Text className=" mb-0">
+                            <strong style={{ fontWeight: "500" }}>Prezzo adulto:</strong>
                             <span
                               className="text-white px-2 mx-2 rounded-2"
                               style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
                             >
-                              {offer.price}€
+                              {offer.price},00 €
                             </span>
-                            <span className="ps-0">adulti</span>
                           </Card.Text>
                           <Card.Text>
-                            <strong style={{ fontWeight: "500" }}>Prezzo:</strong>
+                            <strong style={{ fontWeight: "500" }}>Prezzo bambino:</strong>
                             <span
                               className="text-white px-2 mx-2 rounded-2"
                               style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
                             >
-                              {offer.price_per_child}€
+                              {offer.price_per_child},00 €
                             </span>
-                            <span className="ps-0">bambini</span>
                           </Card.Text>
                         </Card.Body>
                         <div className="text-center">
@@ -828,8 +847,8 @@ const OffersPage = ({ travel }) => {
       )}
       {isAdmin && editedOffer && (
         <Modal show={isModalOpen} onHide={() => setIsModalOpen(false)}>
-          <Modal.Header closeButton>
-            <Modal.Title style={{ fontFamily: "Impact, san-serif", color: "#203040" }}>Modifica Offerta</Modal.Title>
+          <Modal.Header style={{ backgroundColor: "#203040" }} closeButton>
+            <Modal.Title style={{ fontFamily: "Impact, san-serif", color: "white" }}>Modifica Offerta</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form>

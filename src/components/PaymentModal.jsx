@@ -73,7 +73,7 @@ const PaymentModal = ({ show, onHide, total, onPaymentSuccess }) => {
     <Modal show={show} onHide={onHide} size="lg" className="custom-payment-modal">
       <Modal.Header closeButton className="custom-modal-header">
         <Modal.Title className="custom-modal-title">
-          <h4 className="text-center">Totale da pagare: {total}€</h4>
+          <h4 className="text-center">Totale da pagare: {total},00 €</h4>
         </Modal.Title>
       </Modal.Header>
 

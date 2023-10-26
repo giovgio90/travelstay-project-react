@@ -353,6 +353,7 @@
 
 .swiper {
   width: 100%;
+  --swiper-theme-color: white;
 }
 
 .swiper-slide {
@@ -378,6 +379,11 @@
 .rating-icon {
   color: rgb(197, 235, 27);
   font-size: 1.7rem;
+}
+
+/*OFFER STAY*/
+.card-stay {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 6px 20px rgba(0, 0, 0, 0.19);
 }
 
 /*FOOTER*/
@@ -408,8 +414,13 @@
 
 /*RESERVATION FORM*/
 .reservation-form-container {
-  border: 2px solid #203040;
+  border: 1px solid #203040;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+.custom-datepicker {
+  width: 90px;
+  font-size: 14px;
 }
 
 /*CART CONTAINER*/
@@ -461,14 +472,11 @@
 }
 
 .swal2-popup {
-  /* Regola la distanza dalla parte superiore */
-
   background-color: #f0f0f0;
   border: 2px solid #333;
   border-radius: 10px;
 }
 
-/* Stili per i pulsanti */
 .custom-button {
   margin: 5px;
   padding: 10px 20px;
@@ -485,7 +493,6 @@
   color: #fff;
 }
 
-/* Stili per il modulo di input */
 .custom-form-label {
   font-weight: bold;
 }
@@ -523,12 +530,14 @@
 
 @media (max-width: 767px) {
   h1 {
-    font-size: 4.5rem;
+    margin-top: 50px;
+    font-size: 5.5rem;
     padding-top: 40px;
   }
   h2 {
     font-family: "Dancing Script", cursive;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 70px;
   }
 
   h3 {
@@ -539,13 +548,39 @@
     font-size: 1.1rem;
   }
 
+  .title-tours {
+    font-size: 5rem;
+  }
+
   .header-background {
     background-size: cover;
     background-position: center;
   }
 
+  .title-deluxe {
+    font-size: 3rem;
+  }
+
   .carousel {
     width: 100% !important;
+  }
+  .intro h3 {
+    font-size: 2.5rem;
+  }
+
+  .card-tour {
+    margin-bottom: 30px !important;
+  }
+  .about-us-title {
+    margin-bottom: 10px;
+  }
+
+  .favorite-title {
+    margin-bottom: 10px;
+  }
+  .home-sticky {
+    text-align: center;
+    margin-top: 139px;
   }
 }
 
@@ -567,8 +602,20 @@
     font-size: 1.4rem;
   }
 
+  .title-tours {
+    font-size: 5rem;
+  }
+
   .carousel {
     width: 100% !important;
+  }
+
+  .title-deluxe {
+    font-size: 3rem;
+  }
+
+  .intro h3 {
+    font-size: 2.8rem;
   }
 }
 

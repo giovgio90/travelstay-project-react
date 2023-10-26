@@ -3,10 +3,13 @@ import { Button, Col, Dropdown, Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { addToCartStay } from "../redux/actions";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const ReservationFormTwo = () => {
   const { stayId } = useParams();
   const dispatch = useDispatch();
+  const [selectedDate, setSelectedDate] = useState("");
   const travelData = useSelector((state) => state.stay.data);
 
   const offer = travelData.find((offer) => offer.id.toString() === stayId);
@@ -43,6 +46,7 @@ const ReservationFormTwo = () => {
       offer: offer.offer,
       image: offer.image,
       tax: offer.tax,
+      date: selectedDate,
       price: calculateTotalPrice(),
       quantity: totalPeople,
       adults: adults,
@@ -68,9 +72,20 @@ const ReservationFormTwo = () => {
         </h6>
 
         <Dropdown>
-          <Dropdown.Toggle className="button-search button-filter" variant="white">
-            {adults + children} Ospite
-          </Dropdown.Toggle>
+          <div className="d-flex align-items-center">
+            <Dropdown.Toggle className="button-search button-filter" variant="white">
+              {adults + children} Ospite
+            </Dropdown.Toggle>
+
+            <DatePicker
+              className="rounded-2 ps-1 mx-3 custom-datepicker"
+              selected={selectedDate}
+              onChange={(date) => setSelectedDate(date)}
+              dateFormat="dd/MM/yyyy"
+              placeholderText="Data"
+              style={{ width: "150px", fontSize: "14px" }}
+            />
+          </div>
           <Dropdown.Menu>
             <Dropdown.Item onClick={(e) => e.stopPropagation()}>
               <Row className="align-items-center">

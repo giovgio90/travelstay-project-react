@@ -11,7 +11,7 @@ const BestTours = () => {
   const [tourData, setTourData] = useState([]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [tourCity, setTourCity] = useState("");
+  const [tourDestination, setTourDestination] = useState("");
   const [editingTourId, setEditingTourId] = useState(null);
   const [tourPrice, setTourPrice] = useState("");
 
@@ -36,19 +36,19 @@ const BestTours = () => {
 
   const handleOpenModal = (tour) => {
     setIsModalOpen(true);
-    setTourCity(tour.city);
+    setTourDestination(tour.destination);
     setTourPrice(tour.price);
     setEditingTourId(tour.id);
   };
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    setTourCity("");
+    setTourDestination("");
     setEditingTourId(null);
   };
 
   const handleTourChange = () => {
     if (isAdmin) {
-      dispatch(updateTour({ id: editingTourId, city: tourCity, price: tourPrice }));
+      dispatch(updateTour({ id: editingTourId, destination: tourDestination, price: tourPrice }));
       handleCloseModal();
     }
   };
@@ -57,8 +57,11 @@ const BestTours = () => {
     <Row className="my-4">
       {tourData.map((tour) => (
         <Col key={tour.id} xs={12} md={12} lg={4}>
-          <Card className="bg-dark text-white text-center border-0 me-2 mb-3 hover-scale" style={{ height: "400px" }}>
-            <Card.Img src={tour.image} alt={tour.city} style={{ objectFit: "cover", height: "100%" }} />
+          <Card
+            className="card-tour bg-dark text-white text-center border-0 me-2 mb-3 hover-scale"
+            style={{ width: "100%", height: "400px" }}
+          >
+            <Card.Img src={tour.image} alt={tour.destination} style={{ objectFit: "cover", height: "100%" }} />
             <Card.ImgOverlay className="card-tours d-flex flex-column justify-content-center align-items-center">
               <div className="mt-auto">
                 {isAdmin && (
@@ -66,21 +69,26 @@ const BestTours = () => {
                     Modifica
                   </Button>
                 )}
-                <Card.Title className="display-3 pt-3 fw-bolder">
+                <Card.Title
+                  className="title-tours display-3 pt-3 "
+                  style={{ fontFamily: "Impact, sans-serif", letterSpacing: "0.2rem" }}
+                >
                   {tour.id === editingTourId ? (
                     <input
                       type="text"
-                      value={tourCity}
-                      onChange={(e) => setTourCity(e.target.value)}
+                      value={tourDestination}
+                      onChange={(e) => setTourDestination(e.target.value)}
                       style={{ display: isModalOpen ? "none" : "block" }}
                     />
                   ) : (
-                    tour.city
+                    tour.destination
                   )}
                 </Card.Title>
               </div>
               <div className="mt-auto">
-                <Card.Text>A partire da {tour.price},00 €</Card.Text>
+                <Card.Text style={{ fontFamily: "Montserrat, sans-serif", fontSize: "1.3rem" }}>
+                  A partire da {tour.price},00 €
+                </Card.Text>
                 <Link to={`/tour-detail/${tour.id}`}>
                   <Button className="button-search" style={{ fontWeight: "500" }}>
                     SCOPRI DI PIÚ
@@ -92,10 +100,8 @@ const BestTours = () => {
         </Col>
       ))}
       <Modal show={isModalOpen} onHide={handleCloseModal}>
-        <Modal.Header closeButton>
-          <Modal.Title style={{ fontFamily: "Impact, san-serif", color: "#203040" }}>
-            Modifica anteprima Tour
-          </Modal.Title>
+        <Modal.Header style={{ backgroundColor: "#203040" }} closeButton>
+          <Modal.Title style={{ fontFamily: "Impact, san-serif", color: "white" }}>Modifica anteprima Tour</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -114,8 +120,8 @@ const BestTours = () => {
               <Form.Control
                 type="text"
                 placeholder="Inserisci il titolo del tour"
-                value={tourCity}
-                onChange={(e) => setTourCity(e.target.value)}
+                value={tourDestination}
+                onChange={(e) => setTourDestination(e.target.value)}
               />
             </Form.Group>
             <Form.Group>

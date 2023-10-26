@@ -14,7 +14,14 @@ const Header = () => {
   const cartItemsTravel = useSelector((state) => state.cart.cartItemsTravel);
   const cartItemsStay = useSelector((state) => state.cart.cartItemsStay);
   const cartItemsRoom = useSelector((state) => state.cart.cartItemsRoom);
-  const cartItemCount = cartItemsTravel.length + cartItemsStay.length + cartItemsRoom.length;
+  const cartItemsTour = useSelector((state) => state.cart.cartItemsTour);
+  const cartItemsDeluxe = useSelector((state) => state.cart.cartItemsDeluxe);
+  const cartItemCount =
+    cartItemsTravel.length +
+    cartItemsStay.length +
+    cartItemsRoom.length +
+    cartItemsTour.length +
+    cartItemsDeluxe.length;
 
   const handleLogout = () => {
     dispatch(setUser(null));
@@ -58,9 +65,9 @@ const Header = () => {
           <Row>
             <div className="d-flex  px-0" style={{ backgroundColor: "#203040" }}>
               <Col x6={5} md={4} lg={3} className="text-end">
-                <div className="static-text pe-3">
+                <Container className="static-text pe-3">
                   <h6>Da non perdere:</h6>{" "}
-                </div>
+                </Container>
               </Col>
               <Col xs={7} md={8} lg={9} className="align-self-center ">
                 <div className="scrolling-text-container d-flex ">
@@ -87,37 +94,41 @@ const Header = () => {
             <img src={Logo} width="80" height="80" alt="Logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse id="basic-navbar-nav" className="fullscreen-navbar-collapse">
             <Nav className="justify-content-center mx-lg-auto">
-              <Nav.Link className="pe-lg-5 d-flex" href="/">
+              <Nav.Link className="link-hover pe-lg-5 d-flex" href="/">
                 <div className="d-flex align-items-center justify-content-center">
-                  <HouseFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0">HOME</h4>
+                  <HouseFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0">HOME</h4>
                 </div>
               </Nav.Link>
               <Nav.Link className=" pe-lg-5 d-flex" href="/about-us">
                 <div className="d-flex align-items-center">
-                  <PersonFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
+                  <PersonFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
                 </div>
               </Nav.Link>
 
               <Nav.Link className="pe-lg-5 " href="/explore">
                 <div className="nav-link d-flex align-items-center">
-                  <AirplaneFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0">OFFERTE</h4>
+                  <AirplaneFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0">OFFERTE</h4>
                 </div>
               </Nav.Link>
               <Nav.Link className=" pe-lg-5 " href="/contact">
                 <div className=" nav-link d-flex align-items-center">
-                  <EnvelopeFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0"> CONTATTI</h4>
+                  <EnvelopeFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0"> CONTATTI</h4>
                 </div>
               </Nav.Link>
             </Nav>
             <Form className="d-flex justify-content-start">
               {username ? (
                 <>
-                  <div className="nav-link d-flex align-items-center">
+                  <div className=" d-flex align-items-center">
                     <Nav.Link href="/cart">
                       <div className="d-flex align-items-center position-relative">
-                        <Cart3 className="nav-link me-4 text-white" style={{ fontSize: "1.7rem" }} />
+                        <Cart3 className="nav-link me-4" style={{ fontSize: "1.7rem" }} />
                         {cartItemCount > 0 && (
                           <Badge pill bg="danger" className="cart-badge position-absolute top-0 end-0 translate-middle">
                             {cartItemCount}
@@ -125,20 +136,22 @@ const Header = () => {
                         )}
                       </div>
                     </Nav.Link>
-                    <PersonCircle className="me-2" style={{ fontSize: "1.5rem" }} />
-                    <NavDropdown title={username.username} id="basic-nav-dropdown">
-                      <Link to="/preferiti">
-                        <Button variant="transparent" className="text-black align-self-center pt-0">
-                          Preferiti
-                        </Button>
-                      </Link>
-                      <NavDropdown.Divider />
-                      <Link to="/login" onClick={handleLogout}>
-                        <Button variant="transparent" className="text-black align-self-center pt-0">
-                          Logout
-                        </Button>
-                      </Link>
-                    </NavDropdown>
+                    <div className="nav-link d-flex align-items-center">
+                      <PersonCircle className="nav-link me-2 text-white" style={{ fontSize: "1.5rem" }} />
+                      <NavDropdown title={username.username} id="basic-nav-dropdown">
+                        <Link to="/preferiti">
+                          <Button variant="transparent" className="text-black align-self-center pt-0">
+                            Preferiti
+                          </Button>
+                        </Link>
+                        <NavDropdown.Divider />
+                        <Link to="/login" onClick={handleLogout}>
+                          <Button variant="transparent" className="text-black align-self-center pt-0">
+                            Logout
+                          </Button>
+                        </Link>
+                      </NavDropdown>
+                    </div>
                   </div>
                 </>
               ) : (

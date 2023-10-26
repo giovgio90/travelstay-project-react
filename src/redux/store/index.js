@@ -11,6 +11,7 @@ import userReducer from "../reducers/userReducer";
 import searchReducer from "../reducers/searchReducer";
 import roomReducer from "../reducers/roomReducer";
 import toursReducer from "../reducers/toursReducer";
+import deluxeReducer from "../reducers/deluxeReducer";
 
 const persistConfig = {
   key: "root",
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   register: registerReducer,
   user: userReducer,
   travel: travelReducer,
+  deluxe: deluxeReducer,
   tours: toursReducer,
   rooms: roomReducer,
   search: searchReducer,

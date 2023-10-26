@@ -11,7 +11,7 @@ const FooterTravelStay = () => {
           <Row>
             <Col xs={12} md={7} className="mb-4 mb-lg-0">
               <div className="d-flex ">
-                <div className="me-4 mb-0 mt-3 mt-md-0">
+                <div className="me-2 mb-0 mt-3 mt-md-0">
                   <img src={Logo} width="130" height="130" alt="Logo" />
                 </div>
                 <div className="mt-3">
@@ -22,13 +22,13 @@ const FooterTravelStay = () => {
                     <strong style={{ fontFamily: "Montserrat, sans-serif" }}>Indirizzo:</strong>
                     <h6 className="mb-0 ms-1" style={{ color: "#CBCBCB", fontFamily: "Montserrat, sans-serif" }}>
                       {" "}
-                      Via Giuseppe Verdi, 12345, Salerno
+                      Via Verdi, 12 (SA)
                     </h6>{" "}
                   </div>
                   <div className="mb-0 d-flex align-items-center" style={{ fontFamily: "Montserrat, sans-serif" }}>
                     <strong style={{ fontFamily: "Montserrat, sans-serif" }}>Email:</strong>{" "}
                     <h6 className="mb-0 ms-1" style={{ color: "#CBCBCB", fontFamily: "Montserrat, sans-serif" }}>
-                      tavelstay@gmail.com
+                      travelstay@gmail.com
                     </h6>
                   </div>
                   <div className="mb-0 d-flex align-items-center" style={{ fontFamily: "Montserrat, sans-serif" }}>

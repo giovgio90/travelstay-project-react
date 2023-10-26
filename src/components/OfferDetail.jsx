@@ -3,7 +3,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-creative";
 import "swiper/css/scrollbar";
-import { FaBath, FaBed, FaBuilding, FaCog, FaUser } from "react-icons/fa";
+import { FaBath, FaBed, FaBuilding, FaCog, FaMapMarkerAlt, FaUser } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Logo from "../assets/Logo.png";
@@ -12,20 +12,21 @@ import FooterTravelStay from "./FooterTravelStay";
 import {
   AirplaneFill,
   ArrowLeftCircleFill,
+  Calendar,
+  Calendar2CheckFill,
   Cart3,
   ClockFill,
   EnvelopeFill,
   HouseFill,
   PersonCircle,
   PersonFill,
-  PinMapFill,
   StarFill,
 } from "react-bootstrap-icons";
 import ReservationForm from "./ReservationForm";
 import { useState } from "react";
 import { setUser, updateTravelOffer } from "../redux/actions";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCoverflow, EffectCreative, Pagination } from "swiper/modules";
+import { Autoplay, EffectCoverflow, EffectCreative, Navigation, Pagination } from "swiper/modules";
 import { Scrollbar } from "react-scrollbars-custom";
 import Rating from "react-rating";
 
@@ -43,7 +44,14 @@ const OfferDetail = () => {
   const cartItemsTravel = useSelector((state) => state.cart.cartItemsTravel);
   const cartItemsStay = useSelector((state) => state.cart.cartItemsStay);
   const cartItemsRoom = useSelector((state) => state.cart.cartItemsRoom);
-  const cartItemCount = cartItemsTravel.length + cartItemsStay.length + cartItemsRoom.length;
+  const cartItemsTour = useSelector((state) => state.cart.cartItemsTour);
+  const cartItemsDeluxe = useSelector((state) => state.cart.cartItemsDeluxe);
+  const cartItemCount =
+    cartItemsTravel.length +
+    cartItemsStay.length +
+    cartItemsRoom.length +
+    cartItemsTour.length +
+    cartItemsDeluxe.length;
 
   const isAdmin = username && username.email === "giovanni@gmail.com";
 
@@ -134,23 +142,27 @@ const OfferDetail = () => {
             <Nav className="text-sm-center mx-lg-auto">
               <Nav.Link className="pe-lg-5 d-flex" href="/">
                 <div className="d-flex align-items-center">
-                  <HouseFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0">HOME</h4>
+                  <HouseFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0">HOME</h4>
                 </div>
               </Nav.Link>
               <Nav.Link className=" pe-lg-5 d-flex" href="/about-us">
                 <div className="d-flex align-items-center">
-                  <PersonFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
+                  <PersonFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
                 </div>
               </Nav.Link>
 
               <Nav.Link className="pe-lg-5 " href="/explore">
                 <div className="nav-link d-flex align-items-center">
-                  <AirplaneFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0">OFFERTE</h4>
+                  <AirplaneFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0">OFFERTE</h4>
                 </div>
               </Nav.Link>
               <Nav.Link className=" pe-lg-5 " href="/contact">
                 <div className=" nav-link d-flex align-items-center">
-                  <EnvelopeFill style={{ fontSize: "1.5rem" }} /> <h4 className="nav-link  mb-0"> CONTATTI</h4>
+                  <EnvelopeFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
+                  <h4 className="nav-link  mb-0"> CONTATTI</h4>
                 </div>
               </Nav.Link>
             </Nav>
@@ -162,7 +174,7 @@ const OfferDetail = () => {
                       <div className="nav-link d-flex align-items-center">
                         <Nav.Link href="/cart">
                           <div className="d-flex align-items-center position-relative">
-                            <Cart3 className="nav-link me-4 text-white" style={{ fontSize: "1.7rem" }} />
+                            <Cart3 className="nav-link me-4" style={{ fontSize: "1.7rem" }} />
                             {cartItemCount > 0 && (
                               <Badge
                                 pill
@@ -174,7 +186,7 @@ const OfferDetail = () => {
                             )}
                           </div>
                         </Nav.Link>
-                        <PersonCircle className="me-2" style={{ fontSize: "1.5rem" }} />
+                        <PersonCircle className="me-2 text-white" style={{ fontSize: "1.5rem" }} />
                         <NavDropdown title={username.username} id="basic-nav-dropdown">
                           <NavDropdown.Item as={Link} to="/preferiti">
                             Preferiti
@@ -219,8 +231,8 @@ const OfferDetail = () => {
                 className="d-flex align-items-center mt-4 mb-0"
                 style={{ fontSize: "2.5rem", fontFamily: "Impact, san-serif", color: "#203040" }}
               >
-                <PinMapFill className="me-2" style={{ fontSize: "2.5rem" }} />
-                {offer.destination}
+                <FaMapMarkerAlt className="me-2" style={{ color: "#203040", fontSize: "2.3rem" }} />
+                {offer.destination} - {offer.region}
               </h4>
             </div>
             <div className="ms-auto mt-4">
@@ -232,7 +244,37 @@ const OfferDetail = () => {
             </div>
           </div>
           <Row>
-            <Col md={12} className="my-2">
+            <Col md={12} className="my-2 d-lg-none">
+              {" "}
+              <Swiper
+                effect={"creative"}
+                navigation={true}
+                creativeEffect={{
+                  prev: {
+                    shadow: true,
+                    translate: [0, 0, -400],
+                  },
+                  next: {
+                    translate: ["100%", 0, 0],
+                  },
+                }}
+                modules={[Navigation, EffectCreative]}
+                className="mySwiper"
+                style={{ width: "100%" }}
+              >
+                <SwiperSlide className="my-2 rounded-3">
+                  <img src={offer.image_two} alt={offer.destination} className="rounded-3" />
+                </SwiperSlide>
+                <SwiperSlide className="my-2 rounded-3">
+                  <img src={offer.image_three} alt={offer.destination} className="rounded-3" />
+                </SwiperSlide>
+                <SwiperSlide className="my-2 rounded-3">
+                  <img src={offer.image_four} alt={offer.destination} className="rounded-2" />
+                </SwiperSlide>
+              </Swiper>
+            </Col>
+            <Col xs={12} className="my-2 d-none d-lg-block">
+              {" "}
               <Swiper
                 effect={"coverflow"}
                 grabCursor={true}
@@ -280,8 +322,8 @@ const OfferDetail = () => {
             <div>
               {isAdmin && editedOffer && (
                 <Modal show={isModalOpen} size="lg" onHide={() => setIsModalOpen(false)}>
-                  <Modal.Header closeButton>
-                    <Modal.Title style={{ fontFamily: "Impact, san-serif", color: "#203040" }}>
+                  <Modal.Header style={{ backgroundColor: "#203040" }} closeButton>
+                    <Modal.Title style={{ fontFamily: "Impact, san-serif", color: "white" }}>
                       Modifica offerta
                     </Modal.Title>
                   </Modal.Header>
@@ -581,14 +623,15 @@ const OfferDetail = () => {
                 </Modal>
               )}
             </div>
-            <Col md={7}>
+            <Col xs={12} md={12} lg={7}>
               <h4 style={{ fontFamily: "Montserrat, sans-serif", fontWeight: "600" }}>Dove alloggerai</h4>
 
               <Row>
-                <Col xs={12} md={10} className="d-flex">
+                <Col xs={12} md={12} className="d-flex mb-2">
                   <Swiper
                     grabCursor={true}
                     effect={"creative"}
+                    navigation={true}
                     creativeEffect={{
                       prev: {
                         shadow: true,
@@ -598,21 +641,20 @@ const OfferDetail = () => {
                         translate: ["100%", 0, 0],
                       },
                     }}
-                    modules={[EffectCreative]}
+                    modules={[Navigation, EffectCreative]}
                     className="mySwiper"
+                    style={{ width: "100%" }}
                   >
-                    <SwiperSlide>
-                      <img className="rounded-3" src={offer.hotel.images[0]} alt="Immagine hotel" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <img className="rounded-3" src={offer.hotel.images[1]} alt="Immagine hotel" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <img className="rounded-3" src={offer.hotel.images[2]} alt="Immagine hotel" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <img className="rounded-3" src={offer.hotel.images[3]} alt="Immagine hotel" />
-                    </SwiperSlide>
+                    {offer.hotel.images.map((image, index) => (
+                      <SwiperSlide key={index} style={{ display: "flex", justifyContent: "center" }}>
+                        <img
+                          src={image}
+                          alt="Immagine hotel"
+                          className="rounded-3"
+                          style={{ maxHeight: "380px", width: "100%" }}
+                        />
+                      </SwiperSlide>
+                    ))}
                   </Swiper>
                 </Col>
               </Row>
@@ -763,14 +805,14 @@ const OfferDetail = () => {
               </div>
 
               <Row className="mt-3 mb-5">
-                <Col md={9}>
+                <Col md={12}>
                   <div>
                     <div
                       style={{ fontFamily: "Montserrat, sans-serif" }}
                       className="info-hotel border border-1 mb-2 p-3"
                     >
                       <Row>
-                        <Col md={3} className="d-flex align-items-center  mb-3">
+                        <Col xs={6} md={3} className="d-flex align-items-center">
                           <div>
                             <ClockFill className="me-1" />
                           </div>
@@ -780,10 +822,29 @@ const OfferDetail = () => {
                             </p>
                           </div>
                         </Col>
-                        <Col md={6}>{offer.duration}</Col>
+                        <Col xs={6} md={6}>
+                          {offer.duration}
+                        </Col>
                       </Row>
+                      <hr />
                       <Row>
-                        <Col md={3} className="d-flex align-items-center mb-3">
+                        <Col xs={6} md={3} className="d-flex align-items-center">
+                          <div>
+                            <Calendar2CheckFill className="me-1" />
+                          </div>
+                          <div>
+                            <p className="mb-0">
+                              <strong>Data:</strong>
+                            </p>
+                          </div>
+                        </Col>
+                        <Col xs={6} md={6}>
+                          {offer.date.split("-").reverse().join("/")}
+                        </Col>
+                      </Row>
+                      <hr />
+                      <Row>
+                        <Col xs={6} md={3} className="d-flex align-items-center ">
                           <div>
                             <FaUser className="me-1" />
                           </div>
@@ -793,10 +854,13 @@ const OfferDetail = () => {
                             </p>
                           </div>
                         </Col>
-                        <Col md={6}>{offer.host}</Col>
+                        <Col xs={6} md={6}>
+                          {offer.host}
+                        </Col>
                       </Row>
+                      <hr />
                       <Row>
-                        <Col md={3} className="d-flex align-items-center mb-3">
+                        <Col xs={6} md={3} className="d-flex align-items-center ">
                           <div>
                             <FaBed className="me-1" />
                           </div>
@@ -806,10 +870,13 @@ const OfferDetail = () => {
                             </p>
                           </div>
                         </Col>
-                        <Col md={6}>{offer.hotel.bedrooms}</Col>
+                        <Col xs={6} md={6}>
+                          {offer.hotel.bedrooms}
+                        </Col>
                       </Row>
+                      <hr />
                       <Row>
-                        <Col md={3} className="d-flex align-items-center mb-3">
+                        <Col xs={6} md={3} className="d-flex align-items-center">
                           <div>
                             <FaBath className="me-1" />
                           </div>
@@ -819,10 +886,14 @@ const OfferDetail = () => {
                             </p>
                           </div>
                         </Col>
-                        <Col md={6}>{offer.hotel.bathrooms}</Col>
+                        <Col xs={6} md={6}>
+                          {offer.hotel.bathrooms}
+                        </Col>
                       </Row>
+                      <hr />
+
                       <Row>
-                        <Col md={3} className="d-flex align-items-center mb-3">
+                        <Col xs={6} md={3} className="d-flex align-items-center">
                           <div>
                             <FaCog className="me-1" />
                           </div>
@@ -832,7 +903,9 @@ const OfferDetail = () => {
                             </p>
                           </div>
                         </Col>
-                        <Col md={9}>{offer.hotel.amenities.join(", ")}</Col>
+                        <Col xs={6} md={9}>
+                          {offer.hotel.amenities.join(", ")}
+                        </Col>
                         <div className="text-end">
                           <Button className=" mt-2" variant="trasparent" onClick={() => setShowModal(true)}>
                             {offer.reviews.length > 0 && (
@@ -862,7 +935,7 @@ const OfferDetail = () => {
                 </Col>
               </Row>
             </Col>
-            <Col md={4} className="ms-auto mb-5">
+            <Col xs={12} md={12} lg={4} className="ms-auto mb-5">
               <div className="position-sticky" style={{ top: "110px" }}>
                 <ReservationForm />
               </div>

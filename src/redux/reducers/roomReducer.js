@@ -11,7 +11,9 @@ const initialState = [
   {
     id: 80,
     name: "Camera Standard",
-    city: "Bologna",
+    destination: "Bologna",
+    region: "Emilia-Romagna",
+    offer: "room",
     price: 49,
     images: [
       "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/d8/32/45a3b4fc2357f57f5b94e68db303aa7fc492c28dd612b6683b0b1791789a.jpeg",
@@ -43,8 +45,10 @@ const initialState = [
   },
   {
     id: 81,
-    name: "Camera Deluxe",
-    city: "Roma",
+    name: "Soggiorno Deluxe",
+    destination: "Roma",
+    region: "Lazio",
+    offer: "room",
     price: 59,
     images: [
       "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/89/0f/5d2d413ed33926c3c8d09b8d11cf3ad3a09f4d94df4fa23be8fcc30da61d.jpeg",
@@ -82,7 +86,9 @@ const initialState = [
   {
     id: 82,
     name: "Executive Suite",
-    city: "Milano",
+    destination: "Milano",
+    region: "Lombardia",
+    offer: "room",
     price: 99,
     images: [
       "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/cb/52/c84477d95ec703a1d1d8eea2107643881939caf04fb81cb26ee8a3e312e8.jpeg",
@@ -120,7 +126,9 @@ const initialState = [
   {
     id: 83,
     name: "Suite famiglia",
-    city: "Firenze",
+    destination: "Firenze",
+    region: "Toscana",
+    offer: "room",
     price: 69,
     images: [
       "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/94/13/32f93b4b33b85fa5c0daeb6c03e340486b8053288aacbf9cfd8133273da7.jpeg",
@@ -153,7 +161,9 @@ const initialState = [
   {
     id: 84,
     name: "Suite vista mare",
-    city: "Napoli",
+    destination: "Napoli",
+    region: "Campania",
+    offer: "room",
     price: 79,
     images: [
       "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/10/88/1782009311e195d43b16a62890fec5841d643b541e0f9b240941d19ce4a2.jpeg",
@@ -186,7 +196,9 @@ const initialState = [
   {
     id: 85,
     name: "Suite presidenziale",
-    city: "Venezia",
+    destination: "Venezia",
+    region: "Veneto",
+    offer: "room",
     price: 129,
     images: [
       "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/fe/67/eb44266f1a12981ea424e48d1f4efb8571e35d751abffb64ff1f020de98e.jpeg",
@@ -224,7 +236,9 @@ const initialState = [
   {
     id: 86,
     name: "Cabina accogliente",
-    city: "Verona",
+    destination: "Verona",
+    region: "Veneto",
+    offer: "room",
     price: 39,
     images: [
       "https://a0.muscache.com/im/pictures/a1c61297-ff05-4a87-aa80-2d55cfa56fd6.jpg?im_w=1200",
@@ -262,7 +276,9 @@ const initialState = [
   {
     id: 87,
     name: "Con vista sulle montagne",
-    city: "Torino",
+    destination: "Torino",
+    region: "Piemonte",
+    offer: "room",
     price: 59,
     images: [
       "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/83/96/d8c9b1a17b20cfb40eddf5cd9ba374e94157f7a584a93705f10893df8d5c.jpeg",
@@ -301,7 +317,7 @@ const initialState = [
 
 const roomReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "UPDATE_OFFER":
+    case "UPDATE_ROOM":
       const updatedOffer = action.payload;
       const updatedStateOffer = state.map((room) => {
         if (room.id === updatedOffer.id) {

@@ -2,19 +2,23 @@ import { useState } from "react";
 import { Button, Col, Dropdown, Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { addToCartTour } from "../redux/actions";
+import { addToCartDeluxe } from "../redux/actions";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
-const ReservationFormFour = () => {
-  const { tourId } = useParams();
+const ReservationFormFive = () => {
+  const { deluxeId } = useParams();
   const dispatch = useDispatch();
-  const tour = useSelector((state) => state.tours.find((r) => r.id === parseInt(tourId)));
-  console.log(tour);
+  const [selectedDate, setSelectedDate] = useState("");
+  const deluxe = useSelector((state) => state.deluxe.find((d) => d.id === parseInt(deluxeId)));
+  console.log(deluxe);
 
   let offer;
 
-  if (tour.offer) {
-    const matchingOffers = tour.offers.filter((offer) => offer.id.toString() === tourId);
+  if (deluxe.offer) {
+    const matchingOffers = deluxe.offers.filter((offer) => offer.id.toString() === deluxeId);
     if (matchingOffers.length > 0) {
+      // eslint-disable-next-line no-unused-vars
       offer = matchingOffers[0];
     }
   }
@@ -23,8 +27,8 @@ const ReservationFormFour = () => {
   const [children, setChildren] = useState(0);
 
   const calculateTotalPrice = () => {
-    const adultPrice = tour.price;
-    const childPrice = tour.price_per_child;
+    const adultPrice = deluxe.price;
+    const childPrice = deluxe.price_per_child;
     const totalAdultPrice = adults * adultPrice;
     const totalChildPrice = children * childPrice;
     return totalAdultPrice + totalChildPrice;
@@ -43,15 +47,18 @@ const ReservationFormFour = () => {
   const handleBookClick = () => {
     const totalPeople = adults + children;
     const productToAddToCart = {
-      id: tour.id,
-      city: tour.city,
-      image: tour.image,
+      id: deluxe.id,
+      name: deluxe.name,
+      image: deluxe.image,
+      type_offer: deluxe.type_offer,
+      duration: deluxe.duration,
       price: calculateTotalPrice(),
       quantity: totalPeople,
       adults: adults,
       children: children,
+      date: selectedDate,
     };
-    dispatch(addToCartTour(productToAddToCart));
+    dispatch(addToCartDeluxe(productToAddToCart));
   };
 
   return (
@@ -59,21 +66,33 @@ const ReservationFormFour = () => {
       <Form className="reservation-form">
         <h6 style={{ fontFamily: "Montserrat, sans-serif" }}>
           <span> Prezzo per adulto:</span>{" "}
-          <span className="p-1 rounded-2" style={{ color: "white", backgroundColor: "red" }}>
-            {tour.price}€
+          <span className="p-1 rounded-2" style={{ fontWeight: "600" }}>
+            {deluxe.price},00 €
           </span>
         </h6>
         <h6 style={{ fontFamily: "Montserrat, sans-serif" }}>
           <span>Prezzo per bambino:</span>{" "}
-          <span className="p-1 rounded-2" style={{ color: "white", backgroundColor: "red" }}>
-            {tour.price_per_child}€
+          <span className="p-1 rounded-2" style={{ fontWeight: "600" }}>
+            {deluxe.price_per_child},00 €
           </span>
         </h6>
 
         <Dropdown>
-          <Dropdown.Toggle className="button-search button-filter" variant="white">
-            {adults + children} Ospite
-          </Dropdown.Toggle>
+          <div className="d-flex align-items-center">
+            <Dropdown.Toggle className="button-search button-filter" variant="white">
+              {adults + children} Ospite
+            </Dropdown.Toggle>
+            <div className="mx-3">
+              <DatePicker
+                className="rounded-2 ps-1 mx-3 custom-datepicker"
+                selected={selectedDate}
+                onChange={(date) => setSelectedDate(date)}
+                dateFormat="dd/MM/yyyy"
+                placeholderText="Data"
+                style={{ width: "150px", fontSize: "14px" }}
+              />
+            </div>
+          </div>
           <Dropdown.Menu>
             <Dropdown.Item onClick={(e) => e.stopPropagation()}>
               <Row className="align-items-center">
@@ -108,17 +127,17 @@ const ReservationFormFour = () => {
         <hr />
         <h4 className="mt-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
           Prezzo totale:{" "}
-          <span className="p-1 rounded-2" style={{ color: "white", backgroundColor: "red" }}>
-            {calculateTotalPrice()}€
+          <span className="p-1 rounded-2" style={{ fontWeight: "600" }}>
+            {calculateTotalPrice()},00 €
           </span>
         </h4>
         <Row>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={3} lg={6}>
             <Button className="button-search mt-3 px-5" type="button" onClick={handleBookClick}>
               Prenota
             </Button>
           </Col>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={6} lg={6}>
             <Link to="/cart">
               <Button className="button-search mt-3 px-4" type="button">
                 Vai al carrello
@@ -134,4 +153,4 @@ const ReservationFormFour = () => {
   );
 };
 
-export default ReservationFormFour;
+export default ReservationFormFive;

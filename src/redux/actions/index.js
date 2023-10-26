@@ -31,8 +31,10 @@ export const UPDATE_QUANTITY = "UPDATE_QUANTITY";
 
 export const ADD_TO_CART_ROOM = "ADD_TO_CART_ROOM";
 export const ADD_TO_CART_TOUR = "ADD_TO_CART_TOUR";
+export const ADD_TO_CART_DELUXE = "ADD_TO_CART_DELUXE";
 export const REMOVE_FROM_CART_ROOM = "REMOVE_FROM_CART_ROOM";
 export const REMOVE_FROM_CART_TOUR = "REMOVE_FROM_CART_TOUR";
+export const REMOVE_FROM_CART_DELUXE = "REMOVE_FROM_CART_DELUXE";
 
 export const SET_USER = "SET_USER";
 
@@ -149,8 +151,13 @@ export const addToCartRoom = (room) => ({
 });
 
 export const addToCartTour = (tour) => ({
-  type: ADD_TO_CART_ROOM,
+  type: ADD_TO_CART_TOUR,
   payload: tour,
+});
+
+export const addToCartDeluxe = (deluxe) => ({
+  type: ADD_TO_CART_DELUXE,
+  payload: deluxe,
 });
 
 export const removeFromCartTravel = (productId) => ({
@@ -169,8 +176,13 @@ export const removeFromCartRoom = (roomId) => ({
 });
 
 export const removeFromCartTour = (tourId) => ({
-  type: REMOVE_FROM_CART_ROOM,
+  type: REMOVE_FROM_CART_TOUR,
   payload: tourId,
+});
+
+export const removeFromCartDeluxe = (deluxeId) => ({
+  type: REMOVE_FROM_CART_DELUXE,
+  payload: deluxeId,
 });
 
 export const updateQuantity = (productId, quantity) => ({
@@ -238,14 +250,19 @@ export const setUser = (user) => {
   };
 };
 
-export const updateRoom = (roomId, name, price) => ({
+export const updateRoom = (roomData) => ({
   type: "UPDATE_ROOM",
-  payload: { roomId, name, price },
+  payload: roomData,
 });
 
 export const updateTour = (tourData) => ({
   type: "UPDATE_TOUR",
   payload: tourData,
+});
+
+export const updateDeluxe = (deluxeData) => ({
+  type: "UPDATE_DELUXE",
+  payload: deluxeData,
 });
 
 export const addReviewSuccess = (review) => ({
@@ -356,6 +373,18 @@ export const addReviewThree = (tourId, user, rating, comment) => {
     type: "ADD_REVIEW",
     payload: {
       tourId,
+      user,
+      rating,
+      comment,
+    },
+  };
+};
+
+export const addReviewFour = (deluxeId, user, rating, comment) => {
+  return {
+    type: "ADD_REVIEW",
+    payload: {
+      deluxeId,
       user,
       rating,
       comment,
