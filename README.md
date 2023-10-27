@@ -26,11 +26,14 @@ TravelStay is a web application built with React that allows users to explore an
    ```bash
    git clone https://github.com/giovgio90/travelstay-project-react.git
 
-2. ```Move to the project directory:
+2. Move to the project directory:
+   ```bash
    cd travelstay-project-react
 
-3. ```Execute the installation of additional libraries:
+3. Execute the installation of additional libraries:
+   ```bash
    npm install react-bootstrap react-bootstrap-icons swiper sweetalert2 redux react-redux redux-persist redux-persist-transform-encrypt
 
-4. ```Start the development server:
+4. Start the development server:
+   ```bash
    npm-run-dev
