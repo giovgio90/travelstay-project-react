@@ -1,15 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Col, Dropdown, Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { addToCartDeluxe } from "../redux/actions";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import LoadingThree from "./LoadingThree";
 
 const ReservationFormFive = () => {
   const { deluxeId } = useParams();
   const dispatch = useDispatch();
   const [selectedDate, setSelectedDate] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+
   const deluxe = useSelector((state) => state.deluxe.find((d) => d.id === parseInt(deluxeId)));
   console.log(deluxe);
 
@@ -53,6 +61,7 @@ const ReservationFormFive = () => {
       type_offer: deluxe.type_offer,
       duration: deluxe.duration,
       price: calculateTotalPrice(),
+      tax: deluxe.tax,
       quantity: totalPeople,
       adults: adults,
       children: children,
@@ -63,92 +72,100 @@ const ReservationFormFive = () => {
 
   return (
     <div className="reservation-form-container rounded-2 p-3">
-      <Form className="reservation-form">
-        <h6 style={{ fontFamily: "Montserrat, sans-serif" }}>
-          <span> Prezzo per adulto:</span>{" "}
-          <span className="p-1 rounded-2" style={{ fontWeight: "600" }}>
-            {deluxe.price},00 €
-          </span>
-        </h6>
-        <h6 style={{ fontFamily: "Montserrat, sans-serif" }}>
-          <span>Prezzo per bambino:</span>{" "}
-          <span className="p-1 rounded-2" style={{ fontWeight: "600" }}>
-            {deluxe.price_per_child},00 €
-          </span>
-        </h6>
+      {isLoading ? (
+        <LoadingThree />
+      ) : (
+        <Form className="reservation-form">
+          <h6 style={{ fontFamily: "Montserrat, sans-serif" }}>
+            <span> Prezzo per adulto:</span>{" "}
+            <span className="p-1 rounded-2" style={{ fontWeight: "600" }}>
+              {deluxe.price},00 €
+            </span>
+          </h6>
+          <h6 style={{ fontFamily: "Montserrat, sans-serif" }}>
+            <span>Prezzo per bambino:</span>{" "}
+            <span className="p-1 rounded-2" style={{ fontWeight: "600" }}>
+              {deluxe.price_per_child},00 €
+            </span>
+          </h6>
 
-        <Dropdown>
-          <div className="d-flex align-items-center">
-            <Dropdown.Toggle className="button-search button-filter" variant="white">
-              {adults + children} Ospite
-            </Dropdown.Toggle>
-            <div className="mx-3">
-              <DatePicker
-                className="rounded-2 ps-1 mx-3 custom-datepicker"
-                selected={selectedDate}
-                onChange={(date) => setSelectedDate(date)}
-                dateFormat="dd/MM/yyyy"
-                placeholderText="Data"
-                style={{ width: "150px", fontSize: "14px" }}
-              />
+          <Dropdown>
+            <div className="d-flex align-items-center">
+              <Dropdown.Toggle size="sm" className="button-search button-filter" variant="white">
+                {adults + children} Ospite
+              </Dropdown.Toggle>
+              <div className="mx-3">
+                <DatePicker
+                  className="rounded-2 ps-1 mx-3 custom-datepicker"
+                  selected={selectedDate}
+                  onChange={(date) => setSelectedDate(date)}
+                  dateFormat="dd/MM/yyyy"
+                  placeholderText="Data"
+                  style={{ width: "150px", fontSize: "14px" }}
+                />
+              </div>
             </div>
-          </div>
-          <Dropdown.Menu>
-            <Dropdown.Item onClick={(e) => e.stopPropagation()}>
-              <Row className="align-items-center">
-                <Form.Group controlId="adults" className="d-flex mb-0">
-                  <Col xs={3}>
-                    <Form.Label className="me-5" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                      <h6 className="mb-0">Adulti:</h6>
-                    </Form.Label>
-                  </Col>
-                  <Col xs={3}>
-                    <Form.Control type="number" size="sm" value={adults} onChange={handleAdultsChange} min={1} />
-                  </Col>
-                </Form.Group>
-              </Row>
-            </Dropdown.Item>
-            <Dropdown.Item onClick={(e) => e.stopPropagation()}>
-              <Row className="align-items-center">
-                <Form.Group controlId="children" className="d-flex mb-0">
-                  <Col xs={3}>
-                    <Form.Label style={{ fontFamily: "Montserrat, sans-serif" }}>
-                      <h6 className="mb-0">Bambini:</h6>
-                    </Form.Label>
-                  </Col>
-                  <Col xs={3}>
-                    <Form.Control type="number" size="sm" value={children} onChange={handleChildrenChange} min={0} />
-                  </Col>
-                </Form.Group>
-              </Row>
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-        <hr />
-        <h4 className="mt-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
-          Prezzo totale:{" "}
-          <span className="p-1 rounded-2" style={{ fontWeight: "600" }}>
-            {calculateTotalPrice()},00 €
-          </span>
-        </h4>
-        <Row>
-          <Col xs={12} md={3} lg={6}>
-            <Button className="button-search mt-3 px-5" type="button" onClick={handleBookClick}>
-              Prenota
-            </Button>
-          </Col>
-          <Col xs={12} md={6} lg={6}>
-            <Link to="/cart">
-              <Button className="button-search mt-3 px-4" type="button">
-                Vai al carrello
-              </Button>
-            </Link>
-          </Col>
-        </Row>
-        <p className="mt-2 mb-0" style={{ fontFamily: "Montserrat, sans-serif" }}>
-          Il prezzo totale del soggiorno include l'IVA e tutti i costi applicabili
-        </p>
-      </Form>
+            <Dropdown.Menu>
+              <Dropdown.Item onClick={(e) => e.stopPropagation()}>
+                <Row className="align-items-center">
+                  <Form.Group controlId="adults" className="d-flex mb-0">
+                    <Col xs={3}>
+                      <Form.Label className="me-5" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                        <h6 className="mb-0">Adulti:</h6>
+                      </Form.Label>
+                    </Col>
+                    <Col xs={3}>
+                      <Form.Control type="number" size="sm" value={adults} onChange={handleAdultsChange} min={1} />
+                    </Col>
+                  </Form.Group>
+                </Row>
+              </Dropdown.Item>
+              <Dropdown.Item onClick={(e) => e.stopPropagation()}>
+                <Row className="align-items-center">
+                  <Form.Group controlId="children" className="d-flex mb-0">
+                    <Col xs={3}>
+                      <Form.Label style={{ fontFamily: "Montserrat, sans-serif" }}>
+                        <h6 className="mb-0">Bambini:</h6>
+                      </Form.Label>
+                    </Col>
+                    <Col xs={3}>
+                      <Form.Control type="number" size="sm" value={children} onChange={handleChildrenChange} min={0} />
+                    </Col>
+                  </Form.Group>
+                </Row>
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          <hr />
+          <h4 className="mt-4 text-center text-lg-start" style={{ fontFamily: "Montserrat, sans-serif" }}>
+            Prezzo totale:{" "}
+            <span className="p-1 rounded-2" style={{ fontWeight: "600" }}>
+              {calculateTotalPrice()},00 €
+            </span>
+          </h4>
+          <Row>
+            <Col xs={6} md={6} lg={6}>
+              <div className="text-end text-lg-center">
+                <Button className="button-search mt-3 px-4" type="button" onClick={handleBookClick}>
+                  Prenota
+                </Button>
+              </div>
+            </Col>
+            <Col xs={6} md={6} lg={6}>
+              <div className="text-start text-lg-center">
+                <Link to="/cart">
+                  <Button className="button-search ms-1 mt-3 px-4" type="button">
+                    Carrello
+                  </Button>
+                </Link>
+              </div>
+            </Col>
+          </Row>
+          <p className="mt-2 mb-0 text-center text-lg-start" style={{ fontFamily: "Montserrat, sans-serif" }}>
+            Il prezzo totale del soggiorno include l'IVA e tutti i costi applicabili
+          </p>
+        </Form>
+      )}
     </div>
   );
 };

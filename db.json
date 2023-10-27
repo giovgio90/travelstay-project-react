@@ -22,7 +22,12 @@
         "bedrooms": 2,
         "bathrooms": 2,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Ristorante", "Aria Condizionata", "Vista Panoramica"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Ristorante",
+          "Aria Condizionata",
+          "Vista Panoramica"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/93/d5/77bb521c29e2e65fb8b2dc9b843e7f7d35551f986cafaa35a02c60e68d00.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/d4/94/17bc5b0325f03554b1dbdb08a8dde0a42279459c315ff5429789e93b4f5a.jpeg",
@@ -54,7 +59,11 @@
       ],
       "host": "Sara",
       "cancellation_policy": "Flessibile",
-      "dates_available": ["2023-11-10", "2023-11-17", "2023-11-24"],
+      "dates_available": [
+        "2023-11-10",
+        "2023-11-17",
+        "2023-11-24"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -72,9 +81,9 @@
       "date": "2023-11-08",
       "tax": 9,
       "description": "Scopri la magia dell'incantevole Venezia con il nostro romantico viaggio di 4 giorni. Dall'iconica Piazza San Marco ai tranquilli canali, questa esperienza promette di trasportarti in un mondo di bellezza e amore. Il tuo soggiorno inizia presso l'Hotel Fiore d'Italia, un lussuoso palazzo veneziano affacciato sul Canal Grande. Ammira l'arte rinascimentale in ogni angolo della città, goditi un giro in gondola e assapora autentici piatti italiani. Con WiFi gratuito, una colazione gourmet, aria condizionata e una vista mozzafiato, il tuo alloggio offre un'esperienza unica. I nostri ospiti hanno elogiato le loro esperienze, con MariaVenezia che ha detto: 'Il Canal Grande Palace è un sogno diventato realtà. La sua posizione è impareggiabile e il palazzo è semplicemente stupendo.' Venezia è il luogo perfetto per una fuga romantica. Prenota ora e vivi un'esperienza indimenticabile.",
-      "price": 1350,
-      "price_per_adult": 1350,
-      "price_per_child": 900,
+      "price": 1150,
+      "price_per_adult": 1150,
+      "price_per_child": 700,
       "image": "https://images.pexels.com/photos/258196/pexels-photo-258196.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "image_two": "https://images.pexels.com/photos/1144265/pexels-photo-1144265.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "image_three": "https://images.pexels.com/photos/804954/pexels-photo-804954.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -85,7 +94,12 @@
         "bedrooms": 2,
         "bathrooms": 2,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Colazione Gourmet", "Aria Condizionata", "Vista Mozzafiato"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Colazione Gourmet",
+          "Aria Condizionata",
+          "Vista Mozzafiato"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/4d/5b/98e22528c909c74885ab6558d0753557b9d200b06c62da74a15dff64efbc.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/a2/09/da4db8be1c4219bd13ec11e394d89d337ee1c37f72bc6a70190cf5996740.jpeg",
@@ -117,7 +131,11 @@
       ],
       "host": "Marco",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2023-09-15", "2023-09-22", "2023-09-29"],
+      "dates_available": [
+        "2023-09-15",
+        "2023-09-22",
+        "2023-09-29"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -156,7 +174,12 @@
         "bedrooms": 1,
         "bathrooms": 1,
         "guests": 2,
-        "amenities": ["WiFi Gratuito", "Area Salotto", "Aria Condizionata", "Vista Panoramica"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Area Salotto",
+          "Aria Condizionata",
+          "Vista Panoramica"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/84/e8/97580db44c0bf20a21e70be18e0e114bf66cffbedd595665fc3ebec2ec95.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/a8/72/b2b3fa70e1931c4ada632795461c7292e3c3590985d0e3c3cce1173a55a1.jpeg",
@@ -188,7 +211,11 @@
       ],
       "host": "Luigi",
       "cancellation_policy": "Flessibile",
-      "dates_available": ["2023-11-15", "2023-11-22", "2023-11-29"],
+      "dates_available": [
+        "2023-11-15",
+        "2023-11-22",
+        "2023-11-29"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -214,9 +241,9 @@
       "date": "2023-11-11",
       "tax": 7,
       "description": "Esplora la vivace città di Napoli con il nostro entusiasmante viaggio di 6 giorni. Dall'iconico Castel dell'Ovo alle autentiche pizzerie, questa esperienza promette una miscela di cultura e gastronomia. Il tuo soggiorno inizia presso 'Grand Hotel Bellavista' un'accogliente albergo nel cuore di Napoli. Assapora la pizza napoletana, visita antiche rovine romane e goditi la vista sul Golfo di Napoli. Con WiFi gratuito, una cucina completamente attrezzata, aria condizionata e un balcone panoramico, il tuo alloggio offre comfort e autenticità. I nostri ospiti hanno elogiato le loro esperienze, con MarioPizzaLover che ha detto: 'La Bella Napoli è stato il luogo perfetto per gustare la vera pizza napoletana. La sua posizione è ideale per esplorare la città.' Napoli è famosa per la sua cucina e la sua storia. Prenota ora e immergiti in questa cultura unica.",
-      "price": 1100,
-      "price_per_adult": 1100,
-      "price_per_child": 750,
+      "price": 800,
+      "price_per_adult": 800,
+      "price_per_child": 650,
       "image": "https://images.unsplash.com/photo-1590663964384-e3bfac60bed7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1936&q=80",
       "image_two": "https://images.unsplash.com/photo-1581242125825-f9faf0f350bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       "image_three": "https://images.unsplash.com/photo-1571075051578-c8cd15385f46?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
@@ -227,7 +254,12 @@
         "bedrooms": 2,
         "bathrooms": 2,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Cucina completamente attrezzata", "Aria Condizionata", "Balcone Panoramico"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Cucina completamente attrezzata",
+          "Aria Condizionata",
+          "Balcone Panoramico"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/74/83/9483f2456af60dffbd8567d0c6554580fd596a1b3c638404fde40dfc6aac.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/c3/55/b945f2d7891718df89f7f76ba4acc36c205dcb158a48d1573f0b84642762.jpeg",
@@ -249,7 +281,11 @@
       ],
       "host": "Francesca",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2023-11-10", "2023-11-17", "2023-11-24"],
+      "dates_available": [
+        "2023-11-10",
+        "2023-11-17",
+        "2023-11-24"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -275,9 +311,9 @@
       "date": "2023-11-13",
       "tax": 11,
       "description": "Goditi la bella costiera di Amalfi con il nostro rilassante viaggio di 5 giorni. Dalle pittoresche spiagge ai villaggi in collina, questa esperienza promette tranquillità e autenticità. Il tuo soggiorno inizia presso 'Villa Amalfi View,' una splendida villa con vista sul mare. Rilassati sulla spiaggia, esplora le strade strette e tortuose di Amalfi e assapora la cucina mediterranea. Con WiFi gratuito, una piscina privata, aria condizionata e giardini terrazzati, la tua villa offre comfort e vista panoramica. I nostri ospiti hanno elogiato le loro esperienze, con ElenaBeachLover che ha detto: 'La Villa Amalfi View è un paradiso sulla costa. La vista è mozzafiato e la villa è perfetta per una vacanza di relax.' Amalfi è una gemma nascosta della costa italiana. Prenota ora e vivi un'esperienza costiera indimenticabile.",
-      "price": 1550,
-      "price_per_adult": 1550,
-      "price_per_child": 1000,
+      "price": 950,
+      "price_per_adult": 950,
+      "price_per_child": 600,
       "image": "https://images.unsplash.com/photo-1583844056361-4418a8f2a985?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
       "image_two": "https://plus.unsplash.com/premium_photo-1676528716949-99ad31eb406b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       "image_three": "https://images.unsplash.com/photo-1612698093158-e07ac200d44e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
@@ -288,7 +324,12 @@
         "bedrooms": 3,
         "bathrooms": 2,
         "guests": 6,
-        "amenities": ["WiFi Gratuito", "Piscina Privata", "Aria Condizionata", "Giardini Terrazzati"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Piscina Privata",
+          "Aria Condizionata",
+          "Giardini Terrazzati"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/e2/be/6edf6a6fe575320ae2236049e6cb73bd56f3c5a4639d0a36989a324e32d6.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/1d/cf/5b7152a6cead456fe1acb7bace9234ba2ec2470dd2522a4a530045d2db53.jpeg",
@@ -310,7 +351,11 @@
       ],
       "host": "Emma",
       "cancellation_policy": "Severa",
-      "dates_available": ["2023-11-05", "2023-11-12", "2023-11-19"],
+      "dates_available": [
+        "2023-11-05",
+        "2023-11-12",
+        "2023-11-19"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -336,9 +381,9 @@
       "date": "2023-11-05",
       "tax": 7,
       "description": "Hai sempre sognato di visitare Verona? Ora è il momento di farlo in grande stile! Il nostro tour di 5 giorni ti condurrà attraverso le bellezze di Verona, da Piazza delle Erbe all'Arena di Verona, dall'antico Ponte Pietra al romantico balcone di Giulietta. E cosa c'è di meglio di un soggiorno presso la rinomata Villa dei Sogni? Questa villa esclusiva offre non solo comfort di prima classe ma anche una vista panoramica mozzafiato sulla città. Rilassati nella piscina privata, esplora i giardini terrazzati o semplicemente goditi l'aria condizionata e il WiFi gratuito. Un'esperienza unica per gli amanti della cultura, della storia e del lusso. Non perdere questa opportunità di scoprire Verona con stile e comfort. Prenota ora e inizia il tuo viaggio verso la Villa dei Sogni.",
-      "price": 1200,
-      "price_per_adult": 1200,
-      "price_per_child": 800,
+      "price": 700,
+      "price_per_adult": 700,
+      "price_per_child": 550,
       "image": "https://images.unsplash.com/photo-1518204213685-466b68a6d0f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
       "image_two": "https://images.unsplash.com/photo-1555796861-b29396df890e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       "image_three": "https://images.unsplash.com/photo-1551806580-e668327b0611?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
@@ -349,7 +394,12 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Giardino Privato", "Aria Condizionata", "Posizione Tranquilla"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Giardino Privato",
+          "Aria Condizionata",
+          "Posizione Tranquilla"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/e2/28/ceba10b9123e49d5547e58e13cf2e19305a4d207bbd3a77454aa98118195.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/3a/7c/18a2d6b056dcc8454e41449561bd31ad5d8fd9fe48f232c969211c7ec1c9.jpeg",
@@ -381,7 +431,11 @@
       ],
       "host": "Antonio",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2023-11-15", "2023-11-22", "2023-11-29"],
+      "dates_available": [
+        "2023-11-15",
+        "2023-11-22",
+        "2023-11-29"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -407,9 +461,9 @@
       "date": "2023-11-15",
       "tax": 9,
       "description": "Esplora la splendida città costiera di Sorrento con il nostro incantevole viaggio di 5 giorni. Dalle scogliere mozzafiato alle spiagge pittoresche, questa esperienza promette relax e bellezza naturale. Il tuo soggiorno inizia presso 'Hotel delle Stelle,' un albergo con vista sul mare. Goditi il sole sulla spiaggia, assapora il limoncello locale e scopri la cultura sorrentina. Con WiFi gratuito, una piscina a sfioro, aria condizionata e una terrazza panoramica, la tua villa offre lusso e vista mozzafiato. I nostri ospiti hanno lodato le loro esperienze, con SofiaBeachLover che ha detto: 'La Villa Sorrento Sea è un paradiso sulla costa. La vista è spettacolare e la villa è perfetta per una vacanza di relax.' Sorrento è un gioiello della costa amalfitana. Prenota ora e goditi una vacanza in riva al mare indimenticabile.",
-      "price": 1650,
-      "price_per_adult": 1650,
-      "price_per_child": 1100,
+      "price": 960,
+      "price_per_adult": 960,
+      "price_per_child": 700,
       "image": "https://images.unsplash.com/photo-1596299444021-ddf77bd21e83?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
       "image_two": "https://images.unsplash.com/photo-1502825305473-fedeffa5b12c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80",
       "image_three": "https://images.unsplash.com/photo-1529914266944-527632c9ea58?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
@@ -420,7 +474,12 @@
         "bedrooms": 3,
         "bathrooms": 3,
         "guests": 6,
-        "amenities": ["WiFi Gratuito", "Piscina a Sfioro", "Aria Condizionata", "Terrazza Panoramica"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Piscina a Sfioro",
+          "Aria Condizionata",
+          "Terrazza Panoramica"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/b6/bd/f06a2f5e387fbab2df64a2261cb4c869f3cc3b851b6d7f212161d7c8ba43.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/c4/1e/cdc851aeb3f5f0788fc96105fc42265f7a42f1d1801e533b47650f7b7d5d.jpeg",
@@ -442,7 +501,11 @@
       ],
       "host": "Lorenzo",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2023-11-05", "2023-11-12", "2023-11-19"],
+      "dates_available": [
+        "2023-11-05",
+        "2023-11-12",
+        "2023-11-19"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -468,9 +531,9 @@
       "date": "2023-11-11",
       "tax": 10,
       "description": "Scopri la deliziosa città di Bologna con il nostro gustoso viaggio di 4 giorni. Dall'iconica Torre degli Asinelli alle trattorie storiche, questa esperienza promette sapori autentici e storia affascinante. Il tuo soggiorno inizia presso 'Grand Hotel delle Palme', un'accogliente albergo nel centro storico di Bologna. Assapora la pasta fresca, visita musei eccezionali e percorri i portici secolari. Con WiFi gratuito, una cucina ben attrezzata, aria condizionata e un'atmosfera accogliente, la tua casa offre comfort e convenienza. I nostri ospiti hanno elogiato le loro esperienze, con PaoloFoodie che ha detto: 'Casa Bologna è stata la base perfetta per esplorare i sapori di Bologna. La sua posizione è ideale per scoprire la città a piedi.' Bologna è la capitale gastronomica d'Italia. Prenota ora e delizati con questa esperienza culinaria.",
-      "price": 990,
-      "price_per_adult": 990,
-      "price_per_child": 700,
+      "price": 500,
+      "price_per_adult": 500,
+      "price_per_child": 430,
       "image": "https://images.unsplash.com/photo-1445265005361-ae273d6a1e16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2048&q=80",
       "image_two": "https://images.unsplash.com/photo-1445265005361-ae273d6a1e16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2048&q=80",
       "image_three": "https://images.unsplash.com/photo-1599932904138-305485fdcee7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
@@ -481,7 +544,12 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Cucina Ben Attrezzata", "Aria Condizionata", "Atmosfera Accogliente"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Cucina Ben Attrezzata",
+          "Aria Condizionata",
+          "Atmosfera Accogliente"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/29/67/6ecdf75d2c98e12c585fd6c56edddb9f3408cd421e7e77b9b7a80aa2f9bb.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/8d/3e/5f3570b86d2978cff69c44c1676bc921c2c19bd57a77bdaf1f6f1922f25e.jpeg",
@@ -503,7 +571,11 @@
       ],
       "host": "Giulia",
       "cancellation_policy": "Flessibile",
-      "dates_available": ["2023-11-10", "2023-11-17", "2023-11-24"],
+      "dates_available": [
+        "2023-11-10",
+        "2023-11-17",
+        "2023-11-24"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -529,9 +601,9 @@
       "date": "2023-11-08",
       "tax": 9,
       "description": "Esplora la bellissima città costiera di Taormina con il nostro affascinante viaggio di 5 giorni. Dall'iconico Teatro Antico alle spiagge di Isola Bella, questa esperienza promette cultura e relax. Il tuo soggiorno inizia presso 'Villa delle Acque' una villa con vista sul mare. Visita antichi siti greci, rilassati sulla spiaggia e gustati i piatti siciliani. Con WiFi gratuito, una piscina privata, aria condizionata e una terrazza panoramica, la tua villa offre comfort e vista mozzafiato. I nostri ospiti hanno lodato le loro esperienze, con AlessiaBeachLover che ha detto: 'La Villa Taormina View è un sogno diventato realtà. La vista è spettacolare e la villa è perfetta per una vacanza di relax.' Taormina è la perla della Sicilia. Prenota ora e goditi una vacanza in riva al mare indimenticabile.",
-      "price": 1750,
-      "price_per_adult": 1750,
-      "price_per_child": 1200,
+      "price": 1000,
+      "price_per_adult": 1000,
+      "price_per_child": 850,
       "image": "https://images.unsplash.com/photo-1602359394198-b6cfc9dc17fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
       "image_two": "https://plus.unsplash.com/premium_photo-1676497323594-81366200fcbb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       "image_three": "https://images.unsplash.com/photo-1679710611883-4c8441bf12f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
@@ -542,7 +614,12 @@
         "bedrooms": 3,
         "bathrooms": 2,
         "guests": 6,
-        "amenities": ["WiFi Gratuito", "Piscina Privata", "Aria Condizionata", "Terrazza Panoramica"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Piscina Privata",
+          "Aria Condizionata",
+          "Terrazza Panoramica"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/a1/12/33f567cb7d874b48e2175e91e1b521ab083e5a46688e12f82dbea1aa64ae.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/96/a2/209c4b797c4c79e7bf434f3abcac83299cbc1a0675ff312cbea88adfcbf8.jpeg",
@@ -564,7 +641,11 @@
       ],
       "host": "Alessio",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2023-11-05", "2023-11-12", "2023-11-19"],
+      "dates_available": [
+        "2023-11-05",
+        "2023-11-12",
+        "2023-11-19"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -603,7 +684,11 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Cucina Attrezzata", "Vista Panoramica"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Cucina Attrezzata",
+          "Vista Panoramica"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/9e/47/2161ebf490e2f562afaf1f5b893d1e6ab15463e7a3608eab40f9a8dbc52e.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/a1/37/61859cbbdee048c5ac78c746eb700ab4d9c583713a69281749137bd53340.jpeg",
@@ -624,7 +709,11 @@
       ],
       "host": "Giovanni",
       "cancellation_policy": "Flessibile",
-      "dates_available": ["2023-11-20", "2023-11-27", "2023-12-04"],
+      "dates_available": [
+        "2023-11-20",
+        "2023-11-27",
+        "2023-12-04"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -650,9 +739,9 @@
       "date": "2023-11-15",
       "tax": 11,
       "description": "Scopri la bellezza di Palermo da questa villa siciliana con vista mare. Goditi il relax e la cultura siciliana in questa spaziosa villa con vista panoramica sul Mar Tirreno. La villa è dotata di piscina privata, ampie terrazze e comfort moderni. Trascorri il tuo tempo esplorando le strade affollate di Palermo, assaporando la cucina locale e ammirando l'arte e l'architettura uniche della città.",
-      "price": 1100,
-      "price_per_adult": 1100,
-      "price_per_child": 700,
+      "price": 600,
+      "price_per_adult": 600,
+      "price_per_child": 450,
       "image": "https://images.unsplash.com/photo-1598717475893-e4d14de42bca?auto=format&fit=crop&q=80&w=2071&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_two": "https://images.unsplash.com/photo-1618048558171-8c9edde77055?auto=format&fit=crop&q=80&w=2071&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_three": "https://images.unsplash.com/photo-1597654091452-3ac8d2185d59?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -663,7 +752,11 @@
         "bedrooms": 4,
         "bathrooms": 3,
         "guests": 8,
-        "amenities": ["Piscina Privata", "Terrazza Vista Mare", "Cucina Moderna"],
+        "amenities": [
+          "Piscina Privata",
+          "Terrazza Vista Mare",
+          "Cucina Moderna"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/6e/8e/be08604d321983c176644b20737ef31ebe20426e9a8adf1f956fbecacaef.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/ec/f9/3f3970156fcecd91a5454c264adb62ece6081da43afe17a9f28bce6463b6.jpeg",
@@ -684,7 +777,11 @@
       ],
       "host": "Francesca",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2023-11-15", "2023-11-22", "2023-11-29"],
+      "dates_available": [
+        "2023-11-15",
+        "2023-11-22",
+        "2023-11-29"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -723,7 +820,11 @@
         "bedrooms": 1,
         "bathrooms": 1,
         "guests": 2,
-        "amenities": ["WiFi Gratuito", "Cucina Attrezzata", "Posizione Centrale"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Cucina Attrezzata",
+          "Posizione Centrale"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/7a/d2/780a16ec8f0a716a03756fdfaa556a159db97b9cf109fded112b13e402d6.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/7d/54/a211042b3050892a908ac640c38412b18c622c1c1caa74b9898ab15ec689.jpeg",
@@ -744,7 +845,11 @@
       ],
       "host": "Lorenzo",
       "cancellation_policy": "Rigida",
-      "dates_available": ["2023-11-25", "2023-12-02", "2023-12-09"],
+      "dates_available": [
+        "2023-11-25",
+        "2023-12-02",
+        "2023-12-09"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -770,8 +875,8 @@
       "date": "2024-01-20",
       "tax": 20,
       "description": "Esplora la pittoresca città di Alghero da questo incantevole appartamento vicino al mare. Conosci la cultura catalana di Alghero, scopri le spiagge di sabbia dorata e assapora il pesce fresco. Questo viaggio è un'immersione nella bellezza della Sardegna.",
-      "price": 1200,
-      "price_per_adult": 1200,
+      "price": 1100,
+      "price_per_adult": 1100,
       "price_per_child": 800,
       "image": "https://images.unsplash.com/photo-1575485703091-622113d6015a?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_two": "https://images.unsplash.com/photo-1611386844451-40ac8b31843b?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -783,7 +888,11 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Vicino alla Spiaggia", "Cucina Attrezzata"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Vicino alla Spiaggia",
+          "Cucina Attrezzata"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/d2/74/3680ec6c59ac805d4222afeee4f59de10a0e06390d5af3192a7c06f0dad0.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/38/d3/3d46cf0c0d16cc55e9e36abdb712826c09af42b24490b83f9425d728faa5.jpeg",
@@ -804,7 +913,11 @@
       ],
       "host": "Alessandro",
       "cancellation_policy": "Flessibile",
-      "dates_available": ["2024-01-20", "2024-01-27", "2024-02-03"],
+      "dates_available": [
+        "2024-01-20",
+        "2024-01-27",
+        "2024-02-03"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -830,9 +943,9 @@
       "date": "2023-12-20",
       "tax": 16,
       "description": "Visita la città storica di Pisa da questo appartamento accogliente a pochi passi dalla famosa Torre Pendente. Goditi l'atmosfera unica di Pisa, esplora il Campo dei Miracoli e assapora la cucina toscana. L'appartamento offre una posizione eccezionale e tutte le comodità necessarie per un soggiorno piacevole.",
-      "price": 750,
-      "price_per_adult": 750,
-      "price_per_child": 500,
+      "price": 300,
+      "price_per_adult": 300,
+      "price_per_child": 150,
       "image": "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_two": "https://images.unsplash.com/photo-1591452193195-ac4a41416c5f?auto=format&fit=crop&q=80&w=2069&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_three": "https://images.unsplash.com/photo-1551981996-1e0aa26c5fba?auto=format&fit=crop&q=80&w=1840&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -843,7 +956,11 @@
         "bedrooms": 1,
         "bathrooms": 1,
         "guests": 2,
-        "amenities": ["WiFi Gratuito", "Vicino alla Torre Pendente", "Cucina Attrezzata"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Vicino alla Torre Pendente",
+          "Cucina Attrezzata"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/cf/ad/f5b197fb051483ecb35086e270267fded7a2b49995eedc3fd2d7e40695c9.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/13/0e/ae7905175f4031b6ac7e7c4213c5bba02969116b3063d841c51c8da8cff1.jpeg",
@@ -864,7 +981,11 @@
       ],
       "host": "Giulia",
       "cancellation_policy": "Flessibile",
-      "dates_available": ["2023-12-20", "2023-12-27", "2024-01-03"],
+      "dates_available": [
+        "2023-12-20",
+        "2023-12-27",
+        "2024-01-03"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -890,9 +1011,9 @@
       "date": "2023-12-15",
       "tax": 15,
       "description": "Visita la città portuale di Genova da questo appartamento moderno con vista sul mare. La città ha una storia marittima ricca e un centro storico affascinante. Questo appartamento offre comfort moderni e una vista spettacolare sul Porto Antico. Esplora i musei marittimi, assapora il pesce fresco e percorri le strade affollate. Questo viaggio è un mix di storia, cultura e cibo delizioso.",
-      "price": 900,
-      "price_per_adult": 900,
-      "price_per_child": 600,
+      "price": 200,
+      "price_per_adult": 200,
+      "price_per_child": 130,
       "image": "https://images.unsplash.com/photo-1577600867469-30cc013db252?auto=format&fit=crop&q=80&w=2071&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_two": "https://images.unsplash.com/photo-1592671520190-e41aa6c959e6?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_three": "https://images.unsplash.com/photo-1618434997924-6677c53b60d1?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -903,7 +1024,11 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Vista Mare", "Posizione Centrale"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Vista Mare",
+          "Posizione Centrale"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/9e/8b/e052bb7ae88d597829989112295005efaee85019bcb82651bd6b91a609cb.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/81/e8/a1be7b7d3e277082c5a84e248411d5fd2418ccf776684570f0a9531c12b1.jpeg",
@@ -924,7 +1049,11 @@
       ],
       "host": "Roberto",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2023-12-15", "2023-12-22", "2023-12-29"],
+      "dates_available": [
+        "2023-12-15",
+        "2023-12-22",
+        "2023-12-29"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -950,9 +1079,9 @@
       "date": "2023-12-05",
       "tax": 14,
       "description": "Scopri i gioielli costieri delle Cinque Terre da questa pittoresca casa a Manarola. Questa affascinante casa ti offre una vista spettacolare sul mare e facile accesso alle cinque pittoresche città. Fai escursioni sui sentieri panoramici, assapora il vino locale e goditi il mare cristallino. Questa esperienza è un sogno per gli amanti della natura e della bellezza del mare.",
-      "price": 1150,
-      "price_per_adult": 1150,
-      "price_per_child": 750,
+      "price": 450,
+      "price_per_adult": 450,
+      "price_per_child": 375,
       "image": "https://images.unsplash.com/photo-1528645752497-dce79f475d63?auto=format&fit=crop&q=80&w=1840&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_two": "https://images.unsplash.com/photo-1567086552731-39bb0b835b27?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_three": "https://images.unsplash.com/photo-1603473511024-9b4cb9226f17?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -963,7 +1092,11 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": ["Vista Mare Panoramica", "Cucina Attrezzata", "Accesso Ai Sentieri"],
+        "amenities": [
+          "Vista Mare Panoramica",
+          "Cucina Attrezzata",
+          "Accesso Ai Sentieri"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/ed/f8/ddb22447e829f31d045ce53c10423ebf6a436cafbdc6e2189a4357deaa1b.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/67/3f/b20672839d718f840943454f081d715f2a51fb0d927bf0dcc8fb5c0c3f02.jpeg",
@@ -984,7 +1117,11 @@
       ],
       "host": "Isabella",
       "cancellation_policy": "Flessibile",
-      "dates_available": ["2023-12-05", "2023-12-12", "2023-12-19"],
+      "dates_available": [
+        "2023-12-05",
+        "2023-12-12",
+        "2023-12-19"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -1010,9 +1147,9 @@
       "date": "2024-03-15",
       "tax": 15,
       "description": "Scopri la bellezza di Merano, nel cuore delle Dolomiti. Questo viaggio ti condurrà tra le valli alpine, i bagni termali e le strade storiche. Assapora la cucina tirolese e percorri i sentieri di montagna. Merano ti offre una vacanza indimenticabile.",
-      "price": 1300,
-      "price_per_adult": 1300,
-      "price_per_child": 900,
+      "price": 800,
+      "price_per_adult": 800,
+      "price_per_child": 600,
       "image": "https://images.unsplash.com/photo-1558986377-f1d85a71eda0?auto=format&fit=crop&q=80&w=1808&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_two": "https://images.unsplash.com/photo-1592847712299-6919b9e45baf?auto=format&fit=crop&q=80&w=2071&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_three": "https://images.unsplash.com/photo-1636218586093-031f7290a2c8?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -1023,7 +1160,11 @@
         "bedrooms": 3,
         "bathrooms": 2,
         "guests": 6,
-        "amenities": ["WiFi Gratuito", "Bagni Termali", "Ristorante Interno"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Bagni Termali",
+          "Ristorante Interno"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/a8/0a/5210a15191b6f99385d4d559b26bb6c60a8b3b9e8388f3ecdc35963abc2d.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/ca/63/a253fb234fc0fd3a49bc4552cadc285b60d60bb96ba79ab6a78879418cbd.jpeg",
@@ -1044,7 +1185,11 @@
       ],
       "host": "Alessandra",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2024-03-15", "2024-03-22", "2024-03-29"],
+      "dates_available": [
+        "2024-03-15",
+        "2024-03-22",
+        "2024-03-29"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -1070,9 +1215,9 @@
       "date": "2024-04-10",
       "tax": 10,
       "description": "Scopri la città affascinante di Bolzano, situata nelle montagne dell'Alto Adige. Questo viaggio ti offre l'opportunità di immergerti nella cultura altoatesina, assaporare prelibatezze culinarie locali e passeggiare per il pittoresco centro storico. Bolzano è famosa per il suo mercato delle erbe, dove puoi acquistare prodotti locali freschi. Questa offerta include alloggio in un hotel comodo e moderno nel cuore della città. Rilassati nelle vicinanze del fiume Talvera, visita il Museo Archeologico dell'Alto Adige e goditi il cibo delizioso della regione. Un'esperienza da non perdere.",
-      "price": 1100,
-      "price_per_adult": 1100,
-      "price_per_child": 750,
+      "price": 930,
+      "price_per_adult": 930,
+      "price_per_child": 700,
       "image": "https://images.unsplash.com/photo-1565254263094-d31b3477a07e?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_two": "https://images.unsplash.com/photo-1588532042180-6953b73f5523?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_three": "https://images.unsplash.com/photo-1638652988976-d56351a304fd?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -1083,7 +1228,11 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Ristorante Interno", "Vicino al Mercato"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Ristorante Interno",
+          "Vicino al Mercato"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/61/cf/590de26a4d89e862c539980f94246592449aef1811845404dbf408b8f92a.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/56/0f/09f71b77391c4e7c240d5fdd9f2c5fab4b994c4f7ac61cf5505c33e801c2.jpeg",
@@ -1104,7 +1253,11 @@
       ],
       "host": "Alessandra",
       "cancellation_policy": "Flessibile",
-      "dates_available": ["2024-04-10", "2024-04-17", "2024-04-24"],
+      "dates_available": [
+        "2024-04-10",
+        "2024-04-17",
+        "2024-04-24"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -1130,9 +1283,9 @@
       "date": "2024-05-05",
       "tax": 15,
       "description": "Esplora la splendida città di Como, situata sulle rive del Lago di Como. Visita le ville storiche, come Villa Olmo, e prendi una barca per ammirare le viste panoramiche. La cucina lombarda ti delizierà. Un viaggio da sogno nel cuore del nord Italia. Como è rinomata per la sua bellezza naturale e le ville storiche affacciate sul lago. Questa offerta include alloggio in un hotel elegante e confortevole nel centro di Como. Goditi il panorama del lago, visita le ville storiche, come Villa Carlotta, e scopri le prelibatezze locali nei ristoranti. Un'esperienza che ti lascerà senza parole.",
-      "price": 1400,
-      "price_per_adult": 1400,
-      "price_per_child": 1000,
+      "price": 1000,
+      "price_per_adult": 1000,
+      "price_per_child": 800,
       "image": "https://images.unsplash.com/photo-1606521276375-5fbc52665c8a?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_two": "https://images.unsplash.com/photo-1606745463199-d7623eee5f8a?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_three": "https://images.unsplash.com/photo-1582150050076-52baeeba4a74?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -1143,7 +1296,11 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Ristorante Interno", "Vista sul Lago"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Ristorante Interno",
+          "Vista sul Lago"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/78/67/1258df100181933f69c290b2cd2186ea56de53c16db795e87f839c789a2a.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/45/56/4ef525b9108293d0b4f608c2d92be56a3b4feb950552033efada98215efe.jpeg",
@@ -1164,7 +1321,11 @@
       ],
       "host": "Alessia",
       "cancellation_policy": "Flessibile",
-      "dates_available": ["2024-05-05", "2024-05-12", "2024-05-19"],
+      "dates_available": [
+        "2024-05-05",
+        "2024-05-12",
+        "2024-05-19"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -1190,9 +1351,9 @@
       "date": "2024-06-10",
       "tax": 20,
       "description": "Esplora l'antica città di Siracusa, situata sulla costa orientale della Sicilia. Questo viaggio ti porterà indietro nel tempo mentre visiti il Parco Archeologico della Neapolis, ammira l'Anfiteatro Romano e scopri le meraviglie dell'Isola di Ortigia. Siracusa è famosa per la sua storia millenaria e l'incredibile patrimonio culturale. Questa offerta include alloggio in un affascinante hotel nel cuore di Ortigia, con vista sul mare. Rilassati sulle spiagge locali, immergiti nella cultura siciliana e gusta le prelibatezze locali. Un'esperienza unica in uno dei tesori storici dell'Italia.",
-      "price": 1500,
-      "price_per_adult": 1500,
-      "price_per_child": 1000,
+      "price": 600,
+      "price_per_adult": 600,
+      "price_per_child": 420,
       "image": "https://www.casevacanzepomelia.it/images/territorio/siracusa/siracusa/ortigia/siracusa-ortigia-1.jpg",
       "image_two": "https://images.unsplash.com/photo-1682197290108-5199172a6a53?auto=format&fit=crop&q=80&w=2069&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_three": "https://images.unsplash.com/photo-1414439482149-56ba839f3d96?auto=format&fit=crop&q=80&w=2074&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -1203,7 +1364,11 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Vista Mare", "Colazione Inclusa"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Vista Mare",
+          "Colazione Inclusa"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/06/f6/92e1d06a1d69aec358467ce33b9d3ff5858813d2528266866aae34e304fd.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/c3/25/a46576337311ee36ed9abafd1ec2d88fa86a6f73a5395703cf41fc3ec859.jpeg",
@@ -1224,7 +1389,11 @@
       ],
       "host": "Giovanna",
       "cancellation_policy": "Flessibile",
-      "dates_available": ["2024-06-10", "2024-06-17", "2024-06-24"],
+      "dates_available": [
+        "2024-06-10",
+        "2024-06-17",
+        "2024-06-24"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -1250,9 +1419,9 @@
       "date": "2024-08-15",
       "tax": 10,
       "description": "Scopri la bellissima città di Ferrara, situata nell'Emilia-Romagna. Questo viaggio ti porterà nel cuore del Rinascimento italiano mentre visiti il Castello Estense, esplori il centro storico e gusti la cucina emiliana. Ferrara è famosa per il suo patrimonio UNESCO e l'atmosfera medievale. Questa offerta include alloggio in un accogliente bed & breakfast nel centro storico. Goditi le mura cittadine, scopri il Castello Estense e assapora i famosi cappellacci di zucca. Un'esperienza culturale e gastronomica da non perdere.",
-      "price": 900,
-      "price_per_adult": 900,
-      "price_per_child": 600,
+      "price": 300,
+      "price_per_adult": 300,
+      "price_per_child": 210,
       "image": "https://images.unsplash.com/photo-1619423138055-3a12df430631?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_two": "https://images.unsplash.com/photo-1623847700046-5a8871aae85b?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_three": "https://images.unsplash.com/photo-1623847700132-7c9bd6fe29af?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -1263,7 +1432,11 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Colazione Inclusa", "Vicino al Castello"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Colazione Inclusa",
+          "Vicino al Castello"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/9b/10/1c21121d0d623541693e750bf8cfbc6733e45f90f5807ef2fb7e42bf8744.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/cd/ea/156f9f8c805062b92c040ef77a33ac4965c49aa34cda482ee92034ff88ff.jpeg",
@@ -1284,7 +1457,11 @@
       ],
       "host": "Roberta",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2024-08-15", "2024-08-22", "2024-08-29"],
+      "dates_available": [
+        "2024-08-15",
+        "2024-08-22",
+        "2024-08-29"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -1310,9 +1487,9 @@
       "date": "2024-07-20",
       "tax": 15,
       "description": "Esplora il magnifico borgo medievale di San Gimignano, situato nelle colline toscane. Questo viaggio ti condurrà tra le torri medievali, degusterai il famoso vino Vernaccia e assaporerai la cucina toscana. San Gimignano è famosa per le sue torri e la bellezza storica. Questa offerta include alloggio in un affascinante agriturismo nei pressi del centro storico. Scopri le torri, visita le cantine vinicole locali e sperimenta la dolce vita toscana. Un'esperienza che ti farà innamorare dell'Italia.",
-      "price": 1200,
-      "price_per_adult": 1200,
-      "price_per_child": 800,
+      "price": 720,
+      "price_per_adult": 720,
+      "price_per_child": 650,
       "image": "https://plus.unsplash.com/premium_photo-1676655014315-63ba125eed52?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_two": "https://images.unsplash.com/photo-1583828870251-c41c2ebcee93?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_three": "https://images.unsplash.com/photo-1584086602323-fcfa6cc4b32c?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -1323,7 +1500,11 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": ["Piscina", "Cucina Toscana", "WiFi Gratuito"],
+        "amenities": [
+          "Piscina",
+          "Cucina Toscana",
+          "WiFi Gratuito"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/cd/72/187c24c96e614d96d608356f621259633723632051466b5a385bc92e7484.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/51/98/d36a1d6bc1d08844705c28762bab0346296fea5e3c017eea63c3dc933877.jpeg",
@@ -1344,7 +1525,11 @@
       ],
       "host": "Francesco",
       "cancellation_policy": "Flessibile",
-      "dates_available": ["2024-07-20", "2024-07-27", "2024-08-03"],
+      "dates_available": [
+        "2024-07-20",
+        "2024-07-27",
+        "2024-08-03"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -1370,9 +1555,9 @@
       "date": "2024-09-15",
       "tax": 10,
       "description": "Esplora la suggestiva città di Trieste, situata sulla costa adriatica. Questo viaggio ti condurrà alla scoperta delle sue piazze storiche, come Piazza Unità d'Italia, e ti farà assaporare la cucina austro-ungarica. Trieste è una città di cultura e storia unica. Questa offerta include alloggio in un elegante hotel nel centro della città. Visita il Castello di Miramare, passeggia lungo il mare e gustati un autentico caffè triestino. Un'esperienza che ti farà innamorare di questa affascinante città.",
-      "price": 950,
-      "price_per_adult": 950,
-      "price_per_child": 700,
+      "price": 650,
+      "price_per_adult": 650,
+      "price_per_child": 520,
       "image": "https://images.unsplash.com/photo-1598087609909-8aa3bfd4a5c6?auto=format&fit=crop&q=80&w=1935&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_two": "https://images.unsplash.com/photo-1557866972-f07ce5d695f0?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_three": "https://images.unsplash.com/photo-1600075976117-eb8d3aa9aa34?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -1383,7 +1568,11 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Posizione Centrale", "Ristorante Interno"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Posizione Centrale",
+          "Ristorante Interno"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/dd/27/4cb686d8f83d0ac66f1e3138f2a1c5da6ca9cc03b14bda3dd43c26e195d9.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/35/4b/800a2e56a9cc78f10b21caef2d1afc8d6035d8a49575ae9191e8ee728d80.jpeg",
@@ -1404,7 +1593,11 @@
       ],
       "host": "Matteo",
       "cancellation_policy": "Flessibile",
-      "dates_available": ["2024-09-15", "2024-09-22", "2024-09-29"],
+      "dates_available": [
+        "2024-09-15",
+        "2024-09-22",
+        "2024-09-29"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -1430,9 +1623,9 @@
       "date": "2024-07-05",
       "tax": 15,
       "description": "Scopri la bellissima città di Lucca, situata in Toscana. Questo viaggio ti porterà a passeggiare sulle storiche mura medievali, visitare la Torre Guinigi e gustare la cucina toscana. Lucca è famosa per il suo fascino storico e l'atmosfera rilassata. Questa offerta include alloggio in un incantevole appartamento nel centro storico di Lucca. Esplora le piazze, noleggia una bicicletta per un giro sulle mura e assapora l'autentica cucina toscana. Un'esperienza indimenticabile in un tesoro nascosto italiano.",
-      "price": 1100,
-      "price_per_adult": 1100,
-      "price_per_child": 750,
+      "price": 450,
+      "price_per_adult": 450,
+      "price_per_child": 400,
       "image": "https://images.unsplash.com/photo-1552934325-f0fc1cdfc8c6?auto=format&fit=crop&q=80&w=1893&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_two": "https://images.unsplash.com/photo-1592237604582-ee103af86911?auto=format&fit=crop&q=80&w=2052&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_three": "https://images.unsplash.com/photo-1563623558178-316d1cec8cd7?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -1443,7 +1636,11 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Vicino alle Mura", "Cucina Attrezzata"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Vicino alle Mura",
+          "Cucina Attrezzata"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/62/d0/ea21aaa3fcb680d2882764bba98ef48b936d22ebdb9215a0c1d5233e4678.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/4e/e0/3a4eadf29332e13bc03723ac11dc82c6d24696822e7c76bfd5b1d953304b.jpeg",
@@ -1464,7 +1661,11 @@
       ],
       "host": "Giulio",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2024-07-05", "2024-07-12", "2024-07-19"],
+      "dates_available": [
+        "2024-07-05",
+        "2024-07-12",
+        "2024-07-19"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -1490,9 +1691,9 @@
       "date": "2024-09-01",
       "tax": 10,
       "description": "Esplora la città di Perugia, situata nelle colline umbre. Questo viaggio ti condurrà alla scoperta del centro storico, delle sue chiese e dei musei. Perugia è famosa per il suo patrimonio culturale e la produzione di cioccolato. Questa offerta include alloggio in un'accogliente casa vacanze nel centro di Perugia. Visita la Cattedrale di San Lorenzo, scopri la storia dell'Umbria e assapora il delizioso cioccolato locale. Un'esperienza culturale e golosa.",
-      "price": 800,
-      "price_per_adult": 800,
-      "price_per_child": 600,
+      "price": 350,
+      "price_per_adult": 350,
+      "price_per_child": 270,
       "image": "https://plus.unsplash.com/premium_photo-1677613735286-df09b4de4007?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_two": "https://images.unsplash.com/photo-1595359170695-7d7df4f23d4a?auto=format&fit=crop&q=80&w=2031&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_three": "https://images.unsplash.com/photo-1558265963-fc582742b461?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -1503,7 +1704,11 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Cucina Attrezzata", "Vicino ai Musei"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Cucina Attrezzata",
+          "Vicino ai Musei"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/73/76/3ed497fedb9b5470a1cfa12a4dd354ec3f0cb563c09c9fc7c9864cd579d3.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/e9/49/8dd1c50c68713a5339ea4a1b691c2dfdc2ce7e9cbd9b7793c8f61b229587.jpeg",
@@ -1524,7 +1729,11 @@
       ],
       "host": "Francesca",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2024-09-01", "2024-09-08", "2024-09-15"],
+      "dates_available": [
+        "2024-09-01",
+        "2024-09-08",
+        "2024-09-15"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -1563,7 +1772,11 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Posizione Centrale", "Ristorante Interno"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Posizione Centrale",
+          "Ristorante Interno"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/c2/a2/7170c327b2cbfae8476abfa3da3c9a5f0c3645708b9c02616af90a4e4b1a.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/c0/31/0d72e9c67206cd681b69866a8c535d9e76e9f5a7ae09b8370b64e4d9227e.jpeg",
@@ -1584,7 +1797,11 @@
       ],
       "host": "Antonio",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2024-10-10", "2024-10-17", "2024-10-24"],
+      "dates_available": [
+        "2024-10-10",
+        "2024-10-17",
+        "2024-10-24"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -1610,9 +1827,9 @@
       "date": "2024-11-05",
       "tax": 15,
       "description": "Scopri la stupefacente città dei Sassi di Matera, situata tra le affascinanti colline della Basilicata. Questo viaggio ti condurrà a esplorare le antiche grotte e chiese rupestri, assaporare la cucina lucana e scoprire l'arte locale. Matera è celebre per la sua bellezza unica e il suo passato millenario. Questa offerta include alloggio in una caratteristica casa nelle grotte, un'esperienza autentica. Esplora i Sassi, degusta il pane di Matera e immergiti nella storia millenaria. Un viaggio indimenticabile in una città straordinaria.",
-      "price": 1150,
-      "price_per_adult": 1150,
-      "price_per_child": 800,
+      "price": 800,
+      "price_per_adult": 800,
+      "price_per_child": 670,
       "image": "https://images.unsplash.com/photo-1508952730003-37d915086633?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_two": "https://images.unsplash.com/photo-1528214096798-37891d32174c?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_three": "https://images.unsplash.com/photo-1637779716478-b1d132f384b0?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -1623,7 +1840,11 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": ["Atmosfera Unica", "Vicino ai Sassi", "Cucina Lucana"],
+        "amenities": [
+          "Atmosfera Unica",
+          "Vicino ai Sassi",
+          "Cucina Lucana"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/b2/3b/1b3b7188e0d93d2a5426fd87bc1d986d31723d944ca3f85e77220245ba47.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/c7/e2/4122bd4cf0d6d5498bcc71a9a4753e3bc1a4f839179c11595f1b278a8d43.jpeg",
@@ -1644,7 +1865,11 @@
       ],
       "host": "Lucia",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2024-11-05", "2024-11-12", "2024-11-19"],
+      "dates_available": [
+        "2024-11-05",
+        "2024-11-12",
+        "2024-11-19"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -1670,9 +1895,9 @@
       "date": "2024-05-15",
       "tax": 10,
       "description": "Scopri il pittoresco borgo di Apricale, situato sulle colline liguri. Questo viaggio ti condurrà a passeggiare per le stradine medievali, visitare il Castello della Lucertola e assaporare la cucina ligure. Apricale è famosa per la sua atmosfera unica e la vista panoramica sulle colline. Questa offerta include alloggio in un'affascinante casa nel borgo antico. Esplora i vicoli, scopri l'arte locale e gustati una cena panoramica. Un'esperienza autentica in un borgo incantevole.",
-      "price": 950,
-      "price_per_adult": 950,
-      "price_per_child": 700,
+      "price": 750,
+      "price_per_adult": 750,
+      "price_per_child": 620,
       "image": "https://www.borghistorici.it/wp-content/uploads/2019/12/apricale-med.jpg",
       "image_two": "https://i0.wp.com/rivieradeibambini.it/wp-content/uploads/2014/02/apricale-liguria-le-meraviglie-riviera-dei-bambini-1.jpg?fit=1920%2C1280&ssl=1",
       "image_three": "https://cdn-italiani-media.italiani.it/site-italiani/2019/01/cammina-con-me-ad-apricale-1024x683.jpg",
@@ -1683,7 +1908,11 @@
         "bedrooms": 2,
         "bathrooms": 1,
         "guests": 4,
-        "amenities": ["Atmosfera Medievale", "Vista Panoramica", "Cucina Ligure"],
+        "amenities": [
+          "Atmosfera Medievale",
+          "Vista Panoramica",
+          "Cucina Ligure"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/32/c0/dcdc724c16797b279f07123e3098324eb7247741a39e9d487248ae70560a.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/7a/29/b6cd179fc623999961a76ba0ed938e7fd8f3328ea97b54aaf4eacd6db97e.jpeg",
@@ -1704,7 +1933,11 @@
       ],
       "host": "Marta",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2024-05-15", "2024-05-22", "2024-05-29"],
+      "dates_available": [
+        "2024-05-15",
+        "2024-05-22",
+        "2024-05-29"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -1730,9 +1963,9 @@
       "date": "2024-06-12",
       "tax": 15,
       "description": "Esplora la splendida località sul lago di Riva del Garda, situata nel Trentino-Alto Adige. Questo viaggio ti condurrà a scoprire il lago di Garda, fare escursioni nelle montagne circostanti e gustare la cucina tirolese. Riva del Garda è famosa per il suo paesaggio mozzafiato e le attività all'aria aperta. Questa offerta include alloggio in un accogliente chalet con vista sul lago. Goditi il lago, escursioni panoramiche e prelibatezze locali. Un'esperienza nella natura e nella cultura.",
-      "price": 1300,
-      "price_per_adult": 1300,
-      "price_per_child": 900,
+      "price": 1000,
+      "price_per_adult": 1000,
+      "price_per_child": 880,
       "image": "https://images.unsplash.com/photo-1564038073681-6bb5e4737351?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_two": "https://images.unsplash.com/photo-1475066903363-e46730503e66?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_three": "https://images.unsplash.com/photo-1474925025275-ebf7877d1e2e?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -1743,7 +1976,11 @@
         "bedrooms": 3,
         "bathrooms": 2,
         "guests": 6,
-        "amenities": ["Vista sul Lago", "Cucina Attrezzata", "Escursioni Vicine"],
+        "amenities": [
+          "Vista sul Lago",
+          "Cucina Attrezzata",
+          "Escursioni Vicine"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/b5/3d/70eb1ce714d7281d664bc79dd56c5c87820154e415741f495592f85e84f2.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/ce/4e/c4d9477305ff1d4d24d82950bff47d5584ce4c5c1ec1225c27ef1d3beb03.jpeg",
@@ -1764,7 +2001,11 @@
       ],
       "host": "Roberto",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2024-06-12", "2024-06-19", "2024-06-26"],
+      "dates_available": [
+        "2024-06-12",
+        "2024-06-19",
+        "2024-06-26"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -1790,9 +2031,9 @@
       "date": "2024-08-15",
       "tax": 10,
       "description": "Scopri la bellezza di Udine, una città situata nella regione del Friuli-Venezia Giulia. Questo viaggio ti condurrà a esplorare il centro storico, assaporare la cucina friulana e scoprire l'eredità culturale della città. Udine è famosa per la sua piazza unica, Piazza della Libertà, circondata da eleganti palazzi. Questa offerta include un soggiorno in un accogliente bed & breakfast nel cuore della città. Prova i piatti locali, visita musei e percorri le vie storiche di Udine. Un'esperienza autentica nel nord-est dell'Italia.",
-      "price": 950,
-      "price_per_adult": 950,
-      "price_per_child": 700,
+      "price": 450,
+      "price_per_adult": 450,
+      "price_per_child": 400,
       "image": "https://images.unsplash.com/photo-1571942347102-23df2d0ee3a2?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image_two": "https://artbonus.gov.it/assets/components/artbonus/images/copertine/5161/a8005987ff43b11f82ce1a6ab5d075e1d1997cc7.jpg",
       "image_three": "https://images.unsplash.com/photo-1605789427921-13ec0a6cb956?auto=format&fit=crop&q=80&w=2074&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -1803,7 +2044,11 @@
         "bedrooms": 2,
         "bathrooms": 2,
         "guests": 4,
-        "amenities": ["WiFi Gratuito", "Colazione Inclusa", "Posizione Centrale"],
+        "amenities": [
+          "WiFi Gratuito",
+          "Colazione Inclusa",
+          "Posizione Centrale"
+        ],
         "images": [
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/05/98/9e449db0673adcefc1332ee4756011756f433f36af0cb77b87577e36a32d.jpeg",
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/3e/46/ec275d26abf3a064d04332e04de2edf7d73e09d120686bc08bc0b536e6ea.jpeg",
@@ -1824,7 +2069,11 @@
       ],
       "host": "Giuliana",
       "cancellation_policy": "Moderata",
-      "dates_available": ["2024-08-15", "2024-08-22", "2024-08-29"],
+      "dates_available": [
+        "2024-08-15",
+        "2024-08-22",
+        "2024-08-29"
+      ],
       "instant_bookable": true,
       "special_prices": [
         {
@@ -1855,7 +2104,12 @@
       "bedrooms": 2,
       "bathrooms": 2,
       "guests": 4,
-      "amenities": ["WiFi gratuito", "Piscina", "Palestra", "Ristorante"],
+      "amenities": [
+        "WiFi gratuito",
+        "Piscina",
+        "Palestra",
+        "Ristorante"
+      ],
       "reviews": [
         {
           "user": "Guest123",
@@ -1894,8 +2148,8 @@
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/df/b9/ec7e9b1e00672daa6d553354b5dd4dcb3839abbca4f410f792692c2afa7c.jpeg",
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/bb/b8/2e6f5e284fe51dcdabb95dc84ab9468c06ef5f0ef92eb36bfb2dc333813f.jpeg"
       ],
-      "price_per_adult": 230,
-      "price_per_child": 110,
+      "price_per_adult": 170,
+      "price_per_child": 130,
       "tax": 9,
       "host": "Emilia"
     },
@@ -1911,7 +2165,12 @@
       "bedrooms": 4,
       "bathrooms": 3,
       "guests": 8,
-      "amenities": ["Piscina privata", "Giardino lussureggiante", "Cucina gourmet", "Jacuzzi"],
+      "amenities": [
+        "Piscina privata",
+        "Giardino lussureggiante",
+        "Cucina gourmet",
+        "Jacuzzi"
+      ],
       "reviews": [
         {
           "user": "FamilySmith",
@@ -1939,24 +2198,29 @@
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/b6/25/9aeb4543f8b799d3eb0e4e4c3041e37315c33f219eddf3c99b038b068a83.jpeg",
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/6a/22/4da5200e87b9ea22911dff6c1497a144ae55c9a89bcedc04057af3e32bcb.jpeg"
       ],
-      "price_per_adult": 350,
-      "price_per_child": 150,
+      "price_per_adult": 150,
+      "price_per_child": 120,
       "tax": 8,
       "host": "Isabella"
     },
     {
       "id": 3,
-      "name": "Resort Splendido",
+      "name": "Hotel Splendido",
       "city": "Ravello",
       "region": "Campania",
-      "description": " Il Resort Splendido è un paradiso sulla terra situato a Ravello. Questo resort offre 1 camera da letto e 1 bagno per 2 ospiti, con amenità come una spiaggia privata, un ristorante gourmet, una spa di lusso ed escursioni guidate. Perfetto per una luna di miele o una vacanza romantica.",
-      "type": "Resort",
+      "description": " L'Hotel Resort Splendido è un paradiso sulla terra situato a Ravello. Questo hotel offre 1 camera da letto e 1 bagno per 2 ospiti, con amenità come una spiaggia privata, un ristorante gourmet, una spa di lusso ed escursioni guidate. Perfetto per una luna di miele o una vacanza romantica.",
+      "type": "Hotel",
       "offer": "stay",
       "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/6c/9e/7562ecfbca97d2ef737e3747507df83a301118d2ec9bdcfb7ec049c24620.jpeg",
       "bedrooms": 1,
       "bathrooms": 1,
       "guests": 2,
-      "amenities": ["Spiaggia privata", "Ristorante gourmet", "Spa di lusso", "Escursioni guidate"],
+      "amenities": [
+        "Spiaggia privata",
+        "Ristorante gourmet",
+        "Spa di lusso",
+        "Escursioni guidate"
+      ],
       "reviews": [
         {
           "user": "CoppiaFelice",
@@ -1979,8 +2243,8 @@
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/8b/9d/21da246d1db7c88b845feb89b5fbac8bf90df835cb54942d53f7e558ab30.jpeg",
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/db/a5/253845a617a679363eaeda5fbfbee30b6404967f8846f21bbc036b81604b.jpeg"
       ],
-      "price_per_adult": 400,
-      "price_per_child": 200,
+      "price_per_adult": 170,
+      "price_per_child": 90,
       "tax": 10,
       "host": "Giuseppe"
     },
@@ -1996,7 +2260,12 @@
       "bedrooms": 3,
       "bathrooms": 2,
       "guests": 6,
-      "amenities": ["Accesso diretto alla spiaggia", "Piscina", "Ristorante vista mare", "Centro benessere"],
+      "amenities": [
+        "Accesso diretto alla spiaggia",
+        "Piscina",
+        "Ristorante vista mare",
+        "Centro benessere"
+      ],
       "reviews": [
         {
           "user": "ViaggiatoreSardegna",
@@ -2019,8 +2288,8 @@
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/85/c8/67c38fca5c0e24235e0ce03b9e0daf001dbaa962b52d29026507a8f6e7cf.jpeg",
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/a0/ab/7f28845248108b5308b55b8f2519bc70992b21e1c1a91c9916770134e6eb.jpeg"
       ],
-      "price_per_adult": 300,
-      "price_per_child": 150,
+      "price_per_adult": 125,
+      "price_per_child": 70,
       "tax": 6,
       "host": "Luca"
     },
@@ -2036,7 +2305,12 @@
       "bedrooms": 2,
       "bathrooms": 2,
       "guests": 4,
-      "amenities": ["Patio privato", "Cucina moderna", "Giardino tranquillo", "Parcheggio gratuito"],
+      "amenities": [
+        "Patio privato",
+        "Cucina moderna",
+        "Giardino tranquillo",
+        "Parcheggio gratuito"
+      ],
       "reviews": [
         {
           "user": "FamigliaPuglia",
@@ -2059,8 +2333,8 @@
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/b5/78/e8ea735398254932b1d97fffbfddb4ed8fb69676186e2396426160e7cc62.jpeg",
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/5b/80/58200bdeaf004223b744b98a7b924b426da7da23b05bcdf1266561d38303.jpeg"
       ],
-      "price_per_adult": 220,
-      "price_per_child": 110,
+      "price_per_adult": 200,
+      "price_per_child": 150,
       "tax": 8,
       "host": "Maria"
     },
@@ -2076,7 +2350,12 @@
       "bedrooms": 4,
       "bathrooms": 3,
       "guests": 8,
-      "amenities": ["Piscina privata", "Terrazza panoramica", "Cucina moderna", "Giardino lussureggiante"],
+      "amenities": [
+        "Piscina privata",
+        "Terrazza panoramica",
+        "Cucina moderna",
+        "Giardino lussureggiante"
+      ],
       "reviews": [
         {
           "user": "FamigliaCalabria",
@@ -2099,8 +2378,8 @@
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/d5/97/e65de26c1477d113cf5476a75895c89dbd1980ae20587cc8c067b9360f41.jpeg",
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/00/08/aef8ca4120e29319e827c51392e4ae30a624506a96d4d49ea98872cdd5ca.jpeg"
       ],
-      "price_per_adult": 320,
-      "price_per_child": 160,
+      "price_per_adult": 90,
+      "price_per_child": 75,
       "tax": 12,
       "host": "Roberto"
     },
@@ -2116,7 +2395,12 @@
       "bedrooms": 1,
       "bathrooms": 1,
       "guests": 2,
-      "amenities": ["Spiaggia privata", "Ristorante gourmet", "Piscina con vista sul mare", "Spa di lusso"],
+      "amenities": [
+        "Spiaggia privata",
+        "Ristorante gourmet",
+        "Piscina con vista sul mare",
+        "Spa di lusso"
+      ],
       "reviews": [
         {
           "user": "CoppiaFeliceEmilia",
@@ -2139,8 +2423,8 @@
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/2e/44/a6b85d66bd621bf9b1fbc1e24719fc15fca92ad1823b55e19b377b9ce0fb.jpeg",
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/04/5d/809ec6d3a30cb0274907244931542f63b877fef5f9646e6ae8bbe8862c5e.jpeg"
       ],
-      "price_per_adult": 380,
-      "price_per_child": 190,
+      "price_per_adult": 135,
+      "price_per_child": 110,
       "tax": 9,
       "host": "Lorenzo"
     },
@@ -2184,8 +2468,8 @@
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/94/21/520ccc46788ca183c8c95e00236962510e72f43e50fff3fe23b249780c33.jpeg",
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/c9/ae/289a1da4dfb884b91e5ee4f7b5c59a240feadd0bcd7ac1b70a7ed1b2921e.jpeg"
       ],
-      "price_per_adult": 350,
-      "price_per_child": 175,
+      "price_per_adult": 150,
+      "price_per_child": 75,
       "tax": 7,
       "host": "Giovanni"
     },
@@ -2201,7 +2485,12 @@
       "bedrooms": 2,
       "bathrooms": 1,
       "guests": 2,
-      "amenities": ["Casa tradizionale", "Giardino privato", "Cucina tipica pugliese", "Parcheggio gratuito"],
+      "amenities": [
+        "Casa tradizionale",
+        "Giardino privato",
+        "Cucina tipica pugliese",
+        "Parcheggio gratuito"
+      ],
       "reviews": [
         {
           "user": "CoppiaPuglia",
@@ -2241,7 +2530,12 @@
       "bedrooms": 3,
       "bathrooms": 2,
       "guests": 6,
-      "amenities": ["Piscina privata", "Giardino lussureggiante", "Cucina moderna", "Jacuzzi"],
+      "amenities": [
+        "Piscina privata",
+        "Giardino lussureggiante",
+        "Cucina moderna",
+        "Jacuzzi"
+      ],
       "reviews": [
         {
           "user": "FamigliaEmilia",
@@ -2264,44 +2558,419 @@
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/23/6a/3a60f7688b5658bfc1ddcfa5465c1c1165cb91fe8c1bae8b5875d990d84e.jpeg",
         "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/8d/b1/be2282c8cee7ad92ea04032cab09f1c70b32396316fcc1693de6a478423b.jpeg"
       ],
-      "price_per_adult": 280,
+      "price_per_adult": 200,
       "price_per_child": 140,
       "tax": 9,
       "host": "Roberto"
+    },
+    {
+      "id": 11,
+      "name": "Paradiso Marino",
+      "city": "Rimini",
+      "region": "Emilia-Romagna",
+      "description": "Paradiso Marino è una villa fronte mare a Rimini, che offre 4 camere da letto, 3 bagni e alloggi per 8 ospiti. Godetevi l'accesso diretto alla spiaggia, un ampio terrazzo e una vista mozzafiato sull'oceano. Questa è la destinazione perfetta per una rilassante vacanza in spiaggia.",
+      "type": "Villa",
+      "offer": "stay",
+      "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/26/8d/c6a9ab5abff2902c7cdcbe2d67ac3e1bc77728f205a2f34ae76500aebd2f.jpeg",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "guests": 8,
+      "amenities": [
+        "Fronte mare",
+        "Ampio Terrazzo",
+        "Vista sull'Oceano"
+      ],
+      "reviews": [
+        {
+          "user": "BeachLover21",
+          "rating": 4.9,
+          "comment": "Un vero paradiso fronte mare!"
+        },
+        {
+          "user": "VacanzeFamiglia",
+          "rating": 4.8,
+          "comment": "Tutto perfetto, vacanza indimenticabile."
+        },
+        {
+          "user": "Anna",
+          "rating": 4.7,
+          "comment": "Una vista mozzafiato e relax totale."
+        }
+      ],
+      "images": [
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/22/bf/06805ef373a9de34a47ed92a992f4cf3fd4ffc099b1c85323b38d8e7f513.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/7c/f2/4783ac3adf78cbdcd7558dc15da096480b8660b409b364e38d406bfbf910.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/26/8d/c6a9ab5abff2902c7cdcbe2d67ac3e1bc77728f205a2f34ae76500aebd2f.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/40/b9/a98624d2566a407b9037426e7f0cc860db2826d48b4a001ebc95da6512ee.jpeg"
+      ],
+      "price_per_adult": 130,
+      "price_per_child": 105,
+      "tax": 10,
+      "host": "Roberto"
+    },
+    {
+      "id": 12,
+      "name": "Vista Montagna",
+      "city": "Cortina d'Ampezzo",
+      "region": "Veneto",
+      "description": "Vista Montagna è una casa di montagna situata a Cortina d'Ampezzo, nel cuore delle Dolomiti. Questa accogliente casa offre 2 camere da letto, 2 bagni e spazio per 4 ospiti. Potrete esplorare sentieri panoramici, fare escursioni e godere di una vista mozzafiato sulle montagne.",
+      "type": "Casa",
+      "offer": "stay",
+      "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/f3/dd/a8ef447d0959078d797516a11e315d5992a92d799a05599d424ca03b990b.jpeg",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "guests": 4,
+      "amenities": [
+        "Vista sulle Montagne",
+        "Sentieri Panoramici",
+        "Escursioni"
+      ],
+      "reviews": [
+        {
+          "user": "AmantiDolomiti",
+          "rating": 4.9,
+          "comment": "Un paradiso per gli amanti della montagna."
+        },
+        {
+          "user": "Escursionisti123",
+          "rating": 4.8,
+          "comment": "Escursioni indimenticabili!"
+        },
+        {
+          "user": "Giulia",
+          "rating": 4.7,
+          "comment": "Relax e tranquillità in montagna."
+        }
+      ],
+      "images": [
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/9f/88/ef2a5198b8317796c71e1c08644385567b28d16e1d34d9d3f47f57db42f8.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/02/7c/9af5055f3952f2d9f1f24553aa4b6a801c92156303c4177de5c575a936dc.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/20/91/a56d025a2179cd39302ca620602a2a58bf40c991ad9438a85353183421aa.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/96/85/837ca08f370f2b079a0197fc7f633265b9d2a996f2d0cf760363fa3dca78.jpeg"
+      ],
+      "price_per_adult": 150,
+      "price_per_child": 85,
+      "tax": 8,
+      "host": "Roberto"
+    },
+    {
+      "id": 13,
+      "name": "Seaside Villa",
+      "city": "Portofino",
+      "region": "Liguria",
+      "description": "Seaside Villa è una lussuosa proprietà fronte mare nella pittoresca cittadina di Portofino. Questa villa offre 4 camere da letto, 3 bagni e può ospitare 8 persone. Godetevi la vista mozzafiato sul mare, l'accesso diretto alla spiaggia e la piscina privata. Con una cucina ben attrezzata e arredi eleganti, questa villa è l'ambiente perfetto per una fuga al mare.",
+      "type": "Villa",
+      "offer": "stay",
+      "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/da/34/4b369153541d25ecc7730eb84227cf1df990eedb8411f3e3b7926cf0ed78.jpeg",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "guests": 8,
+      "amenities": [
+        "Beachfront",
+        "Private Pool",
+        "Well-equipped Kitchen",
+        "Sea Views"
+      ],
+      "reviews": [
+        {
+          "user": "BeachLover",
+          "rating": 4.9,
+          "comment": "Paradise by the sea."
+        },
+        {
+          "user": "SunsetWatcher",
+          "rating": 4.8,
+          "comment": "Spectacular sunsets every evening."
+        },
+        {
+          "user": "David",
+          "rating": 4.7,
+          "comment": "A dream vacation spot."
+        }
+      ],
+      "images": [
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/62/50/d0d6fe8bdc1ac953c8091dce6aad13baa5eca8c865e00758bbe12585e367.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/79/87/b5c25d5c2f269a048cafd0e91d4a4e312f66a330cc2b9b35de02be8fbd7c.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/8e/86/c4c6d85da62bf83fa88af16305e82bacd1b9e48edb180f8a04e4d41ddd25.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/a2/c1/76dc9c9ad061abcac70728b64fdaf60b40c51cee6b483c7a305d7f504d3f.jpeg"
+      ],
+      "price_per_adult": 200,
+      "price_per_child": 145,
+      "tax": 10,
+      "host": "Alessia"
+    },
+    {
+      "id": 14,
+      "name": "Chalet Montano",
+      "city": "Livigno",
+      "region": "Lombardia",
+      "description": "Il Chalet Montano è un'accogliente chalet di montagna situato a Livigno, nelle Alpi lombarde. Questo chalet offre 2 camere da letto, 2 bagni e spazio per 4 ospiti. Potrete esplorare piste da sci, fare snowboard e godere di una vista spettacolare sulle montagne.",
+      "type": "Chalet",
+      "offer": "stay",
+      "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/31/f2/e283ae49e7b357543ffe516e975ec1391880fc428feacbb1ca543ea03184.jpeg",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "guests": 4,
+      "amenities": [
+        "Piste da Sci",
+        "Snowboard",
+        "Vista sulle Montagne"
+      ],
+      "reviews": [
+        {
+          "user": "SciatoriPro",
+          "rating": 4.9,
+          "comment": "Un chalet perfetto per gli amanti dello sci."
+        },
+        {
+          "user": "MontagneInnevate",
+          "rating": 4.8,
+          "comment": "Sciate indimenticabili e paesaggi mozzafiato."
+        },
+        {
+          "user": "Francesca",
+          "rating": 4.7,
+          "comment": "Un soggiorno da favola nelle Alpi lombarde."
+        }
+      ],
+      "images": [
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/c3/94/fadba9dc607ef632f7dbd7386920375bee44c7d2c31890df80174d60fab5.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/82/71/a9fea9f856aac41cb955558d1d9e5d4934a5c7d35f4746c1584e9a708831.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/c1/d3/c6ec761a0d6fd3b20b3e19b831108e2bb5a06b0b3910a1ec10d7e98e76f3.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/ac/9f/329a0930c1c21fbb2061359896b8e1a13a923a664565bbc8620e5a0fd732.jpeg"
+      ],
+      "price_per_adult": 180,
+      "price_per_child": 120,
+      "tax": 8,
+      "host": "Elena"
+    },
+    {
+      "id": 15,
+      "name": "Casa Relax",
+      "city": "Siena",
+      "region": "Toscana",
+      "description": "La Casa Relax Toscana è una graziosa casa di campagna situata vicino a Siena, in Toscana. Questa casa offre 3 camere da letto, 2 bagni e spazio per 6 ospiti. Potrete godere di un ampio giardino, una piscina privata e una vista pittoresca sulle colline toscane. È la scelta perfetta per una vacanza rilassante in Toscana.",
+      "type": "Casa",
+      "offer": "stay",
+      "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/19/48/6aaeb1fcd7dd715a1aaa57b15c2d97064040c4373175aa03225bb481a852.jpeg",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "guests": 6,
+      "amenities": [
+        "Ampio Giardino",
+        "Piscina Privata",
+        "Vista sulle Colline"
+      ],
+      "reviews": [
+        {
+          "user": "Amanti della Toscana",
+          "rating": 4.8,
+          "comment": "Una casa di campagna con un autentico fascino toscano."
+        },
+        {
+          "user": "RelaxTraLeColline",
+          "rating": 4.7,
+          "comment": "Un'oasi di tranquillità nelle colline toscane."
+        },
+        {
+          "user": "Giovanni",
+          "rating": 4.6,
+          "comment": "Un soggiorno perfetto in Toscana."
+        }
+      ],
+      "images": [
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/21/7b/fa51df629206b38b0488560fb37f0ea1181d54231b406e1ca94d56ddae7a.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/11/e6/887c8f5d254ab71dff6aa56c56813d46be29daaa7b03dab6610477c86e0b.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/97/c7/c5dc376edfb44383161907a16828c4a255cda8b7c5ae5d798f2c5e61a03d.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/15/e0/a06d81c14b84db4fcd4c0118f1d0f9c9e6ba320a1afe402d0d43f6bd3d99.jpeg"
+      ],
+      "price_per_adult": 220,
+      "price_per_child": 160,
+      "tax": 9,
+      "host": "Marta"
+    },
+    {
+      "id": 16,
+      "name": "Villa Marchetti",
+      "city": "Como",
+      "region": "Lombardia",
+      "description": "La Villa Marchetti è una lussuosa villa situata sulle sponde del Lago di Como, in Lombardia. Questa villa offre 4 camere da letto, 3 bagni e spazio per 8 ospiti. Potrete ammirare una vista mozzafiato sul lago, rilassarvi in una piscina privata e esplorare i pittoreschi villaggi del lago.",
+      "type": "Villa",
+      "offer": "stay",
+      "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/ce/f7/6002efcdd7a57ef4e5ac3854bc3550fb2730f403f4e2e9beb6e4d333bfc1.jpeg",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "guests": 8,
+      "amenities": [
+        "Vista sul Lago",
+        "Piscina Privata",
+        "Esplorazione dei Villaggi"
+      ],
+      "reviews": [
+        {
+          "user": "Amanti dei Laghi",
+          "rating": 4.9,
+          "comment": "Una villa di lusso con vista sul Lago di Como."
+        },
+        {
+          "user": "VacanzaSulLago",
+          "rating": 4.8,
+          "comment": "Tutto ciò che si può desiderare per una vacanza sul lago."
+        },
+        {
+          "user": "Lorenzo",
+          "rating": 4.7,
+          "comment": "Un sogno che si è avverato sul Lago di Como."
+        }
+      ],
+      "images": [
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/b4/b7/f2b3fd09d25bb71885e918255025b635da3db3a32edd221e4244036cc21d.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/ce/f7/6002efcdd7a57ef4e5ac3854bc3550fb2730f403f4e2e9beb6e4d333bfc1.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/67/b0/4b9265bc7affa3e6a83dc8b1f516d720f3a421f8244aba1838f3ef922c81.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/8c/bf/4de70bb14a9fcd9d6ee0aea19881b943aba422518495368c849304837363.jpeg"
+      ],
+      "price_per_adult": 200,
+      "price_per_child": 100,
+      "tax": 10,
+      "host": "Carlo"
+    },
+    {
+      "id": 17,
+      "name": "Trullo Siciliano",
+      "city": "Modica",
+      "region": "Sicilia",
+      "description": "Il Trullo Siciliano è una casa tradizionale situata a Modica, in Sicilia. Questa casa offre 2 camere da letto, 1 bagno e spazio per 4 ospiti. Potrete immergervi nell'atmosfera unica di un trullo siciliano, esplorare il barocco di Modica e gustare prelibatezze locali.",
+      "type": "Casa",
+      "offer": "stay",
+      "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/32/e4/4eee1d5d2902dd2b3109cbb7ca233e1f59b8081e62b9dca6c2aa8537f3c4.jpeg",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "guests": 4,
+      "amenities": [
+        "Atmosfera Unica",
+        "Esplorazione del Barocco",
+        "Cucina Siciliana"
+      ],
+      "reviews": [
+        {
+          "user": "Amanti della Cultura",
+          "rating": 4.8,
+          "comment": "Un'esperienza autentica nel cuore di Modica."
+        },
+        {
+          "user": "ViaggiatoriSiciliani",
+          "rating": 4.7,
+          "comment": "Un soggiorno indimenticabile in un trullo siciliano."
+        },
+        {
+          "user": "Francesca",
+          "rating": 4.6,
+          "comment": "Un tuffo nella cultura siciliana."
+        }
+      ],
+      "images": [
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/03/5a/04531daf7467af855a7155ce384e2e12709cd171951db225ec2aaaf92f4b.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/31/36/4ae683c1314135da67a49c0719db35ee4dd5f87f664c4669dd2864a336e4.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/8b/fc/2a54a72c4d76d1391a6750005f06e288ce8a8aa1eef89a7dcc5b907a7f67.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/e9/b2/93cb9e753bb5a73ffad29a6bd7b2c468cfb1ed512085d8a31d06a60fa2fc.jpeg"
+      ],
+      "price_per_adult": 80,
+      "price_per_child": 45,
+      "tax": 8,
+      "host": "Giuseppe"
+    },
+    {
+      "id": 18,
+      "name": "Villa Lago",
+      "city": "Bolsena",
+      "region": "Lazio",
+      "description": "La Villa Sul Lago di Bolsena è una lussuosa villa sulle rive del Lago di Bolsena. Questa villa offre 4 camere da letto, 3 bagni e spazio per 8 ospiti. Potrete godere di una vista panoramica sul lago, un accesso diretto alla spiaggia privata e una piscina all'aperto. È la destinazione perfetta per una vacanza rilassante sul lago.",
+      "type": "Villa",
+      "offer": "stay",
+      "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/6c/3b/2ee0ffa27b7b9012d8c255abcd508d7a715027a2f7a2b8500b9e89323856.jpeg",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "guests": 8,
+      "amenities": [
+        "Vista Lago",
+        "Accesso Spiaggia Privata",
+        "Piscina All'Aperto"
+      ],
+      "reviews": [
+        {
+          "user": "Amanti dei Laghi",
+          "rating": 4.9,
+          "comment": "Un'esperienza lussuosa sul Lago di Bolsena."
+        },
+        {
+          "user": "Vacanza Relax",
+          "rating": 4.8,
+          "comment": "Tutto ciò di cui avevamo bisogno per una vacanza sul lago."
+        },
+        {
+          "user": "Marco",
+          "rating": 4.7,
+          "comment": "Relax totale in una cornice spettacolare."
+        }
+      ],
+      "images": [
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/cb/04/371b04d7f2661ed7776091dc0a1227581f6960e90a927892545cd0dc5e7e.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/21/8c/aae3f553da9e87848c65be93e4203ce98e27060920f94d1614ac81ecebe6.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/fd/4b/aecbdc58673ac38aa7ff9a8d064d3a0432c78b06e4189d2ed0193a136ebd.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/79/0b/77089c360abd23ba18d87d4376cc118aeec4e4064efee3c4db57aac9b341.jpeg"
+      ],
+      "price_per_adult": 140,
+      "price_per_child": 120,
+      "tax": 9,
+      "host": "Roberto"
+    },
+    {
+      "id": 19,
+      "name": "Casa a Tivoli",
+      "city": "Tivoli",
+      "region": "Lazio",
+      "description": "La Casa Vacanze a Tivoli è un'accogliente residenza nel cuore di Tivoli, famosa per le sue ville storiche. Questa casa offre 2 camere da letto, 1 bagno e spazio per 4 ospiti. Potrete esplorare Villa d'Este, Villa Adriana e gustare la cucina locale nei ristoranti circostanti.",
+      "type": "Casa",
+      "offer": "stay",
+      "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/4e/78/6f08cc7138d14b81428acdc83bd60a7d0409904e616dca23aafc4d622e13.jpeg",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "guests": 4,
+      "amenities": [
+        "Villa d'Este",
+        "Villa Adriana",
+        "Ristoranti Locali"
+      ],
+      "reviews": [
+        {
+          "user": "Amanti di Tivoli",
+          "rating": 4.6,
+          "comment": "Un'esperienza autentica nel cuore di Tivoli."
+        },
+        {
+          "user": "Viaggiatori del Passato",
+          "rating": 4.5,
+          "comment": "Una base perfetta per esplorare le ville storiche."
+        },
+        {
+          "user": "Anna",
+          "rating": 4.4,
+          "comment": "Gusti e tradizioni locali in un'unica vacanza."
+        }
+      ],
+      "images": [
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/4e/78/6f08cc7138d14b81428acdc83bd60a7d0409904e616dca23aafc4d622e13.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/bf/58/e44b97be9becaca5dcbbccf77ca91700e5bb15c831008897a5cc92dbef72.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/73/95/de77fd57f34163298686d9431eacb008578b12921c6b2ee2722286178167.jpeg",
+        "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/4f/3b/a6fbb932e9d5c3dab0925ea43fb73b999e30961b5353c9f654cc5d6a3237.jpeg"
+      ],
+      "price_per_adult": 130,
+      "price_per_child": 80,
+      "tax": 7,
+      "host": "Lucia"
     }
   ],
   "register": [
-    {
-      "username": "Giovanni787",
-      "email": "giovgio90@gmail.com",
-      "password": "sdfsdfsdf",
-      "id": "JbVzrS2"
-    },
-    {
-      "username": "Michele",
-      "email": "michele@gmail.com",
-      "password": "12121212",
-      "id": "8pTUtWx"
-    },
-    {
-      "username": "Francesco123",
-      "email": "fran23@gmail.com",
-      "password": "34567",
-      "id": "oSWpLp3"
-    },
-    {
-      "username": "Marco324",
-      "email": "marco234@gmail.com",
-      "password": "123456",
-      "id": "9PR8X0v"
-    },
-    {
-      "username": "Mariagrazia",
-      "email": "mary91@gmail.com",
-      "password": "123456",
-      "gender": "female",
-      "id": "JblPjTv"
-    },
     {
       "username": "Giovanni12",
       "email": "giovanni12@gmail.com",
@@ -2317,32 +2986,11 @@
       "id": "3oa3M0q"
     },
     {
-      "username": "Gabriele",
-      "email": "gabriele@gmail.com",
-      "password": "23456",
-      "gender": "male",
-      "id": "fP6lexD"
-    },
-    {
       "username": "Giovanni123",
-      "email": "giovi@gmail.com",
-      "password": "121212",
-      "gender": "male",
-      "id": "xzmnIXH"
-    },
-    {
-      "username": "Giacomo23",
-      "email": "giacomo23@gmail.com",
+      "email": "giovanni123@gmail.com",
       "password": "123456",
       "gender": "male",
-      "id": "qpETdSa"
-    },
-    {
-      "username": "Giovanni45",
-      "email": "giovanni45@gmail.com",
-      "password": "12345",
-      "gender": "male",
-      "id": "6hFCZfG"
+      "id": "jNpHzoX"
     }
   ]
 }

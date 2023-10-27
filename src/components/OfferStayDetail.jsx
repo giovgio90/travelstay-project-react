@@ -1,39 +1,34 @@
 import "swiper/css";
 import "swiper/css/effect-creative";
 
-import { Button, Card, Col, Container, Modal, Row, Form, Navbar, Nav, NavDropdown, Badge } from "react-bootstrap";
+import { Button, Card, Col, Container, Modal, Row, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import Logo from "../assets/Logo.png";
 import FooterTravelStay from "./FooterTravelStay";
 import ReservationFormTwo from "./ReservationFormTwo";
-import { useState } from "react";
-import { setUser, updateStayOffer } from "../redux/actions";
-import {
-  AirplaneFill,
-  ArrowLeftCircleFill,
-  Cart3,
-  EnvelopeFill,
-  HouseFill,
-  PersonCircle,
-  PersonFill,
-  StarFill,
-} from "react-bootstrap-icons";
+import { useEffect, useState } from "react";
+import { updateStayOffer } from "../redux/actions";
+import { ArrowLeftCircleFill, StarFill } from "react-bootstrap-icons";
 import { Scrollbar } from "react-scrollbars-custom";
 import Rating from "react-rating";
 
 import { EffectCreative, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaBath, FaBed, FaCog, FaHotel, FaMapMarkerAlt, FaUser } from "react-icons/fa";
+import LoadingFour from "./LoadingFour";
+import HeaderTwo from "./HeaderTwo";
 
 const OfferStayDetail = () => {
   const { stayId } = useParams();
   const travelData = useSelector((state) => state.stay.data);
   const username = useSelector((state) => state.user.username);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const handleLogout = () => {
-    dispatch(setUser(null));
-  };
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
 
   const isAdmin = username && username.email === "giovanni@gmail.com";
 
@@ -42,17 +37,6 @@ const OfferStayDetail = () => {
   const [editedOffer, setEditedOffer] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [newReview, setNewReview] = useState([{ user: username.username, rating: "", comment: "" }]);
-  const cartItemsTravel = useSelector((state) => state.cart.cartItemsTravel);
-  const cartItemsStay = useSelector((state) => state.cart.cartItemsStay);
-  const cartItemsRoom = useSelector((state) => state.cart.cartItemsRoom);
-  const cartItemsTour = useSelector((state) => state.cart.cartItemsTour);
-  const cartItemsDeluxe = useSelector((state) => state.cart.cartItemsDeluxe);
-  const cartItemCount =
-    cartItemsTravel.length +
-    cartItemsStay.length +
-    cartItemsRoom.length +
-    cartItemsTour.length +
-    cartItemsDeluxe.length;
 
   const offer = travelData.find((offer) => offer.id.toString() === stayId);
 
@@ -117,92 +101,7 @@ const OfferStayDetail = () => {
 
   return (
     <>
-      <Navbar expand="lg" className="navbar-head py-0">
-        <Container>
-          <Navbar.Brand className="d-flex align-center ms-2 me-0 ps-auto">
-            <img src={Logo} width="80" height="80" alt="Logo" />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="text-sm-center mx-lg-auto">
-              <Nav.Link className="pe-lg-5 d-flex" href="/">
-                <div className="d-flex align-items-center">
-                  <HouseFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
-                  <h4 className="nav-link  mb-0">HOME</h4>
-                </div>
-              </Nav.Link>
-              <Nav.Link className=" pe-lg-5 d-flex" href="/about-us">
-                <div className="d-flex align-items-center">
-                  <PersonFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
-                  <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
-                </div>
-              </Nav.Link>
-
-              <Nav.Link className="pe-lg-5 " href="/explore">
-                <div className="nav-link d-flex align-items-center">
-                  <AirplaneFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
-                  <h4 className="nav-link  mb-0">OFFERTE</h4>
-                </div>
-              </Nav.Link>
-              <Nav.Link className=" pe-lg-5 " href="/contact">
-                <div className=" nav-link d-flex align-items-center">
-                  <EnvelopeFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
-                  <h4 className="nav-link  mb-0"> CONTATTI</h4>
-                </div>
-              </Nav.Link>
-            </Nav>
-            <Form className="d-flex justify-content-center">
-              <Row>
-                <Col>
-                  {username ? (
-                    <>
-                      <div className="nav-link d-flex align-items-center">
-                        <Nav.Link href="/cart">
-                          <div className="d-flex align-items-center position-relative">
-                            <Cart3 className="nav-link me-4" style={{ fontSize: "1.7rem" }} />
-                            {cartItemCount > 0 && (
-                              <Badge
-                                pill
-                                bg="danger"
-                                className="cart-badge position-absolute top-0 end-0 translate-middle"
-                              >
-                                {cartItemCount}
-                              </Badge>
-                            )}
-                          </div>
-                        </Nav.Link>
-                        <PersonCircle className="me-2 text-white" style={{ fontSize: "1.5rem" }} />
-                        <NavDropdown title={username.username} id="basic-nav-dropdown">
-                          <NavDropdown.Item as={Link} to="/preferiti">
-                            Preferiti
-                          </NavDropdown.Item>
-                          <NavDropdown.Divider />
-                          <Link to="/login" onClick={handleLogout}>
-                            <Button variant="transparent" className="text-black align-self-center pt-0">
-                              Logout
-                            </Button>
-                          </Link>
-                        </NavDropdown>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="d-flex">
-                        <Nav.Link className="pe-lg-4 text-white" href="/login">
-                          ACCEDI
-                        </Nav.Link>
-                        <Nav.Link className="pe-lg-4 text-white" href="/register">
-                          REGISTRATI
-                        </Nav.Link>
-                      </div>
-                    </>
-                  )}
-                </Col>
-              </Row>
-            </Form>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+      <HeaderTwo />
       <div style={{ marginTop: "110px" }}>
         <Container>
           <Link to="/explore">
@@ -486,43 +385,46 @@ const OfferStayDetail = () => {
                   {offer.name}
                 </h4>
               </div>
-              <div className="ms-auto">
+              <div className="ms-auto" style={{ fontFamily: "Montserrat, sans-serif" }}>
                 {isAdmin && (
                   <Button className="button-search" onClick={handleEditOffer}>
-                    Modifica
+                    Modifica offerta
                   </Button>
                 )}
               </div>
             </div>
             <Col xs={12} md={12} lg={7} className="mt-4">
-              <Swiper
-                grabCursor={true}
-                effect={"creative"}
-                navigation={true}
-                creativeEffect={{
-                  prev: {
-                    shadow: true,
-                    translate: [0, 0, -400],
-                  },
-                  next: {
-                    translate: ["100%", 0, 0],
-                  },
-                }}
-                modules={[Navigation, EffectCreative]}
-                className="mySwiper"
-              >
-                {offer.images.map((image, index) => (
-                  <SwiperSlide key={index} style={{ maxHeight: "410px" }}>
-                    <img
-                      src={image}
-                      alt={offer.name}
-                      className="rounded-3"
-                      style={{ maxHeight: "380px", width: "100%" }}
-                    />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-
+              {isLoading ? (
+                <LoadingFour />
+              ) : (
+                <Swiper
+                  grabCursor={true}
+                  effect={"creative"}
+                  navigation={true}
+                  creativeEffect={{
+                    prev: {
+                      shadow: true,
+                      translate: [0, 0, -400],
+                    },
+                    next: {
+                      translate: ["100%", 0, 0],
+                    },
+                  }}
+                  modules={[Navigation, EffectCreative]}
+                  className="mySwiper"
+                >
+                  {offer.images.map((image, index) => (
+                    <SwiperSlide key={index} style={{ maxHeight: "410px" }}>
+                      <img
+                        src={image}
+                        alt={offer.name}
+                        className="rounded-3"
+                        style={{ maxHeight: "380px", width: "100%" }}
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              )}
               <div className="me-auto">
                 <Modal show={showModal} size="lg" onHide={handleCloseModal}>
                   <Modal.Header closeButton style={{ backgroundColor: "#203040" }}>

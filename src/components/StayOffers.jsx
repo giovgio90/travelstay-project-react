@@ -7,6 +7,7 @@ import { addStayOffer, deleteStayOffer, fetchstayOffers, toggleFavoriteTwo, upda
 import LoadingCard from "./LoadingCard";
 import { Scrollbar } from "react-scrollbars-custom";
 import { BookmarkStar, BookmarkStarFill } from "react-bootstrap-icons";
+import { FaEuroSign, FaHouseUser, FaMapMarkerAlt, FaUser } from "react-icons/fa";
 
 const StayOffers = ({ selectedBudget }) => {
   const dispatch = useDispatch();
@@ -348,7 +349,7 @@ const StayOffers = ({ selectedBudget }) => {
               {loading ? (
                 <LoadingCard />
               ) : (
-                <Card className="offer-card mb-4 border-0">
+                <Card className="offer-card mb-4 border-0" style={{ fontFamily: "Montserrat, sans-serif" }}>
                   <div style={{ position: "relative" }}>
                     <Link to={`/stay-offer/${offer.id}`} key={id} className="text-center">
                       <Card.Img
@@ -374,70 +375,98 @@ const StayOffers = ({ selectedBudget }) => {
                   </div>
 
                   <Card.Body className="pb-2">
-                    <div className="d-flex">
-                      <Card.Title style={{ fontSize: "1.2rem" }}>{offer.name}</Card.Title>
-                      {isAdmin && (
-                        <Button
-                          variant="primary"
-                          size="sm"
-                          className="ms-auto button-search"
-                          onClick={() => {
-                            setEditedOffer(offer);
-                            setIsModalOpen(true);
-                          }}
-                        >
-                          Modifica
-                        </Button>
-                      )}
+                    <div className="d-flex align-items-center mb-2">
+                      <div>
+                        <Card.Title className="mb-0" style={{ fontSize: "1.2rem", fontWeight: "600" }}>
+                          {offer.name}
+                        </Card.Title>
+                      </div>
+                      <div className="ms-auto">
+                        {isAdmin && (
+                          <Button
+                            variant="primary"
+                            size="sm"
+                            className="ms-auto button-search"
+                            onClick={() => {
+                              setEditedOffer(offer);
+                              setIsModalOpen(true);
+                            }}
+                          >
+                            Modifica
+                          </Button>
+                        )}
+                      </div>
                     </div>
-                    <Card.Text>
-                      <strong style={{ fontWeight: "500" }}>Località:</strong>
-                      <span
-                        className="text-white px-2 mx-2 rounded-2"
-                        style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
-                      >
-                        {offer.city}
-                      </span>
-                    </Card.Text>
-                    <Card.Text>
-                      <strong style={{ fontWeight: "500" }}>Host:</strong>
-                      <span
-                        className="text-white px-2 mx-2 rounded-2"
-                        style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
-                      >
-                        {offer.host}
-                      </span>
-                    </Card.Text>
-                    <Card.Text>
-                      <strong style={{ fontWeight: "500" }}>Tipo struttura:</strong>
-                      <span
-                        className="text-white px-2 mx-2 rounded-2"
-                        style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
-                      >
-                        {offer.type}
-                      </span>
-                    </Card.Text>
-
-                    <Card.Text className="pt-auto mb-0">
-                      <strong style={{ fontWeight: "500" }}>Prezzo:</strong>
-                      <span
-                        className="text-white px-2 mx-2 rounded-2"
-                        style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
-                      >
-                        {offer.price_per_adult},00 €
-                      </span>
-                      <span className="ps-0">adulti</span>
-                    </Card.Text>
-                    <Card.Text>
-                      <strong style={{ fontWeight: "500" }}>Prezzo:</strong>
-                      <span
-                        className="text-white px-2 mx-2 rounded-2"
-                        style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
-                      >
-                        {offer.price_per_child},00 €
-                      </span>
-                      <span className="ps-0">bambini</span>
-                    </Card.Text>
+                    <div className="d-flex align-items-center mb-1">
+                      <div>
+                        <FaMapMarkerAlt className="pb-1" />
+                      </div>
+                      <Card.Text>
+                        <strong style={{ fontWeight: "500" }}>Località:</strong>
+                        <span
+                          className="text-white px-2 mx-2 rounded-2"
+                          style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
+                        >
+                          {offer.city}
+                        </span>
+                      </Card.Text>
+                    </div>
+                    <div className="d-flex align-items-center mb-1">
+                      <div>
+                        <FaUser className="pb-1" />
+                      </div>
+                      <Card.Text>
+                        <strong style={{ fontWeight: "500" }}>Host:</strong>
+                        <span
+                          className="text-white px-2 mx-2 rounded-2"
+                          style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
+                        >
+                          {offer.host}
+                        </span>
+                      </Card.Text>
+                    </div>
+                    <div className="d-flex align-items-center mb-1">
+                      <div>
+                        <FaHouseUser className="pb-1" />
+                      </div>
+                      <Card.Text>
+                        <strong style={{ fontWeight: "500" }}>Tipo struttura:</strong>
+                        <span
+                          className="text-white px-2 mx-2 rounded-2"
+                          style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
+                        >
+                          {offer.type}
+                        </span>
+                      </Card.Text>
+                    </div>
+                    <div className="d-flex align-items-center mb-1">
+                      <div>
+                        <FaEuroSign className="pb-1" />
+                      </div>
+                      <Card.Text className="pt-auto mb-0">
+                        <strong style={{ fontWeight: "500" }}>Adulto:</strong>
+                        <span
+                          className="text-white px-2 mx-2 rounded-2"
+                          style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
+                        >
+                          {offer.price_per_adult},00 €
+                        </span>
+                      </Card.Text>
+                    </div>
+                    <div className="d-flex align-items-center mb-1">
+                      <div>
+                        <FaEuroSign className="pb-1" />
+                      </div>
+                      <Card.Text>
+                        <strong style={{ fontWeight: "500" }}>Bambino:</strong>
+                        <span
+                          className="text-white px-2 mx-2 rounded-2"
+                          style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
+                        >
+                          {offer.price_per_child},00 €
+                        </span>
+                      </Card.Text>
+                    </div>
                   </Card.Body>
                   <div className="text-center">
                     <Link to={`/stay-offer/${offer.id}`} key={id} className="text-center">
@@ -445,7 +474,7 @@ const StayOffers = ({ selectedBudget }) => {
                         variant="trasparent"
                         className="button-discover mx-auto pt-0 pb-2 w-50"
                         style={{
-                          fontWeight: "500",
+                          fontWeight: "600",
                           color: "#203040",
                         }}
                       >
@@ -468,7 +497,7 @@ const StayOffers = ({ selectedBudget }) => {
             </Col>
           ))
         ) : (
-          <p style={{ height: "60vh" }}>Nessun risultato trovato</p>
+          <p style={{ height: "60vh", fontFamily: "MOntserrat, sans-serif" }}>Nessun risultato trovato</p>
         )}
       </Row>
       {filteredOffers.length > 8 && (
@@ -477,12 +506,13 @@ const StayOffers = ({ selectedBudget }) => {
             variant="transparent"
             className="mx-auto pt-0 pb-2"
             style={{
-              fontWeight: "500",
+              fontWeight: "600",
               color: "#203040",
+              fontFamily: "Montserrat, sans-serif",
             }}
             onClick={handleShowMoreClick}
           >
-            Visualizza Altro
+            Visualizza altro
           </Button>
         </div>
       )}

@@ -1,30 +1,22 @@
-import { useState } from "react";
-import Logo from "../assets/Logo.png";
-import { Badge, Button, Card, Col, Container, Form, Modal, Nav, NavDropdown, Navbar, Row } from "react-bootstrap";
-import {
-  AirplaneFill,
-  ArrowLeftCircleFill,
-  Cart3,
-  ClockFill,
-  EnvelopeFill,
-  HouseFill,
-  PersonCircle,
-  PersonFill,
-  PinMapFill,
-  StarFill,
-} from "react-bootstrap-icons";
+import { useEffect, useState } from "react";
+
+import { Button, Card, Col, Container, Form, Modal, Row } from "react-bootstrap";
+import { ArrowLeftCircleFill, ClockFill, StarFill } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
-import { addReviewFour, setUser, updateDeluxe } from "../redux/actions";
+import { addReviewFour, updateDeluxe } from "../redux/actions";
 import { Scrollbar } from "react-scrollbars-custom";
 
 import FooterTravelStay from "./FooterTravelStay";
 import Rating from "react-rating";
 
 import ReservationFormFive from "./ReservationFive";
-import { FaCog, FaTimes, FaUser } from "react-icons/fa";
+import { FaCog } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative, Navigation } from "swiper/modules";
+
+import LoadingFour from "./LoadingFour";
+import HeaderTwo from "./HeaderTwo";
 
 const DeluxeOfferDetail = () => {
   const { deluxeId } = useParams();
@@ -32,10 +24,14 @@ const DeluxeOfferDetail = () => {
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const username = useSelector((state) => state.user.username);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const handleLogout = () => {
-    dispatch(setUser(null));
-  };
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, []);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editedOffer, setEditedOffer] = useState(null);
 
@@ -60,17 +56,6 @@ const DeluxeOfferDetail = () => {
   };
 
   const [newReview, setNewReview] = useState([{ user: username.username, rating: "", comment: "" }]);
-  const cartItemsTravel = useSelector((state) => state.cart.cartItemsTravel);
-  const cartItemsStay = useSelector((state) => state.cart.cartItemsStay);
-  const cartItemsRoom = useSelector((state) => state.cart.cartItemsRoom);
-  const cartItemsTour = useSelector((state) => state.cart.cartItemsTour);
-  const cartItemsDeluxe = useSelector((state) => state.cart.cartItemsDeluxe);
-  const cartItemCount =
-    cartItemsTravel.length +
-    cartItemsStay.length +
-    cartItemsRoom.length +
-    cartItemsTour.length +
-    cartItemsDeluxe.length;
 
   const isAdmin = username && username.email === "giovanni@gmail.com";
 
@@ -88,92 +73,7 @@ const DeluxeOfferDetail = () => {
 
   return (
     <>
-      <Navbar expand="lg" className="navbar-head py-0">
-        <Container>
-          <Navbar.Brand className="d-flex align-center ms-2 me-0 ps-auto">
-            <img src={Logo} width="80" height="80" alt="Logo" />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="text-sm-center mx-lg-auto">
-              <Nav.Link className="pe-lg-5 d-flex" href="/">
-                <div className="d-flex align-items-center">
-                  <HouseFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
-                  <h4 className="nav-link  mb-0">HOME</h4>
-                </div>
-              </Nav.Link>
-              <Nav.Link className=" pe-lg-5 d-flex" href="/about-us">
-                <div className="d-flex align-items-center">
-                  <PersonFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
-                  <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
-                </div>
-              </Nav.Link>
-
-              <Nav.Link className="pe-lg-5 " href="/explore">
-                <div className="nav-link d-flex align-items-center">
-                  <AirplaneFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
-                  <h4 className="nav-link  mb-0">OFFERTE</h4>
-                </div>
-              </Nav.Link>
-              <Nav.Link className=" pe-lg-5 " href="/contact">
-                <div className=" nav-link d-flex align-items-center">
-                  <EnvelopeFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
-                  <h4 className="nav-link  mb-0"> CONTATTI</h4>
-                </div>
-              </Nav.Link>
-            </Nav>
-            <Form className="d-flex justify-content-center">
-              <Row>
-                <Col>
-                  {username ? (
-                    <>
-                      <div className="nav-link d-flex align-items-center">
-                        <Nav.Link href="/cart">
-                          <div className="d-flex align-items-center position-relative">
-                            <Cart3 className="nav-link me-4" style={{ fontSize: "1.7rem" }} />
-                            {cartItemCount > 0 && (
-                              <Badge
-                                pill
-                                bg="danger"
-                                className="cart-badge position-absolute top-0 end-0 translate-middle"
-                              >
-                                {cartItemCount}
-                              </Badge>
-                            )}
-                          </div>
-                        </Nav.Link>
-                        <PersonCircle className="me-2 text-white" style={{ fontSize: "1.5rem" }} />
-                        <NavDropdown title={username.username} id="basic-nav-dropdown">
-                          <NavDropdown.Item as={Link} to="/preferiti">
-                            Preferiti
-                          </NavDropdown.Item>
-                          <NavDropdown.Divider />
-                          <Link to="/login" onClick={handleLogout}>
-                            <Button variant="transparent" className="text-black align-self-center pt-0">
-                              Logout
-                            </Button>
-                          </Link>
-                        </NavDropdown>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="d-flex">
-                        <Nav.Link className="pe-lg-4 text-white" href="/login">
-                          ACCEDI
-                        </Nav.Link>
-                        <Nav.Link className="pe-lg-4 text-white" href="/register">
-                          REGISTRATI
-                        </Nav.Link>
-                      </div>
-                    </>
-                  )}
-                </Col>
-              </Row>
-            </Form>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+      <HeaderTwo />
       <div style={{ marginTop: "110px" }}>
         <Container>
           <Link to="/">
@@ -315,6 +215,78 @@ const DeluxeOfferDetail = () => {
                         }}
                       />
                     </Form.Group>
+                    <Form.Group className="mb-2">
+                      <Form.Label
+                        style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: "0.9rem",
+                          color: "#203040",
+                          fontWeight: "bolder",
+                        }}
+                        className="mb-0"
+                      >
+                        Immagine 1 (URL)
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={editedOffer.image}
+                        onChange={(e) => setEditedOffer({ ...editedOffer, image_one: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group className="mb-2">
+                      <Form.Label
+                        style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: "0.9rem",
+                          color: "#203040",
+                          fontWeight: "bolder",
+                        }}
+                        className="mb-0"
+                      >
+                        Immagine 2 (URL)
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={editedOffer.images[0]}
+                        onChange={(e) => setEditedOffer({ ...editedOffer, image_one: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group className="mb-2">
+                      <Form.Label
+                        style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: "0.9rem",
+                          color: "#203040",
+                          fontWeight: "bolder",
+                        }}
+                        className="mb-0"
+                      >
+                        Immagine 3 (URL)
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={editedOffer.images[1]}
+                        onChange={(e) => setEditedOffer({ ...editedOffer, image_two: e.target.value })}
+                      />
+                    </Form.Group>
+                    <Form.Group className="mb-2">
+                      <Form.Label
+                        style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: "0.9rem",
+                          color: "#203040",
+                          fontWeight: "bolder",
+                        }}
+                        className="mb-0"
+                      >
+                        Immagine 4 (URL)
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={editedOffer.images[2]}
+                        onChange={(e) => setEditedOffer({ ...editedOffer, image_three: e.target.value })}
+                      />
+                    </Form.Group>
                   </Form>
                 </Scrollbar>
               </Modal.Body>
@@ -338,10 +310,10 @@ const DeluxeOfferDetail = () => {
                 {deluxe.name}
               </h4>
             </div>
-            <div className="ms-auto ">
+            <div className="ms-auto " style={{ fontFamily: "Montserrat, sans-serif" }}>
               {isAdmin && (
                 <Button className="button-search" onClick={handleEditOffer}>
-                  Modifica
+                  Modifica offerta
                 </Button>
               )}
             </div>
@@ -449,34 +421,38 @@ const DeluxeOfferDetail = () => {
                   </Button>
                 </Modal.Footer>
               </Modal>
-              <Swiper
-                grabCursor={true}
-                effect={"creative"}
-                navigation={true}
-                creativeEffect={{
-                  prev: {
-                    shadow: true,
-                    translate: [0, 0, -400],
-                  },
-                  next: {
-                    translate: ["100%", 0, 0],
-                  },
-                }}
-                modules={[Navigation, EffectCreative]}
-                className="mySwiper mb-4"
-                style={{ width: "100%", height: "400px" }}
-              >
-                {deluxe.images.map((image, index) => (
-                  <SwiperSlide key={index} style={{ display: "flex", justifyContent: "center" }}>
-                    <img
-                      src={image}
-                      alt={deluxe.name}
-                      className="rounded-3"
-                      style={{ width: "100%", height: "100%" }}
-                    />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+              {isLoading ? (
+                <LoadingFour />
+              ) : (
+                <Swiper
+                  grabCursor={true}
+                  effect={"creative"}
+                  navigation={true}
+                  creativeEffect={{
+                    prev: {
+                      shadow: true,
+                      translate: [0, 0, -400],
+                    },
+                    next: {
+                      translate: ["100%", 0, 0],
+                    },
+                  }}
+                  modules={[Navigation, EffectCreative]}
+                  className="mySwiper mb-4"
+                  style={{ width: "100%", height: "400px" }}
+                >
+                  {deluxe.images.map((image, index) => (
+                    <SwiperSlide key={index} style={{ display: "flex", justifyContent: "center" }}>
+                      <img
+                        src={image}
+                        alt={deluxe.name}
+                        className="rounded-3"
+                        style={{ width: "100%", height: "100%" }}
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              )}
               <Card className="mb-2">
                 <Card.Body>
                   <Row>

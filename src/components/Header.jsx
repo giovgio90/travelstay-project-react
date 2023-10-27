@@ -1,4 +1,4 @@
-import { Badge, Button, Col, Container, Form, Nav, NavDropdown, Navbar, Row } from "react-bootstrap";
+import { Badge, Col, Container, Form, Nav, NavDropdown, Navbar, Row } from "react-bootstrap";
 import Logo from "../assets/Logo.png";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -62,21 +62,23 @@ const Header = () => {
     <>
       <div className="box-scrolls pt-1">
         <Container>
-          <Row>
-            <div className="d-flex  px-0" style={{ backgroundColor: "#203040" }}>
-              <Col x6={5} md={4} lg={3} className="text-end">
-                <Container className="static-text pe-3">
-                  <h6>Da non perdere:</h6>{" "}
+          <Row style={{ fontFamily: "Montserrat, sans-serif" }}>
+            <div className="d-flex px-0" style={{ backgroundColor: "#203040" }}>
+              <Col xs={6} md={4} lg={3} className="text-center text-lg-end">
+                <Container className="static-text ">
+                  <h6 style={{ fontWeight: "600" }}>Da non perdere:</h6>{" "}
                 </Container>
               </Col>
-              <Col xs={7} md={8} lg={9} className="align-self-center ">
-                <div className="scrolling-text-container d-flex ">
+              <Col xs={6} md={8} lg={9} className="align-self-center ">
+                <div className="scrolling-text-container d-flex">
                   {randomOffers.map((offer, id) => (
-                    <div key={id} className="scrolling-text ">
+                    <div key={id} className={`scrolling-text ${id > 0 ? "d-none d-md-block" : ""}`}>
                       <Link to={`/explore/${offer.id}`} className="text-decoration-none text-white">
-                        <h6 className="mb-1 pe-5 pe-sm-0 pe-md-0">
+                        <h6 className="mb-1 me-md-5 me-lg-4">
                           {offer.destination} - {offer.duration} -{" "}
-                          <span className="bg-danger text-white px-1 rounded-3">{offer.price}€</span>
+                          <span className="bg-danger text-white px-1 rounded-3" style={{ fontWeight: "600" }}>
+                            {offer.price},00 €
+                          </span>
                         </h6>
                       </Link>
                     </div>
@@ -96,26 +98,26 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="fullscreen-navbar-collapse">
             <Nav className="justify-content-center mx-lg-auto">
-              <Nav.Link className="link-hover pe-lg-5 d-flex" href="/">
+              <Nav.Link className="link-hover pe-lg-4 d-flex" href="/">
                 <div className="d-flex align-items-center justify-content-center">
                   <HouseFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
                   <h4 className="nav-link  mb-0">HOME</h4>
                 </div>
               </Nav.Link>
-              <Nav.Link className=" pe-lg-5 d-flex" href="/about-us">
+              <Nav.Link className=" pe-lg-4 d-flex" href="/about-us">
                 <div className="d-flex align-items-center">
                   <PersonFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
                   <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
                 </div>
               </Nav.Link>
 
-              <Nav.Link className="pe-lg-5 " href="/explore">
+              <Nav.Link className="pe-lg-4 " href="/explore">
                 <div className="nav-link d-flex align-items-center">
                   <AirplaneFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
                   <h4 className="nav-link  mb-0">OFFERTE</h4>
                 </div>
               </Nav.Link>
-              <Nav.Link className=" pe-lg-5 " href="/contact">
+              <Nav.Link className=" pe-lg-4 " href="/contact">
                 <div className=" nav-link d-flex align-items-center">
                   <EnvelopeFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
                   <h4 className="nav-link  mb-0"> CONTATTI</h4>
@@ -139,17 +141,23 @@ const Header = () => {
                     <div className="nav-link d-flex align-items-center">
                       <PersonCircle className="nav-link me-2 text-white" style={{ fontSize: "1.5rem" }} />
                       <NavDropdown title={username.username} id="basic-nav-dropdown">
-                        <Link to="/preferiti">
-                          <Button variant="transparent" className="text-black align-self-center pt-0">
-                            Preferiti
-                          </Button>
-                        </Link>
+                        <NavDropdown.Item
+                          as={Link}
+                          to="/preferiti"
+                          style={{ fontFamily: "Montserrat, sans-serif", fontWeight: "600" }}
+                        >
+                          Preferiti
+                        </NavDropdown.Item>
+
                         <NavDropdown.Divider />
-                        <Link to="/login" onClick={handleLogout}>
-                          <Button variant="transparent" className="text-black align-self-center pt-0">
-                            Logout
-                          </Button>
-                        </Link>
+                        <NavDropdown.Item
+                          as={Link}
+                          onClick={handleLogout}
+                          to="/login"
+                          style={{ fontFamily: "Montserrat, sans-serif", fontWeight: "600" }}
+                        >
+                          Logout
+                        </NavDropdown.Item>
                       </NavDropdown>
                     </div>
                   </div>

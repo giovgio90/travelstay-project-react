@@ -16,9 +16,9 @@ const IntroSection = () => {
         <Col xs={10} md={10} lg={10}>
           <div className="intro text-center mt-3">
             <h3 style={{ fontFamily: "Impact, san-serif", color: "#203040" }}>I MIGLIORI TOUR</h3>
-            <p className="text-secondary fst-italic pt-2">
-              Ecco i migliori tour per soddisfare la vostra sete di avventura! Con la nostra selezione di tour
-              eccellenti, potrete esplorare i luoghi più straordinari d'Italia.
+            <p className="text-secondary fst-italic pt-2" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              I migliori tour per soddisfare la vostra sete di avventura! Con la nostra selezione di tour eccellenti,
+              potrete esplorare i luoghi più straordinari d'Italia.
             </p>
           </div>
         </Col>

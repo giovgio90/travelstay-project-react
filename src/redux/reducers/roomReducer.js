@@ -14,6 +14,7 @@ const initialState = [
     destination: "Bologna",
     region: "Emilia-Romagna",
     offer: "room",
+    tax: 13,
     price: 49,
     images: [
       "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/d8/32/45a3b4fc2357f57f5b94e68db303aa7fc492c28dd612b6683b0b1791789a.jpeg",
@@ -49,6 +50,7 @@ const initialState = [
     destination: "Roma",
     region: "Lazio",
     offer: "room",
+    tax: 10,
     price: 59,
     images: [
       "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/89/0f/5d2d413ed33926c3c8d09b8d11cf3ad3a09f4d94df4fa23be8fcc30da61d.jpeg",
@@ -89,6 +91,7 @@ const initialState = [
     destination: "Milano",
     region: "Lombardia",
     offer: "room",
+    tax: 9,
     price: 99,
     images: [
       "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/cb/52/c84477d95ec703a1d1d8eea2107643881939caf04fb81cb26ee8a3e312e8.jpeg",
@@ -129,6 +132,7 @@ const initialState = [
     destination: "Firenze",
     region: "Toscana",
     offer: "room",
+    tax: 11,
     price: 69,
     images: [
       "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/94/13/32f93b4b33b85fa5c0daeb6c03e340486b8053288aacbf9cfd8133273da7.jpeg",
@@ -164,6 +168,7 @@ const initialState = [
     destination: "Napoli",
     region: "Campania",
     offer: "room",
+    tax: 16,
     price: 79,
     images: [
       "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/hotelier-images/10/88/1782009311e195d43b16a62890fec5841d643b541e0f9b240941d19ce4a2.jpeg",
@@ -199,6 +204,7 @@ const initialState = [
     destination: "Venezia",
     region: "Veneto",
     offer: "room",
+    tax: 14,
     price: 129,
     images: [
       "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partner-images/fe/67/eb44266f1a12981ea424e48d1f4efb8571e35d751abffb64ff1f020de98e.jpeg",
@@ -239,6 +245,7 @@ const initialState = [
     destination: "Verona",
     region: "Veneto",
     offer: "room",
+    tax: 10,
     price: 39,
     images: [
       "https://a0.muscache.com/im/pictures/a1c61297-ff05-4a87-aa80-2d55cfa56fd6.jpg?im_w=1200",
@@ -278,6 +285,7 @@ const initialState = [
     name: "Con vista sulle montagne",
     destination: "Torino",
     region: "Piemonte",
+    tax: 12,
     offer: "room",
     price: 59,
     images: [

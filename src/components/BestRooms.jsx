@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateRoom } from "../redux/actions";
 import LoadingCard from "./LoadingCard";
 import { Link } from "react-router-dom";
-import RoomDetail from "./RoomDetail";
 
 const BestRooms = () => {
   const roomData = useSelector((state) => state.rooms);
@@ -75,14 +74,12 @@ const BestRooms = () => {
                       </Button>
                     )}
                     <Card.Text className="ms-auto" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "1.5rem" }}>
-                      {room.price},00 €/notte
+                      {room.price},00 € /notte
                     </Card.Text>
                   </div>
                   <div className="mt-auto">
                     <Link to={`/room-detail/${room.id}`}>
-                      <Button className="button-search" style={{ fontWeight: "500" }}>
-                        {room.name}
-                      </Button>
+                      <Button className="button-search">{room.name}</Button>
                     </Link>
                   </div>
                 </Card.ImgOverlay>

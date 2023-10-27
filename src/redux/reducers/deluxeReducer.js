@@ -5,6 +5,7 @@ const initialState = [
     destination: "Amalfi",
     region: "Campania",
     type_offer: "deluxe",
+    tax: 20,
     description:
       "Vivi un'esperienza di puro lusso sulla rinomata Costiera Amalfitana per 5 indimenticabili giorni. Il tuo soggiorno sarà all'interno di un raffinato hotel a 5 stelle, dove sarai coccolato con servizi impeccabili e comfort senza pari. Concediti una cena gastronomica preparata dai migliori chef, dove ogni piatto è un'opera d'arte culinaria. Inoltre, avrai l'opportunità di esplorare questa affascinante regione costiera in un tour privato su misura. Ammira i pittoreschi paesaggi costieri, scopri villaggi incantevoli e vivi l'autentico spirito della Costiera Amalfitana. Questa vacanza rappresenta il connubio perfetto tra relax, lusso e scoperta, creando ricordi indimenticabili lungo uno dei tratti di costa più belli al mondo.",
     price: 2000,

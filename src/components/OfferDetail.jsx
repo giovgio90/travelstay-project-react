@@ -6,57 +6,40 @@ import "swiper/css/scrollbar";
 import { FaBath, FaBed, FaBuilding, FaCog, FaMapMarkerAlt, FaUser } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import Logo from "../assets/Logo.png";
-import { Badge, Button, Card, Col, Container, Form, Modal, Nav, NavDropdown, Navbar, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Modal, Row } from "react-bootstrap";
 import FooterTravelStay from "./FooterTravelStay";
-import {
-  AirplaneFill,
-  ArrowLeftCircleFill,
-  Calendar,
-  Calendar2CheckFill,
-  Cart3,
-  ClockFill,
-  EnvelopeFill,
-  HouseFill,
-  PersonCircle,
-  PersonFill,
-  StarFill,
-} from "react-bootstrap-icons";
+import { ArrowLeftCircleFill, Calendar2CheckFill, ClockFill, StarFill } from "react-bootstrap-icons";
 import ReservationForm from "./ReservationForm";
-import { useState } from "react";
-import { setUser, updateTravelOffer } from "../redux/actions";
+import { useEffect, useState } from "react";
+import { updateTravelOffer } from "../redux/actions";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCoverflow, EffectCreative, Navigation, Pagination } from "swiper/modules";
 import { Scrollbar } from "react-scrollbars-custom";
 import Rating from "react-rating";
+import LoadingThree from "./LoadingThree";
+import LoadingFour from "./LoadingFour";
+import HeaderTwo from "./HeaderTwo";
 
 const OfferDetail = () => {
   const { id } = useParams();
   const travelData = useSelector((state) => state.travel.data);
   const username = useSelector((state) => state.user.username);
-  const handleLogout = () => {
-    dispatch(setUser(null));
-  };
 
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editedOffer, setEditedOffer] = useState(null);
-  const cartItemsTravel = useSelector((state) => state.cart.cartItemsTravel);
-  const cartItemsStay = useSelector((state) => state.cart.cartItemsStay);
-  const cartItemsRoom = useSelector((state) => state.cart.cartItemsRoom);
-  const cartItemsTour = useSelector((state) => state.cart.cartItemsTour);
-  const cartItemsDeluxe = useSelector((state) => state.cart.cartItemsDeluxe);
-  const cartItemCount =
-    cartItemsTravel.length +
-    cartItemsStay.length +
-    cartItemsRoom.length +
-    cartItemsTour.length +
-    cartItemsDeluxe.length;
+  const [isLoading, setIsLoading] = useState(true);
 
   const isAdmin = username && username.email === "giovanni@gmail.com";
 
   const offer = travelData.find((offer) => offer.id.toString() === id);
   console.log(offer);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
 
   const [showModal, setShowModal] = useState(false);
   const [newReview, setNewReview] = useState([{ user: username.username, rating: "", comment: "" }]);
@@ -132,92 +115,7 @@ const OfferDetail = () => {
 
   return (
     <>
-      <Navbar expand="lg" className="navbar-head py-0">
-        <Container>
-          <Navbar.Brand className="d-flex align-center ms-2 me-0 ps-auto">
-            <img src={Logo} width="80" height="80" alt="Logo" />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="text-sm-center mx-lg-auto">
-              <Nav.Link className="pe-lg-5 d-flex" href="/">
-                <div className="d-flex align-items-center">
-                  <HouseFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
-                  <h4 className="nav-link  mb-0">HOME</h4>
-                </div>
-              </Nav.Link>
-              <Nav.Link className=" pe-lg-5 d-flex" href="/about-us">
-                <div className="d-flex align-items-center">
-                  <PersonFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
-                  <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
-                </div>
-              </Nav.Link>
-
-              <Nav.Link className="pe-lg-5 " href="/explore">
-                <div className="nav-link d-flex align-items-center">
-                  <AirplaneFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
-                  <h4 className="nav-link  mb-0">OFFERTE</h4>
-                </div>
-              </Nav.Link>
-              <Nav.Link className=" pe-lg-5 " href="/contact">
-                <div className=" nav-link d-flex align-items-center">
-                  <EnvelopeFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
-                  <h4 className="nav-link  mb-0"> CONTATTI</h4>
-                </div>
-              </Nav.Link>
-            </Nav>
-            <Form className="d-flex justify-content-center">
-              <Row>
-                <Col>
-                  {username ? (
-                    <>
-                      <div className="nav-link d-flex align-items-center">
-                        <Nav.Link href="/cart">
-                          <div className="d-flex align-items-center position-relative">
-                            <Cart3 className="nav-link me-4" style={{ fontSize: "1.7rem" }} />
-                            {cartItemCount > 0 && (
-                              <Badge
-                                pill
-                                bg="danger"
-                                className="cart-badge position-absolute top-0 end-0 translate-middle"
-                              >
-                                {cartItemCount}
-                              </Badge>
-                            )}
-                          </div>
-                        </Nav.Link>
-                        <PersonCircle className="me-2 text-white" style={{ fontSize: "1.5rem" }} />
-                        <NavDropdown title={username.username} id="basic-nav-dropdown">
-                          <NavDropdown.Item as={Link} to="/preferiti">
-                            Preferiti
-                          </NavDropdown.Item>
-                          <NavDropdown.Divider />
-                          <Link to="/login" onClick={handleLogout}>
-                            <Button variant="transparent" className="text-black align-self-center pt-0">
-                              Logout
-                            </Button>
-                          </Link>
-                        </NavDropdown>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="d-flex">
-                        <Nav.Link className="pe-lg-4 text-white" href="/login">
-                          ACCEDI
-                        </Nav.Link>
-                        <Nav.Link className="pe-lg-4 text-white" href="/register">
-                          REGISTRATI
-                        </Nav.Link>
-                      </div>
-                    </>
-                  )}
-                </Col>
-              </Row>
-            </Form>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+      <HeaderTwo />
       <div style={{ marginTop: "110px" }}>
         <Container className="mt-3">
           <Link to="/explore">
@@ -235,88 +133,94 @@ const OfferDetail = () => {
                 {offer.destination} - {offer.region}
               </h4>
             </div>
-            <div className="ms-auto mt-4">
+            <div className="ms-auto mt-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
               {isAdmin && (
                 <Button className="button-search" onClick={handleEditOffer}>
-                  Modifica
+                  Modifica offerta
                 </Button>
               )}
             </div>
           </div>
           <Row>
-            <Col md={12} className="my-2 d-lg-none">
-              {" "}
-              <Swiper
-                effect={"creative"}
-                navigation={true}
-                creativeEffect={{
-                  prev: {
-                    shadow: true,
-                    translate: [0, 0, -400],
-                  },
-                  next: {
-                    translate: ["100%", 0, 0],
-                  },
-                }}
-                modules={[Navigation, EffectCreative]}
-                className="mySwiper"
-                style={{ width: "100%" }}
-              >
-                <SwiperSlide className="my-2 rounded-3">
-                  <img src={offer.image_two} alt={offer.destination} className="rounded-3" />
-                </SwiperSlide>
-                <SwiperSlide className="my-2 rounded-3">
-                  <img src={offer.image_three} alt={offer.destination} className="rounded-3" />
-                </SwiperSlide>
-                <SwiperSlide className="my-2 rounded-3">
-                  <img src={offer.image_four} alt={offer.destination} className="rounded-2" />
-                </SwiperSlide>
-              </Swiper>
-            </Col>
-            <Col xs={12} className="my-2 d-none d-lg-block">
-              {" "}
-              <Swiper
-                effect={"coverflow"}
-                grabCursor={true}
-                slidesPerView={3}
-                spaceBetween={12}
-                loop={true}
-                centeredSlides={true}
-                coverflowEffect={{
-                  rotate: 50,
-                  stretch: 0,
-                  depth: 100,
-                  modifier: 1,
-                  slideShadows: true,
-                }}
-                pagination={true}
-                modules={[EffectCoverflow, Pagination, Autoplay]}
-                className="mySwiper swiper my-3"
-                autoplay={{
-                  delay: 3000,
-                  disableOnInteraction: false,
-                }}
-              >
-                <SwiperSlide className="my-2 rounded-3">
-                  <img src={offer.image_two} alt={offer.destination} className="rounded-3" />
-                </SwiperSlide>
-                <SwiperSlide className="my-2 rounded-3">
-                  <img src={offer.image_three} alt={offer.destination} className="rounded-3" />
-                </SwiperSlide>
-                <SwiperSlide className="my-2 rounded-3">
-                  <img src={offer.image_four} alt={offer.destination} className="rounded-2" />
-                </SwiperSlide>
-                <SwiperSlide className="my-2 rounded-3">
-                  <img src={offer.image_two} alt={offer.destination} className="rounded-2" />
-                </SwiperSlide>
-                <SwiperSlide className="my-2 rounded-3">
-                  <img src={offer.image_three} alt={offer.destination} className="rounded-2" />
-                </SwiperSlide>
-                <SwiperSlide className="my-2 rounded-3">
-                  <img src={offer.image_four} alt={offer.destination} className="rounded-2" />
-                </SwiperSlide>
-              </Swiper>
-            </Col>
+            {isLoading ? (
+              <LoadingThree />
+            ) : (
+              <>
+                <Col md={12} className="my-2 d-lg-none">
+                  {" "}
+                  <Swiper
+                    effect={"creative"}
+                    navigation={true}
+                    creativeEffect={{
+                      prev: {
+                        shadow: true,
+                        translate: [0, 0, -400],
+                      },
+                      next: {
+                        translate: ["100%", 0, 0],
+                      },
+                    }}
+                    modules={[Navigation, EffectCreative]}
+                    className="mySwiper"
+                    style={{ width: "100%" }}
+                  >
+                    <SwiperSlide className="my-2 rounded-3">
+                      <img src={offer.image_two} alt={offer.destination} className="rounded-3" />
+                    </SwiperSlide>
+                    <SwiperSlide className="my-2 rounded-3">
+                      <img src={offer.image_three} alt={offer.destination} className="rounded-3" />
+                    </SwiperSlide>
+                    <SwiperSlide className="my-2 rounded-3">
+                      <img src={offer.image_four} alt={offer.destination} className="rounded-2" />
+                    </SwiperSlide>
+                  </Swiper>
+                </Col>
+                <Col xs={12} className="my-2 d-none d-lg-block">
+                  {" "}
+                  <Swiper
+                    effect={"coverflow"}
+                    grabCursor={true}
+                    slidesPerView={3}
+                    spaceBetween={12}
+                    loop={true}
+                    centeredSlides={true}
+                    coverflowEffect={{
+                      rotate: 50,
+                      stretch: 0,
+                      depth: 100,
+                      modifier: 1,
+                      slideShadows: true,
+                    }}
+                    pagination={true}
+                    modules={[EffectCoverflow, Pagination, Autoplay]}
+                    className="mySwiper swiper my-3"
+                    autoplay={{
+                      delay: 3000,
+                      disableOnInteraction: false,
+                    }}
+                  >
+                    <SwiperSlide className="my-2 rounded-3">
+                      <img src={offer.image_two} alt={offer.destination} className="rounded-3" />
+                    </SwiperSlide>
+                    <SwiperSlide className="my-2 rounded-3">
+                      <img src={offer.image_three} alt={offer.destination} className="rounded-3" />
+                    </SwiperSlide>
+                    <SwiperSlide className="my-2 rounded-3">
+                      <img src={offer.image_four} alt={offer.destination} className="rounded-2" />
+                    </SwiperSlide>
+                    <SwiperSlide className="my-2 rounded-3">
+                      <img src={offer.image_two} alt={offer.destination} className="rounded-2" />
+                    </SwiperSlide>
+                    <SwiperSlide className="my-2 rounded-3">
+                      <img src={offer.image_three} alt={offer.destination} className="rounded-2" />
+                    </SwiperSlide>
+                    <SwiperSlide className="my-2 rounded-3">
+                      <img src={offer.image_four} alt={offer.destination} className="rounded-2" />
+                    </SwiperSlide>
+                  </Swiper>
+                </Col>
+              </>
+            )}
           </Row>
           <Row className="position-relative">
             <div>
@@ -627,36 +531,40 @@ const OfferDetail = () => {
               <h4 style={{ fontFamily: "Montserrat, sans-serif", fontWeight: "600" }}>Dove alloggerai</h4>
 
               <Row>
-                <Col xs={12} md={12} className="d-flex mb-2">
-                  <Swiper
-                    grabCursor={true}
-                    effect={"creative"}
-                    navigation={true}
-                    creativeEffect={{
-                      prev: {
-                        shadow: true,
-                        translate: [0, 0, -400],
-                      },
-                      next: {
-                        translate: ["100%", 0, 0],
-                      },
-                    }}
-                    modules={[Navigation, EffectCreative]}
-                    className="mySwiper"
-                    style={{ width: "100%" }}
-                  >
-                    {offer.hotel.images.map((image, index) => (
-                      <SwiperSlide key={index} style={{ display: "flex", justifyContent: "center" }}>
-                        <img
-                          src={image}
-                          alt="Immagine hotel"
-                          className="rounded-3"
-                          style={{ maxHeight: "380px", width: "100%" }}
-                        />
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                </Col>
+                {isLoading ? (
+                  <LoadingFour />
+                ) : (
+                  <Col xs={12} md={12} className="d-flex mb-2">
+                    <Swiper
+                      grabCursor={true}
+                      effect={"creative"}
+                      navigation={true}
+                      creativeEffect={{
+                        prev: {
+                          shadow: true,
+                          translate: [0, 0, -400],
+                        },
+                        next: {
+                          translate: ["100%", 0, 0],
+                        },
+                      }}
+                      modules={[Navigation, EffectCreative]}
+                      className="mySwiper"
+                      style={{ width: "100%" }}
+                    >
+                      {offer.hotel.images.map((image, index) => (
+                        <SwiperSlide key={index} style={{ display: "flex", justifyContent: "center" }}>
+                          <img
+                            src={image}
+                            alt="Immagine hotel"
+                            className="rounded-3"
+                            style={{ maxHeight: "380px", width: "100%" }}
+                          />
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  </Col>
+                )}
               </Row>
               <div className="d-flex align-items-center mb-3">
                 <FaBuilding className="me-1" />{" "}

@@ -3,13 +3,11 @@ import {
   createTravelOffer,
   deleteTravelOffer,
   fetchTravelOffers,
-  setUser,
   toggleFavorite,
   updateTravelOffer,
 } from "../redux/actions";
 import { useEffect, useRef, useState } from "react";
 import {
-  Badge,
   Button,
   Card,
   Col,
@@ -19,28 +17,17 @@ import {
   FormControl,
   InputGroup,
   Modal,
-  Nav,
-  NavDropdown,
-  Navbar,
   Row,
 } from "react-bootstrap";
-import Logo from "../assets/Logo.png";
 import { Link } from "react-router-dom";
 import FooterTravelStay from "./FooterTravelStay";
 import StayOffers from "./StayOffers";
 import LoadingCard from "./LoadingCard";
 
-import {
-  AirplaneFill,
-  BookmarkStar,
-  BookmarkStarFill,
-  Cart3,
-  EnvelopeFill,
-  HouseFill,
-  PersonCircle,
-  PersonFill,
-} from "react-bootstrap-icons";
+import { BookmarkStar, BookmarkStarFill, Calendar2CheckFill, ClockFill } from "react-bootstrap-icons";
 import { Scrollbar } from "react-scrollbars-custom";
+import { FaEuroSign } from "react-icons/fa";
+import HeaderTwo from "./HeaderTwo";
 
 const OffersPage = ({ travel }) => {
   const dispatch = useDispatch();
@@ -82,17 +69,6 @@ const OffersPage = ({ travel }) => {
     reviews: [],
     host: "",
   });
-  const cartItemsTravel = useSelector((state) => state.cart.cartItemsTravel);
-  const cartItemsStay = useSelector((state) => state.cart.cartItemsStay);
-  const cartItemsRoom = useSelector((state) => state.cart.cartItemsRoom);
-  const cartItemsTour = useSelector((state) => state.cart.cartItemsTour);
-  const cartItemsDeluxe = useSelector((state) => state.cart.cartItemsDeluxe);
-  const cartItemCount =
-    cartItemsTravel.length +
-    cartItemsStay.length +
-    cartItemsRoom.length +
-    cartItemsTour.length +
-    cartItemsDeluxe.length;
 
   const dropdownRef = useRef(null);
 
@@ -103,9 +79,6 @@ const OffersPage = ({ travel }) => {
   const [tempSelectedItem, setTempSelectedItem] = useState(selectedItem);
 
   const username = useSelector((state) => state.user.username);
-  const handleLogout = () => {
-    dispatch(setUser(null));
-  };
 
   const cleanedEmail = username && username.email ? username.email.trim().toLowerCase() : "";
   const isAdmin = cleanedEmail === "giovanni@gmail.com";
@@ -180,92 +153,7 @@ const OffersPage = ({ travel }) => {
 
   return (
     <>
-      <Navbar expand="lg" className="navbar-head py-0" style={{ zIndex: "1000" }}>
-        <Container>
-          <Navbar.Brand className="d-flex align-center ms-2 me-0 ps-auto">
-            <img src={Logo} width="80" height="80" alt="Logo" />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="text-sm-center mx-lg-auto">
-              <Nav.Link className="pe-lg-5 d-flex" href="/">
-                <div className="d-flex align-items-center">
-                  <HouseFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
-                  <h4 className="nav-link  mb-0">HOME</h4>
-                </div>
-              </Nav.Link>
-              <Nav.Link className=" pe-lg-5 d-flex" href="/about-us">
-                <div className="d-flex align-items-center">
-                  <PersonFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
-                  <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
-                </div>
-              </Nav.Link>
-
-              <Nav.Link className="pe-lg-5 " href="/explore">
-                <div className="nav-link d-flex align-items-center">
-                  <AirplaneFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
-                  <h4 className="nav-link  mb-0">OFFERTE</h4>
-                </div>
-              </Nav.Link>
-              <Nav.Link className=" pe-lg-5 " href="/contact">
-                <div className=" nav-link d-flex align-items-center">
-                  <EnvelopeFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
-                  <h4 className="nav-link  mb-0"> CONTATTI</h4>
-                </div>
-              </Nav.Link>
-            </Nav>
-            <Form className="d-flex justify-content-center">
-              <Row>
-                <Col>
-                  {username ? (
-                    <>
-                      <div className="nav-link d-flex align-items-center">
-                        <Nav.Link href="/cart">
-                          <div className="d-flex align-items-center position-relative">
-                            <Cart3 className="nav-link me-4" style={{ fontSize: "1.7rem" }} />
-                            {cartItemCount > 0 && (
-                              <Badge
-                                pill
-                                bg="danger"
-                                className="cart-badge position-absolute top-0 end-0 translate-middle"
-                              >
-                                {cartItemCount}
-                              </Badge>
-                            )}
-                          </div>
-                        </Nav.Link>
-                        <PersonCircle className="me-2 text-white" style={{ fontSize: "1.5rem" }} />
-                        <NavDropdown title={username.username} id="basic-nav-dropdown">
-                          <NavDropdown.Item as={Link} to="/preferiti">
-                            Preferiti
-                          </NavDropdown.Item>
-                          <NavDropdown.Divider />
-                          <Link to="/login" onClick={handleLogout}>
-                            <Button variant="transparent" className="text-black align-self-center pt-0">
-                              Logout
-                            </Button>
-                          </Link>
-                        </NavDropdown>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="d-flex">
-                        <Nav.Link className="pe-lg-4 text-white" href="/login">
-                          ACCEDI
-                        </Nav.Link>
-                        <Nav.Link className="pe-lg-4 text-white" href="/register">
-                          REGISTRATI
-                        </Nav.Link>
-                      </div>
-                    </>
-                  )}
-                </Col>
-              </Row>
-            </Form>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+      <HeaderTwo />
       <div style={{ marginTop: "120px" }}>
         <Container>
           <div className="d-flex mb-3 align-items-center">
@@ -662,7 +550,14 @@ const OffersPage = ({ travel }) => {
                     onChange={() => setTempSelectedItem("Elemento 3")}
                   />
                 </Form>
-                <Form.Label className="mb-0 ms-2 mt-3">Imposta budget</Form.Label>
+                <div className="d-flex align-items-center justify-content-center">
+                  <div>
+                    <FaEuroSign />
+                  </div>
+                  <div>
+                    <Form.Label className="mb-0 ms-2 mt-1">Imposta budget a persona</Form.Label>
+                  </div>
+                </div>
                 <InputGroup className="mt-0 d-flex">
                   <FormControl
                     className="m-2"
@@ -702,14 +597,16 @@ const OffersPage = ({ travel }) => {
                     {loading ? (
                       <LoadingCard />
                     ) : (
-                      <Card className="offer-card mb-4 border-0">
+                      <Card className="offer-card mb-4 border-0" style={{ fontFamily: "Montserrat, sans-serif" }}>
                         <div style={{ position: "relative" }}>
-                          <Card.Img
-                            variant="top"
-                            src={offer.image}
-                            className="border-0 image-hover-scale"
-                            style={{ height: "230px", objectFit: "cover" }}
-                          />
+                          <Link to={`/explore/${offer.id}`} key={id} className="text-center">
+                            <Card.Img
+                              variant="top"
+                              src={offer.image}
+                              className="border-0 image-hover-scale"
+                              style={{ height: "230px", objectFit: "cover" }}
+                            />
+                          </Link>
                           <div
                             style={{
                               position: "absolute",
@@ -729,59 +626,86 @@ const OffersPage = ({ travel }) => {
                           </div>
                         </div>
                         <Card.Body className="pb-2">
-                          <div className="d-flex">
-                            <Card.Title style={{ fontSize: "1.2rem" }}>{offer.destination}</Card.Title>
+                          <div className="d-flex align-items-center mb-2">
+                            <div>
+                              <Card.Title className="mb-0" style={{ fontSize: "1.2rem", fontWeight: "600" }}>
+                                {offer.destination}
+                              </Card.Title>
+                            </div>
                             {isAdmin && (
-                              <Button
-                                variant="primary"
-                                size="sm"
-                                className="ms-auto button-search"
-                                onClick={() => {
-                                  setEditedOffer(offer);
-                                  setIsModalOpen(true);
-                                }}
-                              >
-                                Modifica
-                              </Button>
+                              <div className="ms-auto">
+                                <Button
+                                  variant="primary"
+                                  size="sm"
+                                  className="ms-auto button-search"
+                                  onClick={() => {
+                                    setEditedOffer(offer);
+                                    setIsModalOpen(true);
+                                  }}
+                                >
+                                  Modifica
+                                </Button>
+                              </div>
                             )}
                           </div>
-                          <Card.Text className="mb-0">
-                            <strong style={{ fontWeight: "500" }}>Data:</strong>
-                            <span
-                              className="text-white px-2 mx-2 rounded-2"
-                              style={{ fontWeight: "500", fontSize: "0,9rem", background: "#203040" }}
-                            >
-                              {offer.date.split("-").reverse().join("/")}
-                            </span>
-                          </Card.Text>
-                          <Card.Text>
-                            <strong style={{ fontWeight: "500" }}>Durata:</strong>
-                            <span
-                              className="text-white px-2 mx-2 rounded-2"
-                              style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
-                            >
-                              {offer.duration ? offer.duration.toUpperCase() : ""}
-                            </span>
-                          </Card.Text>
 
-                          <Card.Text className=" mb-0">
-                            <strong style={{ fontWeight: "500" }}>Prezzo adulto:</strong>
-                            <span
-                              className="text-white px-2 mx-2 rounded-2"
-                              style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
-                            >
-                              {offer.price},00 €
-                            </span>
-                          </Card.Text>
-                          <Card.Text>
-                            <strong style={{ fontWeight: "500" }}>Prezzo bambino:</strong>
-                            <span
-                              className="text-white px-2 mx-2 rounded-2"
-                              style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
-                            >
-                              {offer.price_per_child},00 €
-                            </span>
-                          </Card.Text>
+                          <div className="d-flex align-items-center mb-1">
+                            <div>
+                              <Calendar2CheckFill className="pb-1" />
+                            </div>
+
+                            <Card.Text className="mb-0">
+                              <strong style={{ fontWeight: "500" }}>Data:</strong>
+                              <span
+                                className="text-white px-2 mx-2 rounded-2"
+                                style={{ fontWeight: "500", fontSize: "0,9rem", background: "#203040" }}
+                              >
+                                {offer.date.split("-").reverse().join("/")}
+                              </span>
+                            </Card.Text>
+                          </div>
+                          <div className="d-flex align-items-center mb-1">
+                            <div>
+                              <ClockFill className="pb-1" />
+                            </div>
+                            <Card.Text>
+                              <strong style={{ fontWeight: "500" }}>Durata:</strong>
+                              <span
+                                className="text-white px-2 mx-2 rounded-2"
+                                style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
+                              >
+                                {offer.duration ? offer.duration.toUpperCase() : ""}
+                              </span>
+                            </Card.Text>
+                          </div>
+                          <div className="d-flex align-items-center mb-1">
+                            <div>
+                              <FaEuroSign className="pb-1" />
+                            </div>
+                            <Card.Text className=" mb-0">
+                              <strong style={{ fontWeight: "500" }}>Adulto:</strong>
+                              <span
+                                className="text-white px-2 mx-2 rounded-2"
+                                style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
+                              >
+                                {offer.price},00 €
+                              </span>
+                            </Card.Text>
+                          </div>
+                          <div className="d-flex align-items-center">
+                            <div>
+                              <FaEuroSign className="pb-1" />
+                            </div>
+                            <Card.Text>
+                              <strong style={{ fontWeight: "500" }}>Bambino:</strong>
+                              <span
+                                className="text-white px-2 mx-2 rounded-2"
+                                style={{ fontWeight: "500", fontSize: "0.9rem", background: "red" }}
+                              >
+                                {offer.price_per_child},00 €
+                              </span>
+                            </Card.Text>
+                          </div>
                         </Card.Body>
                         <div className="text-center">
                           <Link to={`/explore/${offer.id}`} key={id} className="text-center">
@@ -789,7 +713,7 @@ const OffersPage = ({ travel }) => {
                               variant="trasparent"
                               className="button-discover mx-auto pt-0 pb-2 w-50"
                               style={{
-                                fontWeight: "500",
+                                fontWeight: "600",
                                 color: "#203040",
                               }}
                             >
@@ -814,11 +738,17 @@ const OffersPage = ({ travel }) => {
                 ))}
             {(selectedItem === "Elemento 1" && selectedBudget
               ? travelData.filter((offer) => offer.price_per_adult <= selectedBudget).length === 0
-              : travelData.length === 0) && <p style={{ height: "60vh" }}>Nessun risultato trovato</p>}
+              : travelData.length === 0) && (
+              <p style={{ fontWeight: "1.8rem", fontFamily: "Montserrat, sans-serif", height: "60vh" }}>
+                Nessun risultato trovato
+              </p>
+            )}
             {(selectedItem === "Elemento 1" || selectedItem === "Elemento 3") &&
               selectedItem === "Elemento 3" &&
               selectedBudget &&
-              !travelData.some((offer) => offer.price_per_adult <= selectedBudget) && <p>Nessun risultato trovato</p>}
+              !travelData.some((offer) => offer.price_per_adult <= selectedBudget) && (
+                <p style={{ fontWeight: "1.8rem", fontFamily: "Montserrat, sans-serif" }}>Nessun risultato trovato</p>
+              )}
           </Row>
 
           {(selectedItem === "Elemento 1" || selectedItem === "Elemento 3") &&
@@ -829,12 +759,13 @@ const OffersPage = ({ travel }) => {
                   variant="transparent"
                   className="mx-auto pt-0 pb-2"
                   style={{
-                    fontWeight: "500",
+                    fontWeight: "600",
                     color: "#203040",
+                    fontFamily: "Montserrat, sans-serif",
                   }}
                   onClick={handleShowMoreClick}
                 >
-                  Visualizza Altro
+                  Visualizza altro
                 </Button>
               </div>
             )}

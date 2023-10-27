@@ -11,7 +11,7 @@ const LoadingCard = () => {
           justifyContent: "center",
           alignItems: "center",
           height: "230px",
-          backgroundColor: "#75a6ff",
+          backgroundColor: "#203040",
         }}
       >
         <Spinner animation="border" variant="light" />

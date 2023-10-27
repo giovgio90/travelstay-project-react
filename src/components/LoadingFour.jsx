@@ -1,9 +1,9 @@
 import { Card, Col, Row, Spinner } from "react-bootstrap";
 
-const LoadingTwo = () => {
+const LoadingFour = () => {
   return (
     <div className="d-flex">
-      <Card className="card-loading mb-4 mt-4 rounded-3" style={{ backgroundColor: "white", width: "330px" }}>
+      <Card className="card-loading mb-4 mt-0 rounded-3 w-100" style={{ backgroundColor: "white" }}>
         <div
           className="rounded-top-3"
           style={{
@@ -11,7 +11,8 @@ const LoadingTwo = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            height: "150px",
+
+            height: "340px",
             backgroundColor: "#203040",
           }}
         >
@@ -32,4 +33,4 @@ const LoadingTwo = () => {
   );
 };
 
-export default LoadingTwo;
+export default LoadingFour;

@@ -34,7 +34,7 @@ const SearchSection = () => {
   const formattedStartDate = startDate ? formatDate(startDate) : "";
 
   return (
-    <Form className="mb-3">
+    <Form className="mb-3" style={{ fontFamily: "Montserrat, sans-serif" }}>
       <div className="searchbar d-block  d-md-flex py-1 py-md-2 py-lg-4 mt-5">
         <Container>
           <Row className="mx-auto align-items-center">
@@ -88,7 +88,7 @@ const SearchSection = () => {
                   to={searchQuery ? `/results/${searchQuery}?budget=${budget}&startDate=${formattedStartDate}` : "#"}
                   style={{ textDecoration: "none" }}
                 >
-                  <Button className="ms-1 h-100 fs-2 py-2 px-5 button-search" type="button">
+                  <Button className="ms-1 h-100 py-2 px-5 button-search" type="button">
                     <h5 className="mb-0">Cerca</h5>
                   </Button>
                 </Link>

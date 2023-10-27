@@ -19,7 +19,7 @@ const Deluxe = () => {
               PACCHETTO COSTA AMALFITANA DELUXE
             </Card.Title>
             <Card.Text
-              className="px-2 fs-5 text-secondary"
+              className="px-2 fs-5 text-secondary fst-italic"
               style={{ fontWeight: "400", fontFamily: "Montserrat, sans-serif" }}
             >
               Esplora le meraviglie della Costa Amalfitana con il nostro pacchetto Deluxe. Un'esperienza unica di relax

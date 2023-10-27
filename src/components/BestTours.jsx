@@ -90,9 +90,7 @@ const BestTours = () => {
                   A partire da {tour.price},00 €
                 </Card.Text>
                 <Link to={`/tour-detail/${tour.id}`}>
-                  <Button className="button-search" style={{ fontWeight: "500" }}>
-                    SCOPRI DI PIÚ
-                  </Button>
+                  <Button className="button-search">SCOPRI DI PIÚ</Button>
                 </Link>
               </div>
             </Card.ImgOverlay>

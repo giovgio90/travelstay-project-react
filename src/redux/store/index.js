@@ -12,10 +12,16 @@ import searchReducer from "../reducers/searchReducer";
 import roomReducer from "../reducers/roomReducer";
 import toursReducer from "../reducers/toursReducer";
 import deluxeReducer from "../reducers/deluxeReducer";
+import { encryptTransform } from "redux-persist-transform-encrypt";
 
 const persistConfig = {
   key: "root",
   storage,
+  transforms: [
+    encryptTransform({
+      secretKey: process.env.REACT_APP_PERSIST_KEY,
+    }),
+  ],
 };
 
 const rootReducer = combineReducers({

@@ -9,9 +9,9 @@ const FooterTravelStay = () => {
       <footer className="footer-travel text-light pb-3">
         <Container className="pt-2">
           <Row>
-            <Col xs={12} md={7} className="mb-4 mb-lg-0">
-              <div className="d-flex ">
-                <div className="me-2 mb-0 mt-3 mt-md-0">
+            <Col xs={12} md={7} className=" mb-4 mb-lg-0">
+              <div className="d-flex">
+                <div className="me-5 ms-3 ms-md-0 me-md-2 mb-0 mt-3 mt-md-0 ">
                   <img src={Logo} width="130" height="130" alt="Logo" />
                 </div>
                 <div className="mt-3">

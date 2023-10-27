@@ -27,6 +27,7 @@ const PaymentModal = ({ show, onHide, total, onPaymentSuccess }) => {
 
   const handlePayment = () => {
     const errors = {};
+
     if (cardNumber.trim() === "") {
       errors.cardNumber = true;
     }
@@ -38,6 +39,22 @@ const PaymentModal = ({ show, onHide, total, onPaymentSuccess }) => {
     }
     if (cardholderName.trim() === "") {
       errors.cardholderName = true;
+    }
+
+    if (firstName.trim() === "") {
+      errors.firstName = true;
+    }
+    if (lastName.trim() === "") {
+      errors.lastName = true;
+    }
+    if (city.trim() === "") {
+      errors.city = true;
+    }
+    if (address.trim() === "") {
+      errors.address = true;
+    }
+    if (zipCode.trim() === "") {
+      errors.zipCode = true;
     }
 
     setFormErrors(errors);
@@ -67,6 +84,38 @@ const PaymentModal = ({ show, onHide, total, onPaymentSuccess }) => {
 
       html: '<a href="/explore" class="button-payment">Vai alle offerte</a>',
     });
+  };
+
+  const formatCreditCardNumber = (input) => {
+    let value = input.replace(/\D/g, "");
+
+    if (value.length > 16) {
+      value = value.slice(0, 16);
+    }
+
+    const formattedValue = value.replace(/(\d{4})(?=\d)/g, "$1 ");
+
+    return formattedValue;
+  };
+
+  const formatCVV = (input) => {
+    const value = input.replace(/\D/g, "");
+
+    return value.slice(0, 3);
+  };
+
+  const formatExpirationDate = (input) => {
+    let value = input.replace(/\D/g, "");
+
+    if (value.length > 4) {
+      value = value.slice(0, 4);
+    }
+
+    if (value.length >= 2) {
+      return `${value.slice(0, 2)}/${value.slice(2)}`;
+    }
+
+    return value;
   };
 
   return (
@@ -208,7 +257,7 @@ const PaymentModal = ({ show, onHide, total, onPaymentSuccess }) => {
               <Form.Control
                 type="text"
                 placeholder="Inserisci il numero della carta"
-                value={cardNumber}
+                value={formatCreditCardNumber(cardNumber)}
                 onChange={(e) => setCardNumber(e.target.value)}
                 className={`custom-form-control ${formErrors.cardNumber && "is-invalid"}`}
                 style={{ marginBottom: "0" }}
@@ -230,7 +279,7 @@ const PaymentModal = ({ show, onHide, total, onPaymentSuccess }) => {
               <Form.Control
                 type="text"
                 placeholder="Inserisci la data di scadenza (MM/YY)"
-                value={expirationDate}
+                value={formatExpirationDate(expirationDate)}
                 onChange={(e) => setExpirationDate(e.target.value)}
                 className={`custom-form-control ${formErrors.expirationDate && "is-invalid"}`}
                 style={{ marginBottom: "0" }}
@@ -252,7 +301,7 @@ const PaymentModal = ({ show, onHide, total, onPaymentSuccess }) => {
               <Form.Control
                 type="text"
                 placeholder="Inserisci il CVV"
-                value={cvv}
+                value={formatCVV(cvv)}
                 onChange={(e) => setCvv(e.target.value)}
                 className={`custom-form-control ${formErrors.cvv && "is-invalid"}`}
                 style={{ marginBottom: "0" }}
