@@ -1,6 +1,6 @@
 # TravelStay Project - React
 
-TravelStay is a web application built with React that allows users to explore and book travel and accommodation experiences. This project serves as a showcase of various technologies and tools, including Bootstrap, Redux, SweetAlert, JSON Server for API development, and json-server-auth for user authentication. It also utilizes Swiper Slider to create interactive and engaging presentations.
+TravelStay is a web application built with React that allows users to explore and book travel and accommodation experiences. This project serves as a showcase of various technologies and tools, including Bootstrap, Redux, SweetAlert, JSON Server for API development and json-server-auth for user authentication. It also utilizes Swiper Slider to create interactive and engaging presentations.
 
 ## Features
 
