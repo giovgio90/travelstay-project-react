@@ -31,27 +31,27 @@ const HeaderTwo = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="text-sm-center mx-lg-auto">
-            <Nav.Link className="pe-lg-4 d-flex" href="/">
+            <Nav.Link className="pe-lg-5 d-flex justify-content-center" href="/">
               <div className="d-flex align-items-center">
                 <HouseFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
                 <h4 className="nav-link  mb-0">HOME</h4>
               </div>
             </Nav.Link>
-            <Nav.Link className=" pe-lg-4 d-flex" href="/about-us">
+            <Nav.Link className=" pe-lg-5 d-flex justify-content-center" href="/about-us">
               <div className="d-flex align-items-center">
                 <PersonFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
                 <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
               </div>
             </Nav.Link>
 
-            <Nav.Link className="pe-lg-4 " href="/explore">
-              <div className="nav-link d-flex align-items-center">
+            <Nav.Link className="pe-lg-5 d-flex justify-content-center" href="/explore">
+              <div className="d-flex align-items-center">
                 <AirplaneFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
                 <h4 className="nav-link  mb-0">OFFERTE</h4>
               </div>
             </Nav.Link>
-            <Nav.Link className=" pe-lg-4 " href="/contact">
-              <div className=" nav-link d-flex align-items-center">
+            <Nav.Link className=" pe-lg-5 d-flex justify-content-center" href="/contact">
+              <div className=" d-flex align-items-center">
                 <EnvelopeFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
                 <h4 className="nav-link  mb-0"> CONTATTI</h4>
               </div>
@@ -80,6 +80,7 @@ const HeaderTwo = () => {
                       <PersonCircle className="me-2 text-white" style={{ fontSize: "1.5rem" }} />
                       <NavDropdown title={username.username} id="basic-nav-dropdown">
                         <NavDropdown.Item
+                          className="text-white"
                           as={Link}
                           to="/preferiti"
                           style={{ fontFamily: "Montserrat, sans-serif", fontWeight: "600" }}
@@ -88,6 +89,7 @@ const HeaderTwo = () => {
                         </NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item
+                          className="text-white"
                           as={Link}
                           onClick={handleLogout}
                           to="/login"

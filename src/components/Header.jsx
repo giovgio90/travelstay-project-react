@@ -96,35 +96,35 @@ const Header = () => {
             <img src={Logo} width="80" height="80" alt="Logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav" className="fullscreen-navbar-collapse">
+          <Navbar.Collapse id="basic-navbar-nav" className="fullscreen-navbar-collapse ">
             <Nav className="justify-content-center mx-lg-auto">
-              <Nav.Link className="link-hover pe-lg-4 d-flex" href="/">
+              <Nav.Link className="link-hover pe-lg-5 d-flex justify-content-center" href="/">
                 <div className="d-flex align-items-center justify-content-center">
                   <HouseFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
                   <h4 className="nav-link  mb-0">HOME</h4>
                 </div>
               </Nav.Link>
-              <Nav.Link className=" pe-lg-4 d-flex" href="/about-us">
+              <Nav.Link className=" pe-lg-5 d-flex justify-content-center" href="/about-us">
                 <div className="d-flex align-items-center">
                   <PersonFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
                   <h4 className="nav-link  mb-0"> CHI SIAMO</h4>
                 </div>
               </Nav.Link>
 
-              <Nav.Link className="pe-lg-4 " href="/explore">
-                <div className="nav-link d-flex align-items-center">
+              <Nav.Link className="pe-lg-5 d-flex justify-content-center" href="/explore">
+                <div className="d-flex align-items-center">
                   <AirplaneFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
                   <h4 className="nav-link  mb-0">OFFERTE</h4>
                 </div>
               </Nav.Link>
-              <Nav.Link className=" pe-lg-4 " href="/contact">
-                <div className=" nav-link d-flex align-items-center">
+              <Nav.Link className=" pe-lg-5 d-flex justify-content-center" href="/contact">
+                <div className=" d-flex align-items-center">
                   <EnvelopeFill className="text-white" style={{ fontSize: "1.5rem" }} />{" "}
                   <h4 className="nav-link  mb-0"> CONTATTI</h4>
                 </div>
               </Nav.Link>
             </Nav>
-            <Form className="d-flex justify-content-start">
+            <Form className="d-flex justify-content-center justify-content-start">
               {username ? (
                 <>
                   <div className=" d-flex align-items-center">
@@ -140,8 +140,9 @@ const Header = () => {
                     </Nav.Link>
                     <div className="nav-link d-flex align-items-center">
                       <PersonCircle className="nav-link me-2 text-white" style={{ fontSize: "1.5rem" }} />
-                      <NavDropdown title={username.username} id="basic-nav-dropdown">
+                      <NavDropdown title={username.username} id="basic-nav-dropdown-head">
                         <NavDropdown.Item
+                          className=" navdrop-item text-white"
                           as={Link}
                           to="/preferiti"
                           style={{ fontFamily: "Montserrat, sans-serif", fontWeight: "600" }}
@@ -151,12 +152,13 @@ const Header = () => {
 
                         <NavDropdown.Divider />
                         <NavDropdown.Item
+                          className=" text-white"
                           as={Link}
                           onClick={handleLogout}
                           to="/login"
                           style={{ fontFamily: "Montserrat, sans-serif", fontWeight: "600" }}
                         >
-                          Logout
+                          Esci
                         </NavDropdown.Item>
                       </NavDropdown>
                     </div>
