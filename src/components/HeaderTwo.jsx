@@ -95,7 +95,7 @@ const HeaderTwo = () => {
                           to="/login"
                           style={{ fontFamily: "Montserrat, sans-serif", fontWeight: "600" }}
                         >
-                          Logout
+                          Esci
                         </NavDropdown.Item>
                       </NavDropdown>
                     </div>
