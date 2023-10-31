@@ -1,7 +1,7 @@
 import "../login.css";
 import Logo from "../assets/Logo.png";
 import React, { useState } from "react";
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { Form, Button, Container, Row, Col, Nav } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../redux/actions";
 import { Link } from "react-router-dom";
@@ -160,6 +160,9 @@ const LoginTravel = () => {
                         required
                       />
                     </Form.Group>
+                    <div className="text-center">
+                      <Nav.Link className="bg-white text-primary border-none">Password dimenticata?</Nav.Link>
+                    </div>
                     {user ? (
                       <Link to="/">
                         <div className="text-center mt-5">

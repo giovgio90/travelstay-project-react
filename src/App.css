@@ -518,6 +518,10 @@
   box-shadow: none;
 }
 
+.card-order {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 6px 20px rgba(0, 0, 0, 0.19);
+}
+
 /*LOGIN*/
 
 .login {

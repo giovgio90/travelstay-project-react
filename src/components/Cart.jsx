@@ -19,6 +19,8 @@ import PaymentModal from "./PaymentModal";
 import LoadingThree from "./LoadingThree";
 import LoadingFive from "./LoadingFive";
 import HeaderTwo from "./HeaderTwo";
+import { Calendar2CheckFill, ClockFill, HouseAddFill, PersonFillExclamation } from "react-bootstrap-icons";
+import { FaEuroSign, FaMapMarkerAlt, FaUser } from "react-icons/fa";
 
 const Cart = () => {
   const cartItemsTravel = useSelector((state) => state.cart.cartItemsTravel);
@@ -138,75 +140,156 @@ const Cart = () => {
                 <h2 className=" mb-4" style={{ fontFamily: "Impact, sans-serif", fontSize: "2rem" }}>
                   Riepilogo ordine
                 </h2>
-                <Col xs={12} md={12} lg={6} style={{ minHeight: "60vh" }}>
+                <Col xs={12} md={12} lg={8} style={{ minHeight: "60vh" }}>
                   {isLoading ? (
                     <LoadingThree />
                   ) : (
                     <>
                       {cartItems.map((item) => (
-                        <div key={item.id}>
-                          <div style={{ fontFamily: "Montserrat, sans-serif" }}>
-                            <div className="d-flex align-items-center">
-                              <Card.Title className="mb-3" style={{ fontSize: "1.6rem", fontWeight: "600" }}>
-                                {item.destination || item.name}
-                              </Card.Title>
-                              <Button
-                                className="ms-auto"
-                                size="sm"
-                                variant="danger"
-                                onClick={() => handleRemoveFromCart(item.id)}
-                              >
-                                Rimuovi dal carrello
-                              </Button>
-                            </div>
-                            {item.date ? (
-                              <Card.Text>
-                                <span style={{ fontSize: "1.2rem", fontWeight: "600" }}>Data</span>{" "}
-                                <p>{formatItalianDate(item.date)}</p>
-                              </Card.Text>
-                            ) : null}
-                            {item.type ? (
-                              <Card.Text>
-                                <span style={{ fontSize: "1.2rem", fontWeight: "600" }}>Tipo struttura</span>{" "}
-                                <p>{item.type}</p>
-                              </Card.Text>
-                            ) : null}
-                            <Card.Text>
-                              {item.adults > 0 || item.children > 0 ? (
-                                <Card.Text>
-                                  <span style={{ fontSize: "1.2rem", fontWeight: "600" }}>Ospiti</span> <br />{" "}
-                                  {item.adults === 1 ? "1 adulto" : item.adults > 1 ? `${item.adults} adulti` : ""}
-                                  {item.adults > 0 && item.children > 0 ? " - " : ""}
-                                  {item.children === 1
-                                    ? "1 bambino"
-                                    : item.children > 1
-                                    ? `${item.children} bambini`
-                                    : ""}
-                                </Card.Text>
-                              ) : null}
-                            </Card.Text>
-                            {item.destination ? (
+                        <Card key={item.id} className="card-order p-3 mb-3">
+                          <Row className="d-flex">
+                            <Col xs={5} md={4} lg={3}>
+                              <div>
+                                <img
+                                  className="rounded-2 me-2"
+                                  src={item.image}
+                                  style={{ width: "150px", height: "150px", objectFit: "cover" }}
+                                  alt="Struttura"
+                                />
+                              </div>{" "}
+                            </Col>
+                            <Col xs={7} md={8} lg={9}>
+                              <div>
+                                <Row className="d-flex w-100">
+                                  <Col xs={12} md={8}>
+                                    <div className="ms-4 ms-md-0">
+                                      <Card.Title
+                                        className="mb-3 "
+                                        style={{
+                                          fontFamily: "Montserrat, sans-serif",
+                                          fontSize: "1.6rem",
+                                          fontWeight: "600",
+                                        }}
+                                      >
+                                        <div className="d-flex align-items-center mb-1">
+                                          <div>
+                                            <FaMapMarkerAlt className="pb-1" />
+                                          </div>
+                                          {item.destination || item.name}
+                                        </div>
+                                      </Card.Title>
+                                    </div>
+                                  </Col>
+                                  <Col xs={12} md={4}>
+                                    <div className="text-center text-lg-end">
+                                      <Button size="sm" variant="danger" onClick={() => handleRemoveFromCart(item.id)}>
+                                        Rimuovi dal carrello
+                                      </Button>
+                                    </div>
+                                  </Col>
+                                  <hr />
+                                </Row>
+
+                                <div>
+                                  <Row className="mt-3">
+                                    <div
+                                      className="d-flex justify-column"
+                                      style={{ fontFamily: "Montserrat, sans-serif" }}
+                                    >
+                                      {item.date ? (
+                                        <Col xs={12} md={6} lg={3}>
+                                          <Card.Text>
+                                            <div className="d-flex align-items-center mb-1">
+                                              <div>
+                                                <Calendar2CheckFill className="pb-1" />
+                                              </div>
+                                              <span style={{ fontSize: "1rem", fontWeight: "600" }}>Data</span>{" "}
+                                            </div>
+                                            <p>{formatItalianDate(item.date)}</p>
+                                          </Card.Text>
+                                        </Col>
+                                      ) : null}
+
+                                      {item.type ? (
+                                        <Col xs={12} md={6} lg={3}>
+                                          <Card.Text>
+                                            <div className="d-flex align-items-center mb-1">
+                                              <div>
+                                                <HouseAddFill className="pb-1" />
+                                              </div>
+                                              <span style={{ fontSize: "1rem", fontWeight: "600" }}>Struttura</span>{" "}
+                                            </div>
+                                            <p>{item.type}</p>
+                                          </Card.Text>
+                                        </Col>
+                                      ) : null}
+
+                                      <Col xs={12} md={6} lg={3}>
+                                        <Card.Text>
+                                          {item.adults > 0 || item.children > 0 ? (
+                                            <Card.Text>
+                                              <div className="d-flex align-items-center mb-1">
+                                                <div>
+                                                  <FaUser className="pb-1" />
+                                                </div>
+                                                <span style={{ fontSize: "1rem", fontWeight: "600" }}>Ospiti</span>{" "}
+                                                <br />{" "}
+                                              </div>
+                                              {item.adults === 1
+                                                ? "1 adulto"
+                                                : item.adults > 1
+                                                ? `${item.adults} adulti`
+                                                : ""}
+                                              {item.adults > 0 && item.children > 0 ? " - " : ""}
+                                              {item.children === 1
+                                                ? "1 bambino"
+                                                : item.children > 1
+                                                ? `${item.children} bambini`
+                                                : ""}
+                                            </Card.Text>
+                                          ) : null}
+                                        </Card.Text>
+                                      </Col>
+                                      {/* {item.destination ? (
                               <Card.Text>
                                 <span style={{ fontSize: "1.2rem", fontWeight: "600" }}>Località</span>{" "}
                                 <p>{item.destination}</p>
                               </Card.Text>
-                            ) : null}
+                            ) : null} */}
 
-                            {item.duration ? (
-                              <Card.Text>
-                                <span style={{ fontSize: "1.2rem", fontWeight: "600" }}>Durata</span>{" "}
-                                <p>{item.duration}</p>
-                              </Card.Text>
-                            ) : null}
+                                      {item.duration ? (
+                                        <Col xs={12} md={6} lg={3}>
+                                          <Card.Text>
+                                            <div className="d-flex align-items-center mb-1">
+                                              <div>
+                                                <ClockFill className="pb-1" />
+                                              </div>
+                                              <span style={{ fontSize: "1rem", fontWeight: "600" }}>Durata</span>{" "}
+                                            </div>
+                                            <p className="ps-1">{item.duration}</p>
+                                          </Card.Text>
+                                        </Col>
+                                      ) : null}
 
-                            {console.log("Valore di item.duration:", item.duration)}
-                            <Card.Text>
-                              <span style={{ fontSize: "1.2rem", fontWeight: "600" }}>Prezzo finale</span>{" "}
-                              <p>{item.price},00 €</p>
-                            </Card.Text>
-                            <hr />
-                          </div>
-                        </div>
+                                      <Col xs={12} md={6} lg={3}>
+                                        {console.log("Valore di item.duration:", item.duration)}
+                                        <Card.Text>
+                                          <div className="d-flex align-items-center mb-1">
+                                            <div>
+                                              <FaEuroSign className="pb-1" />
+                                            </div>
+                                            <span style={{ fontSize: "1rem", fontWeight: "600" }}>Prezzo finale</span>{" "}
+                                          </div>
+                                          <p className="ps-1">{item.price},00 €</p>
+                                        </Card.Text>
+                                      </Col>
+                                    </div>
+                                  </Row>
+                                </div>
+                              </div>
+                            </Col>
+                          </Row>
+                        </Card>
                       ))}
                     </>
                   )}
@@ -214,7 +297,7 @@ const Cart = () => {
               </>
             )}
             {cartItems.length > 0 && (
-              <Col xs={12} md={12} lg={6} className="ms-auto">
+              <Col xs={12} md={12} lg={4} className="ms-auto">
                 <div className="cart-summary p-3  cart-container">
                   <Container>
                     <h4>Dettaglio del prezzo</h4>
@@ -227,7 +310,7 @@ const Cart = () => {
                           <LoadingFive />
                         ) : (
                           <>
-                            <Col xs={7}>
+                            <Col xs={12}>
                               <div key={item.id}>
                                 <div className="d-flex" style={{ fontFamily: "Montserrat, sans-serif" }}>
                                   <p className="mb-0">{item.offer === "travel" ? <p>{item.price},00 €</p> : null}</p>
@@ -277,16 +360,16 @@ const Cart = () => {
                               </div>
                             </Col>
 
-                            <Col xs={5} className="text-end">
-                              <div>
+                            {/* <Col xs={5} className="text-end"> */}
+                            {/* <div>
                                 <img
                                   className="rounded-2"
                                   src={item.image}
                                   style={{ width: "150px", height: "150px", objectFit: "cover" }}
                                   alt="Struttura"
                                 />
-                              </div>{" "}
-                            </Col>
+                              </div>{" "} */}
+                            {/* </Col> */}
                           </>
                         )}
                       </Row>
@@ -297,10 +380,10 @@ const Cart = () => {
                     {isLoading ? (
                       <h4 className="text-center text-white">""</h4>
                     ) : (
-                      <h4 className="text-center">Totale da pagare: {total},00 €</h4>
+                      <h4 className="text-center">Da pagare: {total},00 €</h4>
                     )}
                   </Container>
-                  <div className="text-center" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                  <div className="text-center" style={{ fontSize: "1rem", fontFamily: "Montserrat, sans-serif" }}>
                     {isLoading ? (
                       ""
                     ) : (

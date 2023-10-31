@@ -567,6 +567,21 @@
           "user": "IsabellaArtExplorer",
           "rating": 4,
           "comment": "Bologna è una città straordinaria, e questa casa ci ha fatto sentire come parte di essa."
+        },
+        {
+          "user": "Giovanni12",
+          "rating": 5,
+          "comment": "Bello!!"
+        },
+        {
+          "user": "Giovanni12",
+          "rating": 5,
+          "comment": "Bello!"
+        },
+        {
+          "user": "Giovanni12",
+          "rating": 5,
+          "comment": "Bellissima!"
         }
       ],
       "host": "Giulia",
@@ -977,6 +992,11 @@
           "user": "LuigiTuscanCuisine",
           "rating": 4.7,
           "comment": "La cucina toscana è deliziosa, e questo appartamento ci ha permesso di gustarla appieno."
+        },
+        {
+          "user": "Giovanni12",
+          "rating": 5,
+          "comment": "Bello!"
         }
       ],
       "host": "Giulia",

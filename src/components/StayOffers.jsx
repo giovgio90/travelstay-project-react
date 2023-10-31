@@ -156,7 +156,7 @@ const StayOffers = ({ selectedBudget }) => {
                         }}
                         className="mb-0"
                       >
-                        Tipo Struttura
+                        Struttura
                       </Form.Label>
                       <Form.Control
                         type="text"
@@ -430,7 +430,7 @@ const StayOffers = ({ selectedBudget }) => {
                         <FaHouseUser className="pb-1" />
                       </div>
                       <Card.Text>
-                        <strong style={{ fontWeight: "500" }}>Tipo struttura:</strong>
+                        <strong style={{ fontWeight: "500" }}>Struttura:</strong>
                         <span
                           className="text-white px-2 mx-2 rounded-2"
                           style={{ fontWeight: "500", fontSize: "0.9rem", background: "#203040" }}
@@ -606,7 +606,7 @@ const StayOffers = ({ selectedBudget }) => {
                       fontWeight: "bolder",
                     }}
                   >
-                    Tipo struttura
+                    Struttura
                   </Form.Label>
                   <Form.Control
                     type="text"

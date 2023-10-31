@@ -163,7 +163,7 @@ const OfferStayDetail = () => {
                         }}
                         className="mb-0"
                       >
-                        Tipo struttura
+                        Struttura
                       </Form.Label>
                       <Form.Control
                         as="textarea"
@@ -580,7 +580,7 @@ const OfferStayDetail = () => {
                           </div>
                           <div>
                             <p className="mb-0">
-                              <strong>Tipo struttura:</strong>
+                              <strong>Struttura:</strong>
                             </p>
                           </div>
                         </Col>
